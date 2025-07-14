@@ -1,4 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
 import type { NextConfig } from "next";
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   // Essential for deployment outside Vercel
@@ -6,6 +9,11 @@ const nextConfig: NextConfig = {
   
   // Performance optimizations (Next.js 15 defaults)
   compress: true,
+  
+  // Performance optimizations  
+  experimental: {
+    optimizePackageImports: ['remixicon', 'next-intl'],
+  },
   
   // Image optimization (enhanced in Next.js 15)
   images: {
@@ -47,4 +55,4 @@ const nextConfig: NextConfig = {
   cacheMaxMemorySize: 0, // Disable memory caching in production
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

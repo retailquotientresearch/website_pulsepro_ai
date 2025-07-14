@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
+
+/* Tailwind v4 dark mode configuration */
+@variant dark (.dark &);
+
+/* PulsePro.ai Brand Colors and Design System */
+:root {
+  /* Light mode colors from your design */
+  --background: #f3f0ff; /* Light lavender background */
+  --foreground: #334155; /* Dark gray text */
+  --surface: #ffffff; /* White surfaces */
+  --border: #e9d5ff; /* Light purple borders */
+  --muted: #94a3b8; /* Muted gray text */
+  --accent: #ec4899; /* Pink accent from design */
+
+  /* Primary purple palette from PulsePro.ai */
+  --primary-50: #faf5ff;
+  --primary-100: #f3e8ff;
+  --primary-200: #e9d5ff;
+  --primary-300: #d8b4fe;
+  --primary-400: #c084fc;
+  --primary-500: #a855f7; /* Main purple from design */
+  --primary-600: #9333ea;
+  --primary-700: #7c3aed;
+  --primary-800: #6b21a8;
+  --primary-900: #581c87;
+  --primary-950: #3b0764;
+
+  /* Success, warning, error colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+/* Dark mode - purple-tinted theme */
+.dark {
+  --background: #0f0b1a; /* Very dark purple-tinted background */
+  --foreground: #f8fafc; /* Light text */
+  --surface: #1a1625; /* Dark purple surface */
+  --border: #3d3450; /* Purple-tinted borders */
+  --muted: #94a3b8; /* Muted light text */
+  --accent: #f472b6; /* Lighter pink for dark mode */
+
+  /* Adjusted primary colors for dark mode */
+  --primary-50: #3b0764;
+  --primary-100: #581c87;
+  --primary-200: #6b21a8;
+  --primary-300: #7c3aed;
+  --primary-400: #9333ea;
+  --primary-500: #c084fc; /* Lighter purple for dark mode */
+  --primary-600: #d8b4fe;
+  --primary-700: #e9d5ff;
+  --primary-800: #f3e8ff;
+  --primary-900: #faf5ff;
+  --primary-950: #fefcff;
+}
+
+/* Tailwind v4 theme configuration */
+@theme inline {
+  /* Dark mode configuration for v4 */
+  --color-scheme: light dark;
+  --default-transition-duration: 150ms;
+  
+  /* Map colors to Tailwind utilities */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+
+  /* Primary color scale */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  /* Semantic colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Typography - Inter font family */
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Spacing scale */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* Border radius */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* Shadows for PulsePro design */
+  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -1px rgb(0 0 0 / 0.06);
+  --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -2px rgb(0 0 0 / 0.05);
+  --shadow-large: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-primary: 0 10px 15px -3px rgb(168 85 247 / 0.25);
+
+  /* Animation durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Container sizes */
+  --container-xs: 475px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+}
+
+/* Enhanced base styles */
+/* body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 300ms ease, color 300ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* Custom component styles using Tailwind v4 syntax */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl font-medium;
+    @apply transition-all duration-200 ease-in-out;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700;
+    @apply focus-visible:ring-primary-500;
+    @apply transform hover:scale-[1.02] active:scale-[0.98];
+    box-shadow: var(--shadow-primary);
+  }
+
+  .btn-secondary {
+    @apply bg-surface border border-border text-foreground;
+    @apply hover:bg-primary-50 dark:hover:bg-primary-950;
+    @apply focus-visible:ring-primary-500;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-2xl;
+    @apply transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-medium);
+    @apply -translate-y-1;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-surface border border-border rounded-xl;
+    @apply text-foreground placeholder:text-muted;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  .glass {
+    @apply backdrop-blur-md border border-white/20 dark:border-white/10;
+    background: rgb(255 255 255 / 0.1);
+  }
+
+  .dark .glass {
+    background: rgb(0 0 0 / 0.1);
+  }
+
+  .container-fluid {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent bg-clip-text text-transparent;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}

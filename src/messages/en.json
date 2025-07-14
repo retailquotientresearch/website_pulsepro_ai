@@ -1,0 +1,152 @@
+{
+  "navigation": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "integrations": "Integrations",
+    "support": "Support"
+  },
+  "hero": {
+    "title": "We're not a jack-of-all-trades",
+    "subtitle": "We focus on inspections—so you get speed, clarity, and results.",
+    "cta": "Book a demo",
+    "secondaryCta": "Learn more"
+  },
+  "features": {
+    "title": "We've got the basics, the bells, and the fancy stuff",
+    "subtitle": "Everything you need to streamline your inspection process",
+    "items": [
+      {
+        "title": "Smart Scheduling",
+        "description": "Automated scheduling that works with your calendar"
+      },
+      {
+        "title": "Real-time Reports",
+        "description": "Generate detailed reports instantly after inspection"
+      },
+      {
+        "title": "Mobile App",
+        "description": "Conduct inspections on-the-go with our mobile app"
+      },
+      {
+        "title": "Team Collaboration",
+        "description": "Work seamlessly with your team members"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "description": "Track performance with comprehensive analytics"
+      },
+      {
+        "title": "Custom Templates",
+        "description": "Create custom inspection templates for your needs"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Surprised Our Clients (in a Good Way)",
+    "subtitle": "Here's what our clients say about our inspection platform",
+    "items": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Quality Manager",
+        "company": "BuildTech Solutions",
+        "content": "PulsePro transformed our inspection process. What used to take hours now takes minutes.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Operations Director",
+        "company": "InspectPro Inc",
+        "content": "The real-time reporting feature has been a game-changer for our team.",
+        "rating": 5
+      },
+      {
+        "name": "Emily Rodriguez",
+        "role": "Site Supervisor",
+        "company": "SafeCheck Corp",
+        "content": "Mobile app makes field inspections so much easier and more efficient.",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "title": "Worried about rolling out a new platform?",
+    "items": [
+      {
+        "question": "How long does implementation take?",
+        "answer": "Most clients are up and running within 2-3 weeks, including training and data migration."
+      },
+      {
+        "question": "Do you offer training for our team?",
+        "answer": "Yes, we provide comprehensive training sessions and ongoing support to ensure your team is confident using the platform."
+      },
+      {
+        "question": "Can we integrate with our existing systems?",
+        "answer": "Absolutely. We offer integrations with most popular business tools and can create custom integrations if needed."
+      },
+      {
+        "question": "What if we need custom features?",
+        "answer": "We work closely with clients to develop custom features that meet their specific inspection requirements."
+      },
+      {
+        "question": "Is our data secure?",
+        "answer": "Yes, we use enterprise-grade security measures including encryption, secure data centers, and regular security audits."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Look Good. Get Noticed.",
+    "subtitle": "Ready to transform your inspection process? Join thousands of professionals who trust PulsePro.",
+    "button": "Start Free Trial"
+  },
+  "integrations": {
+    "title": "We Play Well With Others",
+    "subtitle": "Seamlessly connect with your existing tools and workflow",
+    "items": [
+      "Slack",
+      "Microsoft Teams",
+      "Google Workspace",
+      "Zapier",
+      "Salesforce",
+      "QuickBooks"
+    ]
+  },
+  "process": {
+    "title": "From Checklist to Change",
+    "subtitle": "Our streamlined process gets you results fast",
+    "steps": [
+      {
+        "title": "Setup & Training",
+        "description": "Quick setup with comprehensive team training"
+      },
+      {
+        "title": "Customize Templates",
+        "description": "Create inspection templates that match your workflow"
+      },
+      {
+        "title": "Conduct Inspections",
+        "description": "Use our mobile app for efficient field inspections"
+      },
+      {
+        "title": "Generate Reports",
+        "description": "Get instant, detailed reports with actionable insights"
+      },
+      {
+        "title": "Track & Improve",
+        "description": "Monitor performance and continuously optimize your process"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Still thinking about it?",
+    "description": "Join thousands of professionals who have transformed their inspection process with PulsePro.",
+    "cta": "Get Started Today",
+    "secondaryCta": "Schedule a Demo",
+    "copyright": "© 2024 PulsePro.ai. All rights reserved.",
+    "links": {
+      "product": "Product",
+      "company": "Company",
+      "support": "Support",
+      "legal": "Legal"
+    }
+  }
+}

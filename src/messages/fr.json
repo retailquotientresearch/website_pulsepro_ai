@@ -1,0 +1,152 @@
+{
+  "navigation": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "integrations": "Intégrations",
+    "support": "Support"
+  },
+  "hero": {
+    "title": "Nous ne sommes pas des généralistes",
+    "subtitle": "Nous nous concentrons sur les inspections—pour vous offrir rapidité, clarté et résultats.",
+    "cta": "Réserver une démo",
+    "secondaryCta": "En savoir plus"
+  },
+  "features": {
+    "title": "Nous avons les bases, les cloches et les trucs sophistiqués",
+    "subtitle": "Tout ce dont vous avez besoin pour rationaliser votre processus d'inspection",
+    "items": [
+      {
+        "title": "Planification intelligente",
+        "description": "Planification automatisée qui fonctionne avec votre calendrier"
+      },
+      {
+        "title": "Rapports en temps réel",
+        "description": "Générez des rapports détaillés instantanément après l'inspection"
+      },
+      {
+        "title": "Application mobile",
+        "description": "Effectuez des inspections en déplacement avec notre app mobile"
+      },
+      {
+        "title": "Collaboration d'équipe",
+        "description": "Travaillez en harmonie avec les membres de votre équipe"
+      },
+      {
+        "title": "Tableau de bord analytique",
+        "description": "Suivez les performances avec des analyses complètes"
+      },
+      {
+        "title": "Modèles personnalisés",
+        "description": "Créez des modèles d'inspection personnalisés pour vos besoins"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Ce qui a surpris nos clients (en bien)",
+    "subtitle": "Voici ce que nos clients disent de notre plateforme d'inspection",
+    "items": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Responsable Qualité",
+        "company": "BuildTech Solutions",
+        "content": "PulsePro a transformé notre processus d'inspection. Ce qui prenait des heures ne prend maintenant que des minutes.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Directeur des Opérations",
+        "company": "InspectPro Inc",
+        "content": "La fonction de rapport en temps réel a été un changement de donne pour notre équipe.",
+        "rating": 5
+      },
+      {
+        "name": "Emily Rodriguez",
+        "role": "Superviseur de Site",
+        "company": "SafeCheck Corp",
+        "content": "L'app mobile rend les inspections sur le terrain beaucoup plus faciles et efficaces.",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "title": "Inquiet de déployer une nouvelle plateforme ?",
+    "items": [
+      {
+        "question": "Combien de temps prend l'implémentation ?",
+        "answer": "La plupart des clients sont opérationnels dans les 2-3 semaines, y compris la formation et la migration des données."
+      },
+      {
+        "question": "Offrez-vous une formation pour notre équipe ?",
+        "answer": "Oui, nous proposons des sessions de formation complètes et un support continu pour assurer que votre équipe utilise la plateforme en confiance."
+      },
+      {
+        "question": "Peut-on intégrer avec nos systèmes existants ?",
+        "answer": "Absolument. Nous offrons des intégrations avec la plupart des outils business populaires et pouvons créer des intégrations personnalisées si nécessaire."
+      },
+      {
+        "question": "Et si nous avons besoin de fonctionnalités personnalisées ?",
+        "answer": "Nous travaillons étroitement avec les clients pour développer des fonctionnalités personnalisées qui répondent à leurs exigences d'inspection spécifiques."
+      },
+      {
+        "question": "Nos données sont-elles sécurisées ?",
+        "answer": "Oui, nous utilisons des mesures de sécurité de niveau entreprise incluant le chiffrement, des centres de données sécurisés et des audits de sécurité réguliers."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ayez l'air bien. Faites-vous remarquer.",
+    "subtitle": "Prêt à transformer votre processus d'inspection ? Rejoignez des milliers de professionnels qui font confiance à PulsePro.",
+    "button": "Commencer l'essai gratuit"
+  },
+  "integrations": {
+    "title": "Nous jouons bien avec les autres",
+    "subtitle": "Connectez-vous parfaitement avec vos outils et workflow existants",
+    "items": [
+      "Slack",
+      "Microsoft Teams",
+      "Google Workspace",
+      "Zapier",
+      "Salesforce",
+      "QuickBooks"
+    ]
+  },
+  "process": {
+    "title": "De la liste de contrôle au changement",
+    "subtitle": "Notre processus rationalisé vous donne des résultats rapides",
+    "steps": [
+      {
+        "title": "Configuration et formation",
+        "description": "Configuration rapide avec formation d'équipe complète"
+      },
+      {
+        "title": "Personnaliser les modèles",
+        "description": "Créez des modèles d'inspection qui correspondent à votre workflow"
+      },
+      {
+        "title": "Effectuer les inspections",
+        "description": "Utilisez notre app mobile pour des inspections sur le terrain efficaces"
+      },
+      {
+        "title": "Générer des rapports",
+        "description": "Obtenez des rapports instantanés et détaillés avec des insights actionnables"
+      },
+      {
+        "title": "Suivre et améliorer",
+        "description": "Surveillez les performances et optimisez continuellement votre processus"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Vous y réfléchissez encore ?",
+    "description": "Rejoignez des milliers de professionnels qui ont transformé leur processus d'inspection avec PulsePro.",
+    "cta": "Commencer aujourd'hui",
+    "secondaryCta": "Planifier une démo",
+    "copyright": "© 2024 PulsePro.ai. Tous droits réservés.",
+    "links": {
+      "product": "Produit",
+      "company": "Entreprise",
+      "support": "Support",
+      "legal": "Légal"
+    }
+  }
+}
