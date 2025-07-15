@@ -12,32 +12,77 @@
     "secondaryCta": "Learn more"
   },
   "features": {
-    "title": "We've got the basics, the bells, and the fancy stuff",
-    "subtitle": "Everything you need to streamline your inspection process",
+    "tagline": "What You're Looking For",
+    "title": {
+      "part1": "We've got the basics, the bells,",
+      "part2": "and the",
+      "highlight": "brainy stuff"
+    },
+    "subtitle": {
+      "part1": "But let's start with what",
+      "highlight": "you",
+      "part2": "care about."
+    },
     "items": [
       {
-        "title": "Smart Scheduling",
-        "description": "Automated scheduling that works with your calendar"
+        "title": "Geo-tagged Photos",
+        "description": "✓ Yes, we capture timestamp, lat/long, device details",
+        "demoText": "How it looks in-app",
+        "exampleText": "See how Brand X uses this for food safety audits"
       },
       {
-        "title": "Real-time Reports",
-        "description": "Generate detailed reports instantly after inspection"
+        "title": "PDF Reports",
+        "description": "✓ Generate comprehensive PDF reports instantly",
+        "demoText": "View sample report",
+        "exampleText": "See how Company Y streamlines reporting"
       },
       {
-        "title": "Mobile App",
-        "description": "Conduct inspections on-the-go with our mobile app"
+        "title": "Reminders & Alerts",
+        "description": "✓ Never miss an inspection with automated reminders",
+        "demoText": "See notification settings",
+        "exampleText": "How Team Z manages their schedule"
       },
       {
-        "title": "Team Collaboration",
-        "description": "Work seamlessly with your team members"
+        "title": "Scheduling",
+        "description": "✓ Smart scheduling that works with your calendar",
+        "demoText": "Try the scheduler",
+        "exampleText": "See scheduling in action"
       },
       {
-        "title": "Analytics Dashboard",
-        "description": "Track performance with comprehensive analytics"
+        "title": "Custom Branding",
+        "description": "✓ White-label solution with your brand colors",
+        "demoText": "See branding options",
+        "exampleText": "View branded examples"
       },
       {
-        "title": "Custom Templates",
-        "description": "Create custom inspection templates for your needs"
+        "title": "Roles & Permissions",
+        "description": "✓ Control access with granular permissions",
+        "demoText": "Explore permissions",
+        "exampleText": "See team management features"
+      },
+      {
+        "title": "Dashboards & Analytics",
+        "description": "✓ Real-time insights and performance metrics",
+        "demoText": "View dashboard demo",
+        "exampleText": "See analytics in action"
+      },
+      {
+        "title": "Offline Capability",
+        "description": "✓ Work anywhere, sync when connected",
+        "demoText": "Try offline mode",
+        "exampleText": "See offline capabilities"
+      },
+      {
+        "title": "Unlimited Storage",
+        "description": "✓ Store unlimited photos and inspection data",
+        "demoText": "See storage features",
+        "exampleText": "Learn about data management"
+      },
+      {
+        "title": "Action Tracking",
+        "description": "✓ Track follow-up actions and completion",
+        "demoText": "See action tracking",
+        "exampleText": "View tracking examples"
       }
     ]
   },
