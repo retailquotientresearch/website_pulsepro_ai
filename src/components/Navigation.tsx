@@ -16,13 +16,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20 py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <div className="relative h-14 w-44 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+            <div className="relative h-14 w-36 lg:w-44 flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
               <Image
                 src="/images/pulse-black.png"
                 alt="PulsePro.ai"
                 width={1184}
                 height={372}
-                className="dark:hidden h-12 w-auto object-contain"
+                className="dark:hidden h-9 lg:h-10 w-auto object-contain"
                 priority
               />
               <Image
@@ -30,14 +30,14 @@ export default function Navigation() {
                 alt="PulsePro.ai"
                 width={1184}
                 height={372}
-                className="hidden dark:block h-12 w-auto object-contain"
+                className="hidden dark:block h-9 lg:h-10 w-auto object-contain"
                 priority
               />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             <Link 
               href="/features" 
               className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 font-medium"
@@ -65,8 +65,8 @@ export default function Navigation() {
           </div>
 
           {/* Right side actions */}
-          <div className="flex items-center space-x-3">
-            <div className="hidden sm:flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-2">
               <LanguageSwitcher />
               <ThemeToggle />
               

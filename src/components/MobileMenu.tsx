@@ -18,7 +18,7 @@ export default function MobileMenu() {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="md:hidden border border-gray-200 dark:border-gray-700"
+          className="lg:hidden border border-gray-200 dark:border-gray-700"
           aria-label="Toggle menu"
         >
           <i className={`${isOpen ? 'ri-close-line' : 'ri-menu-line'} text-lg text-gray-900 dark:text-white`}></i>
