@@ -136,7 +136,7 @@ export default function Features() {
                   className={`group cursor-pointer transition-all duration-300 rounded-2xl border-0 shadow-md bg-white dark:bg-gray-700 ${
                     isSelected
                       ? "ring-2 ring-purple-500 shadow-xl scale-105"
-                      : "hover:scale-105 hover:shadow-xl"
+                      : "transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
                   }`}
                   onClick={() => handleFeatureClick(index)}
                 >

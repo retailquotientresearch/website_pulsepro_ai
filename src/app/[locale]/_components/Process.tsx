@@ -57,7 +57,7 @@ export default function Process() {
           {steps.map((step, index) => (
             <Card 
               key={index} 
-              className="text-center group hover:scale-105 transition-transform duration-300 relative bg-white dark:bg-gray-800"
+              className="text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right relative bg-white dark:bg-gray-800"
             >
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                 {step.number}

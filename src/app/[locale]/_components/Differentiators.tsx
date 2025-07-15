@@ -63,7 +63,7 @@ export default function Differentiators() {
           {differentiators.map((item, index) => (
             <Card 
               key={index} 
-              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white group hover:scale-105 transition-transform duration-300"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
             >
               <CardContent className="text-center">
                 <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>

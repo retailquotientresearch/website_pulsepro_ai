@@ -57,7 +57,7 @@ export default function Integrations() {
           {integrations.map((integration, index) => (
             <Card 
               key={index} 
-              className="text-center group hover:scale-105 transition-transform duration-300"
+              className="text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
             >
               <CardContent>
                 <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 ${integration.color}`}>
