@@ -6,40 +6,92 @@
     "support": "Support"
   },
   "hero": {
-    "title": "Nous ne sommes pas des généralistes",
-    "subtitle": "Nous nous concentrons sur les inspections—pour vous offrir rapidité, clarté et résultats.",
-    "cta": "Réserver une démo",
-    "secondaryCta": "En savoir plus"
+    "tagline": "Inspections. Bien Faites.",
+    "title": {
+      "part1": "Nous ne sommes",
+      "highlight": "pas",
+      "part2": "des généralistes"
+    },
+    "subtitle": {
+      "part1": "Nous nous concentrons sur les inspections—pour vous offrir",
+      "highlight": "rapidité, clarté et résultats"
+    },
+    "cta": "Voir en Action",
+    "secondaryCta": "Réserver une Démo"
   },
   "features": {
-    "title": "Nous avons les bases, les cloches et les trucs sophistiqués",
-    "subtitle": "Tout ce dont vous avez besoin pour rationaliser votre processus d'inspection",
-    "items": [
-      {
-        "title": "Planification intelligente",
-        "description": "Planification automatisée qui fonctionne avec votre calendrier"
+    "tagline": "Ce Que Vous Cherchez",
+    "title": {
+      "part1": "Nous avons les bases, les cloches,",
+      "part2": "et les",
+      "highlight": "trucs intelligents"
+    },
+    "subtitle": {
+      "part1": "Mais commençons par ce qui",
+      "highlight": "vous",
+      "part2": "intéresse."
+    },
+    "items": {
+      "geotagged": {
+        "title": "Photos Géolocalisées",
+        "descriptionOne": "Oui, nous capturons l'horodatage, lat/long, détails de l'appareil",
+        "btnText": "Comment ça apparaît dans l'app",
+        "linkText": "Voir comment la Marque X l'utilise pour les audits de sécurité alimentaire"
       },
-      {
-        "title": "Rapports en temps réel",
-        "description": "Générez des rapports détaillés instantanément après l'inspection"
+      "pdf": {
+        "title": "Rapports PDF",
+        "descriptionOne": "Générés automatiquement après chaque inspection",
+        "descriptionTwo": "En-tête/pied de page personnalisé avec votre logo et option de lettre de couverture",
+        "descriptionThree": "PDFs protégés par mot de passe disponibles (comme les relevés bancaires)"
       },
-      {
-        "title": "Application mobile",
-        "description": "Effectuez des inspections en déplacement avec notre app mobile"
+      "reminders": {
+        "title": "Rappels et Alertes",
+        "descriptionOne": "Alertes push + email pour inspections manquées, scores faibles, etc.",
+        "descriptionTwo": "Résumés hebdomadaires pour les managers : audits manqués, problèmes principaux",
+        "linkText": "Voir un exemple d'email de rappel"
       },
-      {
-        "title": "Collaboration d'équipe",
-        "description": "Travaillez en harmonie avec les membres de votre équipe"
+      "scheduling": {
+        "title": "Planification",
+        "descriptionOne": "Horaires récurrents, à date fixe ou téléchargement en masse",
+        "descriptionTwo": "Exclure les jours fériés ou les jours de la semaine",
+        "descriptionThree": "Télécharger Excel pour créer automatiquement des centaines d'horaires"
       },
-      {
-        "title": "Tableau de bord analytique",
-        "description": "Suivez les performances avec des analyses complètes"
+      "branding": {
+        "title": "Marque Personnalisée",
+        "descriptionOne": "Votre logo sur l'app, les rapports et les emails",
+        "descriptionTwo": "Thème de couleur personnalisé pour votre organisation",
+        "descriptionThree": "Ajouter des lettres de couverture pour formaliser vos communications"
       },
-      {
-        "title": "Modèles personnalisés",
-        "description": "Créez des modèles d'inspection personnalisés pour vos besoins"
+      "roles": {
+        "title": "Rôles et Permissions",
+        "descriptionOne": "Contrôle d'accès basé sur l'équipe avec différents niveaux de permissions",
+        "descriptionTwo": "Niveaux lecture seule, éditeur, admin supportés",
+        "descriptionThree": "Modèle de permissions conforme SOC 2"
+      },
+      "analytics": {
+        "title": "Tableaux de Bord et Analytiques",
+        "descriptionOne": "Tableaux de bord basés sur les notes avec risques codés par couleur",
+        "descriptionTwo": "Comparer les auditeurs, sites et scores dans le temps",
+        "descriptionThree": "Exporter vers les outils BI, Sheets ou CSV instantanément"
+      },
+      "offline": {
+        "title": "Capacité Hors Ligne",
+        "descriptionOne": "Fonctionne sans réseau—même dans les sous-sols",
+        "descriptionTwo": "Se synchronise automatiquement quand de retour en ligne",
+        "descriptionThree": "Conçu pour un chargement rapide, utilisation mémoire minimale"
+      },
+      "storage": {
+        "title": "Stockage Illimité",
+        "descriptionOne": "Vos données restent exactement où elles doivent être—sûres, intactes et accessibles pour toujours.",
+        "descriptionTwo": "Pas de suppression automatique, pas de limites d'archivage, pas de coupures cachées."
+      },
+      "actions": {
+        "title": "Suivi des Actions",
+        "descriptionOne": "Créer des actions directement depuis les points de contrôle",
+        "descriptionTwo": "Assigner des propriétaires, définir des échéances, ajouter des priorités",
+        "descriptionThree": "Intégrer avec Jira, Freshdesk ou votre système de tickets"
       }
-    ]
+    }
   },
   "testimonials": {
     "title": "Ce qui a surpris nos clients (en bien)",

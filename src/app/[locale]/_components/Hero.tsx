@@ -1,10 +1,12 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import Button from '@/components/ui/Button'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
 export default function Hero() {
+  const t = useTranslations('hero')
   return (
     <Section 
       className="h-[85vh] flex items-center justify-center relative overflow-hidden"
@@ -69,25 +71,25 @@ export default function Hero() {
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
               <span className="text-lg">🚀</span>
               <span className="text-purple-600 dark:text-purple-300 font-medium">
-                Inspections. Done Right.
+                {t('tagline')}
               </span>
             </div>
           </div>
           
           {/* Main heading with gradient text */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-[1.1] tracking-tight">
-            We&apos;re{' '}
+            {t('title.part1')}{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              not
+              {t('title.highlight')}
             </span>{' '}
-            a jack-of-all-trades
+            {t('title.part2')}
           </h1>
           
           {/* Subtitle with gradient text for specific words */}
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
-            We focus on inspections—so you get{' '}
+            {t('subtitle.part1')}{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-semibold">
-              speed, clarity, and results
+              {t('subtitle.highlight')}
             </span>
           </p>
           
@@ -95,7 +97,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Button size="lg" className="flex items-center gap-3">
               <i className="ri-play-fill text-2xl"></i>
-              See It In Action
+              {t('cta')}
             </Button>
             <Button 
               variant="outline" 
@@ -103,7 +105,7 @@ export default function Hero() {
               className="flex items-center gap-3 bg-white dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300"
             >
               <i className="ri-phone-fill text-xl"></i>
-              Book a Demo
+              {t('secondaryCta')}
             </Button>
           </div>
           

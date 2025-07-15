@@ -6,10 +6,18 @@
     "support": "Support"
   },
   "hero": {
-    "title": "We're not a jack-of-all-trades",
-    "subtitle": "We focus on inspections—so you get speed, clarity, and results.",
-    "cta": "Book a demo",
-    "secondaryCta": "Learn more"
+    "tagline": "Inspections. Done Right.",
+    "title": {
+      "part1": "We're",
+      "highlight": "not",
+      "part2": "a jack-of-all-trades"
+    },
+    "subtitle": {
+      "part1": "We focus on inspections—so you get",
+      "highlight": "speed, clarity, and results"
+    },
+    "cta": "See It In Action",
+    "secondaryCta": "Book a Demo"
   },
   "features": {
     "tagline": "What You're Looking For",
@@ -26,63 +34,62 @@
     "items": [
       {
         "title": "Geo-tagged Photos",
-        "description": "✓ Yes, we capture timestamp, lat/long, device details",
-        "demoText": "How it looks in-app",
-        "exampleText": "See how Brand X uses this for food safety audits"
+        "descriptionOne": "Yes, we capture timestamp, lat/long, device details",
+        "btnText": "How it looks in-app",
+        "linkText": "See how Brand X uses this for food safety audits"
       },
       {
         "title": "PDF Reports",
-        "description": "✓ Generate comprehensive PDF reports instantly",
-        "demoText": "View sample report",
-        "exampleText": "See how Company Y streamlines reporting"
+        "descriptionOne": "Auto-generated after each inspection",
+        "descriptionTwo": "Custom header/footer with your logo & cover letter option",
+        "descriptionThree": "Password-protected PDFs available (like bank statements)"
       },
       {
         "title": "Reminders & Alerts",
-        "description": "✓ Never miss an inspection with automated reminders",
-        "demoText": "See notification settings",
-        "exampleText": "How Team Z manages their schedule"
+        "descriptionOne": "Push + email alerts for missed inspections, low scores, etc.",
+        "descriptionTwo": "Weekly digests for managers: missed audits, top issues",
+        "linkText": "See sample reminder email"
       },
       {
         "title": "Scheduling",
-        "description": "✓ Smart scheduling that works with your calendar",
-        "demoText": "Try the scheduler",
-        "exampleText": "See scheduling in action"
+        "descriptionOne": "Recurring, fixed-date, or bulk-upload schedules",
+        "descriptionTwo": "Exclude holidays or days of the week",
+        "descriptionThree": "Upload Excel to auto-create 100s of schedules"
       },
       {
         "title": "Custom Branding",
-        "description": "✓ White-label solution with your brand colors",
-        "demoText": "See branding options",
-        "exampleText": "View branded examples"
+        "descriptionOne": "Your logo on app, reports, and emails",
+        "descriptionTwo": "Custom color theme for your org",
+        "descriptionThree": "Add cover letters to formalize your communications"
       },
       {
         "title": "Roles & Permissions",
-        "description": "✓ Control access with granular permissions",
-        "demoText": "Explore permissions",
-        "exampleText": "See team management features"
+        "descriptionOne": "Your logo on app, reports, and emails",
+        "descriptionTwo": "View-only, editor, admin levels supported",
+        "descriptionThree": "SOC 2 compliant permissions model"
       },
       {
         "title": "Dashboards & Analytics",
-        "description": "✓ Real-time insights and performance metrics",
-        "demoText": "View dashboard demo",
-        "exampleText": "See analytics in action"
+        "descriptionOne": "Grade-based dashboards with color-coded risks",
+        "descriptionTwo": "Compare auditors, sites, and scores over time",
+        "descriptionThree": "Export to BI tools, Sheets, or CSV instantly"
       },
       {
         "title": "Offline Capability",
-        "description": "✓ Work anywhere, sync when connected",
-        "demoText": "Try offline mode",
-        "exampleText": "See offline capabilities"
+        "descriptionOne": "Works with zero network—even in basements",
+        "descriptionTwo": "Auto-syncs when back online",
+        "descriptionThree": "Designed for fast loading, minimal memory use"
       },
       {
         "title": "Unlimited Storage",
-        "description": "✓ Store unlimited photos and inspection data",
-        "demoText": "See storage features",
-        "exampleText": "Learn about data management"
+        "descriptionOne": "Your data stays exactly where it belongs—safe, intact, and accessible forever.",
+        "descriptionTwo": "No auto-deletion, no archiving limits, no hidden cutoffs."
       },
       {
         "title": "Action Tracking",
-        "description": "✓ Track follow-up actions and completion",
-        "demoText": "See action tracking",
-        "exampleText": "View tracking examples"
+        "descriptionOne": "Raise actions directly from checkpoints",
+        "descriptionTwo": "Assign owners, set deadlines, add priorities",
+        "descriptionThree": "Integrate with Jira, Freshdesk, or your ticketing system"
       }
     ]
   },
