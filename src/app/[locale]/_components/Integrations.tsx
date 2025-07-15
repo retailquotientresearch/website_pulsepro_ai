@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Card from '@/components/ui/Card'
+import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
@@ -57,15 +57,16 @@ export default function Integrations() {
           {integrations.map((integration, index) => (
             <Card 
               key={index} 
-              className="text-center group hover:scale-105 transition-transform duration-300 bg-white dark:bg-gray-800"
-              variant="bordered"
+              className="text-center group hover:scale-105 transition-transform duration-300"
             >
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 ${integration.color}`}>
-                <i className={`${integration.icon} text-2xl`}></i>
-              </div>
-              <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-                {integration.name}
-              </h3>
+              <CardContent>
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 ${integration.color}`}>
+                  <i className={`${integration.icon} text-2xl`}></i>
+                </div>
+                <CardTitle className="text-sm font-medium text-gray-900 dark:text-white">
+                  {integration.name}
+                </CardTitle>
+              </CardContent>
             </Card>
           ))}
         </div>

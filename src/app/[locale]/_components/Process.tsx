@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Card from '@/components/ui/Card'
+import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
@@ -58,22 +58,21 @@ export default function Process() {
             <Card 
               key={index} 
               className="text-center group hover:scale-105 transition-transform duration-300 relative bg-white dark:bg-gray-800"
-              variant="bordered"
             >
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                 {step.number}
               </div>
-              <div className="pt-6">
+              <CardContent className="pt-6">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <i className={`${step.icon} text-xl text-purple-600 dark:text-purple-400`}></i>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                <CardTitle className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                   {step.title}
-                </h3>
+                </CardTitle>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </CardContent>
             </Card>
           ))}
         </div>

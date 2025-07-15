@@ -1,6 +1,6 @@
 'use client'
 
-import Card from '@/components/ui/Card'
+import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
@@ -55,7 +55,7 @@ export default function Differentiators() {
             What Makes PulsePro Different
           </h2>
           <p className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto">
-            Here's what sets us apart from other inspection platforms
+            Here&apos;s what sets us apart from other inspection platforms
           </p>
         </div>
         
@@ -64,19 +64,18 @@ export default function Differentiators() {
             <Card 
               key={index} 
               className="bg-white/10 backdrop-blur-sm border border-white/20 text-white group hover:scale-105 transition-transform duration-300"
-              variant="default"
             >
-              <div className="text-center">
+              <CardContent className="text-center">
                 <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <i className={`${item.icon} text-2xl text-white`}></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
+                <CardTitle className="text-xl font-semibold mb-3">
                   {item.title}
-                </h3>
+                </CardTitle>
                 <p className="text-purple-100 leading-relaxed">
                   {item.description}
                 </p>
-              </div>
+              </CardContent>
             </Card>
           ))}
         </div>

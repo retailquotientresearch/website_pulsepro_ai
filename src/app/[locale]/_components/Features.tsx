@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import Card from '@/components/ui/Card'
+import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
@@ -63,21 +63,19 @@ export default function Features() {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              variant="shadow" 
-              className="group hover:scale-105 transition-all duration-300 hover:shadow-2xl border-0 bg-white dark:bg-gray-800"
-              padding="lg"
+              className="group hover:scale-105 transition-all duration-300 hover:shadow-2xl"
             >
-              <div className="flex flex-col items-center text-center">
+              <CardContent className="flex flex-col items-center text-center">
                 <div className={`w-14 h-14 ${feature.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <i className={`${feature.icon} text-xl text-white`}></i>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
+                <CardTitle className="text-lg font-bold text-gray-900 dark:text-white mb-3">
                   {feature.title}
-                </h3>
+                </CardTitle>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                   {feature.description}
                 </p>
-              </div>
+              </CardContent>
             </Card>
           ))}
         </div>

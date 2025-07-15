@@ -39,13 +39,14 @@ export default function Hero() {
           
           {/* CTA Buttons matching the design */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-200 shadow-lg flex items-center gap-3">
+            <Button size="lg" className="flex items-center gap-3">
               <i className="ri-play-fill text-2xl"></i>
               See It In Action
             </Button>
             <Button 
               variant="secondary" 
-              className="bg-white hover:bg-purple-50 text-purple-600 px-10 py-4 rounded-full text-lg font-medium border border-purple-300 transition-all duration-200 flex items-center gap-3"
+              size="lg"
+              className="flex items-center gap-3"
             >
               <i className="ri-phone-fill text-xl"></i>
               Book a Demo

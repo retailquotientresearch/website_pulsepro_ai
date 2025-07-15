@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
+import { Button } from './ui/Button'
 import ThemeToggle from './ThemeToggle'
 import LanguageSwitcher from './LanguageSwitcher'
 import MobileMenu from './MobileMenu'
@@ -69,13 +70,16 @@ export default function Navigation() {
               <LanguageSwitcher />
               <ThemeToggle />
               
-              <button className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors duration-200">
+              <Button 
+                variant="ghost" 
+                className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300"
+              >
                 Sign In
-              </button>
+              </Button>
               
-              <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
+              <Button size="sm">
                 Get Started
-              </button>
+              </Button>
             </div>
             
             <MobileMenu />
