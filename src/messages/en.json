@@ -94,56 +94,64 @@
     ]
   },
   "testimonials": {
-    "title": "What Surprised Our Clients (in a Good Way)",
-    "subtitle": "Here's what our clients say about our inspection platform",
-    "items": [
+    "tagline": "Client Surprises",
+    "title": {
+      "part1": "What Surprised Our Clients",
+      "part2": "(In a Good Way)"
+    },
+    "subtitle": "Here's what our clients didn't ask for—but now can't live without. These features came from 5 years of practical field feedback.",
+    "surprises": [
       {
-        "name": "Sarah Johnson",
-        "role": "Quality Manager",
-        "company": "BuildTech Solutions",
-        "content": "PulsePro transformed our inspection process. What used to take hours now takes minutes.",
-        "rating": 5
+        "title": "Strict vs Lenient Auditor Score Graph",
+        "description": "Compare users by # of audits + their average grades"
       },
       {
-        "name": "Michael Chen",
-        "role": "Operations Director",
-        "company": "InspectPro Inc",
-        "content": "The real-time reporting feature has been a game-changer for our team.",
-        "rating": 5
+        "title": "Digest Emails",
+        "description": "Weekly emails show you missed audits, low scores & patterns"
       },
       {
-        "name": "Emily Rodriguez",
-        "role": "Site Supervisor",
-        "company": "SafeCheck Corp",
-        "content": "Mobile app makes field inspections so much easier and more efficient.",
-        "rating": 5
+        "title": "Focus View Analytics",
+        "description": "See what's getting worse, what's improving—like a stock app"
+      },
+      {
+        "title": "Mobile-first UX",
+        "description": "Our field app feels like Zomato or Uber—not Excel on a phone"
+      },
+      {
+        "title": "Mandatory Image Rules",
+        "description": "Enforce proof—make images or comments mandatory per question or section"
+      },
+      {
+        "title": "Auto-Grading by Thresholds",
+        "description": "Automatically assign grades (A, B, C...) based on the score ranges you configure"
       }
     ]
   },
   "faq": {
-    "title": "Worried about rolling out a new platform?",
-    "items": [
+    "tagline": "Common Worries",
+    "title": {
+      "part1": "Worried about rolling out",
+      "part2": "a new platform?"
+    },
+    "subtitle": "You're not alone. Here's what most clients worry about—and how we've solved it.",
+    "worries": [
       {
-        "question": "How long does implementation take?",
-        "answer": "Most clients are up and running within 2-3 weeks, including training and data migration."
+        "question": "\"Will my field team actually use it?\"",
+        "answer": "We built the mobile app like a food delivery app",
+        "description": "Easy, intuitive, made for zero training."
       },
       {
-        "question": "Do you offer training for our team?",
-        "answer": "Yes, we provide comprehensive training sessions and ongoing support to ensure your team is confident using the platform."
+        "question": "\"Will I need an IT guy to manage this?\"",
+        "answer": "Nope. Run with a 2-person ops team",
+        "description": "Add users, edit templates, schedule audits—no tech required."
       },
       {
-        "question": "Can we integrate with our existing systems?",
-        "answer": "Absolutely. We offer integrations with most popular business tools and can create custom integrations if needed."
-      },
-      {
-        "question": "What if we need custom features?",
-        "answer": "We work closely with clients to develop custom features that meet their specific inspection requirements."
-      },
-      {
-        "question": "Is our data secure?",
-        "answer": "Yes, we use enterprise-grade security measures including encryption, secure data centers, and regular security audits."
+        "question": "\"Is it flexible enough for real-world changes?\"",
+        "answer": "Change on the fly",
+        "description": "Change questions, add checkpoints, reassign users—without calling support."
       }
-    ]
+    ],
+    "seeAllButton": "See list of all 25"
   },
   "cta": {
     "title": "Look Good. Get Noticed.",

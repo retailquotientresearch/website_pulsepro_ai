@@ -1,9 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Card, CardContent } from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import { useTranslations } from "next-intl";
 
 export default function Testimonials() {
   const t = useTranslations("testimonials");
@@ -48,18 +47,18 @@ export default function Testimonials() {
   ];
 
   return (
-    <Section
-      className="py-20 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden"
-    >
+    <Section className="py-20 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden">
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-pink-900/50"></div>
-      
+
       <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}
           <div className="inline-block mb-4">
             <div className="bg-white/20 backdrop-blur-md rounded-full px-6 py-3 border border-white/30">
-              <span className="text-white font-semibold">🌟 {t("tagline")}</span>
+              <span className="text-white font-semibold">
+                🌟 {t("tagline")}
+              </span>
             </div>
           </div>
 
@@ -80,7 +79,9 @@ export default function Testimonials() {
               key={index}
               className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
             >
-              <div className={`w-14 h-14 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6`}>
+              <div
+                className={`w-14 h-14 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6`}
+              >
                 <i className={`${feature.icon} text-white text-2xl`}></i>
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
