@@ -35,12 +35,12 @@ export default function FAQ() {
           <div className="inline-block mb-4">
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-full px-6 py-3">
               <span className="text-purple-700 font-semibold">
-                <i className="ri-question-line text-red-600 mr-2"></i>
+                <i className="ri-question-line text-red-600 text-xl mr-2"></i>
                 {t("tagline")}
               </span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-6">
             {t("title.part1")} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
               {t("title.part2")}
@@ -62,7 +62,7 @@ export default function FAQ() {
                   <i className="ri-question-line text-red-600 text-xl"></i>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-0">
                     🤔 {worry.question}
                   </h3>
                 </div>

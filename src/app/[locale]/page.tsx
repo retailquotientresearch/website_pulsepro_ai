@@ -1,12 +1,11 @@
-import Hero from './_components/Hero'
-import Features from './_components/Features'
-import Testimonials from './_components/Testimonials'
-import FAQ from './_components/FAQ'
-import Integrations from './_components/Integrations'
-import Process from './_components/Process'
-import Differentiators from './_components/Differentiators'
-import CTA from './_components/CTA'
-import Footer from './_components/Footer'
+import Hero from "./_components/Hero";
+import Features from "./_components/Features";
+import Testimonials from "./_components/Testimonials";
+import FAQ from "./_components/FAQ";
+import Integrations from "./_components/Integrations";
+import Process from "./_components/Process";
+import Differentiators from "./_components/Differentiators";
+import CTA from "./_components/CTA";
 
 export default function Home() {
   return (
@@ -19,7 +18,6 @@ export default function Home() {
       <Integrations />
       <Process />
       <Differentiators />
-      <Footer />
     </main>
-  )
+  );
 }

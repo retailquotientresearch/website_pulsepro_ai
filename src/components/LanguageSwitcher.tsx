@@ -1,14 +1,19 @@
-'use client'
+"use client";
 
-import { usePathname } from '@/i18n/navigation'
-import { Link } from '@/i18n/navigation'
-import { useLocale } from 'next-intl'
-import { Button } from '@/components/ui/Button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/DropdownMenu'
+import { usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
+import Button from "@/components/ui/Button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/DropdownMenu";
 
 export default function LanguageSwitcher() {
-  const pathname = usePathname()
-  const currentLocale = useLocale()
+  const pathname = usePathname();
+  const currentLocale = useLocale();
 
   return (
     <DropdownMenu modal={false}>
@@ -27,7 +32,9 @@ export default function LanguageSwitcher() {
           <Link
             href={pathname}
             locale="en"
-            className={`${currentLocale === 'en' ? 'bg-purple-50 dark:bg-purple-900/20' : ''}`}
+            className={`${
+              currentLocale === "en" ? "bg-purple-50 dark:bg-purple-900/20" : ""
+            }`}
           >
             English
           </Link>
@@ -36,7 +43,9 @@ export default function LanguageSwitcher() {
           <Link
             href={pathname}
             locale="fr"
-            className={`${currentLocale === 'fr' ? 'bg-purple-50 dark:bg-purple-900/20' : ''}`}
+            className={`${
+              currentLocale === "fr" ? "bg-purple-50 dark:bg-purple-900/20" : ""
+            }`}
           >
             Français
           </Link>
@@ -45,12 +54,14 @@ export default function LanguageSwitcher() {
           <Link
             href={pathname}
             locale="hi"
-            className={`${currentLocale === 'hi' ? 'bg-purple-50 dark:bg-purple-900/20' : ''}`}
+            className={`${
+              currentLocale === "hi" ? "bg-purple-50 dark:bg-purple-900/20" : ""
+            }`}
           >
             हिन्दी
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

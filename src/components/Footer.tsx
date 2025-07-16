@@ -1,62 +1,57 @@
-'use client'
+"use client";
 
-import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
-import Image from 'next/image'
-import Button from '@/components/ui/Button'
-import Container from '@/components/ui/Container'
-import Section from '@/components/ui/Section'
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
+import Section from "@/components/ui/Section";
 
 export default function Footer() {
-  const t = useTranslations('footer')
+  const t = useTranslations("footer");
 
   const footerLinks = {
     product: [
-      { name: 'Features', href: '/features' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'Integrations', href: '/integrations' },
-      { name: 'API', href: '/api' }
+      { name: "Features", href: "/features" },
+      { name: "Pricing", href: "/pricing" },
+      { name: "Integrations", href: "/integrations" },
+      { name: "API", href: "/api" },
     ],
     company: [
-      { name: 'About', href: '/about' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' }
+      { name: "About", href: "/about" },
+      { name: "Blog", href: "/blog" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
     ],
     support: [
-      { name: 'Help Center', href: '/help' },
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Community', href: '/community' },
-      { name: 'Status', href: '/status' }
+      { name: "Help Center", href: "/help" },
+      { name: "Documentation", href: "/docs" },
+      { name: "Community", href: "/community" },
+      { name: "Status", href: "/status" },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookies' },
-      { name: 'GDPR', href: '/gdpr' }
-    ]
-  }
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookies" },
+      { name: "GDPR", href: "/gdpr" },
+    ],
+  };
 
   return (
-    <Section 
-      className="bg-gray-900 text-white"
-      padding="xl"
-    >
+    <Section className="bg-gray-900 text-white" padding="xl">
       <Container>
         {/* CTA Section */}
         <div className="text-center mb-16 pb-16 border-b border-gray-700">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('tagline')}
+            {t("tagline")}
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            {t('description')}
+            {t("description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
-              {t('cta')}
-            </Button>
+            <Button size="lg">{t("cta")}</Button>
             <Button variant="outline" size="lg">
-              {t('secondaryCta')}
+              {t("secondaryCta")}
             </Button>
           </div>
         </div>
@@ -64,11 +59,11 @@ export default function Footer() {
         {/* Links Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('links.product')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("links.product")}</h3>
             <ul className="space-y-2">
               {footerLinks.product.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
@@ -78,13 +73,13 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('links.company')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("links.company")}</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
@@ -94,13 +89,13 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('links.support')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("links.support")}</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
@@ -110,13 +105,13 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('links.legal')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t("links.legal")}</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
@@ -142,25 +137,34 @@ export default function Footer() {
                 />
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <i className="ri-twitter-line text-xl"></i>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <i className="ri-twitter-x-fill text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <i className="ri-linkedin-line text-xl"></i>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <i className="ri-linkedin-fill text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <i className="ri-github-line text-xl"></i>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <i className="ri-youtube-fill text-xl"></i>
               </a>
             </div>
           </div>
-          
+
           <div className="text-center text-gray-400 text-sm mt-6">
-            {t('copyright')}
+            {t("copyright")}
           </div>
         </div>
       </Container>
     </Section>
-  )
+  );
 }

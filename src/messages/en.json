@@ -196,12 +196,144 @@
       }
     ]
   },
+  "pricing": {
+    "tabs": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "Save 20%"
+    },
+    "hero": {
+      "title": {
+        "part1": "Do",
+        "highlight": "Unlimited Inspections"
+      },
+      "subtitle": {
+        "part1": "with all advanced features",
+        "part2": "at just",
+        "part3": "per user.",
+        "part4": "And no hidden costs ever!"
+      },
+      "price": {
+        "monthly": "$22",
+        "yearly": "$18"
+      },
+      "cta": {
+        "primary": "Start Your Free Trial Now",
+        "secondary": "How It Works"
+      }
+    },
+    "features": {
+      "title": "Pulse Pro",
+      "subtitle": "Best for enterprises and growing businesses",
+      "badge": "Pro Unlimited",
+      "items": [
+        "Every feature we offer, plus…",
+        "Best data security protocols",
+        "Unlimited data storage",
+        "1:1 setup with our team",
+        "First-in-line 24/7/365 priority support",
+        "No minimum users commitment. You can start with 1 user also!"
+      ]
+    },
+    "plan": {
+      "badge": "No card needed",
+      "title": "One simple plan with a 2 weeks trial",
+      "subtitle": "Absolutely everything included in our refreshingly simple pricing",
+      "features": [
+        "Every feature you need",
+        "Unlimited data storage",
+        "Works offline",
+        "Geo fencing",
+        "Incident reporting",
+        "API access",
+        "Missed inspection alerts",
+        "Tickets for non compliances",
+        "Custom report formats",
+        "Business analytics",
+        "Unlimited image uploads",
+        "Data exports"
+      ]
+    },
+    "feedback": {
+      "title": "How do customers feel?",
+      "items": [
+        "Remote management is so easy now",
+        "Managing compliances is no longer a headache",
+        "Made me an excellence champ",
+        "Better team work",
+        "We glide through the audits",
+        "Flexibility is so high",
+        "Pulse is a major part of our business operations",
+        "Critical to manage our KPIs",
+        "Don't feel it's a outsourced software",
+        "Support team is amazing",
+        "High visibility and tight control",
+        "Our customer are getting better experience",
+        "No longer drowned in whatsapp groups",
+        "No running around for data",
+        "Everyone loves the reporting",
+        "I can launch new processes with confidence",
+        "Accountability is driving results",
+        "So easy",
+        "Love the vibrant mobile application",
+        "Support to stores is faster"
+      ]
+    },
+    "faq": {
+      "items": [
+        {
+          "question": "What happens if I cancel my plan?",
+          "answer": "If you're paying monthly, then your payments will stop on the next monthly payment. Annual subscriptions are only refundable for the unused portion of the year in special circumstances."
+        },
+        {
+          "question": "Can some of my users be on a free plan and some on a premium plan?",
+          "answer": "No, you all need to be on the same plan so that you have access to the same information. By upgrading your account to Pro you unlock all of the Pulse feature set, to all of your team members."
+        },
+        {
+          "question": "Who pays for our account?",
+          "answer": "One person in your Pulse team (or organization), called the administrator, pays for all users on the account under a single monthly or annual billing statement."
+        },
+        {
+          "question": "Is there a limit to the number of users I can have under my organization?",
+          "answer": "No, there is no limit to the number of users you can add under your organization. Our single plan includes unlimited users at no additional cost per user."
+        },
+        {
+          "question": "Can I trial the plan before I pay?",
+          "answer": "Yes! You can enjoy a 14-day free trial of our plan without any obligation. There is no need to provide your credit card details upfront—just sign up and start using it."
+        },
+        {
+          "question": "During my trial, is there a limit to the number of users I can add to my account?",
+          "answer": "No, you can set up as many users as you like during your trial and you will not be charged during the 14 days period."
+        },
+        {
+          "question": "Are we able to set up invoicing payment?",
+          "answer": "Yes, invoicing is available for organizations on our annual Pro or Enterprise plans with more than 50 users."
+        },
+        {
+          "question": "What integrations are available?",
+          "answer": "The sky's the limit with integrations. We have hundreds of options to choose from depending on your personal needs."
+        },
+        {
+          "question": "What happens to my bill if I increase or decrease users between billing cycles?",
+          "answer": "If you increase users: You will be charged an adjusted prorated amount for the new number of users for the rest of the remainder of the current billing period."
+        }
+      ],
+      "cta": "Start Your Free Trial Now"
+    },
+    "testimonials": {
+      "title": "Don't just take our word for it"
+    },
+    "support": {
+      "title": "We're Here to Support You",
+      "description": "Don't hesitate to reach out with any questions, whether you're interested in learning more before making a purchase, you're an existing customer needing assistance, or you have other inquiries. Contact us, and we promise to respond within an hour. No question is too small; we're here to help!"
+    }
+  },
   "footer": {
     "tagline": "Still thinking about it?",
     "description": "Join thousands of professionals who have transformed their inspection process with PulsePro.",
     "cta": "Get Started Today",
     "secondaryCta": "Schedule a Demo",
-    "copyright": "© 2024 PulsePro.ai. All rights reserved.",
+    "copyright": "© 2025 PulsePro.ai. All rights reserved.",
     "links": {
       "product": "Product",
       "company": "Company",
