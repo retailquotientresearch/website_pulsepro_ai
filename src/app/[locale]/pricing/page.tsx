@@ -282,13 +282,13 @@ export default function PricingPage() {
       </Section>
 
       {/* Support Section */}
-      <Section className="py-16 bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-900 dark:to-black text-white">
+      <Section className="py-16 bg-gradient-to-br from-purple-200 to-pink-200 dark:from-purple-800 dark:to-pink-800">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
               {t("support.title")}
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
               {t("support.description")}
             </p>
           </div>
