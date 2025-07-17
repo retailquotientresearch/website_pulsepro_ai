@@ -188,6 +188,138 @@
       }
     ]
   },
+  "pricing": {
+    "tabs": {
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "save": "Économisez 20%"
+    },
+    "hero": {
+      "title": {
+        "part1": "Faites des",
+        "highlight": "Inspections Illimitées"
+      },
+      "subtitle": {
+        "part1": "avec toutes les fonctionnalités avancées",
+        "part2": "à seulement",
+        "part3": "par utilisateur.",
+        "part4": "Et aucun coût caché jamais !"
+      },
+      "price": {
+        "monthly": "22$",
+        "yearly": "18$"
+      },
+      "cta": {
+        "primary": "Commencez Votre Essai Gratuit Maintenant",
+        "secondary": "Comment Ça Marche"
+      }
+    },
+    "features": {
+      "title": "Pulse Pro",
+      "subtitle": "Idéal pour les entreprises et les entreprises en croissance",
+      "badge": "Pro Illimité",
+      "items": [
+        "Chaque fonctionnalité que nous offrons, plus...",
+        "Meilleurs protocoles de sécurité des données",
+        "Stockage de données illimité",
+        "Configuration 1:1 avec notre équipe",
+        "Support priorité 24/7/365 en première ligne",
+        "Aucun engagement d'utilisateurs minimum. Vous pouvez commencer avec 1 utilisateur aussi !"
+      ]
+    },
+    "plan": {
+      "badge": "Aucune carte nécessaire",
+      "title": "Un plan simple avec un essai de 2 semaines",
+      "subtitle": "Absolument tout inclus dans notre tarification rafraîchissante simple",
+      "features": [
+        "Chaque fonctionnalité dont vous avez besoin",
+        "Stockage de données illimité",
+        "Fonctionne hors ligne",
+        "Géo-clôture",
+        "Signalement d'incidents",
+        "Accès API",
+        "Alertes d'inspections manquées",
+        "Tickets pour non-conformités",
+        "Formats de rapport personnalisés",
+        "Analytiques d'entreprise",
+        "Téléchargements d'images illimités",
+        "Exports de données"
+      ]
+    },
+    "feedback": {
+      "title": "Que ressentent les clients ?",
+      "items": [
+        "La gestion à distance est si facile maintenant",
+        "Gérer les conformités n'est plus un casse-tête",
+        "M'a fait champion de l'excellence",
+        "Meilleur travail d'équipe",
+        "Nous glissons à travers les audits",
+        "La flexibilité est si élevée",
+        "Pulse est une partie majeure de nos opérations commerciales",
+        "Critique pour gérer nos KPI",
+        "Ne ressent pas comme un logiciel externalisé",
+        "L'équipe de support est incroyable",
+        "Haute visibilité et contrôle serré",
+        "Nos clients obtiennent une meilleure expérience",
+        "Plus noyés dans les groupes WhatsApp",
+        "Plus de course pour les données",
+        "Tout le monde aime les rapports",
+        "Je peux lancer de nouveaux processus avec confiance",
+        "La responsabilité génère des résultats",
+        "Si facile",
+        "J'adore l'application mobile vibrante",
+        "Le support aux magasins est plus rapide"
+      ]
+    },
+    "faq": {
+      "items": [
+        {
+          "question": "Que se passe-t-il si j'annule mon plan ?",
+          "answer": "Si vous payez mensuellement, alors vos paiements s'arrêteront au prochain paiement mensuel. Les abonnements annuels ne sont remboursables que pour la partie inutilisée de l'année dans des circonstances spéciales."
+        },
+        {
+          "question": "Certains de mes utilisateurs peuvent-ils être sur un plan gratuit et d'autres sur un plan premium ?",
+          "answer": "Non, vous devez tous être sur le même plan pour avoir accès aux mêmes informations. En mettant à niveau votre compte vers Pro, vous débloquez toutes les fonctionnalités de Pulse, pour tous les membres de votre équipe."
+        },
+        {
+          "question": "Qui paie pour notre compte ?",
+          "answer": "Une personne de votre équipe Pulse (ou organisation), appelée l'administrateur, paie pour tous les utilisateurs du compte sous une seule facture mensuelle ou annuelle."
+        },
+        {
+          "question": "Y a-t-il une limite au nombre d'utilisateurs que je peux avoir sous mon organisation ?",
+          "answer": "Non, il n'y a pas de limite au nombre d'utilisateurs que vous pouvez ajouter sous votre organisation. Notre plan unique inclut des utilisateurs illimités sans coût supplémentaire par utilisateur."
+        },
+        {
+          "question": "Puis-je essayer le plan avant de payer ?",
+          "answer": "Oui ! Vous pouvez profiter d'un essai gratuit de 14 jours de notre plan sans aucune obligation. Il n'est pas nécessaire de fournir vos détails de carte de crédit à l'avance—inscrivez-vous simplement et commencez à l'utiliser."
+        },
+        {
+          "question": "Pendant mon essai, y a-t-il une limite au nombre d'utilisateurs que je peux ajouter à mon compte ?",
+          "answer": "Non, vous pouvez configurer autant d'utilisateurs que vous le souhaitez pendant votre essai et vous ne serez pas facturé pendant la période de 14 jours."
+        },
+        {
+          "question": "Pouvons-nous configurer le paiement par facturation ?",
+          "answer": "Oui, la facturation est disponible pour les organisations sur nos plans Pro ou Enterprise annuels avec plus de 50 utilisateurs."
+        },
+        {
+          "question": "Quelles intégrations sont disponibles ?",
+          "answer": "Le ciel est la limite avec les intégrations. Nous avons des centaines d'options à choisir selon vos besoins personnels."
+        },
+        {
+          "question": "Que se passe-t-il à ma facture si j'augmente ou diminue les utilisateurs entre les cycles de facturation ?",
+          "answer": "Si vous augmentez les utilisateurs : Vous serez facturé un montant prorata ajusté pour le nouveau nombre d'utilisateurs pour le reste de la période de facturation actuelle."
+        }
+      ],
+      "cta": "Commencez Votre Essai Gratuit Maintenant"
+    },
+    "testimonials": {
+      "title": "Ne nous croyez pas sur parole"
+    },
+    "support": {
+      "title": "Nous Sommes Là Pour Vous Soutenir",
+      "description": "N'hésitez pas à nous contacter pour toute question, que vous souhaitiez en savoir plus avant d'effectuer un achat, que vous soyez un client existant ayant besoin d'aide, ou que vous ayez d'autres demandes. Contactez-nous, et nous promettons de répondre dans l'heure. Aucune question n'est trop petite ; nous sommes là pour vous aider !"
+    }
+  },
   "footer": {
     "tagline": "Vous y réfléchissez encore ?",
     "description": "Rejoignez des milliers de professionnels qui ont transformé leur processus d'inspection avec PulsePro.",
