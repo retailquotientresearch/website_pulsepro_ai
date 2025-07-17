@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -11,6 +11,11 @@ export default function PricingPage() {
   const t = useTranslations("pricing");
   const [activeTab, setActiveTab] = useState("yearly");
   const [expandedFAQs, setExpandedFAQs] = useState<Set<number>>(new Set());
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const toggleFAQ = (index: number) => {
     const newExpandedFAQs = new Set(expandedFAQs);
@@ -82,9 +87,9 @@ export default function PricingPage() {
                 <span className="text-gray-600 dark:text-gray-300 font-bold">
                   {t("hero.subtitle.part2")}{" "}
                   <span className="text-3xl md:text-4xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    {activeTab === "yearly"
+                    {isClient ? (activeTab === "yearly"
                       ? t("hero.price.yearly")
-                      : t("hero.price.monthly")}
+                      : t("hero.price.monthly")) : t("hero.price.yearly")}
                   </span>{" "}
                   {t("hero.subtitle.part3")}
                 </span>
