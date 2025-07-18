@@ -3,7 +3,13 @@
     "features": "Fonctionnalités",
     "pricing": "Tarifs",
     "integrations": "Intégrations",
-    "support": "Support"
+    "support": "Support",
+    "bookDemo": "Réserver une Démo",
+    "contactUs": "Nous Contacter",
+    "faqs": "FAQ",
+    "supportCenter": "Centre d'Aide",
+    "signIn": "Se Connecter",
+    "getStarted": "Commencer"
   },
   "hero": {
     "tagline": "Inspections. Bien Faites.",

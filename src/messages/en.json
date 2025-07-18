@@ -3,7 +3,13 @@
     "features": "Features",
     "pricing": "Pricing",
     "integrations": "Integrations",
-    "support": "Support"
+    "support": "Support",
+    "bookDemo": "Book a Demo",
+    "contactUs": "Contact Us",
+    "faqs": "FAQs",
+    "supportCenter": "Support Center",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
   },
   "hero": {
     "tagline": "Inspections. Done Right.",

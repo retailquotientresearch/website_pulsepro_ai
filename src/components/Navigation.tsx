@@ -56,12 +56,39 @@ export default function Navigation() {
             >
               {t("integrations")}
             </Link>
-            <Link
-              href="/support"
-              className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 font-medium"
-            >
-              {t("support")}
-            </Link>
+            <div className="relative group">
+              <button className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 font-medium">
+                {t("support")}
+              </button>
+              
+              {/* Support Dropdown */}
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                <Link
+                  href="/demo"
+                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-150"
+                >
+                  {t("bookDemo")}
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-150"
+                >
+                  {t("contactUs")}
+                </Link>
+                <Link
+                  href="/faq"
+                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-150"
+                >
+                  {t("faqs")}
+                </Link>
+                <Link
+                  href="/support"
+                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-150"
+                >
+                  {t("supportCenter")}
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Right side actions */}
@@ -74,10 +101,10 @@ export default function Navigation() {
                 variant="ghost"
                 className="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300"
               >
-                Sign In
+                {t("signIn")}
               </Button>
 
-              <Button size="sm">Get Started</Button>
+              <Button size="sm">{t("getStarted")}</Button>
             </div>
 
             <MobileMenu />

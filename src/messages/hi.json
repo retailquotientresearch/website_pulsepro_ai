@@ -3,7 +3,13 @@
     "features": "विशेषताएं",
     "pricing": "मूल्य निर्धारण",
     "integrations": "एकीकरण",
-    "support": "सहायता"
+    "support": "सहायता",
+    "bookDemo": "डेमो बुक करें",
+    "contactUs": "संपर्क करें",
+    "faqs": "FAQ",
+    "supportCenter": "सहायता केंद्र",
+    "signIn": "साइन इन",
+    "getStarted": "शुरू करें"
   },
   "hero": {
     "tagline": "निरीक्षण। सही तरीके से।",

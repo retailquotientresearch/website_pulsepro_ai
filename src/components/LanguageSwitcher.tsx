@@ -20,11 +20,11 @@ export default function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          size="icon"
-          className="border border-gray-200 dark:border-gray-700"
+          size="sm"
+          className="border border-gray-200 dark:border-gray-700 h-9 px-3 font-mono text-sm text-gray-900 dark:text-white"
           aria-label="Change language"
         >
-          <i className="ri-global-line text-lg text-gray-900 dark:text-white"></i>
+          {currentLocale.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={5}>
