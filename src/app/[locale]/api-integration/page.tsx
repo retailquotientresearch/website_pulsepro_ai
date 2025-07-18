@@ -2,6 +2,7 @@
 
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -10,44 +11,14 @@ export default function APIIntegrationPage() {
   return (
     <main>
       {/* Hero Section */}
-      <Section className="pt-32 pb-16 relative overflow-hidden">
-        {/* Enhanced gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
-
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-32 -left-40 w-96 h-96 bg-gradient-to-tr from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <Container className="relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left side - Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                {t("hero.title")}
-              </h1>
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                {t("hero.subtitle")}
-              </p>
-            </div>
-
-            {/* Right side - Hero Illustration */}
-            <div className="flex justify-center lg:justify-end order-first lg:order-last">
-              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-                <Image
-                  src="/images/api-integration.png"
-                  alt="API Integration - Connect your existing applications with Pulse"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <HeroSection 
+        title={t("hero.title")}
+        subtitle={t("hero.subtitle")}
+        imageSrc="/images/api-integration.png"
+        imageAlt="API Integration - Connect your existing applications with Pulse"
+        imageWidth={500}
+        imageHeight={500}
+      />
 
       {/* Data Analytics Section */}
       <Section className="py-16 bg-white dark:bg-gray-900">
