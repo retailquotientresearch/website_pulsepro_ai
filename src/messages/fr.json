@@ -1,8 +1,10 @@
 {
   "navigation": {
     "features": "Fonctionnalités",
+    "allFeatures": "Toutes les Fonctionnalités",
     "pricing": "Tarifs",
     "integrations": "Intégrations",
+    "apiIntegration": "Intégration API",
     "support": "Support",
     "bookDemo": "Réserver une Démo",
     "contactUs": "Nous Contacter",
@@ -37,119 +39,127 @@
       "highlight": "vous",
       "part2": "intéresse."
     },
-    "items": {
-      "geotagged": {
+    "items": [
+      {
         "title": "Photos Géolocalisées",
         "descriptionOne": "Oui, nous capturons l'horodatage, lat/long, détails de l'appareil",
         "btnText": "Comment ça apparaît dans l'app",
         "linkText": "Voir comment la Marque X l'utilise pour les audits de sécurité alimentaire"
       },
-      "pdf": {
+      {
         "title": "Rapports PDF",
         "descriptionOne": "Générés automatiquement après chaque inspection",
         "descriptionTwo": "En-tête/pied de page personnalisé avec votre logo et option de lettre de couverture",
         "descriptionThree": "PDFs protégés par mot de passe disponibles (comme les relevés bancaires)"
       },
-      "reminders": {
+      {
         "title": "Rappels et Alertes",
         "descriptionOne": "Alertes push + email pour inspections manquées, scores faibles, etc.",
         "descriptionTwo": "Résumés hebdomadaires pour les managers : audits manqués, problèmes principaux",
         "linkText": "Voir un exemple d'email de rappel"
       },
-      "scheduling": {
+      {
         "title": "Planification",
         "descriptionOne": "Horaires récurrents, à date fixe ou téléchargement en masse",
         "descriptionTwo": "Exclure les jours fériés ou les jours de la semaine",
         "descriptionThree": "Télécharger Excel pour créer automatiquement des centaines d'horaires"
       },
-      "branding": {
+      {
         "title": "Marque Personnalisée",
         "descriptionOne": "Votre logo sur l'app, les rapports et les emails",
         "descriptionTwo": "Thème de couleur personnalisé pour votre organisation",
         "descriptionThree": "Ajouter des lettres de couverture pour formaliser vos communications"
       },
-      "roles": {
+      {
         "title": "Rôles et Permissions",
         "descriptionOne": "Contrôle d'accès basé sur l'équipe avec différents niveaux de permissions",
         "descriptionTwo": "Niveaux lecture seule, éditeur, admin supportés",
         "descriptionThree": "Modèle de permissions conforme SOC 2"
       },
-      "analytics": {
+      {
         "title": "Tableaux de Bord et Analytiques",
         "descriptionOne": "Tableaux de bord basés sur les notes avec risques codés par couleur",
         "descriptionTwo": "Comparer les auditeurs, sites et scores dans le temps",
         "descriptionThree": "Exporter vers les outils BI, Sheets ou CSV instantanément"
       },
-      "offline": {
+      {
         "title": "Capacité Hors Ligne",
         "descriptionOne": "Fonctionne sans réseau—même dans les sous-sols",
         "descriptionTwo": "Se synchronise automatiquement quand de retour en ligne",
         "descriptionThree": "Conçu pour un chargement rapide, utilisation mémoire minimale"
       },
-      "storage": {
+      {
         "title": "Stockage Illimité",
         "descriptionOne": "Vos données restent exactement où elles doivent être—sûres, intactes et accessibles pour toujours.",
         "descriptionTwo": "Pas de suppression automatique, pas de limites d'archivage, pas de coupures cachées."
       },
-      "actions": {
+      {
         "title": "Suivi des Actions",
         "descriptionOne": "Créer des actions directement depuis les points de contrôle",
         "descriptionTwo": "Assigner des propriétaires, définir des échéances, ajouter des priorités",
         "descriptionThree": "Intégrer avec Jira, Freshdesk ou votre système de tickets"
       }
-    }
+    ]
   },
   "testimonials": {
-    "title": "Ce qui a surpris nos clients (en bien)",
-    "subtitle": "Voici ce que nos clients disent de notre plateforme d'inspection",
-    "items": [
+    "tagline": "Surprises Clients",
+    "title": {
+      "part1": "Ce qui a surpris nos clients",
+      "part2": "(en bien)"
+    },
+    "subtitle": "Voici ce que nos clients n'ont pas demandé—mais dont ils ne peuvent plus se passer maintenant. Ces fonctionnalités proviennent de 5 années de retours pratiques sur le terrain.",
+    "surprises": [
       {
-        "name": "Sarah Johnson",
-        "role": "Responsable Qualité",
-        "company": "BuildTech Solutions",
-        "content": "PulsePro a transformé notre processus d'inspection. Ce qui prenait des heures ne prend maintenant que des minutes.",
-        "rating": 5
+        "title": "Graphique des Scores d'Auditeur Strict vs Indulgent",
+        "description": "Comparer les utilisateurs par nombre d'audits + leurs notes moyennes"
       },
       {
-        "name": "Michael Chen",
-        "role": "Directeur des Opérations",
-        "company": "InspectPro Inc",
-        "content": "La fonction de rapport en temps réel a été un changement de donne pour notre équipe.",
-        "rating": 5
+        "title": "Emails de Résumé",
+        "description": "Les emails hebdomadaires vous montrent les audits manqués, les scores faibles et les tendances"
       },
       {
-        "name": "Emily Rodriguez",
-        "role": "Superviseur de Site",
-        "company": "SafeCheck Corp",
-        "content": "L'app mobile rend les inspections sur le terrain beaucoup plus faciles et efficaces.",
-        "rating": 5
+        "title": "Analyses en Vue Focus",
+        "description": "Voir ce qui s'aggrave, ce qui s'améliore—comme une app boursière"
+      },
+      {
+        "title": "UX Mobile-First",
+        "description": "Notre app terrain ressemble à Zomato ou Uber—pas à Excel sur un téléphone"
+      },
+      {
+        "title": "Règles d'Images Obligatoires",
+        "description": "Enforcer la preuve—rendre les images ou commentaires obligatoires par question ou section"
+      },
+      {
+        "title": "Notation Automatique par Seuils",
+        "description": "Attribuer automatiquement des notes (A, B, C...) basées sur les plages de scores que vous configurez"
       }
     ]
   },
   "faq": {
-    "title": "Inquiet de déployer une nouvelle plateforme ?",
-    "items": [
+    "tagline": "Inquiétudes Communes",
+    "title": {
+      "part1": "Inquiet de déployer",
+      "part2": "une nouvelle plateforme ?"
+    },
+    "subtitle": "Vous n'êtes pas seul. Voici ce qui préoccupe la plupart des clients—et comment nous l'avons résolu.",
+    "worries": [
       {
-        "question": "Combien de temps prend l'implémentation ?",
-        "answer": "La plupart des clients sont opérationnels dans les 2-3 semaines, y compris la formation et la migration des données."
+        "question": "\"Mon équipe terrain va-t-elle vraiment l'utiliser ?\"",
+        "answer": "Nous avons conçu l'app mobile comme une app de livraison de nourriture",
+        "description": "Facile, intuitive, conçue pour zéro formation."
       },
       {
-        "question": "Offrez-vous une formation pour notre équipe ?",
-        "answer": "Oui, nous proposons des sessions de formation complètes et un support continu pour assurer que votre équipe utilise la plateforme en confiance."
+        "question": "\"Aurai-je besoin d'un informaticien pour gérer cela ?\"",
+        "answer": "Non. Fonctionnez avec une équipe opérationnelle de 2 personnes",
+        "description": "Ajouter des utilisateurs, modifier des modèles, planifier des audits—aucune technique requise."
       },
       {
-        "question": "Peut-on intégrer avec nos systèmes existants ?",
-        "answer": "Absolument. Nous offrons des intégrations avec la plupart des outils business populaires et pouvons créer des intégrations personnalisées si nécessaire."
-      },
-      {
-        "question": "Et si nous avons besoin de fonctionnalités personnalisées ?",
-        "answer": "Nous travaillons étroitement avec les clients pour développer des fonctionnalités personnalisées qui répondent à leurs exigences d'inspection spécifiques."
-      },
-      {
-        "question": "Nos données sont-elles sécurisées ?",
-        "answer": "Oui, nous utilisons des mesures de sécurité de niveau entreprise incluant le chiffrement, des centres de données sécurisés et des audits de sécurité réguliers."
+        "question": "\"Est-ce assez flexible pour les changements du monde réel ?\"",
+        "answer": "Changez à la volée",
+        "description": "Changez les questions, ajoutez des points de contrôle, réassignez des utilisateurs—sans appeler le support."
       }
-    ]
+    ],
+    "seeAllButton": "Voir la liste complète des 25"
   },
   "cta": {
     "title": "Ayez l'air bien. Faites-vous remarquer.",
@@ -324,6 +334,24 @@
     "support": {
       "title": "Nous Sommes Là Pour Vous Soutenir",
       "description": "N'hésitez pas à nous contacter pour toute question, que vous souhaitiez en savoir plus avant d'effectuer un achat, que vous soyez un client existant ayant besoin d'aide, ou que vous ayez d'autres demandes. Contactez-nous, et nous promettons de répondre dans l'heure. Aucune question n'est trop petite ; nous sommes là pour vous aider !"
+    }
+  },
+  "apiIntegration": {
+    "hero": {
+      "title": "Connectez vos applications existantes avec Pulse",
+      "subtitle": "Liez les applications logicielles que vous utilisez déjà avec Pulse pour profiter de la puissance de plusieurs applications gérant vos besoins."
+    },
+    "dataAnalytics": {
+      "title": "Voyez et comprenez mieux vos données",
+      "description": "Intégrez des outils puissants de Business Intelligence comme Tableau avec Pulse pour donner un élan majeur à vos analyses et rapports. Regardez vos données sous plusieurs angles et obtenez des insights précieux grâce à la puissance des tableaux de bord populaires."
+    },
+    "automation": {
+      "title": "Donner une nouvelle définition à l'automatisation avec Pulse",
+      "description": "Automatisez votre processus de rapport et envoyez vos tâches quotidiennes avec Pulse. Allez plus loin en l'intégrant avec Google Docs ou Google Sheets pour sauvegarder les données. Commencez un voyage facile pour rendre votre organisation plus efficace et gérer tout le workflow de transmission de données entre vos applications."
+    },
+    "teamExtension": {
+      "title": "Étendez l'automatisation à vos équipes",
+      "description": "Permettez à vos équipes et utilisateurs de se connecter en utilisant Single Sign-On dans Google et maintenez la sécurité des données utilisateur comme priorité principale, c'est pourquoi nous avons une sécurité avancée à portée de main."
     }
   },
   "footer": {

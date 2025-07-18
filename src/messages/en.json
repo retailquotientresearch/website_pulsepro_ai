@@ -1,8 +1,10 @@
 {
   "navigation": {
     "features": "Features",
+    "allFeatures": "All Features",
     "pricing": "Pricing",
     "integrations": "Integrations",
+    "apiIntegration": "API Integration",
     "support": "Support",
     "bookDemo": "Book a Demo",
     "contactUs": "Contact Us",
@@ -332,6 +334,24 @@
     "support": {
       "title": "We're Here to Support You",
       "description": "Don't hesitate to reach out with any questions, whether you're interested in learning more before making a purchase, you're an existing customer needing assistance, or you have other inquiries. Contact us, and we promise to respond within an hour. No question is too small; we're here to help!"
+    }
+  },
+  "apiIntegration": {
+    "hero": {
+      "title": "Connect your existing applications with Pulse",
+      "subtitle": "Link the software applications you already use with Pulse to enjoy the power of multiple applications handling your requirements."
+    },
+    "dataAnalytics": {
+      "title": "See and understand your data better",
+      "description": "Integrate powerful Business Intelligence tools like Tableau with Pulse to give your analytics and reporting a major boost. Look at your data from multiple angles and gain valuable insights through the power of popular dashboards."
+    },
+    "automation": {
+      "title": "Giving new definition to automation with Pulse",
+      "description": "Automate your reporting process and send your everyday tasks with Pulse. Take it one step ahead by integrating it with Google Docs or Google Sheets to save the data. Start an easy journey to making your organization more efficient and handle the entire workflow of data transmission between your applications."
+    },
+    "teamExtension": {
+      "title": "Extend the automation to your teams",
+      "description": "Allow your teams and users to sign using Single Sign-On in Google and maintain the security of user data at all primary importance and that's why we have advanced security right to your fingertips."
     }
   },
   "footer": {

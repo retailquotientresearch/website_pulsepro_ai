@@ -3,7 +3,7 @@ import {hasLocale} from 'next-intl';
 import {routing} from './routing';
 
 // Define the message structure type
-type Messages = Record<string, any>;
+type Messages = Record<string, Record<string, unknown>>;
 
 export default getRequestConfig(async ({requestLocale}) => {
   // Typically corresponds to the `[locale]` segment
@@ -18,7 +18,7 @@ export default getRequestConfig(async ({requestLocale}) => {
   // Load default English messages for fallback
   const defaultMessages: Messages = locale !== 'en' 
     ? (await import(`../messages/en.json`)).default
-    : {};
+    : {} as Messages;
  
   return {
     locale,
@@ -29,7 +29,7 @@ export default getRequestConfig(async ({requestLocale}) => {
     getMessageFallback: ({namespace, key}) => {
       // If the key is not found in the current locale, try English
       if (locale !== 'en' && namespace && key && defaultMessages[namespace]?.[key]) {
-        return defaultMessages[namespace][key];
+        return String(defaultMessages[namespace][key]);
       }
       // Return the key as fallback if not found in English either
       return key;
