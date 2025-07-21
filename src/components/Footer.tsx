@@ -1,56 +1,56 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+
+const footerLinks = {
+  product: [
+    { name: "Features", href: "/features" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Integrations", href: "/integrations" },
+    { name: "API", href: "/api" },
+  ],
+  company: [
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
+  ],
+  support: [
+    { name: "Help Center", href: "/help" },
+    { name: "Documentation", href: "/docs" },
+    { name: "Community", href: "/community" },
+    { name: "Status", href: "/status" },
+  ],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookies" },
+    { name: "GDPR", href: "/gdpr" },
+  ],
+};
 
 export default function Footer() {
   const t = useTranslations("footer");
 
-  const footerLinks = {
-    product: [
-      { name: "Features", href: "/features" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "API", href: "/api" },
-    ],
-    company: [
-      { name: "About", href: "/about" },
-      { name: "Blog", href: "/blog" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/contact" },
-    ],
-    support: [
-      { name: "Help Center", href: "/help" },
-      { name: "Documentation", href: "/docs" },
-      { name: "Community", href: "/community" },
-      { name: "Status", href: "/status" },
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookies" },
-      { name: "GDPR", href: "/gdpr" },
-    ],
-  };
-
   return (
-    <Section className="bg-gray-900 text-white" padding="xl">
+    <Section className="!bg-black text-white" padding="xl">
       <Container>
         {/* CTA Section */}
         <div className="text-center mb-16 pb-16 border-b border-gray-700">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             {t("tagline")}
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             {t("description")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">{t("cta")}</Button>
-            <Button variant="outline" size="lg">
+            <Button size="lg" className="bg-white text-black hover:bg-gray-100">{t("cta")}</Button>
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black">
               {t("secondaryCta")}
             </Button>
           </div>
@@ -59,7 +59,7 @@ export default function Footer() {
         {/* Links Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("links.product")}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t("links.product")}</h3>
             <ul className="space-y-2">
               {footerLinks.product.map((link, index) => (
                 <li key={index}>
@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("links.company")}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t("links.company")}</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("links.support")}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t("links.support")}</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
@@ -107,7 +107,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t("links.legal")}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t("links.legal")}</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
@@ -142,18 +142,21 @@ export default function Footer() {
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
+                aria-label="Twitter"
               >
                 <i className="ri-twitter-x-fill text-xl"></i>
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
+                aria-label="LinkedIn"
               >
                 <i className="ri-linkedin-fill text-xl"></i>
               </a>
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
+                aria-label="Youtube"
               >
                 <i className="ri-youtube-fill text-xl"></i>
               </a>

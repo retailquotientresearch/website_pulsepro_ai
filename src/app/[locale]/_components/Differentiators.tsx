@@ -46,7 +46,7 @@ export default function Differentiators() {
 
   return (
     <Section 
-      className="bg-gradient-to-br from-purple-600 to-purple-800 text-white"
+      className="bg-gradient-to-br from-gray-200 to-gray-400 dark:from-gray-600 dark:to-gray-800 text-black dark:text-white"
       padding="xl"
     >
       <Container>
@@ -54,7 +54,7 @@ export default function Differentiators() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             What Makes PulsePro Different
           </h2>
-          <p className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-800 dark:text-gray-50 max-w-3xl mx-auto">
             Here&apos;s what sets us apart from other inspection platforms
           </p>
         </div>
@@ -63,16 +63,16 @@ export default function Differentiators() {
           {differentiators.map((item, index) => (
             <Card 
               key={index} 
-              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
+              className="bg-white/90 dark:bg-gray-900 backdrop-blur-sm border border-white/20 text-white group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
             >
               <CardContent className="text-center">
                 <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <i className={`${item.icon} text-2xl text-white`}></i>
                 </div>
-                <CardTitle className="text-xl font-semibold mb-3">
+                <CardTitle className="text-gray-900 dark:text-white text-xl font-semibold mb-3">
                   {item.title}
                 </CardTitle>
-                <p className="text-purple-100 leading-relaxed">
+                <p className="text-gray-800 dark:text-gray-50 leading-relaxed">
                   {item.description}
                 </p>
               </CardContent>

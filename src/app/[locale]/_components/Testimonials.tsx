@@ -12,44 +12,44 @@ export default function Testimonials() {
       title: t("surprises.0.title"),
       description: t("surprises.0.description"),
       icon: "ri-line-chart-fill",
-      iconBg: "bg-orange-500",
+      iconBg: "bg-gradient-to-br from-orange-400 to-orange-600",
     },
     {
       title: t("surprises.1.title"),
       description: t("surprises.1.description"),
       icon: "ri-mail-fill",
-      iconBg: "bg-blue-500",
+      iconBg: "bg-gradient-to-br from-blue-500 to-blue-700",
     },
     {
       title: t("surprises.2.title"),
       description: t("surprises.2.description"),
       icon: "ri-focus-3-fill",
-      iconBg: "bg-green-500",
+      iconBg: "bg-gradient-to-br from-emerald-400 to-green-600",
     },
     {
       title: t("surprises.3.title"),
       description: t("surprises.3.description"),
       icon: "ri-smartphone-fill",
-      iconBg: "bg-red-500",
+      iconBg: "bg-gradient-to-br from-red-400 to-red-600",
     },
     {
       title: t("surprises.4.title"),
       description: t("surprises.4.description"),
       icon: "ri-error-warning-fill",
-      iconBg: "bg-purple-500",
+      iconBg: "bg-gradient-to-br from-amber-400 to-amber-600",
     },
     {
       title: t("surprises.5.title"),
       description: t("surprises.5.description"),
       icon: "ri-graduation-cap-fill",
-      iconBg: "bg-gradient-to-br from-cyan-400 to-blue-500",
+      iconBg: "bg-gradient-to-br from-teal-400 to-cyan-600",
     },
   ];
 
   return (
-    <Section className="py-20 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden">
+    <Section className="py-20 bg-gradient-to-br from-gray-200 to-black dark:from-gray-700  dark:to-black text-white relative overflow-hidden">
       {/* Overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-pink-900/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-gray-800/50"></div>
 
       <Container className="relative z-10">
         <div className="text-center mb-16">
@@ -64,11 +64,11 @@ export default function Testimonials() {
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {t("title.part1")} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
               {t("title.part2")}
             </span>
           </h2>
-          <p className="text-xl text-purple-100 max-w-4xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
             {t("subtitle")}
           </p>
         </div>
@@ -84,8 +84,8 @@ export default function Testimonials() {
               >
                 <i className={`${feature.icon} text-white text-2xl`}></i>
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-purple-100">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+              <p className="text-gray-300">{feature.description}</p>
             </div>
           ))}
         </div>

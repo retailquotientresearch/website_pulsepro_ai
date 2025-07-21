@@ -11,7 +11,7 @@ const featureConfig = [
   {
     icon: "ri-camera-fill",
     iconTwo: <span>📸</span>,
-    gradient: "bg-gradient-to-br from-pink-400 to-pink-600",
+    gradient: "bg-gradient-to-br from-orange-400 to-orange-600",
     descriptionOneIcon: "ri-check-double-line",
     btnIcon: "ri-video-on-ai-line",
     linkIcon: "ri-message-2-fill",
@@ -19,7 +19,7 @@ const featureConfig = [
   {
     icon: "ri-file-pdf-2-fill",
     iconTwo: <span>📄</span>,
-    gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+    gradient: "bg-gradient-to-br from-blue-500 to-blue-700",
     descriptionOneIcon: "ri-check-double-line",
     descriptionTwoIcon: "ri-check-double-line",
     descriptionThreeIcon: "ri-lock-password-fill",
@@ -35,7 +35,7 @@ const featureConfig = [
   {
     icon: "ri-calendar-schedule-fill",
     iconTwo: <span>🗓️</span>,
-    gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+    gradient: "bg-gradient-to-br from-teal-500 to-teal-700",
     descriptionOneIcon: "ri-check-double-line",
     descriptionTwoIcon: "ri-check-double-line",
     descriptionThreeIcon: "ri-inbox-2-fill",
@@ -43,7 +43,7 @@ const featureConfig = [
   {
     icon: "ri-brush-fill",
     iconTwo: <span>🎨</span>,
-    gradient: "bg-gradient-to-br from-pink-400 to-pink-600",
+    gradient: "bg-gradient-to-br from-amber-400 to-amber-600",
     descriptionOneIcon: "ri-check-double-line",
     descriptionTwoIcon: "ri-check-double-line",
     descriptionThreeIcon: "ri-image-2-fill",
@@ -75,7 +75,7 @@ const featureConfig = [
   {
     icon: "ri-database-fill",
     iconTwo: <span>📝</span>,
-    gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+    gradient: "bg-gradient-to-br from-cyan-500 to-blue-600",
     descriptionOneIcon: "ri-check-double-line",
     descriptionTwoIcon: "ri-check-double-line",
   },
@@ -98,14 +98,14 @@ export default function Features() {
   };
 
   return (
-    <Section className="bg-gray-50 dark:bg-gray-800" padding="xl">
+    <Section className="bg-gray-100 dark:bg-gray-900" padding="xl">
       <Container>
         <div className="text-center mb-16">
           {/* Tagline */}
           <div className="mb-8 flex items-center justify-center ">
-            <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 dark:from-purple-900/30 dark:via-pink-900/20 dark:to-purple-800/30 rounded-full px-4 py-2 flex items-center gap-2">
+            <div className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-900/20 dark:via-gray-800 dark:to-blue-800/20 rounded-full px-4 py-2 flex items-center gap-2 border border-blue-200 dark:border-blue-700">
               <span className="text-lg">🙋</span>
-              <span className="text-purple-600 dark:text-purple-300 font-bold">
+              <span className="text-blue-700 dark:text-blue-300 font-bold">
                 {t("tagline")}
               </span>
             </div>
@@ -115,13 +115,13 @@ export default function Features() {
             {t("title.part1")}
             <br />
             {t("title.part2")}{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
               {t("title.highlight")}
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {t("subtitle.part1")}{" "}
-            <em className="font-bold">{t("subtitle.highlight")}</em>{" "}
+            <em className="font-bold text-blue-700 dark:text-blue-300">{t("subtitle.highlight")}</em>{" "}
             {t("subtitle.part2")}
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function Features() {
                 <Card
                   className={`group cursor-pointer transition-all duration-300 rounded-2xl border-0 shadow-md bg-white dark:bg-gray-700 ${
                     isSelected
-                      ? "ring-2 ring-purple-500 shadow-xl scale-105"
+                      ? "ring-2 ring-blue-500 dark:ring-blue-400 shadow-xl scale-105"
                       : "transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
                   }`}
                   onClick={() => handleFeatureClick(index)}
@@ -149,7 +149,7 @@ export default function Features() {
                     <CardTitle
                       className={`text-sm font-medium leading-tight ${
                         isSelected
-                          ? "text-purple-700 dark:text-purple-300 font-semibold"
+                          ? "text-blue-700 dark:text-blue-300 font-semibold"
                           : "text-gray-900 dark:text-white"
                       }`}
                     >
@@ -165,7 +165,7 @@ export default function Features() {
         {/* Show detailed card after the last card in the row */}
         {selectedFeature !== null && (
           <div className="w-full mt-8 z-10">
-            <Card className="transition-all duration-300 animate-in slide-in-from-top-4 rounded-[2.5rem] border-0 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 dark:from-purple-900/30 dark:via-pink-900/20 dark:to-purple-800/30">
+            <Card className="transition-all duration-300 animate-in slide-in-from-top-4 rounded-[2.5rem] border-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-900/20 dark:via-gray-800 dark:to-blue-800/20 border border-blue-200 dark:border-blue-700">
               <CardContent className="p-6 md:p-8" key={selectedFeature}>
                 <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
                   <div
@@ -186,14 +186,14 @@ export default function Features() {
                     <div className="space-y-2 mb-4">
                       <p className="text-gray-700 dark:text-gray-200 flex items-start gap-2 leading-relaxed text-sm">
                         <i
-                          className={`${featureConfig[selectedFeature].descriptionOneIcon} text-black dark:text-white text-sm mt-0.5 font-bold`}
+                          className={`${featureConfig[selectedFeature].descriptionOneIcon} text-blue-600 dark:text-blue-400 text-sm mt-0.5 font-bold`}
                         ></i>
                         {t(`items.${selectedFeature}.descriptionOne`)}
                       </p>
                       {t.has(`items.${selectedFeature}.descriptionTwo`) && (
                         <p className="text-gray-700 dark:text-gray-200 flex items-start gap-2 leading-relaxed text-sm">
                           <i
-                            className={`${featureConfig[selectedFeature].descriptionTwoIcon} text-black dark:text-white text-sm mt-0.5 font-bold`}
+                            className={`${featureConfig[selectedFeature].descriptionTwoIcon} text-blue-600 dark:text-blue-400 text-sm mt-0.5 font-bold`}
                           ></i>
                           {t(`items.${selectedFeature}.descriptionTwo`)}
                         </p>
@@ -201,7 +201,7 @@ export default function Features() {
                       {t.has(`items.${selectedFeature}.descriptionThree`) && (
                         <p className="text-gray-700 dark:text-gray-200 flex items-start gap-2 leading-relaxed text-sm">
                           <i
-                            className={`${featureConfig[selectedFeature].descriptionThreeIcon} text-black dark:text-white text-sm mt-0.5 font-bold`}
+                            className={`${featureConfig[selectedFeature].descriptionThreeIcon} text-blue-600 dark:text-blue-400 text-sm mt-0.5 font-bold`}
                           ></i>
                           {t(`items.${selectedFeature}.descriptionThree`)}
                         </p>
@@ -215,10 +215,10 @@ export default function Features() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="flex items-center gap-2 px-3 py-2 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white hover:text-gray-900 dark:hover:text-gray-200 font-medium text-xs md:text-sm shadow-md hover:shadow-lg transition-shadow duration-200 w-full md:w-auto justify-center md:justify-start"
+                            className="flex items-center gap-2 px-3 py-2 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 font-medium text-xs md:text-sm shadow-md hover:shadow-lg transition-shadow duration-200 w-full md:w-auto justify-center md:justify-start"
                           >
                             <i
-                              className={`${featureConfig[selectedFeature].btnIcon} text-purple-600 text-sm`}
+                              className={`${featureConfig[selectedFeature].btnIcon} text-blue-600 dark:text-blue-400 text-sm`}
                             ></i>
                             <span className="truncate">
                               {t(`items.${selectedFeature}.btnText`)}
@@ -229,10 +229,10 @@ export default function Features() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="flex items-center gap-2 px-3 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 hover:bg-purple-200 dark:hover:bg-purple-800/40 text-purple-800 dark:text-purple-200 hover:text-purple-900 dark:hover:text-purple-100 font-medium text-xs md:text-sm transition-colors duration-200 w-full md:w-auto justify-center md:justify-start"
+                            className="flex items-center gap-2 px-3 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-800/40 text-blue-800 dark:text-blue-200 hover:text-blue-900 dark:hover:text-blue-100 font-medium text-xs md:text-sm transition-colors duration-200 w-full md:w-auto justify-center md:justify-start"
                           >
                             <i
-                              className={`${featureConfig[selectedFeature].linkIcon} text-gray-600 dark:text-gray-400 text-sm`}
+                              className={`${featureConfig[selectedFeature].linkIcon} text-blue-600 dark:text-blue-400 text-sm`}
                             ></i>
                             <span className="truncate">
                               {t(`items.${selectedFeature}.linkText`)}

@@ -17,9 +17,9 @@ export default function ThemeToggle() {
       <Button
         variant="ghost"
         size="icon"
-        className="border border-gray-200 dark:border-gray-700"
+        className="border border-border hover:bg-gray-100 dark:hover:bg-gray-700"
       >
-        <div className="w-4 h-4 bg-gray-300 rounded animate-pulse"></div>
+        <div className="w-4 h-4 bg-gray-300 dark:bg-gray-600 rounded animate-pulse"></div>
       </Button>
     );
   }
@@ -40,13 +40,13 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       variant="ghost"
       size="icon"
-      className="border border-gray-200 dark:border-gray-700"
+              className="border border-border hover:bg-gray-100 dark:hover:bg-gray-700"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {isDark ? (
-        <i className="ri-sun-line text-lg text-gray-900 dark:text-white"></i>
+        <i className="ri-sun-line text-lg"></i>
       ) : (
-        <i className="ri-moon-line text-lg text-gray-900 dark:text-white"></i>
+        <i className="ri-moon-line text-lg"></i>
       )}
     </Button>
   );

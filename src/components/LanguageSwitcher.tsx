@@ -21,7 +21,7 @@ export default function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="sm"
-          className="border border-gray-200 dark:border-gray-700 h-9 px-3 font-mono text-sm text-gray-900 dark:text-white"
+          className="border border-border h-9 px-3 font-mono text-sm text-foreground"
           aria-label="Change language"
         >
           {currentLocale.toUpperCase()}
@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
             href={pathname}
             locale="en"
             className={`${
-              currentLocale === "en" ? "bg-purple-50 dark:bg-purple-900/20" : ""
+              currentLocale === "en" ? "bg-gray-100 dark:bg-gray-700 text-black dark:text-white" : ""
             }`}
           >
             English
@@ -44,7 +44,7 @@ export default function LanguageSwitcher() {
             href={pathname}
             locale="fr"
             className={`${
-              currentLocale === "fr" ? "bg-purple-50 dark:bg-purple-900/20" : ""
+              currentLocale === "fr" ? "bg-gray-100 dark:bg-gray-700 text-black dark:text-white" : ""
             }`}
           >
             Français
@@ -55,7 +55,7 @@ export default function LanguageSwitcher() {
             href={pathname}
             locale="hi"
             className={`${
-              currentLocale === "hi" ? "bg-purple-50 dark:bg-purple-900/20" : ""
+              currentLocale === "hi" ? "bg-gray-100 dark:bg-gray-700 text-black dark:text-white" : ""
             }`}
           >
             हिन्दी

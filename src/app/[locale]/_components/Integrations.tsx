@@ -42,7 +42,7 @@ export default function Integrations() {
   ]
 
   return (
-    <Section className="bg-gray-50 dark:bg-gray-900" padding="xl">
+    <Section className="bg-gray-100 dark:bg-gray-600" padding="xl">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -57,7 +57,7 @@ export default function Integrations() {
           {integrations.map((integration, index) => (
             <Card 
               key={index} 
-              className="text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
+              className="bg-white/90 dark:bg-gray-800 text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
             >
               <CardContent>
                 <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 ${integration.color}`}>
