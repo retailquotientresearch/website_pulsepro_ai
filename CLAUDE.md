@@ -90,3 +90,9 @@ The app uses next-intl with:
 - Follow the established internationalization patterns
 - Maintain TypeScript strict mode
 - Use the configured path aliases (@/components, @/lib, etc.)
+
+## Git Commit Guidelines
+
+- Write clear, concise commit messages that describe the changes
+- Do NOT include any Claude-related text such as "Generated with Claude Code" or "Co-Authored-By: Claude" in commit messages
+- Keep commit messages professional and focused on the actual changes made
