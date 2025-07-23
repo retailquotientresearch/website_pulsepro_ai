@@ -135,7 +135,7 @@
       }
     ]
   },
-  "faq": {
+  "commonWorries": {
     "tagline": "Common Worries",
     "title": {
       "part1": "Worried about rolling out",
@@ -161,12 +161,12 @@
     ],
     "seeAllButton": "See list of all 25"
   },
-  "cta": {
+  "callToAction": {
     "title": "Look Good. Get Noticed.",
     "subtitle": "Ready to transform your inspection process? Join thousands of professionals who trust PulsePro.",
     "button": "Start Free Trial"
   },
-  "integrations": {
+  "seamlessConnections": {
     "title": "We Play Well With Others",
     "subtitle": "Seamlessly connect with your existing tools and workflow",
     "items": [
@@ -178,7 +178,7 @@
       "QuickBooks"
     ]
   },
-  "process": {
+  "stepByStepProcess": {
     "title": "From Checklist to Change",
     "subtitle": "Our streamlined process gets you results fast",
     "steps": [
@@ -366,5 +366,36 @@
       "support": "Support",
       "legal": "Legal"
     }
+  },
+  "whyChooseUs": {
+    "tagline": "Why Choose Us",
+    "title": "What Makes PulsePro Different",
+    "subtitle": "Here's what sets us apart from other inspection platforms",
+    "items": [
+      {
+        "title": "Lightning Quick Setup",
+        "description": "Get started in minutes, not weeks. Our streamlined onboarding gets you up and running fast."
+      },
+      {
+        "title": "Comprehensive Check",
+        "description": "Complete inspection coverage with customizable checklists and automated workflows."
+      },
+      {
+        "title": "Smart Analytics",
+        "description": "AI-powered insights that help you identify patterns and optimize your inspection process."
+      },
+      {
+        "title": "Real-time Sync",
+        "description": "Instant synchronization across all devices and team members for seamless collaboration."
+      },
+      {
+        "title": "Compliance Ready",
+        "description": "Built-in compliance features that ensure you meet industry standards and regulations."
+      },
+      {
+        "title": "Scalable Growth",
+        "description": "Grows with your business from single inspector to enterprise-level inspection teams."
+      }
+    ]
   }
 }

@@ -5,7 +5,7 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 
 export default function CommonWorries() {
-  const t = useTranslations("faq");
+  const t = useTranslations("commonWorries");
 
   const worries = [
     {
@@ -57,21 +57,21 @@ export default function CommonWorries() {
               key={index}
               className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center ${worry.gradient} rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-gray-600 shadow-sm`}
             >
-              <div className="flex items-center space-x-4 text-center md:text-left">
-                <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <div className="flex flex-col md:flex-row md:items-center text-center md:text-left space-y-3 md:space-y-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                   <i className="ri-question-line text-white text-xl"></i>
                 </div>
-                <div>
+                <div className="md:ml-4">
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-0">
                     {worry.question}
                   </h3>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 text-center md:text-left">
-                <div className="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 dark:from-gray-300 dark:to-gray-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <div className="flex flex-col md:flex-row md:items-center text-center md:text-left space-y-3 md:space-y-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 dark:from-gray-300 dark:to-gray-500 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                   <i className="ri-check-line text-white dark:text-gray-800 text-xl"></i>
                 </div>
-                <div>
+                <div className="md:ml-4">
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
                     {worry.answer}
                   </h3>

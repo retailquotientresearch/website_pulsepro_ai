@@ -6,7 +6,7 @@ import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
 export default function SeamlessConnections() {
-  const t = useTranslations('integrations')
+  const t = useTranslations('seamlessConnections')
 
   const integrations = [
     {

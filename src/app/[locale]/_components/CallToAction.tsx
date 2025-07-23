@@ -6,7 +6,7 @@ import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 
 export default function CallToAction() {
-  const t = useTranslations('cta')
+  const t = useTranslations('callToAction')
 
   return (
     <Section 

@@ -6,7 +6,7 @@ import Section from '@/components/ui/Section'
 import { useTranslations } from 'next-intl'
 
 export default function StepByStepProcess() {
-  const t = useTranslations('process')
+  const t = useTranslations('stepByStepProcess')
 
   const steps = [
     {

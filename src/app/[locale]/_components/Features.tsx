@@ -126,7 +126,7 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mb-8 max-w-sm mx-auto md:max-w-none">
           {featureConfig.map((feature, index) => {
             const isSelected = selectedFeature === index;
 
@@ -135,7 +135,7 @@ export default function Features() {
                 <Card
                   className={`group cursor-pointer transition-all duration-300 rounded-2xl border-0 shadow-md bg-white dark:bg-gray-800 ${
                     isSelected
-                      ? "ring-2 ring-gray-600 dark:ring-gray-400 shadow-xl scale-105"
+                      ? "ring-2 ring-gray-600 dark:ring-gray-400 shadow-xl scale-100"
                       : "transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right"
                   }`}
                   onClick={() => handleFeatureClick(index)}
@@ -164,7 +164,7 @@ export default function Features() {
 
         {/* Show detailed card after the last card in the row */}
         {selectedFeature !== null && (
-          <div className="w-full mt-8 z-10">
+          <div className="w-full max-w-4xl mx-auto mt-8 z-10">
             <Card className="transition-all duration-300 animate-in slide-in-from-top-4 rounded-[2.5rem] border-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-600 shadow-lg">
               <CardContent className="p-6 md:p-8" key={selectedFeature}>
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
