@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button";
 import { Card, CardContent, CardTitle } from "@/components/ui/Card";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { useState } from "react";
 
 const featureConfig = [
@@ -131,7 +132,12 @@ export default function Features() {
             const isSelected = selectedFeature === index;
 
             return (
-              <div key={index} className="relative">
+              <AnimatedCard 
+                key={index} 
+                delay={index * 100}
+                direction="up"
+                className="relative"
+              >
                 <Card
                   className={`group cursor-pointer transition-all duration-300 rounded-2xl border-0 shadow-md bg-white dark:bg-gray-800 ${
                     isSelected
@@ -157,51 +163,51 @@ export default function Features() {
                     </CardTitle>
                   </CardContent>
                 </Card>
-              </div>
+              </AnimatedCard>
             );
           })}
         </div>
 
         {/* Show detailed card after the last card in the row */}
         {selectedFeature !== null && (
-          <div className="w-full max-w-4xl mx-auto mt-8 z-10">
+          <div className="w-full max-w-sm mx-auto md:max-w-none mt-8 z-10">
             <Card className="transition-all duration-300 animate-in slide-in-from-top-4 rounded-[2.5rem] border-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-600 shadow-lg">
-              <CardContent className="p-6 md:p-8" key={selectedFeature}>
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+              <CardContent className="p-6 md:p-10 lg:p-12" key={selectedFeature}>
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 lg:gap-10">
                   <div
-                    className={`w-16 h-16 ${featureConfig[selectedFeature].gradient} rounded-2xl flex items-center justify-center animate-in zoom-in-50 duration-300`}
+                    className={`w-20 h-20 lg:w-24 lg:h-24 ${featureConfig[selectedFeature].gradient} rounded-2xl flex items-center justify-center animate-in zoom-in-50 duration-300`}
                   >
                     <i
-                      className={`${featureConfig[selectedFeature].icon} text-2xl text-white`}
+                      className={`${featureConfig[selectedFeature].icon} text-3xl lg:text-4xl text-white`}
                     ></i>
                   </div>
                   <div className="flex-1 animate-in fade-in-0 slide-in-from-left-4 duration-500 text-center md:text-left">
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center justify-center md:justify-start gap-2">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 lg:mb-4 flex items-center justify-center md:justify-start gap-3">
                       <span className="text-lg">
                         {featureConfig[selectedFeature].iconTwo}
                       </span>
                       {t(`items.${selectedFeature}.title`)}
                     </h3>
 
-                    <div className="space-y-2 mb-4">
-                      <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm text-center md:text-left">
+                    <div className="space-y-2 lg:space-y-3 mb-4 lg:mb-5">
+                      <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm md:text-base lg:text-lg text-center md:text-left">
                         <i
-                          className={`${featureConfig[selectedFeature].descriptionOneIcon} text-gray-600 dark:text-gray-400 text-sm font-bold mr-1`}
+                          className={`${featureConfig[selectedFeature].descriptionOneIcon} text-gray-600 dark:text-gray-400 text-base lg:text-lg font-bold mr-2`}
                         ></i>
                         {t(`items.${selectedFeature}.descriptionOne`)}
                       </p>
                       {t.has(`items.${selectedFeature}.descriptionTwo`) && (
-                        <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm text-center md:text-left">
+                        <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm md:text-base lg:text-lg text-center md:text-left">
                           <i
-                            className={`${featureConfig[selectedFeature].descriptionTwoIcon} text-gray-600 dark:text-gray-400 text-sm font-bold mr-1`}
+                            className={`${featureConfig[selectedFeature].descriptionTwoIcon} text-gray-600 dark:text-gray-400 text-base lg:text-lg font-bold mr-2`}
                           ></i>
                           {t(`items.${selectedFeature}.descriptionTwo`)}
                         </p>
                       )}
                       {t.has(`items.${selectedFeature}.descriptionThree`) && (
-                        <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm text-center md:text-left">
+                        <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm md:text-base lg:text-lg text-center md:text-left">
                           <i
-                            className={`${featureConfig[selectedFeature].descriptionThreeIcon} text-gray-600 dark:text-gray-400 text-sm font-bold mr-1`}
+                            className={`${featureConfig[selectedFeature].descriptionThreeIcon} text-gray-600 dark:text-gray-400 text-base lg:text-lg font-bold mr-2`}
                           ></i>
                           {t(`items.${selectedFeature}.descriptionThree`)}
                         </p>
@@ -210,15 +216,15 @@ export default function Features() {
 
                     {(t.has(`items.${selectedFeature}.btnText`) ||
                       t.has(`items.${selectedFeature}.linkText`)) && (
-                      <div className="flex flex-col sm:flex-row gap-3 animate-in fade-in-0 slide-in-from-bottom-2 duration-700">
+                      <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 animate-in fade-in-0 slide-in-from-bottom-2 duration-700">
                         {t.has(`items.${selectedFeature}.btnText`) && (
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 font-medium text-xs shadow-md hover:shadow-lg transition-shadow duration-200 w-72 sm:w-auto mx-auto sm:mx-0 justify-center sm:justify-start min-h-[52px] sm:min-h-[36px]"
+                            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 lg:gap-3 px-4 py-3 sm:py-2 lg:px-6 lg:py-3 rounded-2xl sm:rounded-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 font-medium text-xs lg:text-sm shadow-md hover:shadow-lg transition-shadow duration-200 w-72 sm:w-auto mx-auto sm:mx-0 justify-center sm:justify-start min-h-[52px] sm:min-h-[36px] lg:min-h-[44px]"
                           >
                             <i
-                              className={`${featureConfig[selectedFeature].btnIcon} text-gray-600 dark:text-gray-400 text-sm flex-shrink-0`}
+                              className={`${featureConfig[selectedFeature].btnIcon} text-gray-600 dark:text-gray-400 text-sm lg:text-base flex-shrink-0`}
                             ></i>
                             <span className="text-center sm:text-left leading-tight break-words hyphens-auto whitespace-normal">
                               {t(`items.${selectedFeature}.btnText`)}
@@ -229,10 +235,10 @@ export default function Features() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-gray-100 dark:bg-gray-800/30 hover:bg-gray-200 dark:hover:bg-gray-700/40 text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 font-medium text-xs transition-colors duration-200 w-72 sm:w-auto mx-auto sm:mx-0 justify-center sm:justify-start min-h-[52px] sm:min-h-[36px]"
+                            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 lg:gap-3 px-4 py-3 sm:py-2 lg:px-6 lg:py-3 rounded-2xl sm:rounded-full bg-gray-100 dark:bg-gray-800/30 hover:bg-gray-200 dark:hover:bg-gray-700/40 text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 font-medium text-xs lg:text-sm transition-colors duration-200 w-72 sm:w-auto mx-auto sm:mx-0 justify-center sm:justify-start min-h-[52px] sm:min-h-[36px] lg:min-h-[44px]"
                           >
                             <i
-                              className={`${featureConfig[selectedFeature].linkIcon} text-gray-600 dark:text-gray-400 text-sm flex-shrink-0`}
+                              className={`${featureConfig[selectedFeature].linkIcon} text-gray-600 dark:text-gray-400 text-sm lg:text-base flex-shrink-0`}
                             ></i>
                             <span className="text-center sm:text-left leading-tight break-words hyphens-auto whitespace-normal">
                               {t(`items.${selectedFeature}.linkText`)}

@@ -3,6 +3,7 @@
 import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
+import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { useTranslations } from 'next-intl'
 
 export default function StepByStepProcess() {
@@ -70,10 +71,14 @@ export default function StepByStepProcess() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
           {steps.map((step, index) => (
-            <Card 
-              key={index} 
-              className="text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right relative bg-white/90 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-600 shadow-sm"
+            <AnimatedCard
+              key={index}
+              delay={index * 150}
+              direction="up"
             >
+              <Card 
+                className="text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right relative bg-white/90 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-600 shadow-sm"
+              >
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 dark:from-gray-300 dark:to-gray-500 text-white dark:text-gray-800 rounded-full flex items-center justify-center text-sm font-bold shadow-sm">
                 {step.number}
               </div>
@@ -89,6 +94,7 @@ export default function StepByStepProcess() {
                 </p>
               </CardContent>
             </Card>
+            </AnimatedCard>
           ))}
         </div>
       </Container>

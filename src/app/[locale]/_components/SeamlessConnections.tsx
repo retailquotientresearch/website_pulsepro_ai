@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
+import { AnimatedCard } from '@/components/ui/AnimatedCard'
 
 export default function SeamlessConnections() {
   const t = useTranslations('seamlessConnections')
@@ -65,10 +66,14 @@ export default function SeamlessConnections() {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           {integrations.map((integration, index) => (
-            <Card 
-              key={index} 
-              className="bg-white/90 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-600 text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right shadow-sm"
+            <AnimatedCard
+              key={index}
+              delay={index * 100}
+              direction="up"
             >
+              <Card 
+                className="bg-white/90 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-600 text-center group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right shadow-sm"
+              >
               <CardContent className="p-4 md:p-6">
                 <div className={`w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 ${integration.color} shadow-sm`}>
                   <i className={`${integration.icon} text-lg md:text-2xl text-white`}></i>
@@ -78,6 +83,7 @@ export default function SeamlessConnections() {
                 </CardTitle>
               </CardContent>
             </Card>
+            </AnimatedCard>
           ))}
         </div>
         

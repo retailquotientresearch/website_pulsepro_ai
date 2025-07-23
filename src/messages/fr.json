@@ -15,6 +15,18 @@
     "mobileMenuTitle": "Menu de Navigation",
     "mobileMenuDescription": "Accédez aux liens de navigation, fonctionnalités, tarifs, intégrations et options de support"
   },
+  "tooltips": {
+    "themeToggle": {
+      "light": "Passer au mode sombre",
+      "dark": "Passer au mode clair"
+    },
+    "languageSwitcher": "Changer de langue",
+    "socialMedia": {
+      "twitter": "Suivez-nous sur Twitter",
+      "linkedin": "Connectez-vous avec nous sur LinkedIn",
+      "youtube": "Abonnez-vous à notre chaîne YouTube"
+    }
+  },
   "hero": {
     "tagline": "Inspections. Bien Faites.",
     "title": {

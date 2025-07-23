@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardTitle } from '@/components/ui/Card'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
+import { AnimatedCard } from '@/components/ui/AnimatedCard'
 
 export default function WhyChooseUs() {
   const t = useTranslations('whyChooseUs')
@@ -61,10 +62,14 @@ export default function WhyChooseUs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {differentiators.map((item, index) => (
-            <Card 
-              key={index} 
-              className="bg-white/90 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-600 group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right shadow-sm"
+            <AnimatedCard
+              key={index}
+              delay={index * 120}
+              direction="up"
             >
+              <Card 
+                className="bg-white/90 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-600 group transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right shadow-sm"
+              >
               <CardContent className="text-center p-6 md:p-8">
                 <div className={`w-14 h-14 md:w-16 md:h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                   <i className={`${item.icon} text-xl md:text-2xl text-white`}></i>
@@ -77,6 +82,7 @@ export default function WhyChooseUs() {
                 </p>
               </CardContent>
             </Card>
+            </AnimatedCard>
           ))}
         </div>
       </Container>

@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 
 export default function CommonWorries() {
   const t = useTranslations("commonWorries");
@@ -53,8 +54,10 @@ export default function CommonWorries() {
 
         <div className="space-y-6">
           {worries.map((worry, index) => (
-            <div
+            <AnimatedCard
               key={index}
+              delay={index * 200}
+              direction="up"
               className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center ${worry.gradient} rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-gray-600 shadow-sm`}
             >
               <div className="flex flex-col md:flex-row md:items-center text-center md:text-left space-y-3 md:space-y-0">
@@ -78,7 +81,7 @@ export default function CommonWorries() {
                   <p className="text-gray-600 dark:text-gray-300">{worry.description}</p>
                 </div>
               </div>
-            </div>
+            </AnimatedCard>
           ))}
         </div>
 

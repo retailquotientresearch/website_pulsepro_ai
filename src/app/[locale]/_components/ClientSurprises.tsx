@@ -2,6 +2,7 @@
 
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { useTranslations } from "next-intl";
 
 export default function ClientSurprises() {
@@ -76,8 +77,10 @@ export default function ClientSurprises() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {surpriseFeatures.map((feature, index) => (
-            <div
+            <AnimatedCard
               key={index}
+              delay={index * 150}
+              direction="up"
               className="bg-white/80 dark:bg-gray-800/70 backdrop-blur-md rounded-3xl p-8 border border-gray-200 dark:border-gray-600 transform hover:rotate-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 origin-bottom-right shadow-lg"
             >
               <div
@@ -87,7 +90,7 @@ export default function ClientSurprises() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{feature.title}</h3>
               <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
-            </div>
+            </AnimatedCard>
           ))}
         </div>
       </Container>

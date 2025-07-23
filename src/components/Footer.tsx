@@ -6,6 +6,12 @@ import Section from "@/components/ui/Section";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const footerLinks = {
   product: [
@@ -36,6 +42,7 @@ const footerLinks = {
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const tooltipT = useTranslations("tooltips");
 
   return (
     <Section className="!bg-black text-white" padding="xl">
@@ -138,29 +145,52 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <i className="ri-twitter-x-fill text-xl"></i>
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <i className="ri-linkedin-fill text-xl"></i>
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-                aria-label="Youtube"
-              >
-                <i className="ri-youtube-fill text-xl"></i>
-              </a>
-            </div>
+            <TooltipProvider>
+              <div className="flex items-center space-x-6">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                      aria-label="Twitter"
+                    >
+                      <i className="ri-twitter-x-fill text-xl"></i>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{tooltipT("socialMedia.twitter")}</p>
+                  </TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                      aria-label="LinkedIn"
+                    >
+                      <i className="ri-linkedin-fill text-xl"></i>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{tooltipT("socialMedia.linkedin")}</p>
+                  </TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                      aria-label="Youtube"
+                    >
+                      <i className="ri-youtube-fill text-xl"></i>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{tooltipT("socialMedia.youtube")}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </div>
+            </TooltipProvider>
           </div>
 
           <div className="text-center text-gray-400 text-sm mt-6">

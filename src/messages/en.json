@@ -15,6 +15,18 @@
     "mobileMenuTitle": "Navigation Menu",
     "mobileMenuDescription": "Access navigation links, features, pricing, integrations, and support options"
   },
+  "tooltips": {
+    "themeToggle": {
+      "light": "Switch to dark mode",
+      "dark": "Switch to light mode"
+    },
+    "languageSwitcher": "Change language",
+    "socialMedia": {
+      "twitter": "Follow us on Twitter",
+      "linkedin": "Connect with us on LinkedIn",
+      "youtube": "Subscribe to our YouTube channel"
+    }
+  },
   "hero": {
     "tagline": "Inspections. Done Right.",
     "title": {
