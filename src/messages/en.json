@@ -11,7 +11,9 @@
     "faqs": "FAQs",
     "supportCenter": "Support Center",
     "signIn": "Sign In",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "mobileMenuTitle": "Navigation Menu",
+    "mobileMenuDescription": "Access navigation links, features, pricing, integrations, and support options"
   },
   "hero": {
     "tagline": "Inspections. Done Right.",

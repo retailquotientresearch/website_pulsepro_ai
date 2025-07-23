@@ -1,12 +1,10 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/Sheet";
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/Sheet";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +41,10 @@ export default function MobileMenu() {
       </SheetTrigger>
 
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          <SheetTitle hidden>{t("mobileMenuTitle")}</SheetTitle>
+          <SheetDescription hidden>
+            {t("mobileMenuDescription")}
+          </SheetDescription>
         <div className="px-4 py-4 space-y-1">
           {/* Features Section */}
           <div className="space-y-0">
@@ -143,24 +145,14 @@ export default function MobileMenu() {
           </div>
 
           <div className="pt-4 border-t border-border space-y-3">
-            <div className="flex items-center justify-between px-4">
-              <span className="text-sm text-gray-600 dark:text-gray-400">
-                Settings
-              </span>
-              <div className="flex items-center space-x-2">
-                <LanguageSwitcher />
-                <ThemeToggle />
-              </div>
-            </div>
-
             <Button
-              variant="ghost"
-              className="w-full justify-start text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              variant="outline"
+              className="w-full bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white"
             >
-              Sign In
+              {t("signIn")}
             </Button>
             <Button className="w-full" onClick={handleMenuClose}>
-              Get Started
+              {t("getStarted")}
             </Button>
           </div>
         </div>

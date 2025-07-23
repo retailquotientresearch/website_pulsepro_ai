@@ -11,7 +11,9 @@
     "faqs": "FAQ",
     "supportCenter": "Centre d'Aide",
     "signIn": "Se Connecter",
-    "getStarted": "Commencer"
+    "getStarted": "Commencer",
+    "mobileMenuTitle": "Menu de Navigation",
+    "mobileMenuDescription": "Accédez aux liens de navigation, fonctionnalités, tarifs, intégrations et options de support"
   },
   "hero": {
     "tagline": "Inspections. Bien Faites.",

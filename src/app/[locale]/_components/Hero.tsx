@@ -1,12 +1,13 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import Button from '@/components/ui/Button'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
   const t = useTranslations('hero')
+  
   return (
     <Section 
       className="h-[85vh] flex items-center justify-center relative overflow-hidden"

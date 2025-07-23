@@ -122,6 +122,12 @@ export default function Navigation() {
               <Button size="sm">{t("getStarted")}</Button>
             </div>
 
+            {/* Mobile controls - always visible */}
+            <div className="flex lg:hidden items-center space-x-2">
+              <LanguageSwitcher />
+              <ThemeToggle />
+            </div>
+
             <MobileMenu />
           </div>
         </div>

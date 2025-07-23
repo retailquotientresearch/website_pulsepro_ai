@@ -11,7 +11,9 @@
     "faqs": "FAQ",
     "supportCenter": "सहायता केंद्र",
     "signIn": "साइन इन",
-    "getStarted": "शुरू करें"
+    "getStarted": "शुरू करें",
+    "mobileMenuTitle": "नेवीगेशन मेनू",
+    "mobileMenuDescription": "नेवीगेशन लिंक, विशेषताएं, मूल्य निर्धारण, एकीकरण और सहायता विकल्पों तक पहुंचें"
   },
   "hero": {
     "tagline": "निरीक्षण। सही तरीके से।",
