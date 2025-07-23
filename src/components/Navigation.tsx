@@ -46,12 +46,6 @@ export default function Navigation() {
               {/* Features Dropdown */}
               <div className="absolute top-full left-0 mt-2 w-48 bg-surface rounded-lg shadow-lg border border-border py-2 opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                 <Link
-                  href="/features"
-                  className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-colors duration-150"
-                >
-                  {t("allFeatures")}
-                </Link>
-                <Link
                   href="/api-integration"
                   className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-colors duration-150"
                 >

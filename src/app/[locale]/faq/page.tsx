@@ -3,9 +3,12 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import HeroSection from "@/components/HeroSection";
+import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function FAQPage() {
+  const t = useTranslations("faq");
   const [expandedFAQs, setExpandedFAQs] = useState<Set<string>>(new Set());
 
   const toggleFAQ = (id: string) => {
@@ -105,66 +108,73 @@ export default function FAQPage() {
     <main>
       {/* Hero Section */}
       <HeroSection 
-        title="Frequently Asked Questions"
-        imageSrc="/images/faq-illustration.png"
-        imageAlt="FAQ Illustration - Two characters with question mark and exclamation mark"
-        imageWidth={500}
-        imageHeight={400}
+        title={t("hero.title")}
+        subtitle={t("hero.subtitle")}
+        customIllustration={{
+          mainIcon: "ri-question-answer-line",
+          topRightIcon: "ri-question-line", 
+          bottomLeftIcon: "ri-lightbulb-line"
+        }}
       />
 
       {/* FAQ Content */}
-      <Section className="py-12 sm:py-16 bg-white dark:bg-gray-900">
+      <Section className="py-12 sm:py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600">
         <Container>
           <div className="max-w-4xl mx-auto">
-            {faqSections.map((section) => (
-              <div key={section.id} className="mb-8 sm:mb-12">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-gray-200 dark:border-gray-700">
-                  {section.title}
-                </h2>
+            {faqSections.map((section, sectionIndex) => (
+              <AnimatedCard key={section.id} delay={sectionIndex * 50 + 100} direction="up">
+                <div className="mb-8 sm:mb-12">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-gray-200 dark:border-gray-700">
+                    {section.title}
+                  </h2>
 
-                <div className="space-y-3 sm:space-y-4">
-                  {section.questions.map((faq) => {
-                    const isExpanded = expandedFAQs.has(faq.id);
-                    return (
-                      <div
-                        key={faq.id}
-                        className="bg-gray-50 dark:bg-gray-800 rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-all duration-300"
-                      >
-                        <button
-                          onClick={() => toggleFAQ(faq.id)}
-                          className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  <div className="space-y-3 sm:space-y-4">
+                    {section.questions.map((faq, questionIndex) => {
+                      const isExpanded = expandedFAQs.has(faq.id);
+                      return (
+                        <AnimatedCard 
+                          key={faq.id} 
+                          delay={sectionIndex * 100 + questionIndex * 50 + 200} 
+                          direction="up"
                         >
-                          <div className="flex items-start justify-between gap-3">
-                            <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base md:text-lg leading-tight">
-                              {faq.question}
-                            </h3>
-                            <div className="flex-shrink-0 mt-1">
-                              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center">
-                                <span className="text-purple-600 dark:text-purple-400 text-lg sm:text-xl font-bold transition-transform duration-300">
-                                  {isExpanded ? "−" : "+"}
-                                </span>
+                          <div className="bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-all duration-300 shadow-sm">
+                            <button
+                              onClick={() => toggleFAQ(faq.id)}
+                              className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base md:text-lg leading-tight">
+                                  {faq.question}
+                                </h3>
+                                <div className="flex-shrink-0 mt-1">
+                                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-full flex items-center justify-center">
+                                    <span className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl font-bold transition-transform duration-300">
+                                      {isExpanded ? "−" : "+"}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </button>
+
+                            <div
+                              className="overflow-hidden transition-all duration-300 ease-in-out"
+                              style={{
+                                maxHeight: isExpanded ? "300px" : "0px",
+                              }}
+                            >
+                              <div className="px-4 sm:px-6 py-4 sm:py-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                                  {faq.answer}
+                                </p>
                               </div>
                             </div>
                           </div>
-                        </button>
-
-                        <div
-                          className="overflow-hidden transition-all duration-300 ease-in-out"
-                          style={{
-                            maxHeight: isExpanded ? "300px" : "0px",
-                          }}
-                        >
-                          <div className="px-4 sm:px-6 py-4 sm:py-5 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-                            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-                              {faq.answer}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                        </AnimatedCard>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              </AnimatedCard>
             ))}
           </div>
         </Container>

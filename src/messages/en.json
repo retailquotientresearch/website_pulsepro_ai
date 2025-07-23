@@ -368,6 +368,12 @@
       "description": "Allow your teams and users to sign using Single Sign-On in Google and maintain the security of user data at all primary importance and that's why we have advanced security right to your fingertips."
     }
   },
+  "faq": {
+    "hero": {
+      "title": "Frequently Asked Questions", 
+      "subtitle": "Find answers to common questions about our inspection management platform"
+    }
+  },
   "footer": {
     "tagline": "Still thinking about it?",
     "description": "Join thousands of professionals who have transformed their inspection process with PulsePro.",

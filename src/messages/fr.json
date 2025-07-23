@@ -368,6 +368,12 @@
       "description": "Permettez à vos équipes et utilisateurs de se connecter en utilisant Single Sign-On dans Google et maintenez la sécurité des données utilisateur comme priorité principale, c'est pourquoi nous avons une sécurité avancée à portée de main."
     }
   },
+  "faq": {
+    "hero": {
+      "title": "Questions Fréquemment Posées",
+      "subtitle": "Trouvez des réponses aux questions courantes sur notre plateforme de gestion d'inspections"
+    }
+  },
   "footer": {
     "tagline": "Vous y réfléchissez encore ?",
     "description": "Rejoignez des milliers de professionnels qui ont transformé leur processus d'inspection avec PulsePro.",

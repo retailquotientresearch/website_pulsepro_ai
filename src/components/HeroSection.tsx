@@ -2,13 +2,20 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import Image from "next/image";
 
+interface CustomIllustration {
+  mainIcon: string;
+  topRightIcon: string;
+  bottomLeftIcon: string;
+}
+
 interface HeroSectionProps {
   title: string;
   subtitle?: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   imageWidth?: number;
   imageHeight?: number;
+  customIllustration?: CustomIllustration;
 }
 
 export default function HeroSection({ 
@@ -17,17 +24,20 @@ export default function HeroSection({
   imageSrc, 
   imageAlt, 
   imageWidth = 500, 
-  imageHeight = 400 
+  imageHeight = 400,
+  customIllustration
 }: HeroSectionProps) {
   return (
     <Section className="pt-32 pb-16 relative overflow-hidden">
-      {/* Enhanced gradient background matching the FAQ design */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+      {/* Enhanced gradient background matching the landing page design */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-white to-gray-100 dark:from-gray-950 dark:via-black dark:to-gray-900"></div>
 
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-96 h-96 bg-gradient-to-tr from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-400/60 to-gray-600/50 dark:from-gray-600/40 dark:to-gray-500/35 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-40 w-96 h-96 bg-gradient-to-tr from-gray-300/50 to-gray-500/60 dark:from-gray-700/35 dark:to-gray-600/40 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-500/70 dark:bg-gray-600/50 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gray-400/65 dark:bg-gray-500/45 rounded-full blur-2xl"></div>
       </div>
 
       <Container className="relative z-10">
@@ -47,16 +57,32 @@ export default function HeroSection({
           {/* Right side - Illustration */}
           <div className="flex justify-center lg:justify-end order-first lg:order-last">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-[5/4]">
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                width={imageWidth}
-                height={imageHeight}
-                className="w-full h-full object-contain"
-                priority
-                loading="eager"
-                sizes="(max-width: 640px) 384px, (max-width: 768px) 448px, 512px"
-              />
+              {customIllustration ? (
+                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-3xl flex items-center justify-center shadow-xl">
+                  <div className="relative">
+                    <div className="w-32 h-32 bg-gradient-to-br from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600 rounded-2xl flex items-center justify-center mb-4">
+                      <i className={`${customIllustration.mainIcon} text-5xl text-white dark:text-gray-800`}></i>
+                    </div>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-700 dark:from-gray-300 dark:to-gray-500 rounded-full flex items-center justify-center">
+                      <i className={`${customIllustration.topRightIcon} text-lg text-white dark:text-gray-800`}></i>
+                    </div>
+                    <div className="absolute -bottom-3 -left-3 w-10 h-10 bg-gradient-to-br from-gray-400 to-gray-600 dark:from-gray-500 dark:to-gray-700 rounded-full flex items-center justify-center">
+                      <i className={`${customIllustration.bottomLeftIcon} text-base text-white dark:text-gray-200`}></i>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Image
+                  src={imageSrc!}
+                  alt={imageAlt!}
+                  width={imageWidth}
+                  height={imageHeight}
+                  className="w-full h-full object-contain"
+                  priority
+                  loading="eager"
+                  sizes="(max-width: 640px) 384px, (max-width: 768px) 448px, 512px"
+                />
+              )}
             </div>
           </div>
         </div>
