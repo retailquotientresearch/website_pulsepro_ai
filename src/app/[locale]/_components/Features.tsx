@@ -167,7 +167,7 @@ export default function Features() {
           <div className="w-full mt-8 z-10">
             <Card className="transition-all duration-300 animate-in slide-in-from-top-4 rounded-[2.5rem] border-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 border border-gray-200 dark:border-gray-600 shadow-lg">
               <CardContent className="p-6 md:p-8" key={selectedFeature}>
-                <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
                   <div
                     className={`w-16 h-16 ${featureConfig[selectedFeature].gradient} rounded-2xl flex items-center justify-center animate-in zoom-in-50 duration-300`}
                   >
@@ -175,8 +175,8 @@ export default function Features() {
                       className={`${featureConfig[selectedFeature].icon} text-2xl text-white`}
                     ></i>
                   </div>
-                  <div className="flex-1 animate-in fade-in-0 slide-in-from-left-4 duration-500">
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                  <div className="flex-1 animate-in fade-in-0 slide-in-from-left-4 duration-500 text-center md:text-left">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-3 flex items-center justify-center md:justify-start gap-2">
                       <span className="text-lg">
                         {featureConfig[selectedFeature].iconTwo}
                       </span>
@@ -184,24 +184,24 @@ export default function Features() {
                     </h3>
 
                     <div className="space-y-2 mb-4">
-                      <p className="text-gray-700 dark:text-gray-200 flex items-start gap-2 leading-relaxed text-sm">
+                      <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm text-center md:text-left">
                         <i
-                          className={`${featureConfig[selectedFeature].descriptionOneIcon} text-gray-600 dark:text-gray-400 text-sm mt-0.5 font-bold`}
+                          className={`${featureConfig[selectedFeature].descriptionOneIcon} text-gray-600 dark:text-gray-400 text-sm font-bold mr-1`}
                         ></i>
                         {t(`items.${selectedFeature}.descriptionOne`)}
                       </p>
                       {t.has(`items.${selectedFeature}.descriptionTwo`) && (
-                        <p className="text-gray-700 dark:text-gray-200 flex items-start gap-2 leading-relaxed text-sm">
+                        <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm text-center md:text-left">
                           <i
-                            className={`${featureConfig[selectedFeature].descriptionTwoIcon} text-gray-600 dark:text-gray-400 text-sm mt-0.5 font-bold`}
+                            className={`${featureConfig[selectedFeature].descriptionTwoIcon} text-gray-600 dark:text-gray-400 text-sm font-bold mr-1`}
                           ></i>
                           {t(`items.${selectedFeature}.descriptionTwo`)}
                         </p>
                       )}
                       {t.has(`items.${selectedFeature}.descriptionThree`) && (
-                        <p className="text-gray-700 dark:text-gray-200 flex items-start gap-2 leading-relaxed text-sm">
+                        <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm text-center md:text-left">
                           <i
-                            className={`${featureConfig[selectedFeature].descriptionThreeIcon} text-gray-600 dark:text-gray-400 text-sm mt-0.5 font-bold`}
+                            className={`${featureConfig[selectedFeature].descriptionThreeIcon} text-gray-600 dark:text-gray-400 text-sm font-bold mr-1`}
                           ></i>
                           {t(`items.${selectedFeature}.descriptionThree`)}
                         </p>
@@ -215,12 +215,12 @@ export default function Features() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="flex items-center gap-2 px-3 py-2 rounded-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 font-medium text-xs md:text-sm shadow-md hover:shadow-lg transition-shadow duration-200 w-full md:w-auto justify-center md:justify-start"
+                            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 font-medium text-xs shadow-md hover:shadow-lg transition-shadow duration-200 w-72 sm:w-auto mx-auto sm:mx-0 justify-center sm:justify-start min-h-[52px] sm:min-h-[36px]"
                           >
                             <i
-                              className={`${featureConfig[selectedFeature].btnIcon} text-gray-600 dark:text-gray-400 text-sm`}
+                              className={`${featureConfig[selectedFeature].btnIcon} text-gray-600 dark:text-gray-400 text-sm flex-shrink-0`}
                             ></i>
-                            <span className="truncate">
+                            <span className="text-center sm:text-left leading-tight break-words hyphens-auto whitespace-normal">
                               {t(`items.${selectedFeature}.btnText`)}
                             </span>
                           </Button>
@@ -229,12 +229,12 @@ export default function Features() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            className="flex items-center gap-2 px-3 py-2 rounded-full bg-gray-100 dark:bg-gray-800/30 hover:bg-gray-200 dark:hover:bg-gray-700/40 text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 font-medium text-xs md:text-sm transition-colors duration-200 w-full md:w-auto justify-center md:justify-start"
+                            className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-gray-100 dark:bg-gray-800/30 hover:bg-gray-200 dark:hover:bg-gray-700/40 text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-100 font-medium text-xs transition-colors duration-200 w-72 sm:w-auto mx-auto sm:mx-0 justify-center sm:justify-start min-h-[52px] sm:min-h-[36px]"
                           >
                             <i
-                              className={`${featureConfig[selectedFeature].linkIcon} text-gray-600 dark:text-gray-400 text-sm`}
+                              className={`${featureConfig[selectedFeature].linkIcon} text-gray-600 dark:text-gray-400 text-sm flex-shrink-0`}
                             ></i>
-                            <span className="truncate">
+                            <span className="text-center sm:text-left leading-tight break-words hyphens-auto whitespace-normal">
                               {t(`items.${selectedFeature}.linkText`)}
                             </span>
                           </Button>

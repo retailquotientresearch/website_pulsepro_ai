@@ -1,6 +1,6 @@
 import Hero from "./_components/Hero";
 import Features from "./_components/Features";
-import Testimonials from "./_components/Testimonials";
+import ClientSurprises from "./_components/ClientSurprises";
 import FAQ from "./_components/FAQ";
 import Integrations from "./_components/Integrations";
 import Process from "./_components/Process";
@@ -12,7 +12,7 @@ export default function Home() {
     <main className="pt-16">
       <Hero />
       <Features />
-      <Testimonials />
+      <ClientSurprises />
       <FAQ />
       <CTA />
       <Integrations />

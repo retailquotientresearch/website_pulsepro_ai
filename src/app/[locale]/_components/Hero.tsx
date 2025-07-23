@@ -25,70 +25,70 @@ export default function Hero() {
         <div className="absolute -top-20 left-1/3 transform -translate-x-1/2 w-72 h-72 bg-gradient-to-b from-gray-400/50 to-gray-350/40 dark:from-gray-600/30 dark:to-gray-500/25 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Floating UI elements - one at each corner using grayscale theme */}
+      {/* Floating UI elements - one at each corner using grayscale theme with metallic shine */}
       {/* Top left - Rocket */}
-      <div className="absolute top-16 left-16 animate-bounce">
-        <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 dark:from-gray-200 dark:to-gray-400 backdrop-blur-sm rounded-full rotate-12 opacity-90 shadow-lg flex items-center justify-center hover:opacity-100 hover:shadow-xl transition-all duration-300">
-          <i className="ri-rocket-fill text-white dark:text-gray-800 text-xl"></i>
+      <div className="absolute top-16 sm:top-16 left-16 sm:left-16 animate-bounce">
+        <div className="w-12 h-12 bg-gradient-to-br from-gray-800 via-gray-700 to-black dark:from-gray-200 dark:via-gray-100 dark:to-gray-400 backdrop-blur-sm rounded-full rotate-12 opacity-90 shadow-lg flex items-center justify-center hover:opacity-100 hover:shadow-xl transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-tr before:from-white/20 before:to-transparent before:rounded-full before:opacity-60">
+          <i className="ri-rocket-fill text-white dark:text-gray-800 text-xl relative z-10"></i>
         </div>
       </div>
       {/* Top right - Flashlight */}
-      <div className="absolute top-16 right-16 animate-bounce" style={{animationDelay: '0.5s', animationDuration: '2s'}}>
-        <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 dark:from-gray-300 dark:to-gray-500 backdrop-blur-sm rounded-full opacity-85 shadow-md flex items-center justify-center transform transition-transform hover:scale-110 hover:opacity-100 hover:shadow-lg">
-          <i className="ri-flashlight-fill text-white dark:text-gray-800 text-xl"></i>
+      <div className="absolute top-16 sm:top-16 right-16 sm:right-16 animate-bounce" style={{animationDelay: '0.5s', animationDuration: '2s'}}>
+        <div className="w-12 h-12 bg-gradient-to-bl from-gray-700 via-gray-600 to-gray-900 dark:from-gray-300 dark:via-gray-200 dark:to-gray-500 backdrop-blur-sm rounded-full opacity-85 shadow-md flex items-center justify-center transform transition-transform hover:scale-110 hover:opacity-100 hover:shadow-lg before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:to-transparent before:rounded-full before:opacity-50">
+          <i className="ri-flashlight-fill text-white dark:text-gray-800 text-xl relative z-10"></i>
         </div>
       </div>
       {/* Bottom left - Star */}
-      <div className="absolute bottom-16 left-16 animate-bounce" style={{animationDelay: '1s', animationDuration: '2.5s'}}>
-        <div className="w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-700 dark:from-gray-400 dark:to-gray-600 backdrop-blur-sm rounded-full rotate-45 opacity-80 shadow-sm flex items-center justify-center transform transition-transform hover:scale-110 hover:opacity-100 hover:shadow-md">
-          <i className="ri-star-fill text-white dark:text-gray-800 -rotate-45 text-xl"></i>
+      <div className="absolute bottom-16 sm:bottom-16 left-16 sm:left-16 animate-bounce" style={{animationDelay: '1s', animationDuration: '2.5s'}}>
+        <div className="w-12 h-12 bg-gradient-to-tr from-gray-700 via-gray-600 to-gray-900 dark:from-gray-400 dark:via-gray-300 dark:to-gray-600 backdrop-blur-sm rounded-full rotate-45 opacity-80 shadow-sm flex items-center justify-center transform transition-transform hover:scale-110 hover:opacity-100 hover:shadow-md before:absolute before:inset-0 before:bg-gradient-to-bl before:from-white/25 before:to-transparent before:rounded-full before:opacity-40">
+          <i className="ri-star-fill text-white dark:text-gray-800 -rotate-45 text-xl relative z-10"></i>
         </div>
       </div>
       {/* Bottom right - Check */}
-      <div className="absolute bottom-16 right-16 animate-bounce" style={{animationDelay: '2s', animationDuration: '1.8s'}}>
-        <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black dark:from-gray-100 dark:to-gray-300 backdrop-blur-sm rounded-full opacity-85 shadow-md flex items-center justify-center transform transition-transform hover:scale-110 hover:opacity-100 hover:shadow-lg">
-          <i className="ri-check-fill text-white dark:text-gray-800 text-xl"></i>
+      <div className="absolute bottom-16 sm:bottom-16 right-16 sm:right-16 animate-bounce" style={{animationDelay: '2s', animationDuration: '1.8s'}}>
+        <div className="w-12 h-12 bg-gradient-to-tl from-black via-gray-800 to-gray-900 dark:from-gray-100 dark:via-white dark:to-gray-300 backdrop-blur-sm rounded-full opacity-85 shadow-md flex items-center justify-center transform transition-transform hover:scale-110 hover:opacity-100 hover:shadow-lg before:absolute before:inset-0 before:bg-gradient-to-tr before:from-white/30 before:to-transparent before:rounded-full before:opacity-70">
+          <i className="ri-check-fill text-white dark:text-gray-800 text-xl relative z-10"></i>
         </div>
       </div>
       
-      {/* Additional geometrical shapes using grayscale */}
-      <div className="absolute top-1/3 left-8 animate-bounce" style={{animationDelay: '0.5s'}}>
-        <div className="w-5 h-5 bg-gray-600 dark:bg-gray-400 rounded-full opacity-60 hover:opacity-80 transition-opacity"></div>
+      {/* Additional geometrical shapes using grayscale with subtle metallic shine - hidden on mobile to avoid text overlap */}
+      <div className="absolute top-1/3 left-8 animate-bounce hidden md:block" style={{animationDelay: '0.5s'}}>
+        <div className="w-5 h-5 bg-gradient-to-br from-gray-600 to-gray-700 dark:from-gray-400 dark:to-gray-500 rounded-full opacity-60 hover:opacity-80 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-tr before:from-white/30 before:to-transparent before:rounded-full"></div>
       </div>
-      <div className="absolute top-1/2 right-8 animate-bounce" style={{animationDelay: '1.5s'}}>
-        <div className="w-6 h-6 bg-gray-500 dark:bg-gray-500 rounded-full opacity-50 hover:opacity-70 transition-opacity"></div>
+      <div className="absolute top-1/2 right-8 animate-bounce hidden md:block" style={{animationDelay: '1.5s'}}>
+        <div className="w-6 h-6 bg-gradient-to-tl from-gray-500 to-gray-600 dark:from-gray-500 dark:to-gray-400 rounded-full opacity-50 hover:opacity-70 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/25 before:to-transparent before:rounded-full"></div>
       </div>
-      <div className="absolute bottom-1/3 left-12 animate-bounce" style={{animationDelay: '2.5s'}}>
-        <div className="w-4 h-4 bg-gray-700 dark:bg-gray-300 rounded-full opacity-70 hover:opacity-90 transition-opacity"></div>
+      <div className="absolute bottom-1/3 left-12 animate-bounce hidden md:block" style={{animationDelay: '2.5s'}}>
+        <div className="w-4 h-4 bg-gradient-to-tr from-gray-700 to-gray-800 dark:from-gray-300 dark:to-gray-400 rounded-full opacity-70 hover:opacity-90 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-bl before:from-white/20 before:to-transparent before:rounded-full"></div>
       </div>
-      <div className="absolute top-20 right-1/3 animate-bounce" style={{animationDelay: '3s'}}>
-        <div className="w-5 h-5 bg-gray-800 dark:bg-gray-200 rounded-full opacity-40 hover:opacity-60 transition-opacity"></div>
-      </div>
-      
-      {/* Additional floating shapes at bottom off-center */}
-      <div className="absolute bottom-1/4 left-1/4 animate-bounce" style={{animationDelay: '1s'}}>
-        <div className="w-6 h-6 bg-gray-700 dark:bg-gray-300 rounded-full opacity-50 hover:opacity-70 transition-opacity"></div>
-      </div>
-      <div className="absolute bottom-1/3 right-1/4 animate-bounce" style={{animationDelay: '2s'}}>
-        <div className="w-4 h-4 bg-gray-600 dark:bg-gray-400 rounded-full opacity-60 hover:opacity-80 transition-opacity"></div>
-      </div>
-      <div className="absolute bottom-20 left-2/3 animate-bounce" style={{animationDelay: '2.8s'}}>
-        <div className="w-5 h-5 bg-gray-800 dark:bg-gray-200 rounded-full opacity-45 hover:opacity-65 transition-opacity"></div>
+      <div className="absolute top-20 right-1/3 animate-bounce hidden md:block" style={{animationDelay: '3s'}}>
+        <div className="w-5 h-5 bg-gradient-to-bl from-gray-800 to-black dark:from-gray-200 dark:to-gray-300 rounded-full opacity-40 hover:opacity-60 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-tr before:from-white/35 before:to-transparent before:rounded-full"></div>
       </div>
       
-      {/* Additional floating shapes at top off-center towards left */}
-      <div className="absolute top-1/4 left-1/5 animate-bounce" style={{animationDelay: '1.2s'}}>
-        <div className="w-6 h-6 bg-gray-600 dark:bg-gray-400 rounded-full opacity-55 hover:opacity-75 transition-opacity"></div>
+      {/* Additional floating shapes at bottom off-center with metallic shine - hidden on mobile */}
+      <div className="absolute bottom-1/4 left-1/4 animate-bounce hidden md:block" style={{animationDelay: '1s'}}>
+        <div className="w-6 h-6 bg-gradient-to-br from-gray-700 to-gray-800 dark:from-gray-300 dark:to-gray-400 rounded-full opacity-50 hover:opacity-70 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-tr before:from-white/25 before:to-transparent before:rounded-full before:opacity-60"></div>
       </div>
-      <div className="absolute top-24 left-1/4 animate-bounce" style={{animationDelay: '4s'}}>
-        <div className="w-5 h-5 bg-gray-800 dark:bg-gray-200 rounded-full opacity-40 hover:opacity-60 transition-opacity"></div>
+      <div className="absolute bottom-1/3 right-1/4 animate-bounce hidden md:block" style={{animationDelay: '2s'}}>
+        <div className="w-4 h-4 bg-gradient-to-tl from-gray-600 to-gray-700 dark:from-gray-400 dark:to-gray-500 rounded-full opacity-60 hover:opacity-80 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-bl before:from-white/20 before:to-transparent before:rounded-full before:opacity-50"></div>
+      </div>
+      <div className="absolute bottom-20 left-2/3 animate-bounce hidden md:block" style={{animationDelay: '2.8s'}}>
+        <div className="w-5 h-5 bg-gradient-to-tr from-gray-800 to-black dark:from-gray-200 dark:to-gray-300 rounded-full opacity-45 hover:opacity-65 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/30 before:to-transparent before:rounded-full before:opacity-70"></div>
+      </div>
+      
+      {/* Additional floating shapes at top off-center towards left with metallic shine - hidden on mobile */}
+      <div className="absolute top-1/4 left-1/5 animate-bounce hidden md:block" style={{animationDelay: '1.2s'}}>
+        <div className="w-6 h-6 bg-gradient-to-bl from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-500 rounded-full opacity-55 hover:opacity-75 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-tr before:from-white/25 before:to-transparent before:rounded-full before:opacity-55"></div>
+      </div>
+      <div className="absolute top-24 left-1/4 animate-bounce hidden md:block" style={{animationDelay: '4s'}}>
+        <div className="w-5 h-5 bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-gray-300 rounded-full opacity-40 hover:opacity-60 transition-opacity shadow-sm before:absolute before:inset-0 before:bg-gradient-to-tl before:from-white/35 before:to-transparent before:rounded-full before:opacity-65"></div>
       </div>
       
       <Container className="relative z-10 text-center">
         <div className="max-w-5xl mx-auto">
           
           {/* Tagline */}
-          <div className="mb-8 flex items-center justify-center">
+          <div className="mb-8 mt-8 sm:mt-4 flex items-center justify-center">
             <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900/20 dark:via-gray-800 dark:to-gray-700/20 backdrop-blur-sm border border-gray-200 dark:border-gray-600 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
               <span className="text-lg">🚀</span>
               <span className="text-gray-700 dark:text-gray-300 font-medium">
