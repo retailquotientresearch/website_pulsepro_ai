@@ -236,8 +236,8 @@
         "part4": "Et aucun coût caché jamais !"
       },
       "price": {
-        "monthly": "22$",
-        "yearly": "18$"
+        "monthly": "$22",
+        "yearly": "$18"
       },
       "cta": {
         "primary": "Commencez Votre Essai Gratuit Maintenant",

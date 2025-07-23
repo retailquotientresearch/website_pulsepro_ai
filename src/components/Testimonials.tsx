@@ -66,9 +66,9 @@ export default function Testimonials() {
       <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden mb-12 border border-gray-200 dark:border-gray-700">
         <div className="flex flex-col md:flex-row">
           {/* Profile Image - On top for mobile, right side for desktop */}
-          <div className="order-1 md:order-2 md:w-96 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 flex items-center justify-center p-8">
+          <div className="order-1 md:order-2 md:w-96 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/20 dark:to-gray-700/20 flex items-center justify-center p-8">
             <div
-              className={`w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-800 dark:to-pink-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden transition-all duration-300 ${
+              className={`w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden transition-all duration-300 ${
                 isAnimating ? "opacity-0 scale-95" : "opacity-100 scale-100"
               }`}
             >
@@ -88,10 +88,10 @@ export default function Testimonials() {
                 }}
               />
               <div
-                className="w-full h-full bg-gradient-to-br from-purple-200 to-pink-200 dark:from-purple-700 dark:to-pink-700 rounded-full flex items-center justify-center"
+                className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700 rounded-full flex items-center justify-center"
                 style={{ display: "none" }}
               >
-                <span className="text-6xl md:text-7xl font-bold text-purple-700 dark:text-purple-200">
+                <span className="text-6xl md:text-7xl font-bold text-gray-700 dark:text-gray-200">
                   {testimonials[activeTestimonial].initials}
                 </span>
               </div>
@@ -171,12 +171,12 @@ export default function Testimonials() {
                         onClick={() => handleTestimonialChange(index)}
                         className={`w-full p-2 sm:p-3 rounded-2xl transition-all duration-300 text-left ${
                           index === activeTestimonial
-                            ? "bg-white dark:bg-gray-700 shadow-xl border-2 border-purple-500 dark:border-purple-400 scale-105 transform"
+                            ? "bg-white dark:bg-gray-700 shadow-xl border-2 border-gray-500 dark:border-gray-400 scale-105 transform"
                             : "bg-white/60 dark:bg-gray-700/60 hover:bg-white/90 dark:hover:bg-gray-700/90 border-2 border-transparent hover:scale-102 transform"
                         }`}
                       >
                         <div className="flex items-center space-x-2">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-800 dark:to-pink-800 rounded-full flex items-center justify-center shadow-lg flex-shrink-0 overflow-hidden">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-full flex items-center justify-center shadow-lg flex-shrink-0 overflow-hidden">
                             <Image
                               src={person.image}
                               alt={person.name}
@@ -193,7 +193,7 @@ export default function Testimonials() {
                               }}
                             />
                             <span
-                              className="text-xs sm:text-sm font-bold text-purple-700 dark:text-purple-200 w-full h-full flex items-center justify-center"
+                              className="text-xs sm:text-sm font-bold text-gray-700 dark:text-gray-200 w-full h-full flex items-center justify-center"
                               style={{ display: "none" }}
                             >
                               {person.initials}
@@ -213,15 +213,11 @@ export default function Testimonials() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 sm:-left-12 top-1/2 -translate-y-1/2 h-7 w-7 sm:h-8 sm:w-8 bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 shadow-md">
-                <span className="text-gray-600 dark:text-gray-400 text-lg">
-                  &lt;
-                </span>
+              <CarouselPrevious className="left-0 sm:-left-12 top-1/2 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+                <i className="ri-arrow-left-line text-gray-600 dark:text-gray-400 text-sm sm:text-base"></i>
               </CarouselPrevious>
-              <CarouselNext className="right-0 sm:-right-12 top-1/2 -translate-y-1/2 h-7 w-7 sm:h-8 sm:w-8 bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 shadow-md">
-                <span className="text-gray-600 dark:text-gray-400 text-lg">
-                  &gt;
-                </span>
+              <CarouselNext className="right-0 sm:-right-12 top-1/2 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+                <i className="ri-arrow-right-line text-gray-600 dark:text-gray-400 text-sm sm:text-base"></i>
               </CarouselNext>
             </div>
           </Carousel>
