@@ -89,8 +89,8 @@ export default function Hero() {
           
           {/* Tagline */}
           <div className="mb-8 mt-8 sm:mt-4 flex items-center justify-center">
-            <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900/20 dark:via-gray-800 dark:to-gray-700/20 backdrop-blur-sm border border-gray-200 dark:border-gray-600 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-lg">🚀</span>
+            <div className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-400 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+              <i className="ri-rocket-line text-gray-600 dark:text-gray-400 text-xl font-bold"></i>
               <span className="text-gray-700 dark:text-gray-300 font-medium">
                 {t('tagline')}
               </span>

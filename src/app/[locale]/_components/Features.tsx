@@ -98,13 +98,13 @@ export default function Features() {
   };
 
   return (
-    <Section className="bg-gradient-to-br from-gray-200 via-white to-gray-100 dark:from-gray-950 dark:via-black dark:to-gray-900" padding="xl">
+    <Section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black" padding="xl">
       <Container>
         <div className="text-center mb-16">
           {/* Tagline */}
           <div className="mb-8 flex items-center justify-center ">
-            <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900/20 dark:via-gray-800 dark:to-gray-700/20 rounded-full px-4 py-2 flex items-center gap-2 border border-gray-200 dark:border-gray-600">
-              <span className="text-lg">🙋</span>
+            <div className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-400 dark:from-gray-700 dark:via-gray-600 dark:to-gray-500 rounded-full px-4 py-2 flex items-center gap-2">
+              <i className="ri-hand-heart-line text-gray-600 dark:text-gray-400 text-xl font-bold"></i>
               <span className="text-gray-700 dark:text-gray-300 font-bold">
                 {t("tagline")}
               </span>

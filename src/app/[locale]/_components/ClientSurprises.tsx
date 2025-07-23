@@ -55,9 +55,10 @@ export default function ClientSurprises() {
         <div className="text-center mb-16">
           {/* Tagline */}
           <div className="inline-block mb-4">
-            <div className="bg-gray-50/80 dark:bg-gray-800/60 backdrop-blur-md rounded-full px-6 py-3 border border-gray-300 dark:border-gray-600">
+            <div className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-400 dark:from-gray-600 dark:via-gray-500 dark:to-gray-400 backdrop-blur-md rounded-full px-6 py-3 flex items-center gap-2">
+              <i className="ri-star-line text-gray-600 dark:text-gray-400 text-xl font-bold"></i>
               <span className="text-gray-700 dark:text-gray-300 font-semibold">
-                🌟 {t("tagline")}
+                {t("tagline")}
               </span>
             </div>
           </div>
