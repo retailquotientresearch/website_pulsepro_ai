@@ -19,7 +19,7 @@ export default function ThemeToggle() {
         size="icon"
         className="border border-border hover:bg-gray-100 dark:hover:bg-gray-700"
       >
-        <div className="w-4 h-4 bg-gray-300 dark:bg-gray-600 rounded animate-pulse"></div>
+        <i className="ri-contrast-line text-lg text-gray-400 animate-pulse"></i>
       </Button>
     );
   }
@@ -44,9 +44,9 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       {isDark ? (
-        <i className="ri-sun-line text-lg"></i>
+        <i className="ri-sun-fill text-lg text-yellow-400 font-bold"></i>
       ) : (
-        <i className="ri-moon-line text-lg"></i>
+        <i className="ri-moon-fill text-lg text-blue-800 font-bold"></i>
       )}
     </Button>
   );
