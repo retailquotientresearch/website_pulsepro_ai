@@ -13,54 +13,60 @@ export default function SeamlessConnections() {
     {
       name: 'Slack',
       icon: 'ri-slack-line',
-      color: 'bg-gradient-to-br from-gray-400 to-gray-600',
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
     },
     {
       name: 'Microsoft Teams',
       icon: 'ri-microsoft-line',
-      color: 'bg-gradient-to-br from-gray-500 to-gray-700',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
     },
     {
       name: 'Google Workspace',
       icon: 'ri-google-line',
-      color: 'bg-gradient-to-br from-gray-600 to-gray-800',
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
     },
     {
       name: 'Zapier',
       icon: 'ri-flashlight-line',
-      color: 'bg-gradient-to-br from-gray-500 to-gray-700',
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
     },
     {
       name: 'Salesforce',
       icon: 'ri-cloud-line',
-      color: 'bg-gradient-to-br from-gray-500 to-gray-800',
+      color: 'bg-gradient-to-br from-orange-600 to-red-700',
     },
     {
       name: 'QuickBooks',
       icon: 'ri-calculator-line',
-      color: 'bg-gradient-to-br from-gray-600 to-gray-900',
+      color: 'bg-gradient-to-br from-red-500 to-orange-700',
     }
   ]
 
   return (
-    <Section className="bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-950 dark:via-gray-900 dark:to-black" padding="xl">
-      <Container>
+    <Section className="bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-950 dark:via-gray-900 dark:to-black relative overflow-hidden" padding="xl">
+      {/* Background decorative elements using orange gradient theme */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-yellow-400/25 to-orange-400/20 dark:from-yellow-400/15 dark:to-orange-400/12 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-yellow-300/20 to-orange-500/25 dark:from-yellow-400/12 dark:to-orange-400/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-500/30 dark:bg-amber-400/20 rounded-full blur-2xl"></div>
+      </div>
+      <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}
           <div className="inline-block mb-4">
-            <div className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-400 dark:from-gray-700 dark:via-gray-600 dark:to-gray-500 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
-              <span className="text-gray-700 dark:text-gray-300 font-semibold">
-                <i className="ri-plug-line text-gray-600 dark:text-gray-400 text-xl font-bold mr-2"></i>
+            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
+              <span className="text-orange-600 dark:text-yellow-300 font-semibold">
+                <i className="ri-plug-line text-orange-600 dark:text-yellow-400 text-xl font-bold mr-2"></i>
                 Seamless Connections
               </span>
             </div>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            {t('title')}
+            We <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-extrabold drop-shadow-sm">Play Well</span> With Others
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('subtitle')}
+            Seamlessly connect with your existing <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-bold drop-shadow-sm">tools and workflow</span>
           </p>
         </div>
         

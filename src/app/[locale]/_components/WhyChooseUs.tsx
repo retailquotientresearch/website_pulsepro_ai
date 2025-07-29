@@ -11,52 +11,59 @@ export default function WhyChooseUs() {
   const differentiators = [
     {
       icon: 'ri-flashlight-line',
-      color: 'bg-gradient-to-br from-gray-500 to-gray-700'
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500'
     },
     {
       icon: 'ri-checkbox-circle-line',
-      color: 'bg-gradient-to-br from-gray-600 to-gray-800'
+      color: 'bg-gradient-to-br from-orange-500 to-red-600'
     },
     {
       icon: 'ri-brain-line',
-      color: 'bg-gradient-to-br from-gray-700 to-black'
+      color: 'bg-gradient-to-br from-amber-500 to-orange-600'
     },
     {
       icon: 'ri-refresh-line',
-      color: 'bg-gradient-to-br from-gray-600 to-gray-900'
+      color: 'bg-gradient-to-br from-yellow-500 to-orange-600'
     },
     {
       icon: 'ri-shield-check-line',
-      color: 'bg-gradient-to-br from-gray-800 to-black'
+      color: 'bg-gradient-to-br from-orange-600 to-red-700'
     },
     {
       icon: 'ri-rocket-line',
-      color: 'bg-gradient-to-br from-gray-500 to-gray-800'
+      color: 'bg-gradient-to-br from-red-500 to-orange-700'
     }
   ]
 
   return (
     <Section 
-      className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-black text-black dark:text-white"
+      className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-black text-black dark:text-white relative overflow-hidden"
       padding="xl"
     >
-      <Container>
+      {/* Background decorative elements using orange gradient theme */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-yellow-400/35 to-orange-400/30 dark:from-yellow-400/20 dark:to-orange-400/18 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-yellow-300/30 to-orange-500/35 dark:from-yellow-400/18 dark:to-orange-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-500/50 dark:bg-amber-400/30 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-yellow-400/45 to-orange-400/35 dark:from-yellow-500/25 dark:to-orange-400/20 rounded-full blur-2xl"></div>
+      </div>
+      <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}
           <div className="inline-block mb-4">
-            <div className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-400 dark:from-gray-600 dark:via-gray-500 dark:to-gray-400 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm">
-              <span className="text-gray-700 dark:text-gray-300 font-semibold">
-                <i className="ri-star-line text-gray-600 dark:text-gray-400 text-xl font-bold mr-2"></i>
+            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
+              <span className="text-orange-600 dark:text-yellow-300 font-semibold">
+                <i className="ri-star-line text-orange-600 dark:text-yellow-400 text-xl font-bold mr-2"></i>
                 {t('tagline')}
               </span>
             </div>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            {t('title')}
+            What Makes PulsePro <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-extrabold drop-shadow-sm">Different</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('subtitle')}
+            Here's what sets us <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-bold drop-shadow-sm">apart</span> from other inspection platforms
           </p>
         </div>
         
