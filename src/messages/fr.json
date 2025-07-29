@@ -181,6 +181,7 @@
     "button": "Commencer l'essai gratuit"
   },
   "seamlessConnections": {
+    "tagline": "Connexions Fluides",
     "title": "Nous jouons bien avec les autres",
     "subtitle": "Connectez-vous parfaitement avec vos outils et workflow existants",
     "items": [
@@ -193,6 +194,7 @@
     ]
   },
   "stepByStepProcess": {
+    "tagline": "Étape par Étape",
     "title": "De la liste de contrôle au changement",
     "subtitle": "Notre processus rationalisé vous donne des résultats rapides",
     "steps": [

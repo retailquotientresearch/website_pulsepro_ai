@@ -57,7 +57,7 @@ export default function SeamlessConnections() {
             <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
               <span className="text-orange-600 dark:text-yellow-300 font-semibold">
                 <i className="ri-plug-line text-orange-600 dark:text-yellow-400 text-xl font-bold mr-2"></i>
-                Seamless Connections
+                {t('tagline')}
               </span>
             </div>
           </div>

@@ -181,6 +181,7 @@
     "button": "Start Free Trial"
   },
   "seamlessConnections": {
+    "tagline": "Seamless Connections",
     "title": "We Play Well With Others",
     "subtitle": "Seamlessly connect with your existing tools and workflow",
     "items": [
@@ -193,6 +194,7 @@
     ]
   },
   "stepByStepProcess": {
+    "tagline": "Step by Step",
     "title": "From Checklist to Change",
     "subtitle": "Our streamlined process gets you results fast",
     "steps": [
