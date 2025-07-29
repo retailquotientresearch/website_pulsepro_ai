@@ -151,11 +151,11 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons following black/white theme */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <div className="p-1 bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 rounded-full">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+            <div className="p-1 bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 rounded-full hover:scale-[1.02] transition-all duration-200">
               <Button
                 size="lg"
-                className="flex items-center gap-3 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-full"
+                className="flex items-center gap-3 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-full hover:scale-[1.0]"
               >
                 <i className="ri-play-fill text-2xl bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent"></i>
                 {t("cta")}
@@ -164,7 +164,7 @@ export default function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="flex items-center gap-3 bg-white dark:bg-slate-900/90 border-2 border-gray-600 dark:border-white text-gray-700 hover:text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 dark:hover:text-gray-200 hover:border-gray-800 dark:hover:border-gray-300 transition-all duration-200 hover:scale-[1.02]"
+              className="flex items-center gap-3 bg-white dark:bg-slate-900/90 border-2 border-gray-600 dark:border-white text-gray-700 hover:text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 dark:hover:text-gray-200 hover:border-gray-800 dark:hover:border-gray-300 transition-all hover:scale-[1.05] duration-200"
             >
               <i className="ri-phone-fill text-xl"></i>
               {t("secondaryCta")}
