@@ -43,13 +43,7 @@ export default function SeamlessConnections() {
   ]
 
   return (
-    <Section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black relative overflow-hidden" padding="xl">
-      {/* Background decorative elements using gradient theme */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-300/25 to-gray-500/20 dark:from-gray-700/15 dark:to-gray-900/12 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-200/20 to-gray-400/25 dark:from-gray-800/12 dark:to-gray-600/15 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-400/30 dark:bg-gray-700/20 rounded-full blur-2xl"></div>
-      </div>
+    <Section className="bg-gradient-to-l from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden" padding="xl">
       <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}

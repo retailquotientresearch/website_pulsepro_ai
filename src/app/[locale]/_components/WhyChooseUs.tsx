@@ -37,16 +37,9 @@ export default function WhyChooseUs() {
 
   return (
     <Section 
-      className="bg-gradient-to-bl from-gray-100 via-white to-gray-50 dark:from-black dark:via-gray-900 dark:to-gray-950 text-black dark:text-white relative overflow-hidden"
+      className="bg-gradient-to-tr from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 text-black dark:text-white relative overflow-hidden"
       padding="xl"
     >
-      {/* Background decorative elements using gradient theme */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-400/35 to-gray-600/30 dark:from-gray-600/20 dark:to-gray-800/18 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-300/30 to-gray-500/35 dark:from-gray-700/18 dark:to-gray-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-500/50 dark:bg-gray-700/30 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-gray-400/45 to-gray-600/35 dark:from-gray-600/25 dark:to-gray-800/20 rounded-full blur-2xl"></div>
-      </div>
       <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}

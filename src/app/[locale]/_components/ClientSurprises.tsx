@@ -49,13 +49,6 @@ export default function ClientSurprises() {
 
   return (
     <Section className="bg-gradient-to-bl from-gray-100 via-white to-gray-50 dark:from-black dark:via-gray-900 dark:to-gray-950 relative overflow-hidden">
-      {/* Background decorative elements using gradient theme */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-300/40 to-gray-500/35 dark:from-gray-700/25 dark:to-gray-900/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-200/35 to-gray-400/40 dark:from-gray-800/20 dark:to-gray-600/25 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-400/50 dark:bg-gray-700/30 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-gray-300/45 to-gray-500/40 dark:from-gray-600/25 dark:to-gray-800/20 rounded-full blur-2xl"></div>
-      </div>
 
       <Container className="relative z-10">
         <div className="text-center mb-16">

@@ -30,13 +30,7 @@ export default function CommonWorries() {
   ];
 
   return (
-    <Section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-black dark:via-gray-950 dark:to-gray-900 relative overflow-hidden">
-      {/* Background decorative elements using gradient theme */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-300/30 to-gray-500/25 dark:from-gray-700/20 dark:to-gray-900/15 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-200/25 to-gray-400/30 dark:from-gray-800/15 dark:to-gray-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-400/40 dark:bg-gray-700/25 rounded-full blur-2xl"></div>
-      </div>
+    <Section className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       <Container className="relative z-10">
         <div className="text-center mb-16">
           <div className="mb-8 flex items-center justify-center">
