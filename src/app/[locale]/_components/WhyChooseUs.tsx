@@ -11,49 +11,49 @@ export default function WhyChooseUs() {
   const differentiators = [
     {
       icon: 'ri-flashlight-line',
-      color: 'bg-gradient-to-br from-yellow-400 to-orange-500'
+      color: 'bg-gradient-to-br from-gray-400 to-gray-700'
     },
     {
       icon: 'ri-checkbox-circle-line',
-      color: 'bg-gradient-to-br from-orange-500 to-red-600'
+      color: 'bg-gradient-to-br from-gray-500 to-gray-800'
     },
     {
       icon: 'ri-brain-line',
-      color: 'bg-gradient-to-br from-amber-500 to-orange-600'
+      color: 'bg-gradient-to-br from-slate-500 to-gray-700'
     },
     {
       icon: 'ri-refresh-line',
-      color: 'bg-gradient-to-br from-yellow-500 to-orange-600'
+      color: 'bg-gradient-to-br from-gray-600 to-gray-900'
     },
     {
       icon: 'ri-shield-check-line',
-      color: 'bg-gradient-to-br from-orange-600 to-red-700'
+      color: 'bg-gradient-to-br from-gray-700 to-black'
     },
     {
       icon: 'ri-rocket-line',
-      color: 'bg-gradient-to-br from-red-500 to-orange-700'
+      color: 'bg-gradient-to-br from-gray-600 to-gray-800'
     }
   ]
 
   return (
     <Section 
-      className="bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-black text-black dark:text-white relative overflow-hidden"
+      className="bg-gradient-to-bl from-gray-100 via-white to-gray-50 dark:from-black dark:via-gray-900 dark:to-gray-950 text-black dark:text-white relative overflow-hidden"
       padding="xl"
     >
-      {/* Background decorative elements using orange gradient theme */}
+      {/* Background decorative elements using gradient theme */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-yellow-400/35 to-orange-400/30 dark:from-yellow-400/20 dark:to-orange-400/18 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-yellow-300/30 to-orange-500/35 dark:from-yellow-400/18 dark:to-orange-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-500/50 dark:bg-amber-400/30 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-yellow-400/45 to-orange-400/35 dark:from-yellow-500/25 dark:to-orange-400/20 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-400/35 to-gray-600/30 dark:from-gray-600/20 dark:to-gray-800/18 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-300/30 to-gray-500/35 dark:from-gray-700/18 dark:to-gray-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-500/50 dark:bg-gray-700/30 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-gray-400/45 to-gray-600/35 dark:from-gray-600/25 dark:to-gray-800/20 rounded-full blur-2xl"></div>
       </div>
       <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}
-          <div className="inline-block mb-4">
-            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-orange-600 dark:text-yellow-300 font-semibold">
-                <i className="ri-star-line text-orange-600 dark:text-yellow-400 text-xl font-bold mr-2"></i>
+          <div className="mb-8 flex items-center justify-center">
+            <div className="bg-white/80 dark:bg-gray-800 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+              <i className="ri-star-line text-gray-600 dark:text-gray-400 text-xl font-bold"></i>
+              <span className="text-gray-600 dark:text-gray-300 font-medium text-lg">
                 {t('tagline')}
               </span>
             </div>
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
             What Makes PulsePro <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-extrabold drop-shadow-sm">Different</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Here&apos;s what sets us <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-bold drop-shadow-sm">apart</span> from other inspection platforms
+            Here&apos;s what sets us <span className="font-bold">apart</span> from other inspection platforms
           </p>
         </div>
         

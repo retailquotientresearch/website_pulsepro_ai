@@ -30,30 +30,30 @@ export default function CommonWorries() {
   ];
 
   return (
-    <Section className="py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-black dark:via-gray-950 dark:to-gray-900 relative overflow-hidden">
-      {/* Background decorative elements using orange gradient theme */}
+    <Section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-black dark:via-gray-950 dark:to-gray-900 relative overflow-hidden">
+      {/* Background decorative elements using gradient theme */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-yellow-400/30 to-orange-400/25 dark:from-yellow-400/20 dark:to-orange-400/15 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-yellow-300/25 to-orange-500/30 dark:from-yellow-400/15 dark:to-orange-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-500/40 dark:bg-amber-400/25 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-300/30 to-gray-500/25 dark:from-gray-700/20 dark:to-gray-900/15 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-200/25 to-gray-400/30 dark:from-gray-800/15 dark:to-gray-600/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-400/40 dark:bg-gray-700/25 rounded-full blur-2xl"></div>
       </div>
       <Container className="relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-orange-600 dark:text-yellow-300 font-semibold">
-                <i className="ri-question-line text-orange-600 dark:text-yellow-400 text-xl font-bold mr-2"></i>
+          <div className="mb-8 flex items-center justify-center">
+            <div className="bg-white/80 dark:bg-gray-800 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+              <i className="ri-question-line text-gray-600 dark:text-gray-400 text-xl font-bold"></i>
+              <span className="text-gray-600 dark:text-gray-300 font-medium text-lg">
                 {t("tagline")}
               </span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {t("title.part1")} <br />
             <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-extrabold drop-shadow-sm">
               {t("title.part2")}
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {t("subtitle")}
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function CommonWorries() {
               className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center ${worry.gradient} rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-gray-600 shadow-sm`}
             >
               <div className="flex flex-col md:flex-row md:items-center text-center md:text-left space-y-3 md:space-y-0">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-800 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
                   <i className="ri-question-line text-white text-xl"></i>
                 </div>
                 <div className="md:ml-4">
@@ -77,8 +77,8 @@ export default function CommonWorries() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row md:items-center text-center md:text-left space-y-3 md:space-y-0">
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 dark:from-yellow-300 dark:to-orange-400 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
-                  <i className="ri-check-line text-white dark:text-gray-800 text-xl"></i>
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-600 dark:from-gray-600 dark:to-gray-800 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto md:mx-0">
+                  <i className="ri-check-line text-white text-xl"></i>
                 </div>
                 <div className="md:ml-4">
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">

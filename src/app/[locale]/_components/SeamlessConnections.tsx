@@ -13,50 +13,50 @@ export default function SeamlessConnections() {
     {
       name: 'Slack',
       icon: 'ri-slack-line',
-      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+      color: 'bg-gradient-to-br from-gray-400 to-gray-700',
     },
     {
       name: 'Microsoft Teams',
       icon: 'ri-microsoft-line',
-      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      color: 'bg-gradient-to-br from-gray-500 to-gray-800',
     },
     {
       name: 'Google Workspace',
       icon: 'ri-google-line',
-      color: 'bg-gradient-to-br from-amber-500 to-orange-600',
+      color: 'bg-gradient-to-br from-gray-600 to-gray-900',
     },
     {
       name: 'Zapier',
       icon: 'ri-flashlight-line',
-      color: 'bg-gradient-to-br from-yellow-500 to-orange-600',
+      color: 'bg-gradient-to-br from-slate-500 to-gray-700',
     },
     {
       name: 'Salesforce',
       icon: 'ri-cloud-line',
-      color: 'bg-gradient-to-br from-orange-600 to-red-700',
+      color: 'bg-gradient-to-br from-gray-700 to-black',
     },
     {
       name: 'QuickBooks',
       icon: 'ri-calculator-line',
-      color: 'bg-gradient-to-br from-red-500 to-orange-700',
+      color: 'bg-gradient-to-br from-gray-600 to-gray-800',
     }
   ]
 
   return (
-    <Section className="bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-950 dark:via-gray-900 dark:to-black relative overflow-hidden" padding="xl">
-      {/* Background decorative elements using orange gradient theme */}
+    <Section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black relative overflow-hidden" padding="xl">
+      {/* Background decorative elements using gradient theme */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-yellow-400/25 to-orange-400/20 dark:from-yellow-400/15 dark:to-orange-400/12 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-yellow-300/20 to-orange-500/25 dark:from-yellow-400/12 dark:to-orange-400/15 rounded-full blur-3xl"></div>
-        <div className="absolute top-20 left-20 w-32 h-32 bg-amber-500/30 dark:bg-amber-400/20 rounded-full blur-2xl"></div>
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-gray-300/25 to-gray-500/20 dark:from-gray-700/15 dark:to-gray-900/12 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-40 w-64 h-64 bg-gradient-to-tr from-gray-200/20 to-gray-400/25 dark:from-gray-800/12 dark:to-gray-600/15 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gray-400/30 dark:bg-gray-700/20 rounded-full blur-2xl"></div>
       </div>
       <Container className="relative z-10">
         <div className="text-center mb-16">
           {/* Tagline */}
-          <div className="inline-block mb-4">
-            <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-orange-600 dark:text-yellow-300 font-semibold">
-                <i className="ri-plug-line text-orange-600 dark:text-yellow-400 text-xl font-bold mr-2"></i>
+          <div className="mb-8 flex items-center justify-center">
+            <div className="bg-white/80 dark:bg-gray-800 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+              <i className="ri-plug-line text-gray-600 dark:text-gray-400 text-xl font-bold"></i>
+              <span className="text-gray-600 dark:text-gray-300 font-medium text-lg">
                 {t('tagline')}
               </span>
             </div>
@@ -66,7 +66,7 @@ export default function SeamlessConnections() {
             We <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-extrabold drop-shadow-sm">Play Well</span> With Others
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Seamlessly connect with your existing <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 dark:from-yellow-400 dark:via-orange-300 dark:to-red-400 bg-clip-text text-transparent font-bold drop-shadow-sm">tools and workflow</span>
+            Seamlessly connect with your existing <span className="font-bold">tools and workflow</span>
           </p>
         </div>
         
