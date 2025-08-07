@@ -8,10 +8,10 @@ import { useState } from "react";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const [expandedSection, setExpandedSection] = useState<'features' | 'support' | null>(null);
+  const [expandedSection, setExpandedSection] = useState<'features' | 'resources' | 'support' | null>(null);
   const t = useTranslations("navigation");
 
-  const toggleSection = (section: 'features' | 'support') => {
+  const toggleSection = (section: 'features' | 'resources' | 'support') => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
@@ -96,6 +96,53 @@ export default function MobileMenu() {
           >
             {t("integrations")}
           </Link>
+
+          {/* Resources Section */}
+          <div className="space-y-0">
+            <button
+              onClick={() => toggleSection('resources')}
+              className="w-full flex items-center justify-between py-3 px-4 text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200"
+            >
+              {t("resources")}
+              <i className={`ri-arrow-down-s-line text-lg transition-transform duration-200 ${
+                expandedSection === 'resources' ? 'rotate-180' : ''
+              }`}></i>
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              expandedSection === 'resources' ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+            }`}>
+              <div className="space-y-1 pb-2">
+                <Link
+                  href="/api-documents"
+                  className="block py-2 px-6 text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200 text-sm"
+                  onClick={handleMenuClose}
+                >
+                  {t("apiDocuments")}
+                </Link>
+                <Link
+                  href="/checklist-library"
+                  className="block py-2 px-6 text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200 text-sm"
+                  onClick={handleMenuClose}
+                >
+                  {t("checklistLibrary")}
+                </Link>
+                <Link
+                  href="/security"
+                  className="block py-2 px-6 text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200 text-sm"
+                  onClick={handleMenuClose}
+                >
+                  {t("security")}
+                </Link>
+                <Link
+                  href="/blog"
+                  className="block py-2 px-6 text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200 text-sm"
+                  onClick={handleMenuClose}
+                >
+                  {t("pulseBlog")}
+                </Link>
+              </div>
+            </div>
+          </div>
 
           {/* Support Section */}
           <div className="space-y-0">

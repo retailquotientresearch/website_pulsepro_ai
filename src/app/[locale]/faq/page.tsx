@@ -118,14 +118,17 @@ export default function FAQPage() {
       />
 
       {/* FAQ Content */}
-      <Section className="py-12 sm:py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600">
+      <Section className="py-12 sm:py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black">
         <Container>
           <div className="max-w-4xl mx-auto">
             {faqSections.map((section, sectionIndex) => (
               <AnimatedCard key={section.id} delay={sectionIndex * 50 + 100} direction="up">
                 <div className="mb-8 sm:mb-12">
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-gray-200 dark:border-gray-700">
-                    {section.title}
+                    <span className="text-gray-900 dark:text-white font-extrabold">
+                      {section.title.split(' - ')[0]}
+                    </span>
+                    {section.title.includes(' - ') && ` - ${section.title.split(' - ')[1]}`}
                   </h2>
 
                   <div className="space-y-3 sm:space-y-4">
@@ -142,13 +145,13 @@ export default function FAQPage() {
                               onClick={() => toggleFAQ(faq.id)}
                               className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                             >
-                              <div className="flex items-start justify-between gap-3">
+                              <div className="flex items-center justify-between gap-3">
                                 <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base md:text-lg leading-tight">
                                   {faq.question}
                                 </h3>
                                 <div className="flex-shrink-0 mt-1">
-                                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-full flex items-center justify-center">
-                                    <span className="text-gray-600 dark:text-gray-400 text-lg sm:text-xl font-bold transition-transform duration-300">
+                                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-900 dark:bg-gray-100 rounded-full flex items-center justify-center">
+                                    <span className="text-white dark:text-gray-900 text-lg sm:text-xl font-bold transition-transform duration-300">
                                       {isExpanded ? "−" : "+"}
                                     </span>
                                   </div>

@@ -22,7 +22,7 @@ export default function APIIntegrationPage() {
       />
 
       {/* Data Analytics Section */}
-      <Section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+      <Section className="py-16 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-black">
         <Container>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left side - Illustration */}
@@ -62,7 +62,7 @@ export default function APIIntegrationPage() {
       </Section>
 
       {/* Automation Section */}
-      <Section className="py-16 bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-gray-900">
+      <Section className="py-16 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-950 dark:via-gray-900 dark:to-black">
         <Container>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left side - Content */}
@@ -102,7 +102,7 @@ export default function APIIntegrationPage() {
       </Section>
 
       {/* Team Extension Section */}
-      <Section className="py-16 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600">
+      <Section className="py-16 bg-gradient-to-br from-gray-200 via-gray-100 to-white dark:from-gray-800 dark:via-gray-900 dark:to-black">
         <Container>
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left side - Illustration */}

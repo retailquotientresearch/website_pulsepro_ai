@@ -5,6 +5,11 @@
     "pricing": "Tarifs",
     "integrations": "Intégrations",
     "apiIntegration": "Intégration API",
+    "resources": "Ressources",
+    "apiDocuments": "Documents API",
+    "checklistLibrary": "Bibliothèque de Listes",
+    "security": "Sécurité",
+    "pulseBlog": "Le Blog Pulse",
     "support": "Support",
     "bookDemo": "Réserver une Démo",
     "contactUs": "Nous Contacter",
@@ -419,5 +424,131 @@
         "description": "Grandit avec votre entreprise d'un seul inspecteur à des équipes d'inspection de niveau entreprise."
       }
     ]
+  },
+  "security": {
+    "hero": {
+      "title": "Sécurité chez Pulse",
+      "subtitle": "La sécurité de vos données est notre priorité absolue. Découvrez les mesures que nous prenons pour protéger vos informations."
+    },
+    "intro": {
+      "paragraph1": "PulsePro est fier de donner la priorité à la sécurité afin que nous puissions livrer en toute sécurité des résultats agréables à nos clients. Nous avons mis en place plusieurs types de procédures de sécurité autour de notre produit, de sa fabrication et de la façon dont nous traitons les données produites. Nous comprenons qu'une inspection contient des informations sensibles de l'entreprise, et nous prenons la sécurité des données très au sérieux.",
+      "paragraph2": "Le logiciel de PulsePro est approuvé par un grand nombre d'entreprises dans le monde, y compris certaines du Fortune 500. Notre application est conçue pour soutenir de grandes organisations d'entreprise sensibles à la sécurité. L'équipe expérimentée de PulsePro a construit des produits de classe mondiale, axés sur la sécurité dans d'anciennes entreprises.",
+      "paragraph3": "Voici un résumé des mesures de sécurité chez PulsePro. Si vous avez des questions supplémentaires, veuillez contacter notre équipe à"
+    },
+    "infrastructure": {
+      "title": "Infrastructure",
+      "paragraph1": "Tous les systèmes Pulse sont construits avec une approche défense d'abord, en supposant qu'une attaque peut arriver à tout moment. Bien que notre processus empêche idéalement les attaques, nous travaillons également à atténuer les dommages d'une attaque en séparant les systèmes les uns des autres. Les systèmes ne contiennent que le logiciel pour une seule application (appelés « systèmes à usage unique ») et ne partagent jamais le même système pour différents types de logiciels.",
+      "paragraph2": "L'infrastructure physique de Pulse est hébergée et gérée dans les centres de données sécurisés Amazon et utilise la technologie Amazon Web Services (AWS). Amazon gère continuellement les risques et subit des évaluations récurrentes pour assurer la conformité avec les normes de l'industrie.",
+      "accreditedUnder": "Les opérations du centre de données Amazon ont été accréditées sous :",
+      "awsCertifications": "Voir la liste complète des certifications Amazon Web Services",
+      "here": "ici"
+    },
+    "application": {
+      "title": "Application",
+      "description": "L'application Pulse vise à utiliser des protocoles d'environnement et de messagerie mis à jour dans notre environnement AWS qui résultent en une efficacité opérationnelle, sécurité et performance cohérentes. Les pratiques AWS sont mises en œuvre pour maintenir la protection de l'application et de ses données grâce à un accès restreint aux couches de données, et des entrepôts de données centralisés, ainsi que des applications commerciales axées sur la sécurité à partir de la compréhension des architectures réseau de base."
+    },
+    "database": {
+      "title": "Base de données",
+      "description": "Pulse implémente des données dans sa base de données AWS RDS Enterprise à accès contrôlé en dehors de son application. Les données client sont stockées de manière hautement disponible côté serveur en utilisant l'architecture AWS Prisma, la sécurité et l'intégrité du stockage. Les sauvegardes de données continues sont prises toutes les 24 heures en utilisant approprié. Les contrôles assurent que les sauvegardes sont régulièrement testées et toute l'application a."
+    },
+    "networkProtection": {
+      "textOne": "Tous les serveurs Pulse sont hébergés à l'intérieur d'un réseau virtuel privé au sein d'AWS, ce qui garantit que la communication entre les serveurs Pulse reste cryptée et séparée du trafic Internet public. La communication entre serveurs sur des réseaux externes (ou publics) est toujours cryptée avec SSL standard de l'industrie.",
+      "textTwo": "Les serveurs ne sont autorisés à accepter les communications réseau que sur les ports approuvés. Tous les serveurs utilisent un pare-feu pour limiter les connexions entrantes et sortantes qu'ils acceptent. Nos serveurs ont une politique de \\\"refus par défaut\\\" en place pour toute communication réseau.",
+      "textThree": "Dans la mesure du possible, l'authentification à deux facteurs et des mots de passe forts sont appliqués lorsque l'accès au système ou à la console est requis. Cette politique garantit que l'accès à de tels systèmes est de plus en plus difficile à attaquer.",
+      "loggingMonitoring": {
+        "title": "Journalisation et Surveillance",
+        "description": "Tous les systèmes écrivent les données de journal dans un système de stockage de journalisation centralisé qui utilise une politique d'écriture seule. Les données de journal ne peuvent pas être modifiées ou supprimées dans le système de journal. Ces données de journal sont disponibles pendant 1 an selon les politiques de conformité PCI. Tous les systèmes génèrent des événements vers un service tiers dans un flux d'événements en écriture seule. Cela garantit que nos applications et serveurs peuvent être surveillés sans accéder aux systèmes, et garantit que nos données d'événements ne peuvent pas être altérées."
+      },
+      "dataResourceIsolation": {
+        "title": "Isolation des Ressources de Données",
+        "description": "Pulse est une plateforme multi-locataire, où les données client sont logiquement séparées par un identifiant unique et le contrôle d'accès est fortement appliqué au niveau de l'application. Les permissions suivent un processus de moindre privilège où l'accès explicite aux ressources doit être accordé. Puisque Pulse utilise AWS pour son infrastructure, chaque serveur se voit par défaut refuser l'accès à toutes les autres ressources AWS sauf approbation explicite. Un environnement ne peut pas lire d'un autre environnement. Cela est rendu possible grâce à une utilisation extensive des politiques IAM avec des permissions sur liste blanche."
+      },
+      "dataAccess": {
+        "title": "Accès aux Données",
+        "description": "Des politiques et procédures sont appliquées pour que seuls les employés autorisés soient autorisés à accéder aux données client et autres données non publiques maintenues chez Pulse. L'autorisation est accordée au cas par cas selon les besoins commerciaux. L'accès est révoqué immédiatement dans le cas où un employé n'a plus de besoin commercial d'accéder aux données ou en cas de licenciement."
+      },
+      "dataSecurityAtRest": {
+        "title": "Sécurité des Données au Repos",
+        "description": "Conformément à notre politique de sécurité de l'information, toutes les données sont classifiées en niveaux qui dictent leurs exigences de chiffrement. Les données les plus sensibles sont toujours chiffrées au repos et l'accès est limité aux utilisateurs autorisés ayant un besoin commercial."
+      },
+      "dataSecurityInTransit": {
+        "title": "Sécurité des Données en Transit",
+        "description": "L'accès à l'application Pulse utilise toujours SSL standard de l'industrie pour sécuriser la connexion entre votre navigateur et nos services. À aucun moment les données de carte de paiement ne sont soumises par des méthodes de communication non sécurisées. La communication inter-systèmes est toujours chiffrée. Cela s'applique à la communication entre systèmes internes (gérés par Pulse) ou systèmes externes (communiquant avec d'autres entreprises)."
+      }
+    },
+    "penetrationTesting": {
+      "description": "Les processus Pulse sont conçus pour corriger de manière proactive les risques de sécurité. Pulse est notifié des vulnérabilités par le biais d'évaluations internes et externes, de surveillance des correctifs système, et de listes de diffusion et services tiers. Chaque vulnérabilité est examinée pour déterminer si elle s'applique à l'environnement de Pulse, classée selon le risque, et assignée à l'équipe appropriée pour résolution. Les nouveaux systèmes sont déployés avec les dernières mises à jour, correctifs de sécurité et configurations, et les systèmes existants sont décommissionnés après migration de l'application vers les nouvelles instances. Ce processus nous permet de maintenir l'environnement à jour. Puisque l'application de Pulse fonctionne dans des environnements isolés, elle n'est pas affectée par ces mises à jour du système central."
+    },
+    "privacy": {
+      "description": "Chez Pulse, nous prenons votre vie privée au sérieux. Nous nous engageons à protéger la confidentialité des informations personnelles que vous nous fournissez. Pour en savoir plus, lisez notre",
+      "privacyPolicyLink": "Politique de Confidentialité"
+    },
+    "bestInClass": {
+      "description": "Chez tout le monde, c'est Pulse, à partir de ce certificat, s'attendent à cette fonctionnalité et s'assurent que l'impact du risque disponible et du service résilient. Nos risques commerciaux les plus élevés notre capacité de réponse aux incidents sur notre capacité à notre sécurité et avoir la pleine responsabilité.",
+      "features": [
+        "Notre application a 99,99% de temps de disponibilité, le statut actuel de nos applications et tout incident passé peut être vu sur notre page de statut.",
+        "Nos employés suivent attentivement les procédures de réponse aux incidents et fournissent des sessions de rétroaction en temps opportun (et des tests respectifs), pour enseigner pourquoi les gens et ce qui se passe à l'avenir.",
+        "Pour signaler des problèmes de sécurité ou de confidentialité qui affectent Pulse ou nos services Web, veuillez contacter security@pulsepro.ai."
+      ]
+    },
+    "vulnerabilities": {
+      "sections": [
+        {
+          "title": "Techniques d'injection SQL et autres",
+          "description": "Toute communication à nos bases de données backend est effectuée via des entrées nettoyées qui ne sont pas utilisées pour toute chaîne de requête sélectionnée dans une entreprise ou une nouvelle menace. Notre application utilise une sortie nettoyée de la base de données pour empêcher l'injection accidentelle ou XSS affichée par la suite."
+        },
+        {
+          "title": "Cross Site Scripting",
+          "description": "Nos mécanismes de sécurité sont conçus pour prévenir les attaques XSS. Nous exécutons continuellement un balayage de sécurité automatisé ciblant nous sécurisons les mécanismes de prévention ciblant nos applications."
+        },
+        {
+          "title": "Authentification / Gestion de session",
+          "description": "Toutes les informations d'authentification doivent être stockées de manière cryptée sur SQL, et les cookies ne sont accessibles que via HTTPS pour s'assurer que les informations d'identification ne sont pas compromises ou partagées."
+        },
+        {
+          "title": "Cross-Site Request Forgery",
+          "description": "Les attaques CSRF sont prêtes à l'emploi pour Pulse App. Cette procédure est vérifiée par un scanner automatisé qui cible les points de terminaison dans ou test automatique qui garantit les demandes originales."
+        },
+        {
+          "title": "Gestion de la configuration de sécurité",
+          "description": "Pulse utilise la configuration d'outillage automatisé tous les serveurs et bases de données utilisés en production, tous les changements de configuration comme guidés par la politique par processus d'affaires contrôlé. Toute la configuration du système est guidée par des tests de modèles pour s'assurer que les processus de sécurité peuvent être vérifiés."
+        },
+        {
+          "title": "Gestion des clés cryptographiques",
+          "description": "Tous les mots de passe fournis par les utilisateurs sont stockés comme un facteur de travail plus élevé que la moyenne que la technologie de mot de passe à être difficile à faire-force de n'importe qui. À l'heure de fin un système de récupération de clé sont susceptibles de faire l'avenir où."
+        }
+      ]
+    },
+    "serviceProviders": {
+      "title": "Fournisseurs de Services",
+      "paragraph1": "Pulse héberge tous les services d'application sur Amazon Web Services (AWS). En outre, un processeur de paiement conforme PCI-DSS Niveau 1 est utilisé pour traiter les paiements par carte de crédit. Les données complètes de carte de crédit passent entre le navigateur du client et le processeur de paiement, et ne sont jamais envoyées ou accessibles par Pulse.",
+      "paragraph2": "Les données de journal, qui peuvent contenir des informations sensibles mais pas d'informations de paiement, sont stockées avec une société tierce de stockage de journaux centralisé en ajout uniquement. Seuls les employés approuvés ont accès aux données de journalisation, à des fins de dépannage ou d'audit.",
+      "paragraph3": "Tous les fournisseurs de services sont censés être conformes PCI avant que leurs services soient mis en service."
+    },
+    "complianceConcerns": {
+      "title": "Préoccupations de Conformité",
+      "subtitle": "Pulse maintient la conformité suivante pour son service:",
+      "pciCompliance": {
+        "title": "PCI: Pulse est un Marchand PCI Niveau 4 et a terminé avec succès toutes les exigences SAQ A-EP. Nous traitons votre carte de crédit avec un processeur de paiement tiers, et ne stockons ni n'accédons à vos détails complets de carte de crédit. La conformité PCI aide les clients à comprendre qu'il existe des politiques et procédures en place pour traiter en toute sécurité les données de carte de crédit dans nos systèmes. Cela inclut plus de 100 contrôles pour sécuriser, surveiller et auditer nos systèmes pour prévenir l'accès non autorisé et la falsification."
+      },
+      "disclaimer": "Toute certification de conformité non listée ici est supposée ne pas être présente ou en cours d'utilisation chez Pulse.",
+      "euCompliance": "La confidentialité des données de l'UE et les contrôles de conformité qui l'entourent sont encore une situation dynamique. Pulse surveille activement les efforts législatifs et réglementaires entourant la confidentialité des données de l'UE qui sont en cours de ratification, et se conformera à ces contrôles comme requis par la loi."
+    },
+    "bestInClass": {
+      "description": "Tous les systèmes échouent. Chez Pulse, nous sommes fiers de prévoir cette éventualité et de nous assurer que l'impact de l'échec soit minimisé. Nous valorisons nos compétences de réponse aux incidents sur la capacité d'agir rapidement pour récupérer de l'échec.",
+      "features": [
+        "Notre application a 99,99% de disponibilité ; le statut actuel de notre application et tous les incidents passés peuvent être vus sur notre",
+        "Nos Plans Enterprise incluent également des fonctionnalités et services conçus pour garantir que Pulse soit géré aussi sécurisé que possible dans votre organisation. Ceux-ci incluent : Authentification Unique, Sécurité de Mot de Passe Renforcée, Gestion d'Admin Avancée, Restriction sur le Partage de Données",
+        "Nos employés suivent soigneusement les procédures de réponse aux incidents, et promeuvent des sessions de feedback honnêtes (post mortems) pour apprendre pourquoi les systèmes échouent et comment empêcher que cela se reproduise à l'avenir",
+        "Pour signaler des problèmes de sécurité ou de confidentialité qui affectent Pulse ou nos serveurs web, veuillez contacter"
+      ],
+      "statusPage": "page de statut"
+    },
+    "cta": {
+      "title": "Bienvenue aux améliorations",
+      "subtitle": "Résolvez les problèmes rapidement avec PulsePro.",
+      "primaryButton": "Essayez gratuitement",
+      "secondaryButton": "Réservez une démo aujourd'hui"
+    }
   }
 }
