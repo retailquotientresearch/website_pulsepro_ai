@@ -213,12 +213,6 @@ export default function Testimonials() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 sm:-left-12 top-1/2 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
-                <i className="ri-arrow-left-line text-gray-600 dark:text-gray-400 text-sm sm:text-base"></i>
-              </CarouselPrevious>
-              <CarouselNext className="right-0 sm:-right-12 top-1/2 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-600 hover:bg-white dark:hover:bg-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
-                <i className="ri-arrow-right-line text-gray-600 dark:text-gray-400 text-sm sm:text-base"></i>
-              </CarouselNext>
             </div>
           </Carousel>
         </div>

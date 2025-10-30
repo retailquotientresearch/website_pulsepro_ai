@@ -9,6 +9,14 @@
 
 /* Black & White Brand Colors and Design System */
 :root {
+  /* Brand green (single source of truth) */
+  --brand-green: #1A7D3D; /* primary green shade */
+  --brand-green-600: color-mix(in oklch, var(--brand-green) 100%, black 10%);
+  --brand-green-400: color-mix(in oklch, var(--brand-green) 85%, white 15%);
+  --brand-green-300: color-mix(in oklch, var(--brand-green) 70%, white 30%);
+  --brand-green-200: color-mix(in oklch, var(--brand-green) 55%, white 45%);
+  --brand-green-100: color-mix(in oklch, var(--brand-green) 40%, white 60%);
+
   /* Light mode colors - black and white theme */
   --surface: #ffffff; /* White surfaces */
   --border: oklch(0.922 0 0); /* Light gray borders */
@@ -276,6 +284,18 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
   }
 
+  /* Full-bleed container: spans entire viewport width with no horizontal margins */
+  .full-bleed {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .text-gradient {
     @apply bg-gradient-to-r from-primary-900 to-primary-600 bg-clip-text text-transparent;
   }
@@ -315,6 +335,37 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+
+/* Subtle motion for chaos icons */
+@keyframes bobSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(8px) rotate(2deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes swaySlower {
+  0% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+.animate-bob-slow {
+  animation: bobSlow 4.5s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 6s ease-in-out infinite;
+}
+
+.animate-sway-slower {
+  animation: swaySlower 7.5s ease-in-out infinite;
 }
 
 .animate-fade-in {
@@ -359,4 +410,172 @@
   html {
     scrollbar-gutter: stable;
   }
+}
+
+/* ---- Utilities for TrustedBy marquee ---- */
+/* Edge masking to fade sides of the scrolling strip */
+.mask-edge-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 3%,
+    black 97%,
+    transparent 100%
+  );
+}
+
+/* Vertical mask for top/bottom fade when scrolling up */
+.mask-edge-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeScrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Marquee animations for CommonWorries section */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.marquee {
+  animation: marqueeScroll linear infinite;
+}
+
+.marquee-reverse {
+  animation: marqueeScrollReverse linear infinite;
+}
+
+.animate-marquee-left {
+  animation: marquee-left 80s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 15s linear infinite;
+}
+
+/* Flowing signal animations for ChaosToClarity */
+@keyframes marquee-flow-in {
+  0% {
+    transform: translateX(0%) rotateY(0deg);
+  }
+  25% {
+    transform: translateX(-12.5%) rotateY(-2deg);
+  }
+  50% {
+    transform: translateX(-25%) rotateY(-4deg);
+  }
+  75% {
+    transform: translateX(-37.5%) rotateY(-2deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateY(0deg);
+  }
+}
+
+@keyframes marquee-flow-out {
+  0% {
+    transform: translateX(-50%) rotateY(0deg);
+  }
+  25% {
+    transform: translateX(-37.5%) rotateY(2deg);
+  }
+  50% {
+    transform: translateX(-25%) rotateY(4deg);
+  }
+  75% {
+    transform: translateX(-12.5%) rotateY(2deg);
+  }
+  100% {
+    transform: translateX(0%) rotateY(0deg);
+  }
+}
+
+.animate-marquee-flow-in {
+  animation: marquee-flow-in 12s ease-in-out infinite;
+}
+
+.animate-marquee-flow-out {
+  animation: marquee-flow-out 12s ease-in-out infinite;
+  animation-delay: -6s; /* Start halfway through to sync with input flow */
+}
+
+/* Radial gradient utility for phone processing effect */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Vertical marquee for up/down scrolls */
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-up {
+  animation: marquee-up 30s linear infinite;
+}
+
+/* Respect reduced motion and allow hover to pause */
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .marquee-reverse {
+    animation: none !important;
+  }
+}
+
+.group:hover .marquee,
+.group:hover .marquee-reverse {
+  animation-play-state: paused;
 }

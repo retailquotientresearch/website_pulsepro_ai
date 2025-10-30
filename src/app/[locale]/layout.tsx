@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
@@ -7,11 +7,19 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navigation from "@/components/Navigation";
 import "@/globals.css";
-import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+// Display serif similar to the reference heading
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -52,7 +60,21 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning className={inter.variable}>
+  <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" 
+          rel="stylesheet" 
+        />
+        <Script 
+          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
       <body className="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -62,7 +84,7 @@ export default async function RootLayout({
           >
             <Navigation />
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
