@@ -3,8 +3,14 @@
 import { Check, Play, Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+type CTAFeature = {
+  title: string;
+  description: string;
+};
+
 export default function CallToAction() {
   const t = useTranslations('callToAction');
+  const features = t.raw('features') as CTAFeature[];
 
   return (
   <section className="pt-12 md:pt-16 lg:pt-20 pb-0 bg-[#FDF6E9]">
@@ -41,7 +47,7 @@ export default function CallToAction() {
                 </div>
                 
                 <div className="space-y-8 flex-1 flex flex-col justify-evenly">
-                  {t.raw('features').map((feature: any, index: number) => (
+                  {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
                         <Check className="w-4 h-4 text-[#2A2A2A]" />
