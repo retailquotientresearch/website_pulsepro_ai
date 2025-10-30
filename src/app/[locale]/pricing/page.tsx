@@ -255,109 +255,22 @@ export default function PricingPage() {
               </div>
             </AnimatedCard>
 
-            {/* Feature Grid */}
-            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-16'>
-              {t.raw('plan.features').map((feature: string, index: number) => {
-                // Define icons for different features
-                const getFeatureIcon = (feature: string) => {
-                  const lowerFeature = feature.toLowerCase();
-                  if (lowerFeature.includes('unlimited data') || lowerFeature.includes('storage')) return 'ri-database-2-fill';
-                  if (lowerFeature.includes('offline')) return 'ri-wifi-off-fill';
-                  if (lowerFeature.includes('geo') || lowerFeature.includes('fencing')) return 'ri-map-pin-fill';
-                  if (lowerFeature.includes('incident') || lowerFeature.includes('reporting')) return 'ri-alarm-warning-fill';
-                  if (lowerFeature.includes('api')) return 'ri-code-s-slash-fill';
-                  if (lowerFeature.includes('alert') || lowerFeature.includes('missed')) return 'ri-notification-3-fill';
-                  if (lowerFeature.includes('ticket') || lowerFeature.includes('compliance')) return 'ri-ticket-2-fill';
-                  if (lowerFeature.includes('custom') || lowerFeature.includes('report')) return 'ri-file-chart-fill';
-                  if (lowerFeature.includes('analytics') || lowerFeature.includes('business')) return 'ri-line-chart-fill';
-                  if (lowerFeature.includes('image') || lowerFeature.includes('upload')) return 'ri-image-fill';
-                  if (lowerFeature.includes('export') || lowerFeature.includes('data export')) return 'ri-download-cloud-fill';
-                  return 'ri-check-fill';
-                };
-
-                // Define gradient colors for variety
-                const gradients = [
-                  'from-green-400 to-green-600',
-                  'from-blue-400 to-blue-600', 
-                  'from-purple-400 to-purple-600',
-                  'from-orange-400 to-orange-600',
-                  'from-teal-400 to-teal-600',
-                  'from-pink-400 to-pink-600',
-                  'from-indigo-400 to-indigo-600',
-                  'from-red-400 to-red-600'
-                ];
-
-                // Define asymmetric grid patterns - different sizes for visual interest
-                const getCardSpan = (index: number) => {
-                  const patterns = [
-                    'col-span-2 row-span-2', // Large card
-                    'col-span-1 row-span-1', // Regular card
-                    'col-span-1 row-span-2', // Tall card
-                    'col-span-2 row-span-1', // Wide card
-                    'col-span-1 row-span-1', // Regular card
-                    'col-span-1 row-span-1', // Regular card
-                    'col-span-2 row-span-1', // Wide card
-                    'col-span-1 row-span-2', // Tall card
-                    'col-span-1 row-span-1', // Regular card
-                    'col-span-2 row-span-2', // Large card
-                    'col-span-1 row-span-1', // Regular card
-                    'col-span-1 row-span-1'  // Regular card
-                  ];
-                  return patterns[index % patterns.length];
-                };
-
-                // Different padding based on card size
-                const getPadding = (index: number) => {
-                  const spanClass = getCardSpan(index);
-                  if (spanClass.includes('row-span-2') && spanClass.includes('col-span-2')) return 'p-8'; // Large cards
-                  if (spanClass.includes('row-span-2') || spanClass.includes('col-span-2')) return 'p-6'; // Medium cards
-                  return 'p-4'; // Small cards
-                };
-
-                // Different icon sizes
-                const getIconSize = (index: number) => {
-                  const spanClass = getCardSpan(index);
-                  if (spanClass.includes('row-span-2') && spanClass.includes('col-span-2')) return 'w-16 h-16 text-2xl'; // Large cards
-                  if (spanClass.includes('row-span-2') || spanClass.includes('col-span-2')) return 'w-14 h-14 text-xl'; // Medium cards
-                  return 'w-12 h-12 text-lg'; // Small cards
-                };
-
-                // Different text sizes
-                const getTextSize = (index: number) => {
-                  const spanClass = getCardSpan(index);
-                  if (spanClass.includes('row-span-2') && spanClass.includes('col-span-2')) return 'text-lg font-bold'; // Large cards
-                  if (spanClass.includes('row-span-2') || spanClass.includes('col-span-2')) return 'text-base font-semibold'; // Medium cards
-                  return 'text-sm font-semibold'; // Small cards
-                };
-
-                return (
-                  <AnimatedCard
-                    key={index}
-                    delay={index * 50 + 100}
-                    direction='up'
-                    className={`h-full ${getCardSpan(index)}`}
-                  >
-                    <div className={`bg-white rounded-2xl ${getPadding(index)} shadow-lg border border-green-200 text-center relative hover:shadow-xl hover:border-green-300 hover:-translate-y-2 transition-all duration-300 h-full flex flex-col justify-center group overflow-hidden`}>
-                      {/* Background decoration */}
-                      <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-50 to-green-100 rounded-full -translate-y-8 translate-x-8 opacity-50 group-hover:scale-150 transition-transform duration-500'></div>
-                      <div className='absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-green-50 to-green-100 rounded-full translate-y-6 -translate-x-6 opacity-30 group-hover:scale-125 transition-transform duration-500'></div>
-                      
-                      <div className='flex flex-col items-center relative z-10 space-y-3'>
-                        <div className={`${getIconSize(index)} bg-gradient-to-br ${gradients[index % gradients.length]} rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                          <i className={`${getFeatureIcon(feature)}`}></i>
-                        </div>
-                        <div className={`${getTextSize(index)} text-gray-900 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center`}>
-                          {feature}
-                        </div>
-                        
-                        {/* Subtle shine effect */}
-                        <div className='absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-all duration-700'></div>
-                      </div>
-                    </div>
-                  </AnimatedCard>
-                );
-              })}
-            </div>
+            {/* Clean, modern feature list (no boxes) */}
+            <AnimatedCard delay={150} direction='up'>
+              <div className='relative mb-16'>
+                <div className='absolute inset-x-0 -top-2 h-px bg-gradient-to-r from-transparent via-green-300 to-transparent opacity-70'></div>
+                <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 pt-6'>
+                  {t.raw('plan.features').map((feature: string, index: number) => (
+                    <li key={index} className='flex items-start gap-3'>
+                      <span className='mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full' style={{ backgroundColor: 'var(--brand-green-100)', color: 'var(--brand-green)' }}>
+                        <i className='ri-check-line text-sm'></i>
+                      </span>
+                      <span className='text-gray-900 leading-relaxed'>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </AnimatedCard>
           </div>
         </Container>
       </Section>

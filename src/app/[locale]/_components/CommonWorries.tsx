@@ -1,86 +1,12 @@
 'use client';
 
 import { useInView } from '@/hooks/useInView';
+import { useTranslations } from 'next-intl';
 
 interface Concern {
   question: string;
   answer: string;
 }
-
-const concerns: Concern[] = [
-  {
-    question: "Can I delete reports?",
-    answer: "Yes. Reports can be deleted or archived anytime by authorized users."
-  },
-  {
-    question: "Can I export the data in the format I want?",
-    answer: "Yes. You can export all responses and analytics in Excel, CSV, or PDF formats."
-  },
-  {
-    question: "Can I do bulk downloads of my PDF reports?",
-    answer: "Yes. You can download multiple reports at once in just a few clicks."
-  },
-  {
-    question: "Can I get training sessions to get started?",
-    answer: "Absolutely. We offer complimentary onboarding sessions so your team is fully confident using PulsePro from Day 1."
-  },
-  {
-    question: "Can I get training for my regional teams?",
-    answer: "Yes, as many as you need. We believe software is only successful when it's actually used. We provide free training for all your teams—regional, zone-level, or field."
-  },
-  {
-    question: "Can I get refresher sessions for old or new users?",
-    answer: "Yes. We understand teams change, and users often need help with new features. We're happy to provide refresher sessions anytime—free of cost."
-  },
-  {
-    question: "Can I email reports or summaries outside my organization?",
-    answer: "Yes, and there's no extra cost. You can email reports, summaries, or PDFs to vendors, partners, or any external email address."
-  },
-  {
-    question: "Do you support very lengthy templates—like 500 questions?",
-    answer: "Yes. Many of our clients run templates with 500+ questions and attach 1,000+ photos. PulsePro is built to handle real-world inspection complexity."
-  },
-  {
-    question: "Are you constantly updating the product with new features and AI?",
-    answer: "Yes. Because we focus only on inspections, we're able to quickly adopt new technologies, including AI, and continuously improve the platform."
-  },
-  {
-    question: "Will field users struggle or take more time than paper/Excel?",
-    answer: "No. We know field users often work in customer-facing or time-sensitive environments like hotels, warehouses, and hospitals. PulsePro's mobile interface is ultra-simple and designed for fast use—even during hectic shifts."
-  },
-  {
-    question: "Can I download reports of missed inspections to push my team?",
-    answer: "Yes. You can download and share missed inspection summaries with just one click—perfect for driving completion and accountability."
-  },
-  {
-    question: "Can I download graphs from Analytics for my internal presentations?",
-    answer: "Yes. All charts and graphs are downloadable in image format (PNG) for quick use in your reports or presentations."
-  },
-  {
-    question: "Do you support version control for templates?",
-    answer: "Yes. You can clone, edit, and maintain multiple versions of a template—old data remains intact."
-  },
-  {
-    question: "If I delete questions from a template, will old data be lost?",
-    answer: "No. All past inspection responses are preserved in the system—even if the template is modified."
-  },
-  {
-    question: "Can I create templates by uploading Excel files?",
-    answer: "Yes. You can upload checklists in Excel format and turn them into working templates in minutes."
-  },
-  {
-    question: "Can I upload all my sites in one go?",
-    answer: "Yes. Upload all locations in bulk using a simple Excel upload—no need to enter them one by one."
-  },
-  {
-    question: "Can I bulk edit or delete users, sites, or reports?",
-    answer: "Yes. We offer bulk editing and bulk deletion tools for all major data elements."
-  },
-  {
-    question: "Can I add people in CC when sharing reports?",
-    answer: "Yes. You can automatically add stakeholders in CC to distribute reports to multiple recipients."
-  }
-];
 
 // Generate different heights for variety - increased heights
 const heights = ['h-56', 'h-64', 'h-60', 'h-68', 'h-52', 'h-66', 'h-58', 'h-62', 'h-54'];
@@ -122,6 +48,8 @@ function MarqueeRow({ concerns }: { concerns: Concern[] }) {
 
 export default function CommonWorries() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
+  const t = useTranslations('commonWorries');
+  const concerns = t.raw('concerns') as Concern[];
 
   return (
   <section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]">
@@ -140,10 +68,10 @@ export default function CommonWorries() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#1A7D3D]/20 via-transparent to-[#1A7D3D]/20 blur-3xl"></div>
                 
                 <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                  Your Concerns,
+                  {t('title.part1')}
                   <br />
                   <span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">
-                    Already Solved
+                    {t('title.part2')}
                   </span>
                 </h2>
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { useTranslations } from 'next-intl';
 
 type UseCase = {
 	key: string;
@@ -13,66 +14,11 @@ type UseCase = {
 // Note: Removed unused Chip helper
 
 export default function UseCases() {
-	const EXTRA =
-		"Get structured updates in seconds—clear, shareable, and consistent across your workflow.";
-	const items: UseCase[] = useMemo(
-		() => [
-			{
-				key: "accessibility",
-				label: "Accessibility",
-				title: "PulsePro for Accessibility",
-				description:
-					`Voice-first inspections that remove keyboard friction. Capture structured findings hands‑free across checklists and reports. ${EXTRA}`,
-				image: "/images/automation.png",
-			},
-			{
-				key: "consultants",
-				label: "Consultants",
-				title: "PulsePro for Consultants",
-				description:
-					`Dictate observations on‑site and instantly turn them into client‑ready reports. Nothing gets lost between walkthrough and write‑up. ${EXTRA}`,
-				image: "/images/data-analytics.png",
-			},
-			{
-				key: "creators",
-				label: "Creators",
-				title: "PulsePro for Creators",
-				description:
-					`Move ideas faster—draft emails, comments, and tasks with your voice while staying focused on the work. ${EXTRA}`,
-				image: "/images/api-integration.png",
-			},
-			{
-				key: "customer-support",
-				label: "Customer Support",
-				title: "PulsePro for Customer Support",
-				description:
-					`Resolve field issues faster with templated responses and auto‑formatted logs across tickets and chats. ${EXTRA}`,
-				image: "/images/team-collaboration.png",
-			},
-			{ key: "designers", label: "Designers", title: "PulsePro for Designers", description: `Leave rich voice notes and annotate flows without breaking focus. ${EXTRA}`, image: "/images/api-integration.png" },
-			{ key: "esl", label: "ESL", title: "PulsePro for ESL", description: `Speak naturally—get clean, structured text ready to share. ${EXTRA}`, image: "/images/automation.png" },
-			{ key: "educators", label: "Educators", title: "PulsePro for Educators", description: `Draft rubrics, feedback, and plans hands‑free. ${EXTRA}`, image: "/images/faq-illustration.png" },
-			{ key: "engineers", label: "Engineers", title: "PulsePro for Engineers", description: `From commit notes to refactors—stay in the zone. ${EXTRA}`, image: "/images/data-analytics.png" },
-			{ key: "ergonomics", label: "Ergonomics", title: "PulsePro for Ergonomics", description: `Reduce wrist strain and eye fatigue by speaking to work. ${EXTRA}`, image: "/images/automation.png" },
-			{ key: "execs", label: "Execs", title: "PulsePro for Execs", description: `Speed, compliance, and visibility your teams will use. ${EXTRA}`, image: "/images/team-collaboration.png" },
-			{ key: "government", label: "Government", title: "PulsePro for Government", description: `HIPAA‑ready, audit‑friendly records across operations. ${EXTRA}`, image: "/images/data-analytics.png" },
-			{ key: "healthcare", label: "Healthcare", title: "PulsePro for Healthcare", description: `Clinical voice notes into clean, structured documentation. ${EXTRA}`, image: "/images/automation.png" },
-			{ key: "individuals", label: "Individuals", title: "PulsePro for Individuals", description: `Dictate updates across Mail, Slack, Docs and more. ${EXTRA}`, image: "/images/api-integration.png" },
-			{ key: "journalists", label: "Journalists", title: "PulsePro for Journalists", description: `Capture interviews and live coverage without transcription marathons. ${EXTRA}`, image: "/images/team-collaboration.png" },
-			{ key: "lawyers", label: "Lawyers", title: "PulsePro for Lawyers", description: `Accurate dictation for case notes and contracts. ${EXTRA}`, image: "/images/data-analytics.png" },
-			{ key: "multilinguals", label: "Multilinguals", title: "PulsePro for Multilinguals", description: `Switch languages freely and keep moving. ${EXTRA}`, image: "/images/automation.png" },
-			{ key: "product", label: "Product", title: "PulsePro for Product", description: `Turn spoken updates into structured, shareable tasks. ${EXTRA}`, image: "/images/api-integration.png" },
-			{ key: "sales", label: "Sales", title: "PulsePro for Sales", description: `Follow up instantly after meetings—no typing. ${EXTRA}`, image: "/images/team-collaboration.png" },
-			{ key: "slow-typists", label: "Slower Typists", title: "PulsePro for Slow Typists", description: `If your keyboard slows you down, voice levels the field. ${EXTRA}`, image: "/images/automation.png" },
-			{ key: "students", label: "Students", title: "PulsePro for Students", description: `Capture notes, break blockers, and ship writing faster. ${EXTRA}`, image: "/images/faq-illustration.png" },
-			{ key: "teams", label: "Teams", title: "PulsePro for Teams", description: `Fewer meetings, faster alignment, and a voice for everyone. ${EXTRA}`, image: "/images/team-collaboration.png" },
-			{ key: "writers", label: "Writers", title: "PulsePro for Writers", description: `Write faster with fewer edits and cleaner first drafts. ${EXTRA}`, image: "/images/data-analytics.png" },
-		],
-		[]
-	);
-
-		const [active, setActive] = useState<string>("accessibility");
-	const current = items.find((i) => i.key === active) ?? items[0];
+	const t = useTranslations('useCases');
+	const useCaseItems = t.raw('useCaseItems') as UseCase[];
+	
+	const [active, setActive] = useState<string>("food-beverage");
+	const current = useCaseItems.find((i) => i.key === active) ?? useCaseItems[0];
 
 				return (
 					<section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]">
@@ -85,14 +31,14 @@ export default function UseCases() {
 													<div className="lg:col-span-6 xl:col-span-7">
 														<div className="max-w-3xl">
 																				<h2 className="text-[42px] sm:text-[48px] md:text-[56px] lg:text-[64px] leading-[1.05] font-serif tracking-tight [font-family:var(--font-fraunces)] text-center">
-																					PulsePro is made
+																					{t('title.part1')}
 																					<br className="hidden sm:block" />
-																					{' '}<span className="text-[#f0d7ff]">for you</span>
+																					{' '}<span className="text-[#f0d7ff]">{t('title.highlight')}</span>
 															</h2>
 														</div>
 														<div className="mt-6"></div>
 														<div aria-label="Use case tabs" role="tablist" className="flex flex-wrap gap-x-3 gap-y-3 justify-center">
-													{items.map((item) => (
+													{useCaseItems.map((item) => (
 														<button
 											key={item.key}
 											role="tab"
@@ -129,7 +75,7 @@ export default function UseCases() {
 												</div>
 
 												<h3 className="text-[24px] sm:text-[28px] md:text-[34px] font-semibold font-sans text-center">
-																					PulsePro for <em className="not-italic text-[#f0d7ff] font-serif">{items.find(i=>i.key===active)?.label}</em>
+																					{current.title}
 												</h3>
 												<p className="text-white/90 text-base sm:text-lg md:text-xl leading-7 max-w-xl mx-auto">{current.description}</p>
 												<div className="mt-2">
@@ -137,7 +83,7 @@ export default function UseCases() {
 														href="#download"
 														className="inline-flex items-center rounded-xl bg-[#f0d7ff] text-black font-medium px-5 py-3 hover:brightness-95 transition-colors mx-auto"
 													>
-														Download for free
+														{t('downloadButton')}
 													</a>
 												</div>
 											</div>

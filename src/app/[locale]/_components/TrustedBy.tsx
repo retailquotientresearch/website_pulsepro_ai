@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { useTranslations } from 'next-intl';
 
 type Client = {
   name: string;
@@ -65,6 +66,8 @@ function LogosRow({ clients, reverse = false, speed = 30 }: { clients: Client[];
 }
 
 export default function TrustedBy() {
+  const t = useTranslations('trustedBy');
+
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-transparent">
       {/* Full-bleed wrapper with the SAME rounded curve as UseCases */}
@@ -73,10 +76,10 @@ export default function TrustedBy() {
           <div className="max-w-[1400px] mx-auto w-full">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-3 inline-block transform -rotate-2">
-                Trusted by
+                {t('title')}
               </h2>
-              <h3 className="text-3xl md:text-4xl font-semibold">Enterprise Networks</h3>
-              <p className="text-gray-300 mt-4 text-lg">Driving scale across global operations</p>
+              <h3 className="text-3xl md:text-4xl font-semibold">{t('subtitle')}</h3>
+              <p className="text-gray-300 mt-4 text-lg">{t('description')}</p>
             </div>
 
             <div className="mt-12 space-y-8">

@@ -48,12 +48,21 @@ export default function MobileMenu() {
           </Link>
 
           {/* Industries */}
-          <Link
+          {/* <Link
             href="/#industries"
             className="block py-3 px-4 text-gray-700 hover:text-[#1A7D3D] hover:bg-gray-100 rounded-lg transition-all duration-200 font-medium"
             onClick={handleMenuClose}
           >
             Industries
+          </Link> */}
+
+          {/* API Integration */}
+          <Link
+            href="/api-integration"
+            className="block py-3 px-4 text-gray-700 hover:text-[#1A7D3D] hover:bg-gray-100 rounded-lg transition-all duration-200 font-medium"
+            onClick={handleMenuClose}
+          >
+            API Integration
           </Link>
 
           {/* Pricing */}

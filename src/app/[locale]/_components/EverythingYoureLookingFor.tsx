@@ -3,6 +3,7 @@
 import Section from "@/components/ui/Section";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
 
 type Reel = {
 	title: string;
@@ -11,13 +12,8 @@ type Reel = {
 
 const REELS: Reel[] = [
 	{ title: "Analytics", image: "/images/Analytics_card.png" },
-	{ title: "Analytics", image: "/images/Analytics_card.png" },
-	{ title: "Analytics", image: "/images/Analytics_card.png" },
-	{ title: "Analytics", image: "/images/Analytics_card.png" },
-	
-	// { title: "UX Design #1", image: "/images/uxpilot-design-1761673550808.png" },
-	// { title: "UX Design #2", image: "/images/uxpilot-design-1761673584821.png" },
-	// { title: "UX Design #3", image: "/images/uxpilot-design-1761673602974.png" },
+	{ title: "Actions", image: "/images/Action_card.png" },
+	{ title: "Notifications", image: "/images/Notification_card.png" },
 ];
 
 function ReelCard({ title, image, className = "" }: Reel & { className?: string }) {
@@ -39,6 +35,8 @@ function ReelCard({ title, image, className = "" }: Reel & { className?: string 
 }
 
 export default function EverythingYoureLookingFor() {
+	const t = useTranslations('everythingYoureLookingFor');
+
 	return (
 			<Section className="bg-[#FDF6E9] py-12 md:py-16 lg:py-20">
 				<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -46,9 +44,9 @@ export default function EverythingYoureLookingFor() {
 						{/* Soft green glow behind the title to match site accents */}
 						<div className="pointer-events-none absolute -inset-x-10 -top-6 h-20 bg-gradient-to-r from-[#1A7D3D]/20 via-transparent to-[#1A7D3D]/20 blur-3xl"></div>
 						<h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111]">
-							Everything you&apos;re 
+							{t('title.part1')}
 							{' '}
-							<span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">looking for</span>
+							<span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">{t('title.highlight')}</span>
 						</h2>
 					</div>
 

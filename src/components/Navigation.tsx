@@ -2,14 +2,11 @@
 
 import React from "react";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import MobileMenu from "./MobileMenu";
 
 export default function Navigation() {
-  // const [isClient, setIsClient] = useState(false);
-
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
+  const t = useTranslations('navigation');
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FDF6E9]/90 backdrop-blur-md border-b border-gray-200">
@@ -27,22 +24,22 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-700">
             <Link
-              href="/#features"
+              href="/features"
               className="hover:text-[#1A7D3D] transition-colors"
             >
-              Features
+              {t('features')}
             </Link>
             <Link
-              href="/#industries"
+              href="/api-integration"
               className="hover:text-[#1A7D3D] transition-colors"
             >
-              Industries
+              {t('apiIntegration')}
             </Link>
             <Link
               href="/pricing"
               className="hover:text-[#1A7D3D] transition-colors"
             >
-              Pricing
+              {t('pricing')}
             </Link>
           </nav>
 
@@ -54,7 +51,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className="hidden lg:block bg-[#1A7D3D] text-white px-6 py-2 rounded-full hover:bg-[#166534] transition-colors font-medium"
             >
-              Get Started
+              {t('getStarted')}
             </a>
             <MobileMenu />
           </div>

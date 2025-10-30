@@ -2,6 +2,7 @@
 
 import { cn } from "../../../lib/utils";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from 'next-intl';
 
 type ScatterIcon = {
   icon: string;
@@ -10,6 +11,17 @@ type ScatterIcon = {
   x: string;
   y: string;
   tone?: "red" | "amber" | "slate";
+};
+
+type StoryPair = {
+  problem: {
+    text: string;
+    icon: string;
+  };
+  solution: {
+    text: string;
+    icon: string;
+  };
 };
 
 const CHAOS_ICONS: ScatterIcon[] = [
@@ -155,6 +167,71 @@ function PhoneMock({
 }
 
 export default function ChaosToClarity() {
+  const t = useTranslations('chaosToClarity');
+  const storyPairs = t.raw('storyPairs') as StoryPair[];
+  
+  const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
+  const [showProblem, setShowProblem] = useState(false);
+  const [showSolution, setShowSolution] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Intersection observer to detect when section is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Story cycling logic
+  useEffect(() => {
+    if (!isInView) return;
+
+    // Initial delay before starting
+    const initialDelay = setTimeout(() => {
+      setShowProblem(true);
+
+      // Problem flows into phone
+      const problemFlowDelay = setTimeout(() => {
+        setShowProblem(false); // Problem disappears into phone
+
+        // Solution pops out from phone
+        const solutionDelay = setTimeout(() => {
+          setShowSolution(true);
+
+          // Solution fades away
+          const solutionFadeDelay = setTimeout(() => {
+            setShowSolution(false);
+
+            // Move to next story
+            setTimeout(() => {
+              setCurrentStoryIndex((prev) => (prev + 1) % storyPairs.length);
+            }, 700); // Wait for fade out animation
+          }, 2500); // Solution display time
+
+          return () => clearTimeout(solutionFadeDelay);
+        }, 400); // Brief pause as problem enters phone
+
+        return () => clearTimeout(solutionDelay);
+      }, 2000); // Problem display + flow time
+
+      return () => clearTimeout(problemFlowDelay);
+    }, 1000); // Initial delay
+
+    return () => clearTimeout(initialDelay);
+  }, [currentStoryIndex, isInView, storyPairs.length]);
+
   // Build a single continuous track with chaos icons followed by clarity icons
   // Simpler: dedicated chaos and clarity strips, each repeated for seamless loop
   const REPEAT = 2;
@@ -329,21 +406,131 @@ export default function ChaosToClarity() {
   );
 
   return (
-    <section className="relative overflow-hidden py-0 md:py-0 bg-[#FDF6E9]">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden py-0 md:py-0 bg-[#FDF6E9]"
+    >
       {/* Replace scattered chaos with synchronized strip system */}
 
       <div className="full-bleed relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8 pt-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            From chaos to clarity
+            {t('title')}
           </h2>
           <p className="mt-3 text-base md:text-lg text-muted-foreground">
-            Watch your messy data flow seamlessly through PulsePro and emerge as
-            clean, actionable insights.
+            {t('subtitle')}
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-stretch gap-0">
+        <div className="flex flex-col lg:flex-row items-stretch gap-0 relative">
+          {/* Problem Message Box - Left Side - Animates INTO phone */}
+          <div className="absolute left-4 md:left-8 lg:left-12 top-[25%] -translate-y-1/2 z-20 w-[280px] md:w-[320px] pointer-events-none">
+            <div
+              className={cn(
+                "transition-all duration-1000 ease-in-out",
+                showProblem
+                  ? "opacity-100 translate-x-0 scale-100"
+                  : "opacity-0 translate-x-[400px] scale-90"
+              )}
+            >
+              <div className="bg-gradient-to-br from-red-50 to-amber-50 dark:from-red-950/30 dark:to-amber-950/30 border-2 border-red-300 dark:border-red-700 rounded-2xl p-4 md:p-5 shadow-2xl backdrop-blur-sm">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-red-500/20 dark:bg-red-500/30 flex items-center justify-center">
+                    <i
+                      className={cn(
+                        "text-2xl md:text-3xl text-red-600 dark:text-red-400",
+                        storyPairs[currentStoryIndex].problem.icon
+                      )}
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold text-red-700 dark:text-red-400 uppercase tracking-wide mb-1">
+                      Problem
+                    </div>
+                    <p className="text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 leading-snug">
+                      {storyPairs[currentStoryIndex].problem.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Solution Message Box - Right Side - Animates OUT OF phone */}
+          <div className="absolute right-4 md:right-8 lg:right-12 top-[25%] -translate-y-1/2 z-20 w-[280px] md:w-[320px] pointer-events-none">
+            <div
+              className={cn(
+                "transition-all duration-1000 ease-out",
+                showSolution
+                  ? "opacity-100 translate-x-0 scale-100"
+                  : "opacity-0 -translate-x-[400px] scale-90"
+              )}
+            >
+              <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-950/30 dark:to-blue-950/30 border-2 border-green-300 dark:border-green-700 rounded-2xl p-4 md:p-5 shadow-2xl backdrop-blur-sm">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-500/20 dark:bg-green-500/30 flex items-center justify-center">
+                    <i
+                      className={cn(
+                        "text-2xl md:text-3xl text-green-600 dark:text-green-400",
+                        storyPairs[currentStoryIndex].solution.icon
+                      )}
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wide mb-1">
+                      Solution
+                    </div>
+                    <p className="text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 leading-snug">
+                      {storyPairs[currentStoryIndex].solution.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Transformation Arrow - Center */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none hidden lg:block">
+            <div
+              className={cn(
+                "transition-all duration-1000 ease-out",
+                showProblem && showSolution
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-90"
+              )}
+            >
+              <svg
+                width="120"
+                height="60"
+                viewBox="0 0 120 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="drop-shadow-lg"
+              >
+                <defs>
+                  <linearGradient
+                    id="arrowGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#ef4444" />
+                    <stop offset="50%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#10b981" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M10 30 L100 30 M90 20 L100 30 L90 40"
+                  stroke="url(#arrowGradient)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
           {/* Left: chaos strip flowing INTO the phone */}
           <div className="lg:order-1 order-1 self-stretch h-full flex items-stretch flex-1 min-w-0 relative">
             {/* Flowing gradient overlay to show flow direction */}
@@ -358,7 +545,7 @@ export default function ChaosToClarity() {
           </div>
 
           {/* Center: phone mock with processing visualization */}
-          <div className="lg:order-2 order-3 m-0 p-0 w-fit flex-none shrink-0 self-center relative">
+          <div className="lg:order-2 order-3 m-0 p-0 w-fit flex-none shrink-0 self-center relative z-30">
             {/* Add subtle glow effect to show data processing */}
             <div className="absolute inset-0 bg-gradient-radial from-blue-500/10 to-transparent rounded-[40px] animate-pulse"></div>
             <PhoneMock onScreenSize={(s) => setPhoneHeight(s.height)} />
@@ -376,6 +563,27 @@ export default function ChaosToClarity() {
               {renderClarityStrip("right", clarityAmp)}
             </div>
           </div>
+        </div>
+
+        {/* Story Progress Indicator */}
+        <div className="flex justify-center items-center gap-2 py-8">
+          {storyPairs.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setCurrentStoryIndex(index);
+                setShowProblem(false);
+                setShowSolution(false);
+              }}
+              className={cn(
+                "h-2 rounded-full transition-all duration-300",
+                index === currentStoryIndex
+                  ? "w-8 bg-blue-600"
+                  : "w-2 bg-gray-300 hover:bg-gray-400"
+              )}
+              aria-label={`Go to story ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

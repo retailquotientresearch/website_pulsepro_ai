@@ -1,8 +1,11 @@
 'use client';
 
 import { Check, Play, Calendar } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function CallToAction() {
+  const t = useTranslations('callToAction');
+
   return (
   <section className="pt-12 md:pt-16 lg:pt-20 pb-0 bg-[#FDF6E9]">
       {/* Full-bleed wrapper matching the site's pattern */}
@@ -17,14 +20,11 @@ export default function CallToAction() {
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Start with a{' '}
-                <span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">
-                  3-Week Pilot
-                </span>
+                {t('title')}
               </h2>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                See the value in weeks, not months. Transform your inspection process with zero risk.
+                {t('subtitle')}
               </p>
             </div>
 
@@ -37,49 +37,21 @@ export default function CallToAction() {
                   <div className="bg-[#FDF6E9] p-3 rounded-xl">
                     <Check className="w-6 h-6 text-[#2A2A2A]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">What&rsquo;s Included</h3>
+                  <h3 className="text-2xl font-bold text-white">{t('whatIncluded')}</h3>
                 </div>
                 
                 <div className="space-y-8 flex-1 flex flex-col justify-evenly">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
-                      <Check className="w-4 h-4 text-[#2A2A2A]" />
+                  {t.raw('features').map((feature: any, index: number) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
+                        <Check className="w-4 h-4 text-[#2A2A2A]" />
+                      </div>
+                      <div>
+                        <p className="text-white font-semibold mb-1">{feature.title}</p>
+                        <p className="text-gray-300 text-sm">{feature.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-white font-semibold mb-1">Custom Digitization</p>
-                      <p className="text-gray-300 text-sm">Share your checklist — we&rsquo;ll digitize it in 24 hours</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
-                      <Check className="w-4 h-4 text-[#2A2A2A]" />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold mb-1">Full Access</p>
-                      <p className="text-gray-300 text-sm">Unlock all core features for complete evaluation</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
-                      <Check className="w-4 h-4 text-[#2A2A2A]" />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold mb-1">Free Training</p>
-                      <p className="text-gray-300 text-sm">Onboarding for your entire team — regional and field</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
-                      <Check className="w-4 h-4 text-[#2A2A2A]" />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold mb-1">24/7 Support</p>
-                      <p className="text-gray-300 text-sm">Dedicated support throughout your pilot period</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -89,14 +61,14 @@ export default function CallToAction() {
                   
                   {/* Pilot badge */}
                   <div className="inline-flex items-center gap-2 bg-[#1A7D3D]/10 border border-[#1A7D3D]/20 rounded-full px-4 py-2 mb-6">
-                    <span className="text-sm font-medium text-[#1A7D3D]">Risk-Free Pilot</span>
+                    <span className="text-sm font-medium text-[#1A7D3D]">{t('pilot.badge')}</span>
                   </div>
                   
                   {/* Pricing */}
                   <div className="mb-8">
-                    <div className="text-5xl md:text-6xl font-bold text-[#1A7D3D] mb-2">FREE</div>
-                    <div className="text-gray-600 mb-2">for 2 weeks</div>
-                    <div className="text-sm text-gray-500">Then $22/month per user</div>
+                    <div className="text-5xl md:text-6xl font-bold text-[#1A7D3D] mb-2">{t('pilot.price')}</div>
+                    <div className="text-gray-600 mb-2">{t('pilot.duration')}</div>
+                    <div className="text-sm text-gray-500">{t('pilot.then')}</div>
                   </div>
                   
                   {/* CTA Buttons - matching Hero component */}
@@ -106,7 +78,7 @@ export default function CallToAction() {
                       className="w-full bg-[#1A7D3D] text-white font-medium rounded-full px-8 py-4 text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:bg-[#166534] flex items-center justify-center gap-3"
                     >
                       <Play className="w-5 h-5" />
-                      Start Free Pilot
+                      {t('cta.primary')}
                     </a>
                     
                     <a
@@ -114,28 +86,28 @@ export default function CallToAction() {
                       className="w-full border-2 border-[#1A7D3D] text-[#1A7D3D] font-medium rounded-full px-8 py-4 text-lg transition-all hover:bg-[#1A7D3D]/5 flex items-center justify-center gap-3"
                     >
                       <Calendar className="w-5 h-5" />
-                      Book a Demo
+                      {t('cta.secondary')}
                     </a>
                   </div>
                   
                   <p className="text-xs text-gray-500">
-                    No credit card required • Cancel anytime • Setup in 24 hours
+                    {t('pilot.disclaimer')}
                   </p>
                 </div>
                 
                 {/* Stats matching Hero component */}
                 <div className="flex items-center justify-center space-x-8 mt-8 pt-8 border-t border-white/20">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#1A7D3D]">10000+</div>
-                    <div className="text-sm text-gray-300">Enterprise Sites</div>
+                    <div className="text-2xl font-bold text-[#1A7D3D]">{t('stats.sites.value')}</div>
+                    <div className="text-sm text-gray-300">{t('stats.sites.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#1A7D3D]">24hrs</div>
-                    <div className="text-sm text-gray-300">Setup Time</div>
+                    <div className="text-2xl font-bold text-[#1A7D3D]">{t('stats.setup.value')}</div>
+                    <div className="text-sm text-gray-300">{t('stats.setup.label')}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#1A7D3D]">99.9%</div>
-                    <div className="text-sm text-gray-300">Uptime</div>
+                    <div className="text-2xl font-bold text-[#1A7D3D]">{t('stats.uptime.value')}</div>
+                    <div className="text-sm text-gray-300">{t('stats.uptime.label')}</div>
                   </div>
                 </div>
               </div>

@@ -483,14 +483,6 @@
       "description": "Chez Pulse, nous prenons votre vie privée au sérieux. Nous nous engageons à protéger la confidentialité des informations personnelles que vous nous fournissez. Pour en savoir plus, lisez notre",
       "privacyPolicyLink": "Politique de Confidentialité"
     },
-    "bestInClass": {
-      "description": "Chez tout le monde, c'est Pulse, à partir de ce certificat, s'attendent à cette fonctionnalité et s'assurent que l'impact du risque disponible et du service résilient. Nos risques commerciaux les plus élevés notre capacité de réponse aux incidents sur notre capacité à notre sécurité et avoir la pleine responsabilité.",
-      "features": [
-        "Notre application a 99,99% de temps de disponibilité, le statut actuel de nos applications et tout incident passé peut être vu sur notre page de statut.",
-        "Nos employés suivent attentivement les procédures de réponse aux incidents et fournissent des sessions de rétroaction en temps opportun (et des tests respectifs), pour enseigner pourquoi les gens et ce qui se passe à l'avenir.",
-        "Pour signaler des problèmes de sécurité ou de confidentialité qui affectent Pulse ou nos services Web, veuillez contacter security@pulsepro.ai."
-      ]
-    },
     "vulnerabilities": {
       "sections": [
         {
@@ -543,6 +535,81 @@
         "Pour signaler des problèmes de sécurité ou de confidentialité qui affectent Pulse ou nos serveurs web, veuillez contacter"
       ],
       "statusPage": "page de statut"
+    },
+    "useCases": {
+      "title": {
+        "part1": "PulsePro est fait",
+        "highlight": "pour vous"
+      },
+      "downloadButton": "Télécharger gratuitement",
+      "useCaseItems": [
+        {
+          "key": "food-beverage",
+          "label": "Alimentation et Boissons",
+          "title": "PulsePro pour l'Alimentation et les Boissons",
+          "description": "Maintenez une hygiène irréprochable, effectuez des audits de points de vente et surveillez les normes de sécurité alimentaire dans les cuisines et les chaînes d'approvisionnement — le tout dans un flux simple."
+        },
+        {
+          "key": "hospitality",
+          "label": "Hôtellerie",
+          "title": "PulsePro pour l'Hôtellerie",
+          "description": "Standardisez les vérifications d'expérience client, les audits de ménage et les inspections d'installations pour maintenir chaque propriété cohérente et impeccable."
+        },
+        {
+          "key": "retail-supermarkets",
+          "label": "Commerce de Détail",
+          "title": "PulsePro pour le Commerce de Détail et les Supermarchés",
+          "description": "Assurez des agencements de magasin parfaits, suivez la précision des inventaires et effectuez des audits réguliers de points de vente pour maintenir des opérations efficaces et conformes."
+        },
+        {
+          "key": "electric-vehicles",
+          "label": "Véhicules Électriques",
+          "title": "PulsePro pour les Véhicules Électriques et Stations de Charge",
+          "description": "Effectuez des inspections de sécurité, des vérifications de maintenance d'infrastructure et des examens de conformité pour maintenir chaque point de charge fiable et prêt."
+        },
+        {
+          "key": "diagnostic-labs",
+          "label": "Laboratoires de Diagnostic",
+          "title": "PulsePro pour les Laboratoires de Diagnostic et Centres de Pathologie",
+          "description": "Rationalisez les évaluations d'hygiène, l'étalonnage d'équipement de laboratoire et les audits de biosécurité pour répondre aux normes de qualité des soins de santé."
+        },
+        {
+          "key": "cloud-kitchens",
+          "label": "Cuisines Virtuelles",
+          "title": "PulsePro pour les Cuisines Virtuelles et Marques de Livraison",
+          "description": "Supervisez la sécurité de la préparation alimentaire, la qualité de l'emballage et l'hygiène de livraison avec des vérifications structurées qui s'adaptent à chaque cuisine partenaire."
+        },
+        {
+          "key": "forestry-environmental",
+          "label": "Foresterie et Environnement",
+          "title": "PulsePro pour les Projets Forestiers et Environnementaux",
+          "description": "Suivez les audits de terrain, les vérifications de conformité environnementale et les évaluations de durabilité avec une visibilité complète à travers les régions."
+        },
+        {
+          "key": "construction-infrastructure",
+          "label": "Construction et Infrastructure",
+          "title": "PulsePro pour la Construction et l'Infrastructure",
+          "description": "Gérez les inspections de sécurité de site, les audits de progrès de projet et la conformité des entrepreneurs — en maintenant chaque projet aligné et sans risque."
+        },
+        {
+          "key": "manufacturing-industrial",
+          "label": "Fabrication et Industrie",
+          "title": "PulsePro pour les Usines de Fabrication et Industrielles",
+          "description": "Restez cohérent avec les examens de maintenance d'équipement, les audits de qualité et les vérifications de conformité EHS à travers les lignes de production."
+        },
+        {
+          "key": "food-processing",
+          "label": "Transformation Alimentaire",
+          "title": "PulsePro pour les Unités de Transformation et Emballage Alimentaire",
+          "description": "Effectuez des inspections d'hygiène, des audits de processus et des examens de qualité d'emballage pour assurer une production sûre et de haute qualité à chaque étape."
+        },
+        {
+          "key": "automobile-dealerships",
+          "label": "Concessionnaires Automobiles",
+          "title": "PulsePro pour les Concessionnaires Automobiles et Ateliers",
+          "description": "Effectuez des audits de performance de concession, des inspections de sécurité d'atelier et des évaluations d'infrastructure avec une visibilité complète."
+        }
+      ]
     },
     "cta": {
       "title": "Bienvenue aux améliorations",

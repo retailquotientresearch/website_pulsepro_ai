@@ -33,90 +33,248 @@
     }
   },
   "hero": {
-    "tagline": "Inspections. Done Right.",
+    "tagline": "Enterprise Inspection Platform",
     "title": {
-      "part1": "We're",
-      "highlight": "not",
-      "part2": "a jack-of-all-trades"
-    },
-    "subtitle": {
-      "part1": "We focus on inspections—so you get",
-      "highlight": "speed, clarity, and results"
+      "part1": "Inspection",
+      "part2": "Platform",
+      "highlight": "Built for Enterprises"
     },
     "cta": "See It In Action",
-    "secondaryCta": "Book a Demo"
+    "secondaryCta": "Book a Demo",
+    "stats": {
+      "sitesManaged": {
+        "value": "10000+",
+        "label": "Sites Managed"
+      },
+      "uptime": {
+        "value": "99.9%",
+        "label": "Uptime"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Support"
+      }
+    }
   },
-  "features": {
-    "tagline": "What You're Looking For",
+  "trustedBy": {
+    "title": "Trusted by",
+    "subtitle": "Enterprise Networks", 
+    "description": "Driving scale across global operations"
+  },
+  "everythingYoureLookingFor": {
     "title": {
-      "part1": "We've got the basics, the bells,",
-      "part2": "and the",
-      "highlight": "brainy stuff"
+      "part1": "Everything you're",
+      "highlight": "looking for"
+    }
+  },
+  "commonWorries": {
+    "title": {
+      "part1": "Your Concerns,",
+      "part2": "Already Solved"
     },
-    "subtitle": {
-      "part1": "But let's start with what",
-      "highlight": "you",
-      "part2": "care about."
+    "concerns": [
+      {
+        "question": "Can I delete reports?",
+        "answer": "Yes. Reports can be deleted or archived anytime by authorized users."
+      },
+      {
+        "question": "Can I export the data in the format I want?",
+        "answer": "Yes. You can export all responses and analytics in Excel, CSV, or PDF formats."
+      },
+      {
+        "question": "Can I do bulk downloads of my PDF reports?",
+        "answer": "Yes. You can download multiple reports at once in just a few clicks."
+      },
+      {
+        "question": "Can I get training sessions to get started?",
+        "answer": "Absolutely. We offer complimentary onboarding sessions so your team is fully confident using PulsePro from Day 1."
+      },
+      {
+        "question": "Can I get training for my regional teams?",
+        "answer": "Yes, as many as you need. We believe software is only successful when it's actually used. We provide free training for all your teams—regional, zone-level, or field."
+      },
+      {
+        "question": "Can I get refresher sessions for old or new users?",
+        "answer": "Yes. We understand teams change, and users often need help with new features. We're happy to provide refresher sessions anytime—free of cost."
+      },
+      {
+        "question": "Can I email reports or summaries outside my organization?",
+        "answer": "Yes, and there's no extra cost. You can email reports, summaries, or PDFs to vendors, partners, or any external email address."
+      },
+      {
+        "question": "Do you support very lengthy templates—like 500 questions?",
+        "answer": "Yes. Many of our clients run templates with 500+ questions and attach 1,000+ photos. PulsePro is built to handle real-world inspection complexity."
+      },
+      {
+        "question": "Are you constantly updating the product with new features and AI?",
+        "answer": "Yes. Because we focus only on inspections, we're able to quickly adopt new technologies, including AI, and continuously improve the platform."
+      },
+      {
+        "question": "Will field users struggle or take more time than paper/Excel?",
+        "answer": "No. We know field users often work in customer-facing or time-sensitive environments like hotels, warehouses, and hospitals. PulsePro's mobile interface is ultra-simple and designed for fast use—even during hectic shifts."
+      },
+      {
+        "question": "Can I download reports of missed inspections to push my team?",
+        "answer": "Yes. You can download and share missed inspection summaries with just one click—perfect for driving completion and accountability."
+      },
+      {
+        "question": "Can I download graphs from Analytics for my internal presentations?",
+        "answer": "Yes. All charts and graphs are downloadable in image format (PNG) for quick use in your reports or presentations."
+      },
+      {
+        "question": "Do you support version control for templates?",
+        "answer": "Yes. You can clone, edit, and maintain multiple versions of a template—old data remains intact."
+      },
+      {
+        "question": "If I delete questions from a template, will old data be lost?",
+        "answer": "No. All past inspection responses are preserved in the system—even if the template is modified."
+      },
+      {
+        "question": "Can I create templates by uploading Excel files?",
+        "answer": "Yes. You can upload checklists in Excel format and turn them into working templates in minutes."
+      },
+      {
+        "question": "Can I upload all my sites in one go?",
+        "answer": "Yes. Upload all locations in bulk using a simple Excel upload—no need to enter them one by one."
+      },
+      {
+        "question": "Can I bulk edit or delete users, sites, or reports?",
+        "answer": "Yes. We offer bulk editing and bulk deletion tools for all major data elements."
+      },
+      {
+        "question": "Can I add people in CC when sharing reports?",
+        "answer": "Yes. You can automatically add stakeholders in CC to distribute reports to multiple recipients."
+      }
+    ]
+  },
+  "useCases": {
+    "title": {
+      "part1": "PulsePro is made",
+      "highlight": "for you"
     },
-    "items": [
+    "downloadButton": "Download for free",
+    "useCaseItems": [
       {
-        "title": "Geo-tagged Photos",
-        "descriptionOne": "Yes, we capture timestamp, lat/long, device details",
-        "btnText": "How it looks in-app",
-        "linkText": "See how Brand X uses this for food safety audits"
+        "key": "food-beverage",
+        "label": "Food & Beverage",
+        "title": "PulsePro for Food & Beverage",
+        "description": "Maintain top-notch hygiene, conduct outlet audits, and monitor food safety standards across kitchens and supply chains — all in one simple flow."
       },
       {
-        "title": "PDF Reports",
-        "descriptionOne": "Auto-generated after each inspection",
-        "descriptionTwo": "Custom header/footer with your logo & cover letter option",
-        "descriptionThree": "Password-protected PDFs available (like bank statements)"
+        "key": "hospitality",
+        "label": "Hospitality",
+        "title": "PulsePro for Hospitality",
+        "description": "Standardize guest experience checks, housekeeping audits, and facility inspections to keep every property consistent and flawless."
       },
       {
-        "title": "Reminders & Alerts",
-        "descriptionOne": "Push + email alerts for missed inspections, low scores, etc.",
-        "descriptionTwo": "Weekly digests for managers: missed audits, top issues",
-        "linkText": "See sample reminder email"
+        "key": "retail-supermarkets",
+        "label": "Retail & Supermarkets",
+        "title": "PulsePro for Retail & Supermarkets",
+        "description": "Ensure perfect store layouts, track inventory accuracy, and conduct regular outlet audits to keep operations efficient and compliant."
       },
       {
-        "title": "Scheduling",
-        "descriptionOne": "Recurring, fixed-date, or bulk-upload schedules",
-        "descriptionTwo": "Exclude holidays or days of the week",
-        "descriptionThree": "Upload Excel to auto-create 100s of schedules"
+        "key": "electric-vehicles",
+        "label": "Electric Vehicles",
+        "title": "PulsePro for Electric Vehicles & Charging Stations",
+        "description": "Run safety inspections, infrastructure maintenance checks, and compliance reviews to keep every charging point reliable and ready."
       },
       {
-        "title": "Custom Branding",
-        "descriptionOne": "Your logo on app, reports, and emails",
-        "descriptionTwo": "Custom color theme for your org",
-        "descriptionThree": "Add cover letters to formalize your communications"
+        "key": "diagnostic-labs",
+        "label": "Diagnostic Labs",
+        "title": "PulsePro for Diagnostic Labs & Pathology Centers",
+        "description": "Streamline hygiene assessments, lab equipment calibration, and biosafety audits to meet healthcare-quality benchmarks."
       },
       {
-        "title": "Roles & Permissions",
-        "descriptionOne": "Your logo on app, reports, and emails",
-        "descriptionTwo": "View-only, editor, admin levels supported",
-        "descriptionThree": "SOC 2 compliant permissions model"
+        "key": "cloud-kitchens",
+        "label": "Cloud Kitchens",
+        "title": "PulsePro for Cloud Kitchens & Delivery Brands",
+        "description": "Oversee food prep safety, packaging quality, and delivery hygiene with structured checks that scale across every partner kitchen."
       },
       {
-        "title": "Dashboards & Analytics",
-        "descriptionOne": "Grade-based dashboards with color-coded risks",
-        "descriptionTwo": "Compare auditors, sites, and scores over time",
-        "descriptionThree": "Export to BI tools, Sheets, or CSV instantly"
+        "key": "forestry-environmental",
+        "label": "Forestry & Environmental",
+        "title": "PulsePro for Forestry & Environmental Projects",
+        "description": "Track field audits, environmental compliance checks, and sustainability assessments with full visibility across regions."
       },
       {
-        "title": "Offline Capability",
-        "descriptionOne": "Works with zero network—even in basements",
-        "descriptionTwo": "Auto-syncs when back online",
-        "descriptionThree": "Designed for fast loading, minimal memory use"
+        "key": "construction-infrastructure",
+        "label": "Construction & Infrastructure",
+        "title": "PulsePro for Construction & Infrastructure",
+        "description": "Manage site safety inspections, project progress audits, and contractor compliance — keeping every project aligned and risk-free."
       },
       {
-        "title": "Unlimited Storage",
-        "descriptionOne": "Your data stays exactly where it belongs—safe, intact, and accessible forever.",
-        "descriptionTwo": "No auto-deletion, no archiving limits, no hidden cutoffs."
+        "key": "manufacturing-industrial",
+        "label": "Manufacturing & Industrial",
+        "title": "PulsePro for Manufacturing & Industrial Plants",
+        "description": "Stay consistent with equipment maintenance reviews, quality audits, and EHS compliance checks across production lines."
       },
       {
-        "title": "Action Tracking",
-        "descriptionOne": "Raise actions directly from checkpoints",
-        "descriptionTwo": "Assign owners, set deadlines, add priorities",
-        "descriptionThree": "Integrate with Jira, Freshdesk, or your ticketing system"
+        "key": "food-processing",
+        "label": "Food Processing",
+        "title": "PulsePro for Food Processing & Packaging Units",
+        "description": "Run hygiene inspections, process audits, and packaging quality reviews to ensure safe, high-standard production at every stage."
+      },
+      {
+        "key": "automobile-dealerships",
+        "label": "Automobile Dealerships",
+        "title": "PulsePro for Automobile Dealerships & Workshops",
+        "description": "Conduct dealership performance audits, workshop safety inspections, and infrastructure assessments with complete visibility."
+      }
+    ]
+  },
+  "chaosToClarity": {
+    "title": "From chaos to clarity",
+    "subtitle": "Watch your messy data flow seamlessly through PulsePro and emerge as clean, actionable insights.",
+    "storyPairs": [
+      {
+        "problem": {
+          "text": "Data scattered across multiple platforms",
+          "icon": "ri-apps-2-fill"
+        },
+        "solution": {
+          "text": "All data sources automatically unified",
+          "icon": "ri-database-2-fill"
+        }
+      },
+      {
+        "problem": {
+          "text": "Manual data collection takes hours",
+          "icon": "ri-timer-fill"
+        },
+        "solution": {
+          "text": "Real-time automated data sync",
+          "icon": "ri-flashlight-fill"
+        }
+      },
+      {
+        "problem": {
+          "text": "Inconsistent data formats cause errors",
+          "icon": "ri-error-warning-fill"
+        },
+        "solution": {
+          "text": "Smart formatting and validation",
+          "icon": "ri-shield-check-fill"
+        }
+      },
+      {
+        "problem": {
+          "text": "No visibility into data pipelines",
+          "icon": "ri-eye-off-fill"
+        },
+        "solution": {
+          "text": "Complete transparency and monitoring",
+          "icon": "ri-eye-fill"
+        }
+      },
+      {
+        "problem": {
+          "text": "Team members work with outdated data",
+          "icon": "ri-time-fill"
+        },
+        "solution": {
+          "text": "Everyone sees the same real-time data",
+          "icon": "ri-team-fill"
+        }
       }
     ]
   },
@@ -154,36 +312,54 @@
       }
     ]
   },
-  "commonWorries": {
-    "tagline": "Common Worries",
-    "title": {
-      "part1": "Worried about rolling out",
-      "part2": "a new platform?"
-    },
-    "subtitle": "You're not alone. Here's what most clients worry about—and how we've solved it.",
-    "worries": [
+  "callToAction": {
+    "title": "Start with a 3-Week Pilot",
+    "subtitle": "See the value in weeks, not months. Transform your inspection process with zero risk.",
+    "whatIncluded": "What's Included",
+    "features": [
       {
-        "question": "\"Will my field team actually use it?\"",
-        "answer": "We built the mobile app like a food delivery app",
-        "description": "Easy, intuitive, made for zero training."
+        "title": "Custom Digitization",
+        "description": "Share your checklist — we'll digitize it in 24 hours"
       },
       {
-        "question": "\"Will I need an IT guy to manage this?\"",
-        "answer": "Nope. Run with a 2-person ops team",
-        "description": "Add users, edit templates, schedule audits—no tech required."
+        "title": "Full Access",
+        "description": "Unlock all core features for complete evaluation"
       },
       {
-        "question": "\"Is it flexible enough for real-world changes?\"",
-        "answer": "Change on the fly",
-        "description": "Change questions, add checkpoints, reassign users—without calling support."
+        "title": "Free Training",
+        "description": "Onboarding for your entire team — regional and field"
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Dedicated support throughout your pilot period"
       }
     ],
-    "seeAllButton": "See list of all 25"
-  },
-  "callToAction": {
-    "title": "Look Good. Get Noticed.",
-    "subtitle": "Ready to transform your inspection process? Join thousands of professionals who trust PulsePro.",
-    "button": "Start Free Trial"
+    "pilot": {
+      "badge": "Risk-Free Pilot",
+      "title": "One simple plan with a 2 weeks trial",
+      "price": "FREE",
+      "duration": "for 2 weeks",
+      "then": "Then $22/month per user",
+      "disclaimer": "No credit card required • Cancel anytime • Setup in 24 hours"
+    },
+    "cta": {
+      "primary": "Start Free Pilot",
+      "secondary": "Book a Demo"
+    },
+    "stats": {
+      "sites": {
+        "value": "10000+",
+        "label": "Enterprise Sites"
+      },
+      "setup": {
+        "value": "24hrs",
+        "label": "Setup Time"
+      },
+      "uptime": {
+        "value": "99.9%",
+        "label": "Uptime"
+      }
+    }
   },
   "seamlessConnections": {
     "tagline": "Seamless Connections",
@@ -551,6 +727,306 @@
     "hero": {
       "title": "Privacy Policy",
       "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information."
+    }
+  },
+  "featuresPage": {
+    "breadcrumb": {
+      "dashboard": "Dashboard",
+      "current": "Explore What Pulse Can Do"
+    },
+    "hero": {
+      "title": "Explore What Pulse Can Do",
+      "description": "Built through years of real-world learning, every feature here helps you run tight, automated, and reliable workflows.",
+      "infoBanner": "💡 You can click on any feature below to see it live inside the platform.",
+      "tipBox": "Features are grouped by objective. Expand any section to see what's inside and how it helps your workflow.",
+      "stats": {
+        "features": {
+          "value": "100+",
+          "label": "Built-in Features"
+        },
+        "customizable": {
+          "value": "Fully",
+          "label": "Customizable"
+        },
+        "availability": {
+          "value": "24/7",
+          "label": "Always Available"
+        }
+      }
+    },
+    "categories": {
+      "noLimits": {
+        "title": "No Limits — Grow Without Restrictions",
+        "subtitle": "Capture, store, and manage as much as you need. Pulse doesn't cap your ambition.",
+        "features": {
+          "unlimitedChecklists": {
+            "title": "Unlimited Checklists",
+            "description": "Create as many checklists as your operations need — no limits."
+          },
+          "unlimitedPhotos": {
+            "title": "Unlimited Photos",
+            "description": "Attach multiple images to every question for complete evidence."
+          },
+          "unlimitedStorage": {
+            "title": "Unlimited Data Storage",
+            "description": "Keep all reports, actions, and photos securely — long term."
+          },
+          "unlimitedSchedules": {
+            "title": "Unlimited Schedules",
+            "description": "Create recurring or ad-hoc schedules across locations — no limits."
+          }
+        }
+      },
+      "mobile": {
+        "title": "Work Easily on Mobile",
+        "subtitle": "Adoption is effortless when tools feel natural.",
+        "features": {
+          "simpleInterface": {
+            "title": "Simple Interface",
+            "description": "Start using immediately — minimal training needed."
+          },
+          "offlineCapture": {
+            "title": "Offline Capture",
+            "description": "Record findings, photos, and notes even without network."
+          },
+          "attachEvidenceFast": {
+            "title": "Attach Evidence Fast",
+            "description": "Add photos, files, and notes right inside a question."
+          },
+          "guidedFlows": {
+            "title": "Guided Flows",
+            "description": "Clear step-by-step screens so nothing gets missed."
+          }
+        }
+      },
+      "reliableData": {
+        "title": "Get Reliable Data Without Chasing Proof",
+        "subtitle": "Ensure every submission reflects what really happened — not what people say happened.",
+        "features": {
+          "geoTagging": {
+            "title": "Geo-tagging",
+            "description": "Automatically records location for every report."
+          },
+          "geoFencing": {
+            "title": "Geo-fencing",
+            "description": "Allow submissions only within approved site boundaries."
+          },
+          "conditionalQuestions": {
+            "title": "Conditional Questions",
+            "description": "Show or hide follow-ups based on responses."
+          },
+          "inputRestrictions": {
+            "title": "Input Restrictions",
+            "description": "Enforce formats (numbers, dates, dropdowns, required fields)."
+          }
+        }
+      },
+      "shareReadyReports": {
+        "title": "Get Share-Ready Reports Instantly",
+        "subtitle": "Turn raw data into clean, ready-to-share outputs automatically.",
+        "features": {
+          "pdfReports": {
+            "title": "PDF Reports",
+            "description": "One-click, section-wise formatted PDFs."
+          },
+          "excelExports": {
+            "title": "Excel Exports",
+            "description": "Structured exports with clean columns and filters."
+          },
+          "missedCallAnalytics": {
+            "title": "Missed-Call Analytics",
+            "description": "See scheduled vs. completed to spot gaps quickly."
+          },
+          "oneClickShare": {
+            "title": "One-Click Share",
+            "description": "Share securely by link or email from inside Pulse."
+          }
+        }
+      },
+      "makerChecker": {
+        "title": "Review and Verify Before Closing (Maker–Checker)",
+        "subtitle": "Maintain quality control with approvals before anything is published.",
+        "features": {
+          "multiLevelReview": {
+            "title": "Multi-Level Review",
+            "description": "One or more approval stages before publish."
+          },
+          "digitalSignatures": {
+            "title": "Digital Signatures",
+            "description": "Capture approver sign-offs."
+          },
+          "verificationPhotos": {
+            "title": "Verification Photos",
+            "description": "Require before/after proof for closure."
+          },
+          "rejectionReasons": {
+            "title": "Rejection Reasons",
+            "description": "Send back with comments; track who/when/why."
+          }
+        }
+      },
+      "trackActions": {
+        "title": "Track Actions and Ensure Closure",
+        "subtitle": "Don't just find issues—close the loop.",
+        "features": {
+          "createActionsFromAudits": {
+            "title": "Create Actions from Audits",
+            "description": "Raise actions directly from any checkpoint."
+          },
+          "dueDatesReminders": {
+            "title": "Due Dates & Reminders",
+            "description": "Set deadlines; Pulse nudges owners automatically."
+          },
+          "escalations": {
+            "title": "Escalations",
+            "description": "Auto-notify seniors when items go overdue."
+          },
+          "linkConvertToTicket": {
+            "title": "Link/Convert to Ticket",
+            "description": "Turn an action into a ticket when cross-team support is needed."
+          }
+        },
+        "note": "For non-audit issues, use the Tickets module (see next section)."
+      },
+      "ticketsAndMaintenance": {
+        "title": "Manage Tickets and Maintenance",
+        "subtitle": "Handle breakdowns and repair requests with built-in ticketing.",
+        "features": {
+          "departmentRouting": {
+            "title": "Department Routing",
+            "description": "Send tickets to maintenance, facilities, or safety teams."
+          },
+          "priorityLevelsSLAs": {
+            "title": "Priority Levels & SLAs",
+            "description": "Track urgency and on-time resolution."
+          },
+          "reassignment": {
+            "title": "Reassignment",
+            "description": "Move ownership across teams smoothly."
+          },
+          "closureProof": {
+            "title": "Closure Proof",
+            "description": "Require photos/notes before resolution."
+          }
+        }
+      },
+      "reminders": {
+        "title": "Keep Everyone Alert with the Right Reminders",
+        "subtitle": "Plenty of smart notifications—without the noise.",
+        "features": {
+          "builtInAlerts": {
+            "title": "Built-in Alerts & Reminders",
+            "description": "Inspections, actions, and tickets — timely nudges included."
+          },
+          "escalationAlerts": {
+            "title": "Escalation Alerts",
+            "description": "Auto-escalate when deadlines are missed."
+          },
+          "roleSiteTargeting": {
+            "title": "Role/Site Targeting",
+            "description": "Send only to relevant users and locations."
+          },
+          "editableMessageContent": {
+            "title": "Editable Message Content",
+            "description": "Tweak subject and body text to match your tone."
+          }
+        }
+      },
+      "systemScoring": {
+        "title": "Let the System Do the Scoring",
+        "subtitle": "Automate scoring so grading is consistent and fair.",
+        "features": {
+          "weightedScores": {
+            "title": "Weighted Scores",
+            "description": "Apply different weights by question or section."
+          },
+          "passFailLogic": {
+            "title": "Pass/Fail Logic",
+            "description": "Set compliance thresholds."
+          },
+          "gradingBands": {
+            "title": "Grading Bands",
+            "description": "A/B/C or Pass/Fail, your choice."
+          },
+          "zeroToleranceItems": {
+            "title": "Zero-Tolerance Items",
+            "description": "Auto-fail if critical items are missed."
+          }
+        }
+      },
+      "ecosystem": {
+        "title": "Integrate with Your Ecosystem",
+        "subtitle": "Connect Pulse to the systems you already use.",
+        "features": {
+          "openAPIsWebhooks": {
+            "title": "Open APIs & Webhooks",
+            "description": "Push/pull data programmatically."
+          },
+          "biConnectors": {
+            "title": "BI Connectors",
+            "description": "Feed Power BI/Tableau/Looker for advanced dashboards."
+          },
+          "ticketingIntegrations": {
+            "title": "Ticketing Integrations",
+            "description": "Connect to Jira/ServiceNow/Zendesk if needed."
+          },
+          "singleSignOn": {
+            "title": "Single Sign-On (SSO)",
+            "description": "Azure AD / Okta / Google Workspace SSO support."
+          }
+        }
+      },
+      "customization": {
+        "title": "Make Pulse Feel Like Your Own",
+        "subtitle": "Match your brand and way of working.",
+        "features": {
+          "customBranding": {
+            "title": "Custom Branding",
+            "description": "Logo, colors, cover pages for reports."
+          },
+          "reportBranding": {
+            "title": "Report Branding",
+            "description": "Headers/footers, sign-offs, and layouts your way."
+          },
+          "terminologyFit": {
+            "title": "Terminology Fit",
+            "description": "Rename fields/labels to match your vocabulary."
+          },
+          "permissionsByRole": {
+            "title": "Permissions by Role",
+            "description": "Fine-grained access aligned to your org structure."
+          }
+        }
+      }
+    },
+    "common": {
+      "clickToSee": "Click on any feature to see it live in the platform."
+    },
+    "featureRequest": {
+      "title": "Missing Something?",
+      "description": "We're always adding new features based on real user needs. If there's something you wish Pulse could do, let us know.",
+      "formTitle": "Request a New Feature",
+      "form": {
+        "featureName": "Feature name or title",
+        "description": "Describe what you'd like this feature to do...",
+        "importanceLabel": "How important is this to you?",
+        "importance": {
+          "niceToHave": "Nice to have",
+          "wouldBeHelpful": "Would be helpful",
+          "reallyNeed": "Really need this",
+          "critical": "Critical for our workflow"
+        },
+        "submit": "Submit Feature Request"
+      }
+    },
+    "footer": {
+      "description": "Pulse keeps evolving — explore, learn, and let us know what else would make your work easier.",
+      "links": {
+        "documentation": "Documentation",
+        "support": "Support",
+        "community": "Community"
+      },
+      "copyright": "© 2024 Pulse. Built for teams who value reliability and efficiency."
     }
   }
 }
