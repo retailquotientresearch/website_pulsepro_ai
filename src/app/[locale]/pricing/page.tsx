@@ -259,7 +259,7 @@ export default function PricingPage() {
             <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-16'>
               {t.raw('plan.features').map((feature: string, index: number) => {
                 // Define icons for different features
-                const getFeatureIcon = (feature: string, index: number) => {
+                const getFeatureIcon = (feature: string) => {
                   const lowerFeature = feature.toLowerCase();
                   if (lowerFeature.includes('unlimited data') || lowerFeature.includes('storage')) return 'ri-database-2-fill';
                   if (lowerFeature.includes('offline')) return 'ri-wifi-off-fill';
@@ -344,7 +344,7 @@ export default function PricingPage() {
                       
                       <div className='flex flex-col items-center relative z-10 space-y-3'>
                         <div className={`${getIconSize(index)} bg-gradient-to-br ${gradients[index % gradients.length]} rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                          <i className={`${getFeatureIcon(feature, index)}`}></i>
+                          <i className={`${getFeatureIcon(feature)}`}></i>
                         </div>
                         <div className={`${getTextSize(index)} text-gray-900 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center`}>
                           {feature}

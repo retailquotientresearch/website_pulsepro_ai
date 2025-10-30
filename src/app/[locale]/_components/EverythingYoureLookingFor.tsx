@@ -46,7 +46,7 @@ export default function EverythingYoureLookingFor() {
 						{/* Soft green glow behind the title to match site accents */}
 						<div className="pointer-events-none absolute -inset-x-10 -top-6 h-20 bg-gradient-to-r from-[#1A7D3D]/20 via-transparent to-[#1A7D3D]/20 blur-3xl"></div>
 						<h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111]">
-							Everything you're 
+							Everything you&apos;re 
 							{' '}
 							<span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">looking for</span>
 						</h2>

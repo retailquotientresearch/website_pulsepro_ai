@@ -1,39 +1,90 @@
 "use client";
 
 import { cn } from "../../../lib/utils";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-type ScatterIcon = { icon: string; size: number; rotate: number; x: string; y: string; tone?: "red" | "amber" | "slate" };
+type ScatterIcon = {
+  icon: string;
+  size: number;
+  rotate: number;
+  x: string;
+  y: string;
+  tone?: "red" | "amber" | "slate";
+};
 
 const CHAOS_ICONS: ScatterIcon[] = [
-  { icon: "ri-apps-2-fill", size: 52, rotate: -18, x: "8%", y: "10%", tone: "red" },
-  { icon: "ri-file-paper-fill", size: 64, rotate: 22, x: "36%", y: "6%", tone: "amber" },
-  { icon: "ri-file-excel-2-fill", size: 58, rotate: -8, x: "20%", y: "30%", tone: "red" },
-  { icon: "ri-file-text-fill", size: 48, rotate: 32, x: "4%", y: "60%", tone: "amber" },
-  { icon: "ri-database-2-fill", size: 42, rotate: -26, x: "46%", y: "48%", tone: "red" },
-  { icon: "ri-mail-fill", size: 56, rotate: 14, x: "28%", y: "72%", tone: "amber" },
+  {
+    icon: "ri-apps-2-fill",
+    size: 52,
+    rotate: -18,
+    x: "8%",
+    y: "10%",
+    tone: "red",
+  },
+  {
+    icon: "ri-file-paper-fill",
+    size: 64,
+    rotate: 22,
+    x: "36%",
+    y: "6%",
+    tone: "amber",
+  },
+  {
+    icon: "ri-file-excel-2-fill",
+    size: 58,
+    rotate: -8,
+    x: "20%",
+    y: "30%",
+    tone: "red",
+  },
+  {
+    icon: "ri-file-text-fill",
+    size: 48,
+    rotate: 32,
+    x: "4%",
+    y: "60%",
+    tone: "amber",
+  },
+  {
+    icon: "ri-database-2-fill",
+    size: 42,
+    rotate: -26,
+    x: "46%",
+    y: "48%",
+    tone: "red",
+  },
+  {
+    icon: "ri-mail-fill",
+    size: 56,
+    rotate: 14,
+    x: "28%",
+    y: "72%",
+    tone: "amber",
+  },
 ];
 
 const STREAMLINED_ICONS: string[] = [
   "ri-dashboard-2-fill",
-  "ri-bar-chart-2-fill", 
+  "ri-bar-chart-2-fill",
   "ri-pie-chart-2-fill",
   "ri-line-chart-fill",
   "ri-check-line",
   "ri-sparkling-fill",
 ];
 
-
 type PhoneSize = { width: number; height: number };
 
-function PhoneMock({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void }) {
+function PhoneMock({
+  onScreenSize,
+}: {
+  onScreenSize?: (size: PhoneSize) => void;
+}) {
   // Little CSS-driven pulse on mount
   const ref = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const [scaledWidth, setScaledWidth] = useState<number>();
-  const [scaledHeight, setScaledHeight] = useState<number>();
   const [loaded, setLoaded] = useState(false);
-  const [src, setSrc] = useState<string>(
+  const [src] = useState<string>(
     "/images/ios-26-iphone-16-pro-take-a-screenshot-options.jpg"
   );
   useEffect(() => {
@@ -56,12 +107,11 @@ function PhoneMock({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void 
         const w = Math.round(nw * 0.6);
         const h = Math.round(nh * 0.6);
         setScaledWidth(w);
-        setScaledHeight(h);
         onScreenSize?.({ width: w, height: h });
       }
       setLoaded(true);
     }
-  }, [src]);
+  }, [src, onScreenSize]);
 
   return (
     <div
@@ -73,7 +123,10 @@ function PhoneMock({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void 
         ref={imgRef}
         src={src}
         alt="PulsePro mobile app screen"
-        className={cn("block h-auto transition-opacity duration-300", loaded ? "opacity-100" : "opacity-0")}
+        className={cn(
+          "block h-auto transition-opacity duration-300",
+          loaded ? "opacity-100" : "opacity-0"
+        )}
         loading="eager"
         decoding="async"
         style={scaledWidth ? { width: `${scaledWidth}px` } : undefined}
@@ -85,7 +138,6 @@ function PhoneMock({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void 
               const w = Math.round(nw * 0.6);
               const h = Math.round(nh * 0.6);
               setScaledWidth(w);
-              setScaledHeight(h);
               onScreenSize?.({ width: w, height: h });
             }
           } finally {
@@ -94,7 +146,6 @@ function PhoneMock({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void 
         }}
         onError={() => {
           // Keep the src unchanged; surface in console for debugging instead of swapping images
-          // eslint-disable-next-line no-console
           console.error("Failed to load image:", src);
           setLoaded(true);
         }}
@@ -108,7 +159,9 @@ export default function ChaosToClarity() {
   // Simpler: dedicated chaos and clarity strips, each repeated for seamless loop
   const REPEAT = 2;
   const chaosStrip = Array.from({ length: REPEAT }).flatMap(() => CHAOS_ICONS);
-  const clarityStrip = Array.from({ length: REPEAT }).flatMap(() => STREAMLINED_ICONS);
+  const clarityStrip = Array.from({ length: REPEAT }).flatMap(
+    () => STREAMLINED_ICONS
+  );
 
   const chaosLen = chaosStrip.length;
   const clarityLen = clarityStrip.length;
@@ -124,7 +177,10 @@ export default function ChaosToClarity() {
     const computeAmp = (el: HTMLElement | null) => {
       if (!el) return 0;
       const h = el.clientHeight || 0;
-      const isMd = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(min-width: 768px)").matches;
+      const isMd =
+        typeof window !== "undefined" &&
+        window.matchMedia &&
+        window.matchMedia("(min-width: 768px)").matches;
       // Card sizes mirror Tailwind classes: h-20 (80px) on base, md:h-24 (96px) on md+
       const cardH = isMd ? 96 : 80;
       // Smaller amplitude for multiple visible waves
@@ -146,16 +202,17 @@ export default function ChaosToClarity() {
     if (L <= 1) return 0;
     const t = i / (L - 1); // 0..1
     // Create multiple smaller waves that flow from edges toward center
-    const numWaves =2; // Number of wave cycles visible at once
+    const numWaves = 2; // Number of wave cycles visible at once
     const waveFrequency = numWaves * Math.PI * 2; // Multiple complete waves
-    
+
     // Base wave pattern - multiple small waves
     const multipleWaves = Math.sin(t * waveFrequency) * depth * 0.4;
-    
+
     // Flow convergence: waves flow from edges (0 and 1) toward center (0.5)
     const distanceFromCenter = Math.abs(t - 0.5); // 0 at center, 0.5 at edges
-    const convergenceFlow = Math.sin(distanceFromCenter * Math.PI) * depth * 0.6;
-    
+    const convergenceFlow =
+      Math.sin(distanceFromCenter * Math.PI) * depth * 0.6;
+
     return multipleWaves + convergenceFlow;
   };
 
@@ -173,13 +230,18 @@ export default function ChaosToClarity() {
             <div
               key={`${keyPrefix}-s1-${i}`}
               className="h-20 w-20 md:h-24 md:w-24 rounded-2xl bg-white/70 dark:bg-white/10 border border-border flex items-center justify-center shadow-sm backdrop-blur-sm transition-transform duration-300"
-              style={{ 
+              style={{
                 transform: `translateY(${offset}px) rotate(${tilt}deg)`,
-                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})` // Brighten cards at flow peaks
+                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})`, // Brighten cards at flow peaks
               }}
             >
-              <i className={cn("text-4xl md:text-5xl", item.icon, tone)} aria-hidden="true" />
-              <span className="sr-only">{item.icon.replace(/ri-|-/g, " ")}</span>
+              <i
+                className={cn("text-4xl md:text-5xl", item.icon, tone)}
+                aria-hidden="true"
+              />
+              <span className="sr-only">
+                {item.icon.replace(/ri-|-/g, " ")}
+              </span>
             </div>
           );
         })}
@@ -196,12 +258,15 @@ export default function ChaosToClarity() {
             <div
               key={`${keyPrefix}-s2-${i}`}
               className="h-20 w-20 md:h-24 md:w-24 rounded-2xl bg-white/70 dark:bg-white/10 border border-border flex items-center justify-center shadow-sm backdrop-blur-sm transition-transform duration-300"
-              style={{ 
+              style={{
                 transform: `translateY(${offset}px) rotate(${tilt}deg)`,
-                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})` // Brighten cards at flow peaks
+                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})`, // Brighten cards at flow peaks
               }}
             >
-              <i className={cn("text-4xl md:text-5xl", item.icon, tone)} aria-hidden="true" />
+              <i
+                className={cn("text-4xl md:text-5xl", item.icon, tone)}
+                aria-hidden="true"
+              />
             </div>
           );
         })}
@@ -219,12 +284,18 @@ export default function ChaosToClarity() {
             <div
               key={`${keyPrefix}-s1-${i}`}
               className="h-20 w-20 md:h-24 md:w-24 rounded-2xl bg-white/70 dark:bg-white/10 border border-border flex items-center justify-center shadow-sm backdrop-blur-sm transition-transform duration-300"
-              style={{ 
+              style={{
                 transform: `translateY(${offset}px) rotate(${tilt}deg)`,
-                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})` // Brighten cards at flow peaks
+                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})`, // Brighten cards at flow peaks
               }}
             >
-              <i className={cn("text-4xl md:text-5xl text-black dark:text-gray-800", icon)} aria-hidden="true" />
+              <i
+                className={cn(
+                  "text-4xl md:text-5xl text-black dark:text-gray-800",
+                  icon
+                )}
+                aria-hidden="true"
+              />
               <span className="sr-only">{icon.replace(/ri-|-/g, " ")}</span>
             </div>
           );
@@ -238,12 +309,18 @@ export default function ChaosToClarity() {
             <div
               key={`${keyPrefix}-s2-${i}`}
               className="h-20 w-20 md:h-24 md:w-24 rounded-2xl bg-white/70 dark:bg-white/10 border border-border flex items-center justify-center shadow-sm backdrop-blur-sm transition-transform duration-300"
-              style={{ 
+              style={{
                 transform: `translateY(${offset}px) rotate(${tilt}deg)`,
-                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})` // Brighten cards at flow peaks
+                filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})`, // Brighten cards at flow peaks
               }}
             >
-              <i className={cn("text-4xl md:text-5xl text-black dark:text-gray-800", icon)} aria-hidden="true" />
+              <i
+                className={cn(
+                  "text-4xl md:text-5xl text-black dark:text-gray-800",
+                  icon
+                )}
+                aria-hidden="true"
+              />
             </div>
           );
         })}
@@ -252,20 +329,21 @@ export default function ChaosToClarity() {
   );
 
   return (
-  <section className="relative overflow-hidden py-0 md:py-0 bg-[#FDF6E9]">
+    <section className="relative overflow-hidden py-0 md:py-0 bg-[#FDF6E9]">
       {/* Replace scattered chaos with synchronized strip system */}
 
-  <div className="full-bleed relative z-10">
+      <div className="full-bleed relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             From chaos to clarity
           </h2>
           <p className="mt-3 text-base md:text-lg text-muted-foreground">
-            Watch your messy data flow seamlessly through PulsePro and emerge as clean, actionable insights.
+            Watch your messy data flow seamlessly through PulsePro and emerge as
+            clean, actionable insights.
           </p>
         </div>
 
-  <div className="flex flex-col lg:flex-row items-stretch gap-0">
+        <div className="flex flex-col lg:flex-row items-stretch gap-0">
           {/* Left: chaos strip flowing INTO the phone */}
           <div className="lg:order-1 order-1 self-stretch h-full flex items-stretch flex-1 min-w-0 relative">
             {/* Flowing gradient overlay to show flow direction */}
