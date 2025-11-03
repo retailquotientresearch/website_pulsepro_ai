@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { ROUTES, EXTERNAL_LINKS } from "@/config/links";
 import { useTranslations } from "next-intl";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 export default function Navigation() {
   const t = useTranslations('navigation');
@@ -15,10 +16,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href={ROUTES.home} className="flex items-center group">
-            <img
+            <Image
               src="/images/pulse-black.png"
               alt="Pulse Logo"
+              width={140}
+              height={40}
               className="h-8 lg:h-10 w-auto group-hover:scale-105 transition-transform duration-200"
+              priority
             />
           </Link>
 

@@ -201,17 +201,7 @@ function InsightList() {
 }
 
 function DashboardPlaceholder() {
-  const [isSmall, setIsSmall] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 767px)');
-    const update = () => setIsSmall(mq.matches);
-    update();
-    mq.addEventListener ? mq.addEventListener('change', update) : mq.addListener(update);
-    return () => {
-      mq.removeEventListener ? mq.removeEventListener('change', update) : mq.removeListener(update);
-    };
-  }, []);
+  // Previously tracked small-screen state here, but it was unused; removed to satisfy ESLint.
 
   return (
     <div className="min-h-full w-full p-3 grid grid-rows-[auto_minmax(0,1fr)_auto] gap-3">
@@ -261,16 +251,25 @@ function PhoneUI({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void })
   useEffect(() => {
     const target = screenRef.current;
     if (!target) return;
-    const ro = new (window as any).ResizeObserver((entries: any[]) => {
-      for (const e of entries) {
-        const { width, height } = e.contentRect || {};
-        if (width && height) onScreenSize?.({ width: Math.round(width), height: Math.round(height) });
-      }
-    });
-    ro.observe(target);
+    // Prefer native ResizeObserver when available, with proper typings
+    if (typeof window !== 'undefined' && 'ResizeObserver' in window) {
+      const ro = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+        for (const entry of entries) {
+          const { width, height } = entry.contentRect;
+          if (width && height) {
+            onScreenSize?.({ width: Math.round(width), height: Math.round(height) });
+          }
+        }
+      });
+      ro.observe(target);
+      const r = target.getBoundingClientRect();
+      if (r.width && r.height) onScreenSize?.({ width: Math.round(r.width), height: Math.round(r.height) });
+      return () => ro.disconnect();
+    }
+
+    // Fallback: measure once if ResizeObserver isn't available
     const r = target.getBoundingClientRect();
     if (r.width && r.height) onScreenSize?.({ width: Math.round(r.width), height: Math.round(r.height) });
-    return () => ro.disconnect();
   }, [onScreenSize]);
 
   const handleAnswer = (answer: "yes" | "no") => {

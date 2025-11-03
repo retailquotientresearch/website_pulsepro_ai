@@ -3,6 +3,7 @@
 import Section from "@/components/ui/Section";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/Badge";
+import Image from "next/image";
 import {
 	Bell,
 	BarChart3,
@@ -38,19 +39,6 @@ const REEL_ICONS: Record<string, LucideIcon> = {
 	Signatures: PenLine,
 	"Geo Check In": MapPin,
 };
-
-function ReelCard({ title, image, className = "" }: Reel & { className?: string }) {
-	return (
-		<div className={cn("w-full", className)}>
-			<img
-				src={image}
-				alt={title}
-				loading="lazy"
-				className="block h-auto w-auto max-w-full mx-auto object-contain"
-			/>
-		</div>
-	);
-}
 
 function Tile({ label }: { label: string }) {
 	return (
@@ -103,11 +91,13 @@ export default function EverythingYoureLookingFor() {
 							<AnimatedCard key={reel.title} delay={idx * 80} direction="up" className="m-0 p-0">
 								<div className="relative group inline-block overflow-visible align-middle m-0 p-0">
 									{/* Image */}
-									<img
+									<Image
 										src={reel.image}
 										alt={reel.title}
-										loading="lazy"
+										width={640}
+										height={400}
 										className="block h-auto w-auto max-w-full object-contain drop-shadow-sm m-0 p-0"
+										loading="lazy"
 									/>
 
 									{/* Curvy arrow with label on md+ (to avoid crowding on small) */}
