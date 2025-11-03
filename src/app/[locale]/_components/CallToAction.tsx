@@ -1,6 +1,7 @@
 'use client';
 
 import { Check, Play, Calendar } from 'lucide-react';
+import { EXTERNAL_LINKS } from '@/config/links';
 import { useTranslations } from 'next-intl';
 
 type CTAFeature = {
@@ -80,7 +81,7 @@ export default function CallToAction() {
                   {/* CTA Buttons - matching Hero component */}
                   <div className="space-y-4 mb-6">
                     <a
-                      href="https://ng-app.pulsepro.ai/register"
+                      href={EXTERNAL_LINKS.register}
                       className="w-full bg-[#1A7D3D] text-white font-medium rounded-full px-8 py-4 text-lg transition-all transform hover:scale-105 hover:shadow-lg hover:bg-[#166534] flex items-center justify-center gap-3"
                     >
                       <Play className="w-5 h-5" />
@@ -88,7 +89,7 @@ export default function CallToAction() {
                     </a>
                     
                     <a
-                      href="https://www.pulsepro.ai/pulse-watch-demo/"
+                      href={EXTERNAL_LINKS.demoWatch}
                       className="w-full border-2 border-[#1A7D3D] text-[#1A7D3D] font-medium rounded-full px-8 py-4 text-lg transition-all hover:bg-[#1A7D3D]/5 flex items-center justify-center gap-3"
                     >
                       <Calendar className="w-5 h-5" />

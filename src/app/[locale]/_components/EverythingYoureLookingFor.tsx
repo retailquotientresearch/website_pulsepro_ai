@@ -2,6 +2,17 @@
 
 import Section from "@/components/ui/Section";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
+import { Badge } from "@/components/ui/Badge";
+import {
+	Bell,
+	BarChart3,
+	CheckSquare,
+	Image as ImageIcon,
+	MapPin,
+	PenLine,
+	CircleHelp,
+	type LucideIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
 
@@ -14,23 +25,49 @@ const REELS: Reel[] = [
 	{ title: "Analytics", image: "/images/Analytics_card.png" },
 	{ title: "Actions", image: "/images/Action_card.png" },
 	{ title: "Notifications", image: "/images/Notification_card.png" },
+	{ title: "Image Upload", image: "/images/Image_upload.png" },
+	{ title: "Signatures", image: "/images/Digital_signature.png" },
+	{ title: "Geo Check In", image: "/images/Geolocation.png" },
 ];
+
+const REEL_ICONS: Record<string, LucideIcon> = {
+	Analytics: BarChart3,
+	Actions: CheckSquare,
+	Notifications: Bell,
+	"Image Upload": ImageIcon,
+	Signatures: PenLine,
+	"Geo Check In": MapPin,
+};
 
 function ReelCard({ title, image, className = "" }: Reel & { className?: string }) {
 	return (
 		<div className={cn("w-full", className)}>
-			{/* Media only: no borders, shadows, overlays, or hover effects */}
 			<img
 				src={image}
 				alt={title}
 				loading="lazy"
-				className="block w-full h-auto object-contain object-center"
+				className="block h-auto w-auto max-w-full mx-auto object-contain"
 			/>
-			{/* Simple caption below the image */}
-			<p className="mt-2 text-[#111] text-sm sm:text-base font-medium tracking-wide text-center">
-				{title}
-			</p>
 		</div>
+	);
+}
+
+function Tile({ label }: { label: string }) {
+	return (
+		<Badge
+			variant="outline"
+			className="w-auto h-10 sm:h-10 rounded-full border-slate-300/80 text-slate-800 bg-white/90 backdrop-blur px-5 sm:px-5 text-sm sm:text-sm font-medium shadow-sm hover:shadow transition-shadow flex items-center gap-2.5 justify-start"
+		>
+			{(() => {
+				const Icon = REEL_ICONS[label] ?? CircleHelp;
+				return (
+					<span className="inline-flex size-6 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-slate-700">
+						<Icon className="size-3.5" aria-hidden="true" />
+					</span>
+				);
+			})()}
+			{label}
+		</Badge>
 	);
 }
 
@@ -50,15 +87,138 @@ export default function EverythingYoureLookingFor() {
 						</h2>
 					</div>
 
-				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-					{REELS.map((reel, idx) => (
-						<AnimatedCard key={reel.title} delay={idx * 80} direction="up">
-							<ReelCard {...reel} />
-						</AnimatedCard>
-					))}
+				{/* Shared tile stack above images (show on < lg) */}
+				<div className="mx-auto w-full max-w-md sm:max-w-lg mb-8 sm:mb-10 lg:hidden">
+					<div className="flex flex-col items-center gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-3">
+						{REELS.map((reel) => (
+							<Tile key={reel.title} label={reel.title} />
+						))}
+					</div>
+				</div>
+
+				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 place-items-center">
+		    {REELS.map((reel, idx) => {
+						const side: 'left' | 'right' = idx % 2 === 0 ? 'left' : 'right'
+						return (
+							<AnimatedCard key={reel.title} delay={idx * 80} direction="up" className="m-0 p-0">
+								<div className="relative group inline-block overflow-visible align-middle m-0 p-0">
+									{/* Image */}
+									<img
+										src={reel.image}
+										alt={reel.title}
+										loading="lazy"
+										className="block h-auto w-auto max-w-full object-contain drop-shadow-sm m-0 p-0"
+									/>
+
+									{/* Curvy arrow with label on md+ (to avoid crowding on small) */}
+									<CurvyArrowLabel
+										id={`reel-${idx}`}
+										label={reel.title}
+										side={side}
+										className="hidden lg:block"
+									/>
+								</div>
+							</AnimatedCard>
+						)
+					})}
 				</div>
 			</div>
 		</Section>
 	);
+}
+
+type CurvyArrowLabelProps = {
+	id: string
+	label: string
+	side?: 'left' | 'right'
+	className?: string
+}
+
+function CurvyArrowLabel({ id, label, side = 'left', className = '' }: CurvyArrowLabelProps) {
+	// Position elements just outside the image area, with a playful curved path
+	const isLeft = side === 'left'
+	const overlaySide = isLeft
+		? 'absolute top-1/2 left-0 -translate-y-1/2 -translate-x-[calc(100%+10px)]'
+		: 'absolute top-1/2 right-0 -translate-y-1/2 translate-x-[calc(100%+10px)]'
+	const labelPos = isLeft
+		? 'left-0 -translate-x-2 sm:-translate-x-4'
+		: 'right-0 translate-x-2 sm:translate-x-4'
+	const labelJustify = isLeft ? 'items-start text-left' : 'items-end text-right'
+
+	// Path bezier points within a 320x220 viewport, scaled by viewBox
+	const pathId = `arrow-path-${id}`
+	const markerId = `arrow-head-${id}`
+
+	// Mirror horizontally for right side within the SVG coordinate system
+	const svgGroupTransform = isLeft ? undefined : 'translate(320 0) scale(-1 1)'
+
+	return (
+		<div className={cn("pointer-events-none", overlaySide, "w-[320px] h-[220px]", className)} aria-hidden>
+			{/* Position label bubble */}
+			<div className={cn("absolute top-6", labelPos)}>
+				<div className={cn("flex flex-col gap-2", labelJustify)}>
+					<div className="pointer-events-auto inline-flex">
+						<Badge
+							variant="outline"
+							className={cn(
+								"rounded-full border-slate-300/70 bg-white/90 text-slate-900 shadow-sm backdrop-blur px-4 py-2",
+								"hover:shadow-md transition-shadow duration-300"
+							)}
+						>
+							{/* Icon bubble + label */}
+							{(() => {
+								const Icon = REEL_ICONS[label] ?? CircleHelp
+								return (
+									<span className="mr-2 inline-flex size-6 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-slate-700">
+										<Icon className="size-3.5" aria-hidden="true" />
+									</span>
+								)
+							})()}
+							<span className="font-medium">{label}</span>
+						</Badge>
+					</div>
+				</div>
+			</div>
+
+			{/* Curved SVG arrow */}
+			<svg
+				className={cn("absolute top-1/2 left-0 -translate-y-1/2 w-[280px] h-[200px] -z-10")}
+				viewBox="0 0 320 220"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				preserveAspectRatio="xMinYMin meet"
+			>
+				<defs>
+					<marker id={markerId} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+						<path d="M 0 0 L 10 5 L 0 10 z" fill="#111111" />
+					</marker>
+				</defs>
+
+				<g {...(svgGroupTransform ? { transform: svgGroupTransform } : {})}>
+					{/* playful wavy curve */}
+					<path
+						id={pathId}
+						d="M 10 30 C 80 20, 120 80, 160 70 S 260 120, 300 90"
+						stroke="#111111"
+						strokeWidth="3.5"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						fill="none"
+						markerEnd={`url(#${markerId})`}
+						className="[stroke-dasharray:6_10] group-hover:[stroke-dashoffset:16] transition-[stroke-dashoffset] duration-500 ease-out"
+					/>
+
+					{/* subtle glow underlay */}
+					<path
+						d="M 10 30 C 80 20, 120 80, 160 70 S 260 120, 300 90"
+						stroke="#00000022"
+						strokeWidth="8"
+						fill="none"
+						className="blur-[1.5px]"
+					/>
+				</g>
+			</svg>
+		</div>
+	)
 }
 

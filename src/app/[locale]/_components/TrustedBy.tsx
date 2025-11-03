@@ -10,11 +10,11 @@ type Client = {
 // Tip: Update this list to add/remove clients. Logos live in public/images/clients
 // You can add more without touching the component logic.
 const ROW_ONE: Client[] = [
-  { name: "Accor", logo: "/images/clients/unnamed%20(1).png" },
-  { name: "Green Resources", logo: "/images/clients/unnamed%20(2).png" },
-  { name: "Fichtner", logo: "/images/clients/unnamed%20(3).png" },
-  { name: "Rebel Foods", logo: "/images/clients/unnamed%20(4).png" },
-  { name: "Nippon Logistics", logo: "/images/clients/unnamed.png" },
+  { name: "Accor", logo: "/images/clients/Accor.png" },
+  { name: "Green Resources", logo: "/images/clients/Green_Resources.png" },
+  { name: "Fichtner", logo: "/images/clients/Fichtner.png" },
+  { name: "Rebel Foods", logo: "/images/clients/Rebel_foods.png" },
+  { name: "Nippon Logistics", logo: "/images/clients/Nex_Nippon_Express.png" },
 ];
 
 const ROW_TWO: Client[] = [

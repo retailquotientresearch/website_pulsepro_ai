@@ -403,12 +403,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+  @apply bg-background text-foreground;
+  overflow-x: hidden;
   }
   
   /* Prevent layout shift from scrollbar hiding */
   html {
-    scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
   }
 }
 

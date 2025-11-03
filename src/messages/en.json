@@ -87,7 +87,7 @@
       },
       {
         "question": "Can I get training sessions to get started?",
-        "answer": "Absolutely. We offer complimentary onboarding sessions so your team is fully confident using PulsePro from Day 1."
+        "answer": "Absolutely. We offer complimentary onboarding sessions so your team is fully confident using Pulse from Day 1."
       },
       {
         "question": "Can I get training for my regional teams?",
@@ -103,7 +103,7 @@
       },
       {
         "question": "Do you support very lengthy templates—like 500 questions?",
-        "answer": "Yes. Many of our clients run templates with 500+ questions and attach 1,000+ photos. PulsePro is built to handle real-world inspection complexity."
+        "answer": "Yes. Many of our clients run templates with 500+ questions and attach 1,000+ photos. Pulse is built to handle real-world inspection complexity."
       },
       {
         "question": "Are you constantly updating the product with new features and AI?",
@@ -111,7 +111,7 @@
       },
       {
         "question": "Will field users struggle or take more time than paper/Excel?",
-        "answer": "No. We know field users often work in customer-facing or time-sensitive environments like hotels, warehouses, and hospitals. PulsePro's mobile interface is ultra-simple and designed for fast use—even during hectic shifts."
+        "answer": "No. We know field users often work in customer-facing or time-sensitive environments like hotels, warehouses, and hospitals. Pulse's mobile interface is ultra-simple and designed for fast use—even during hectic shifts."
       },
       {
         "question": "Can I download reports of missed inspections to push my team?",
@@ -149,82 +149,83 @@
   },
   "useCases": {
     "title": {
-      "part1": "PulsePro is made",
+      "part1": "Pulse is made",
       "highlight": "for you"
     },
+    "getStarted": "Get Started",
     "downloadButton": "Download for free",
     "useCaseItems": [
       {
         "key": "food-beverage",
         "label": "Food & Beverage",
-        "title": "PulsePro for Food & Beverage",
+        "title": "Pulse for Food & Beverage",
         "description": "Maintain top-notch hygiene, conduct outlet audits, and monitor food safety standards across kitchens and supply chains — all in one simple flow."
       },
       {
         "key": "hospitality",
         "label": "Hospitality",
-        "title": "PulsePro for Hospitality",
+        "title": "Pulse for Hospitality",
         "description": "Standardize guest experience checks, housekeeping audits, and facility inspections to keep every property consistent and flawless."
       },
       {
         "key": "retail-supermarkets",
         "label": "Retail & Supermarkets",
-        "title": "PulsePro for Retail & Supermarkets",
+        "title": "Pulse for Retail & Supermarkets",
         "description": "Ensure perfect store layouts, track inventory accuracy, and conduct regular outlet audits to keep operations efficient and compliant."
       },
       {
         "key": "electric-vehicles",
         "label": "Electric Vehicles",
-        "title": "PulsePro for Electric Vehicles & Charging Stations",
+        "title": "Pulse for Electric Vehicles & Charging Stations",
         "description": "Run safety inspections, infrastructure maintenance checks, and compliance reviews to keep every charging point reliable and ready."
       },
       {
         "key": "diagnostic-labs",
         "label": "Diagnostic Labs",
-        "title": "PulsePro for Diagnostic Labs & Pathology Centers",
+        "title": "Pulse for Diagnostic Labs & Pathology Centers",
         "description": "Streamline hygiene assessments, lab equipment calibration, and biosafety audits to meet healthcare-quality benchmarks."
       },
       {
         "key": "cloud-kitchens",
         "label": "Cloud Kitchens",
-        "title": "PulsePro for Cloud Kitchens & Delivery Brands",
+        "title": "Pulse for Cloud Kitchens & Delivery Brands",
         "description": "Oversee food prep safety, packaging quality, and delivery hygiene with structured checks that scale across every partner kitchen."
       },
       {
         "key": "forestry-environmental",
         "label": "Forestry & Environmental",
-        "title": "PulsePro for Forestry & Environmental Projects",
+        "title": "Pulse for Forestry & Environmental Projects",
         "description": "Track field audits, environmental compliance checks, and sustainability assessments with full visibility across regions."
       },
       {
         "key": "construction-infrastructure",
         "label": "Construction & Infrastructure",
-        "title": "PulsePro for Construction & Infrastructure",
+        "title": "Pulse for Construction & Infrastructure",
         "description": "Manage site safety inspections, project progress audits, and contractor compliance — keeping every project aligned and risk-free."
       },
       {
         "key": "manufacturing-industrial",
         "label": "Manufacturing & Industrial",
-        "title": "PulsePro for Manufacturing & Industrial Plants",
+        "title": "Pulse for Manufacturing & Industrial Plants",
         "description": "Stay consistent with equipment maintenance reviews, quality audits, and EHS compliance checks across production lines."
       },
       {
         "key": "food-processing",
         "label": "Food Processing",
-        "title": "PulsePro for Food Processing & Packaging Units",
+        "title": "Pulse for Food Processing & Packaging Units",
         "description": "Run hygiene inspections, process audits, and packaging quality reviews to ensure safe, high-standard production at every stage."
       },
       {
         "key": "automobile-dealerships",
         "label": "Automobile Dealerships",
-        "title": "PulsePro for Automobile Dealerships & Workshops",
+        "title": "Pulse for Automobile Dealerships & Workshops",
         "description": "Conduct dealership performance audits, workshop safety inspections, and infrastructure assessments with complete visibility."
       }
     ]
   },
   "chaosToClarity": {
     "title": "From chaos to clarity",
-    "subtitle": "Watch your messy data flow seamlessly through PulsePro and emerge as clean, actionable insights.",
+    "subtitle": "Watch your messy data flow seamlessly through Pulse and emerge as clean, actionable insights.",
     "storyPairs": [
       {
         "problem": {
@@ -559,7 +560,7 @@
   },
   "footer": {
     "tagline": "Still thinking about it?",
-    "description": "Join thousands of professionals who have transformed their inspection process with PulsePro.",
+    "description": "Join thousands of professionals who have transformed their inspection process with Pulse.",
     "cta": "Get Started Today",
     "secondaryCta": "Schedule a Demo",
     "copyright": "© 2025 PulsePro.ai. All rights reserved.",
@@ -572,7 +573,7 @@
   },
   "whyChooseUs": {
     "tagline": "Why Choose Us",
-    "title": "What Makes PulsePro Different",
+    "title": "What Makes Pulse Different",
     "subtitle": "Here's what sets us apart from other inspection platforms",
     "items": [
       {
@@ -607,9 +608,9 @@
       "subtitle": "Your data's safety is our top priority. Learn about the measures we take to protect your information."
     },
     "intro": {
-      "paragraph1": "PulsePro prides itself on placing a priority on security so that we can safely deliver results that are enjoyable to our customers. We have enacted several types of security procedures around our product, the making of it, and how we handle data that is produced. We understand that an inspection contains sensitive company information, and we take data security very seriously.",
-      "paragraph2": "PulsePro's software is trusted by a large number of companies around the world, including some of the Fortune 500. Our application is designed to support large, security-sensitive enterprise organizations. PulsePro's experienced team has built world-class, security-first products at former companies.",
-      "paragraph3": "Below is a summary of the security measures at PulsePro. If you have additional questions, please reach out to our team at"
+      "paragraph1": "Pulse prides itself on placing a priority on security so that we can safely deliver results that are enjoyable to our customers. We have enacted several types of security procedures around our product, the making of it, and how we handle data that is produced. We understand that an inspection contains sensitive company information, and we take data security very seriously.",
+      "paragraph2": "Pulse's software is trusted by a large number of companies around the world, including some of the Fortune 500. Our application is designed to support large, security-sensitive enterprise organizations. Pulse's experienced team has built world-class, security-first products at former companies.",
+      "paragraph3": "Below is a summary of the security measures at Pulse. If you have additional questions, please reach out to our team at"
     },
     "infrastructure": {
       "title": "Infrastructure",
@@ -718,7 +719,7 @@
     },
     "cta": {
       "title": "Say welcome to improvements",
-      "subtitle": "Make problem solving quick with PulsePro.",
+      "subtitle": "Make problem solving quick with Pulse.",
       "primaryButton": "Try it for free",
       "secondaryButton": "Book a demo today"
     }

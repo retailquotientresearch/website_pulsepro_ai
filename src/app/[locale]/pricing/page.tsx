@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Button from '@/components/ui/Button'
+import { EXTERNAL_LINKS } from '@/config/links'
 import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 import Testimonials from '@/components/Testimonials'
@@ -74,7 +75,7 @@ export default function PricingPage() {
             {/* Main Heading */}
             <h1 className='text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight'>
               {t('hero.title.part1')}{' '}
-              <span className='font-extrabold' style={{ color: 'var(--brand-green)' }}>
+              <span className='font-extrabold' style={{ color: 'var(--brand-green-600)' }}>
                 {t('hero.title.highlight')}
               </span>
             </h1>
@@ -93,7 +94,7 @@ export default function PricingPage() {
                   </span>{' '}
                   {t('hero.subtitle.part3')}
                 </span>
-                <span className='absolute bottom-0 left-0 w-full h-1 -skew-x-12' style={{ backgroundColor: 'var(--brand-green)' }}></span>
+                <span className='absolute bottom-0 left-0 w-full h-1 -skew-x-12' style={{ backgroundColor: 'var(--brand-green-600)' }}></span>
               </span>
             </p>
 
@@ -103,7 +104,7 @@ export default function PricingPage() {
 
             {/* CTA Buttons */}
             <div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
-              <a href="https://ng-app.pulsepro.ai/register" target="_blank" rel="noopener noreferrer">
+              <a href={EXTERNAL_LINKS.register} target="_blank" rel="noopener noreferrer">
                 <Button
                   size='lg'
                   className='flex items-center gap-3 text-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 w-full'
@@ -115,14 +116,14 @@ export default function PricingPage() {
                   {t('hero.cta.primary')}
                 </Button>
               </a>
-              <a href="https://www.pulsepro.ai/how-it-works/" target="_blank" rel="noopener noreferrer">
-                <Button
+              <a href={EXTERNAL_LINKS.howItWorks} target="_blank" rel="noopener noreferrer">
+        <Button
                   variant='outline'
                   size='lg'
                   className='flex items-center gap-3 bg-white border-2 rounded-full px-8 py-4 shadow-md hover:shadow-lg transition-all duration-300 hover:bg-green-50 w-full'
                   style={{ 
-                    borderColor: 'var(--brand-green)',
-                    color: 'var(--brand-green)'
+          borderColor: 'var(--brand-green-400)',
+          color: 'var(--brand-green-400)'
                   }}
                 >
                   <i className='ri-phone-fill text-xl'></i>
@@ -148,9 +149,9 @@ export default function PricingPage() {
                       <span className='text-white px-3 py-1 rounded-full text-xs font-semibold' style={{ backgroundColor: 'var(--brand-green)' }}>
                         {t('features.badge')}
                       </span>
-                      <span className='text-xs font-medium border rounded-full px-3 py-1' style={{ color: 'var(--brand-green)', borderColor: 'var(--brand-green-300)' }}>Most Popular</span>
+                      <span className='text-xs font-medium border rounded-full px-3 py-1' style={{ color: 'var(--brand-green-400)', borderColor: 'var(--brand-green-200)' }}>Most Popular</span>
                     </div>
-                    <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-2'>
+                    <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-2' style={{ color: 'var(--brand-green-400)' }}>
                       {t('features.title')}
                     </h2>
                     <p className='text-gray-600 mb-6'>
@@ -159,7 +160,7 @@ export default function PricingPage() {
 
                     {/* Price */}
                     <div className='flex flex-wrap items-end gap-x-3 gap-y-2 mb-6'>
-                      <span className='text-5xl md:text-6xl font-extrabold tracking-tight' style={{ color: 'var(--brand-green)' }}>
+                      <span className='text-5xl md:text-6xl font-extrabold tracking-tight' style={{ color: 'var(--brand-green-300)' }}>
                         {isClient
                           ? activeTab === 'yearly'
                             ? t('hero.price.yearly')
@@ -167,14 +168,14 @@ export default function PricingPage() {
                           : t('hero.price.yearly')}
                       </span>
                       <span className='text-gray-500 font-medium'>per user</span>
-                      <span className='text-sm font-semibold rounded-full px-2 py-1 border' style={{ color: 'var(--brand-green)', borderColor: 'var(--brand-green-300)' }}>
+                      <span className='text-sm font-semibold rounded-full px-2 py-1 border' style={{ color: 'var(--brand-green-300)', borderColor: 'var(--brand-green-200)' }}>
                         {activeTab === 'yearly' ? 'Billed Yearly' : 'Billed Monthly'}
                       </span>
                     </div>
 
                     {/* CTAs */}
                     <div className='flex flex-col sm:flex-row gap-3 mb-6'>
-                      <a href="https://ng-app.pulsepro.ai/register" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <a href={EXTERNAL_LINKS.register} target="_blank" rel="noopener noreferrer" className="flex-1">
                         <Button
                           size='lg'
                           className='text-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full justify-center'
@@ -186,12 +187,12 @@ export default function PricingPage() {
                           {t('hero.cta.primary')}
                         </Button>
                       </a>
-                      <a href="https://www.pulsepro.ai/how-it-works/" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <a href={EXTERNAL_LINKS.howItWorks} target="_blank" rel="noopener noreferrer" className="flex-1">
                         <Button
                           variant='outline'
                           size='lg'
                           className='bg-white border-2 rounded-full px-8 py-4 shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 hover:bg-green-50 w-full justify-center'
-                          style={{ borderColor: 'var(--brand-green)', color: 'var(--brand-green)' }}
+                          style={{ borderColor: 'var(--brand-green-400)', color: 'var(--brand-green-400)' }}
                         >
                           <i className='ri-phone-fill text-xl'></i>
                           {t('hero.cta.secondary')}
@@ -205,7 +206,7 @@ export default function PricingPage() {
                         .raw('features.items')
                         .map((feature: string, index: number) => (
                           <div key={index} className='flex items-start gap-3'>
-                            <span className='inline-flex w-6 h-6 items-center justify-center rounded-full flex-shrink-0' style={{ backgroundColor: 'var(--brand-green-100)', color: 'var(--brand-green)' }}>
+                            <span className='inline-flex w-6 h-6 items-center justify-center rounded-full flex-shrink-0' style={{ backgroundColor: 'var(--brand-green-100)', color: 'var(--brand-green-400)' }}>
                               <i className='ri-check-line text-base'></i>
                             </span>
                             <span className='text-gray-700 text-sm'>
@@ -226,7 +227,7 @@ export default function PricingPage() {
                           .slice(0, 6)
                           .map((f: string, i: number) => (
                             <li key={i} className='flex items-start gap-2'>
-                              <i className='ri-checkbox-circle-fill mt-0.5' style={{ color: 'var(--brand-green)' }}></i>
+                              <i className='ri-checkbox-circle-fill mt-0.5' style={{ color: 'var(--brand-green-300)' }}></i>
                               <span className='text-gray-700'>{f}</span>
                             </li>
                           ))}
@@ -246,7 +247,7 @@ export default function PricingPage() {
                 <div className='inline-block text-white px-6 py-3 rounded-full mb-6 text-base font-semibold shadow-lg' style={{ backgroundColor: 'var(--brand-green)' }}>
                   {t('plan.badge')}
                 </div>
-                <h3 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+                <h3 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4' style={{ color: 'var(--brand-green-300)' }}>
                   {t('plan.title')}
                 </h3>
                 <p className='text-lg text-gray-600'>
@@ -262,7 +263,7 @@ export default function PricingPage() {
                 <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 pt-6'>
                   {t.raw('plan.features').map((feature: string, index: number) => (
                     <li key={index} className='flex items-start gap-3'>
-                      <span className='mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full' style={{ backgroundColor: 'var(--brand-green-100)', color: 'var(--brand-green)' }}>
+                      <span className='mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full' style={{ backgroundColor: 'var(--brand-green-100)', color: 'var(--brand-green-300)' }}>
                         <i className='ri-check-line text-sm'></i>
                       </span>
                       <span className='text-gray-900 leading-relaxed'>{feature}</span>
@@ -326,7 +327,7 @@ export default function PricingPage() {
                               <h3 className='font-semibold text-gray-900 pr-4 text-sm sm:text-base'>
                                 {faq.question}
                               </h3>
-                              <span className='text-xl transition-all duration-300' style={{ color: 'var(--brand-green)' }}>
+                              <span className='text-xl transition-all duration-300' style={{ color: 'var(--brand-green-300)' }}>
                                 {isExpanded ? '−' : '+'}
                               </span>
                             </div>
@@ -352,7 +353,7 @@ export default function PricingPage() {
 
             <AnimatedCard delay={200} direction='up'>
               <div className='flex flex-col sm:flex-row gap-6 justify-center items-center mb-8'>
-                <a href="https://www.pulsepro.ai/how-it-works/" target="_blank" rel="noopener noreferrer">
+                <a href={EXTERNAL_LINKS.howItWorks} target="_blank" rel="noopener noreferrer">
                   <Button
                     size='lg'
                     className='flex items-center gap-3 text-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300'
@@ -391,7 +392,7 @@ export default function PricingPage() {
           <AnimatedCard delay={200} direction='up'>
             <div className='text-center max-w-4xl mx-auto'>
               <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-900'>
-                We&apos;re Here to <span style={{ color: 'var(--brand-green)' }}>Support You</span>
+                We&apos;re Here to <span style={{ color: 'var(--brand-green-200)' }}>Support You</span>
               </h2>
               <p className='text-xl text-gray-600 leading-relaxed'>
                 {t('support.description')}
