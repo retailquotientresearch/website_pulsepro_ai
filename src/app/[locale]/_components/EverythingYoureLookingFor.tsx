@@ -1,214 +1,243 @@
 "use client";
 
-import Section from "@/components/ui/Section";
 import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Badge } from "@/components/ui/Badge";
 import Image from "next/image";
 import {
-	Bell,
-	BarChart3,
-	CheckSquare,
-	Image as ImageIcon,
-	MapPin,
-	PenLine,
-	CircleHelp,
-	type LucideIcon,
+  Bell,
+  BarChart3,
+  CheckSquare,
+  Image as ImageIcon,
+  MapPin,
+  PenLine,
+  CircleHelp,
+  type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 type Reel = {
-	title: string;
-	image: string;
+  title: string;
+  image: string;
 };
 
 const REELS: Reel[] = [
-	{ title: "Analytics", image: "/images/Analytics_card.png" },
-	{ title: "Actions", image: "/images/Action_card.png" },
-	{ title: "Notifications", image: "/images/Notification_card.png" },
-	{ title: "Image Upload", image: "/images/Image_upload.png" },
-	{ title: "Signatures", image: "/images/Digital_signature.png" },
-	{ title: "Geo Check In", image: "/images/Geolocation.png" },
+  { title: "Analytics", image: "/images/Analytics_card.png" },
+  { title: "Actions", image: "/images/Action_card.png" },
+  { title: "Notifications", image: "/images/Notification_card.png" },
+  { title: "Image Upload", image: "/images/Image_upload.png" },
+  { title: "Signatures", image: "/images/Digital_signature.png" },
+  { title: "Geo Check In", image: "/images/Geolocation.png" },
 ];
 
 const REEL_ICONS: Record<string, LucideIcon> = {
-	Analytics: BarChart3,
-	Actions: CheckSquare,
-	Notifications: Bell,
-	"Image Upload": ImageIcon,
-	Signatures: PenLine,
-	"Geo Check In": MapPin,
+  Analytics: BarChart3,
+  Actions: CheckSquare,
+  Notifications: Bell,
+  "Image Upload": ImageIcon,
+  Signatures: PenLine,
+  "Geo Check In": MapPin,
 };
 
-function Tile({ label }: { label: string }) {
-	return (
-		<Badge
-			variant="outline"
-			className="w-auto h-10 sm:h-10 rounded-full border-slate-300/80 text-slate-800 bg-white/90 backdrop-blur px-5 sm:px-5 text-sm sm:text-sm font-medium shadow-sm hover:shadow transition-shadow flex items-center gap-2.5 justify-start"
-		>
-			{(() => {
-				const Icon = REEL_ICONS[label] ?? CircleHelp;
-				return (
-					<span className="inline-flex size-6 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-slate-700">
-						<Icon className="size-3.5" aria-hidden="true" />
-					</span>
-				);
-			})()}
-			{label}
-		</Badge>
-	);
+function FeatureTile({ label }: { label: string }) {
+  const Icon = REEL_ICONS[label] ?? CircleHelp;
+
+  return (
+    <Badge
+      variant="outline"
+      className="w-auto h-12 sm:h-12 rounded-full border-2 border-[#f0d7ff]/60 text-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 justify-start px-6 sm:px-6 text-sm sm:text-sm font-semibold"
+      style={{
+        backgroundColor: "#f0d7ff",
+        borderColor: "#e6c7ff",
+      }}
+    >
+      <span className="inline-flex size-7 items-center justify-center rounded-full bg-white/90 border-2 border-white/60 text-gray-700 shadow-sm">
+        <Icon className="size-4" aria-hidden="true" />
+      </span>
+      {label}
+    </Badge>
+  );
+}
+
+function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
+  const Icon = REEL_ICONS[reel.title] ?? CircleHelp;
+
+  // Sticky note colors with black borders
+  const colors = [
+    { bg: "#fef3c7", text: "#374151" }, // Yellow
+    { bg: "#d1fae5", text: "#374151" }, // Green
+    { bg: "#fce7f3", text: "#374151" }, // Pink
+    { bg: "#dbeafe", text: "#374151" }, // Blue
+    { bg: "#f3e8ff", text: "#374151" }, // Purple
+    { bg: "#fed7d7", text: "#374151" }, // Red
+  ];
+
+  const color = colors[index % colors.length];
+  const rotations = [-8, 5, -6, 7, -4, 6];
+  const rotation = rotations[index % rotations.length];
+  const isLeft = index % 2 === 0;
+
+  return (
+    <div className="relative group">
+      {/* Phone Image - Made Bigger */}
+      <div className="relative mx-auto w-full max-w-[280px] lg:max-w-[320px] xl:max-w-[360px] hover:scale-105 transition-transform duration-300">
+        <Image
+          src={reel.image}
+          alt={reel.title}
+          width={640}
+          height={400}
+          className="w-full h-auto object-contain drop-shadow-xl"
+          loading="lazy"
+        />
+
+        {/* Sticky Note - Positioned on the center of the sides */}
+        <div
+          className={cn(
+            "absolute top-1/2 -translate-y-1/2 z-20",
+            isLeft ? "-left-3 lg:-left-6" : "-right-3 lg:-right-6"
+          )}
+        >
+          <div
+            className="relative"
+            style={{ transform: `rotate(${rotation}deg)` }}
+          >
+            <div
+              className="px-4 py-2.5 lg:px-8 lg:py-5 rounded-md shadow-lg border-2 lg:border-4 border-black hover:shadow-xl transition-all duration-300 hover:scale-110"
+              style={{
+                backgroundColor: color.bg,
+                filter:
+                  "drop-shadow(1px 2px 3px rgba(0,0,0,0.2)) lg:drop-shadow(2px 4px 6px rgba(0,0,0,0.3))",
+              }}
+            >
+              <div className="flex items-center gap-2 lg:gap-3">
+                <span
+                  className="inline-flex size-6 lg:size-10 items-center justify-center rounded-full border-2 lg:border-3 border-black"
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    color: color.text,
+                  }}
+                >
+                  <Icon className="size-3.5 lg:size-6" aria-hidden="true" />
+                </span>
+                <span
+                  className="font-bold text-sm lg:text-2xl whitespace-nowrap"
+                  style={{
+                    color: color.text,
+                    fontFamily: "ui-serif, Georgia, serif",
+                  }}
+                >
+                  {reel.title}
+                </span>
+              </div>
+            </div>
+
+            {/* Paper tape effect for realistic sticky note */}
+            <div
+              className="absolute -top-1 lg:-top-2 left-1/2 -translate-x-1/2 w-8 lg:w-10 h-3 lg:h-4 rounded-sm opacity-60 border border-black"
+              style={{ backgroundColor: "#f5f5f5" }}
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function EverythingYoureLookingFor() {
-	const t = useTranslations('everythingYoureLookingFor');
+  const t = useTranslations("everythingYoureLookingFor");
 
-	return (
-			<Section className="bg-[#FDF6E9] py-12 md:py-16 lg:py-20">
-				<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-					<div className="relative mb-10 sm:mb-12 lg:mb-14 text-center">
-						{/* Soft green glow behind the title to match site accents */}
-						<div className="pointer-events-none absolute -inset-x-10 -top-6 h-20 bg-gradient-to-r from-[#1A7D3D]/20 via-transparent to-[#1A7D3D]/20 blur-3xl"></div>
-						<h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111]">
-							{t('title.part1')}
-							{' '}
-							<span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">{t('title.highlight')}</span>
-						</h2>
-					</div>
+  return (
+    <section className="w-full bg-gradient-to-br from-[#FDF6E9] via-[#FEFBF3] to-[#F8F4E6] py-6 lg:py-8">
+      <div className="w-full px-2 sm:px-4 lg:px-6">
+        {/* Title */}
+        <div className="text-center mb-6 lg:mb-8">
+          <h2 className="text-3xl lg:text-5xl xl:text-6xl font-black leading-tight text-gray-900">
+            {t("title.part1")}{" "}
+            <span className="bg-gradient-to-r from-[#1A7D3D] via-[#22A456] to-[#1A7D3D] bg-clip-text text-transparent">
+              {t("title.highlight")}
+            </span>
+          </h2>
+        </div>
 
-				{/* Shared tile stack above images (show on < lg) */}
-				<div className="mx-auto w-full max-w-md sm:max-w-lg mb-8 sm:mb-10 lg:hidden">
-					<div className="flex flex-col items-center gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-3">
-						{REELS.map((reel) => (
-							<Tile key={reel.title} label={reel.title} />
-						))}
-					</div>
-				</div>
+        {/* Feature Tiles */}
+        <div className="mb-8 lg:mb-12">
+          {/* Desktop: Horizontal Layout */}
+          <div className="hidden lg:flex justify-center items-center gap-6 xl:gap-8 flex-wrap">
+      {REELS.map((reel, idx) => (
+              <AnimatedCard key={reel.title} delay={idx * 60} direction="up">
+        <FeatureTile label={reel.title} />
+              </AnimatedCard>
+            ))}
+          </div>
 
-				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 place-items-center">
-		    {REELS.map((reel, idx) => {
-						const side: 'left' | 'right' = idx % 2 === 0 ? 'left' : 'right'
-						return (
-							<AnimatedCard key={reel.title} delay={idx * 80} direction="up" className="m-0 p-0">
-								<div className="relative group inline-block overflow-visible align-middle m-0 p-0">
-									{/* Image */}
-									<Image
-										src={reel.image}
-										alt={reel.title}
-										width={640}
-										height={400}
-										className="block h-auto w-auto max-w-full object-contain drop-shadow-sm m-0 p-0"
-										loading="lazy"
-									/>
+          {/* Mobile: Vertical Layout */}
+          <div className="lg:hidden flex flex-col items-center gap-3 sm:gap-4">
+      {REELS.map((reel, idx) => (
+              <AnimatedCard key={reel.title} delay={idx * 60} direction="up">
+        <FeatureTile label={reel.title} />
+              </AnimatedCard>
+            ))}
+          </div>
+        </div>
 
-									{/* Curvy arrow with label on md+ (to avoid crowding on small) */}
-									<CurvyArrowLabel
-										id={`reel-${idx}`}
-										label={reel.title}
-										side={side}
-										className="hidden lg:block"
-									/>
-								</div>
-							</AnimatedCard>
-						)
-					})}
-				</div>
-			</div>
-		</Section>
-	);
+        {/* Phone Mockups */}
+        <div className="space-y-6 lg:space-y-8">
+          {/* Desktop: 2 rows of 3 */}
+          <div className="hidden lg:block">
+            <div className="grid grid-cols-3 gap-8 xl:gap-12 mb-8">
+              {REELS.slice(0, 3).map((reel, idx) => (
+                <AnimatedCard key={reel.title} delay={idx * 100} direction="up">
+                  <PhoneWithStickyNote reel={reel} index={idx} />
+                </AnimatedCard>
+              ))}
+            </div>
+            <div className="grid grid-cols-3 gap-8 xl:gap-12">
+              {REELS.slice(3).map((reel, idx) => (
+                <AnimatedCard
+                  key={reel.title}
+                  delay={(idx + 3) * 100}
+                  direction="up"
+                >
+                  <PhoneWithStickyNote reel={reel} index={idx + 3} />
+                </AnimatedCard>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: 3 rows of 2 */}
+          <div className="lg:hidden space-y-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              {REELS.slice(0, 2).map((reel, idx) => (
+                <AnimatedCard key={reel.title} delay={idx * 80} direction="up">
+                  <PhoneWithStickyNote reel={reel} index={idx} />
+                </AnimatedCard>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              {REELS.slice(2, 4).map((reel, idx) => (
+                <AnimatedCard
+                  key={reel.title}
+                  delay={(idx + 2) * 80}
+                  direction="up"
+                >
+                  <PhoneWithStickyNote reel={reel} index={idx + 2} />
+                </AnimatedCard>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              {REELS.slice(4).map((reel, idx) => (
+                <AnimatedCard
+                  key={reel.title}
+                  delay={(idx + 4) * 80}
+                  direction="up"
+                >
+                  <PhoneWithStickyNote reel={reel} index={idx + 4} />
+                </AnimatedCard>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
-
-type CurvyArrowLabelProps = {
-	id: string
-	label: string
-	side?: 'left' | 'right'
-	className?: string
-}
-
-function CurvyArrowLabel({ id, label, side = 'left', className = '' }: CurvyArrowLabelProps) {
-	// Position elements just outside the image area, with a playful curved path
-	const isLeft = side === 'left'
-	const overlaySide = isLeft
-		? 'absolute top-1/2 left-0 -translate-y-1/2 -translate-x-[calc(100%+10px)]'
-		: 'absolute top-1/2 right-0 -translate-y-1/2 translate-x-[calc(100%+10px)]'
-	const labelPos = isLeft
-		? 'left-0 -translate-x-2 sm:-translate-x-4'
-		: 'right-0 translate-x-2 sm:translate-x-4'
-	const labelJustify = isLeft ? 'items-start text-left' : 'items-end text-right'
-
-	// Path bezier points within a 320x220 viewport, scaled by viewBox
-	const pathId = `arrow-path-${id}`
-	const markerId = `arrow-head-${id}`
-
-	// Mirror horizontally for right side within the SVG coordinate system
-	const svgGroupTransform = isLeft ? undefined : 'translate(320 0) scale(-1 1)'
-
-	return (
-		<div className={cn("pointer-events-none", overlaySide, "w-[320px] h-[220px]", className)} aria-hidden>
-			{/* Position label bubble */}
-			<div className={cn("absolute top-6", labelPos)}>
-				<div className={cn("flex flex-col gap-2", labelJustify)}>
-					<div className="pointer-events-auto inline-flex">
-						<Badge
-							variant="outline"
-							className={cn(
-								"rounded-full border-slate-300/70 bg-white/90 text-slate-900 shadow-sm backdrop-blur px-4 py-2",
-								"hover:shadow-md transition-shadow duration-300"
-							)}
-						>
-							{/* Icon bubble + label */}
-							{(() => {
-								const Icon = REEL_ICONS[label] ?? CircleHelp
-								return (
-									<span className="mr-2 inline-flex size-6 items-center justify-center rounded-full bg-slate-100 border border-slate-200 text-slate-700">
-										<Icon className="size-3.5" aria-hidden="true" />
-									</span>
-								)
-							})()}
-							<span className="font-medium">{label}</span>
-						</Badge>
-					</div>
-				</div>
-			</div>
-
-			{/* Curved SVG arrow */}
-			<svg
-				className={cn("absolute top-1/2 left-0 -translate-y-1/2 w-[280px] h-[200px] -z-10")}
-				viewBox="0 0 320 220"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				preserveAspectRatio="xMinYMin meet"
-			>
-				<defs>
-					<marker id={markerId} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-						<path d="M 0 0 L 10 5 L 0 10 z" fill="#111111" />
-					</marker>
-				</defs>
-
-				<g {...(svgGroupTransform ? { transform: svgGroupTransform } : {})}>
-					{/* playful wavy curve */}
-					<path
-						id={pathId}
-						d="M 10 30 C 80 20, 120 80, 160 70 S 260 120, 300 90"
-						stroke="#111111"
-						strokeWidth="3.5"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						fill="none"
-						markerEnd={`url(#${markerId})`}
-						className="[stroke-dasharray:6_10] group-hover:[stroke-dashoffset:16] transition-[stroke-dashoffset] duration-500 ease-out"
-					/>
-
-					{/* subtle glow underlay */}
-					<path
-						d="M 10 30 C 80 20, 120 80, 160 70 S 260 120, 300 90"
-						stroke="#00000022"
-						strokeWidth="8"
-						fill="none"
-						className="blur-[1.5px]"
-					/>
-				</g>
-			</svg>
-		</div>
-	)
-}
-

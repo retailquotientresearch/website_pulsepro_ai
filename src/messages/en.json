@@ -147,6 +147,10 @@
       }
     ]
   },
+  "enterpriseEssentials": {
+    "title": "Enterprise Essentials",
+    "subtitle": "From SSO to uptime, everything you need to run securely at scale."
+  },
   "useCases": {
     "title": {
       "part1": "Pulse is made",

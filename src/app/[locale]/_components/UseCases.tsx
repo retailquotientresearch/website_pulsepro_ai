@@ -127,9 +127,9 @@ export default function UseCases() {
                     </div>
                   </div>
 
-                  <h3 className="text-[24px] sm:text-[28px] md:text-[34px] font-semibold font-sans text-center">
+                  {/* <h3 className="text-[24px] sm:text-[28px] md:text-[34px] font-semibold font-sans text-center">
                     {current.title}
-                  </h3>
+                  </h3> */}
                   <p className="text-white/90 text-base sm:text-lg md:text-xl leading-7 max-w-xl mx-auto">
                     {current.description}
                   </p>

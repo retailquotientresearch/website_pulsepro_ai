@@ -55,22 +55,18 @@ export default function CommonWorries() {
   <section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]">
       {/* Full-bleed wrapper with top curves only */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
-        <div ref={ref} className="w-full rounded-t-[36px] md:rounded-t-[48px] lg:rounded-t-[64px] overflow-hidden bg-[#2A2A2A] px-4 sm:px-8 lg:px-16 py-20 md:py-24 lg:py-28 relative min-h-[70vh] md:min-h-[80vh]">
-          {/* Green line connecting top curves */}
-          <div className="absolute top-0 left-0 right-0 h-20 md:h-24 lg:h-28 bg-gradient-to-b from-[#1A7D3D]/30 to-transparent pointer-events-none"></div>
+        <div ref={ref} className="w-full rounded-t-[36px] md:rounded-t-[48px] lg:rounded-t-[64px] overflow-hidden bg-[#034f46] px-4 sm:px-8 lg:px-16 py-20 md:py-24 lg:py-28 relative min-h-[70vh] md:min-h-[80vh]">
+          {/* Top connector line (gradient overlay removed) */}
           <div className="absolute top-0 left-[36px] md:left-[48px] lg:left-[64px] right-[36px] md:right-[48px] lg:right-[64px] h-0.5 bg-[#1A7D3D]"></div>
           
           {/* Header */}
           <div className="text-center mb-12 px-4">
             <div className="max-w-5xl mx-auto relative">
               <div className="relative inline-block">
-                {/* Background decoration */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#1A7D3D]/20 via-transparent to-[#1A7D3D]/20 blur-3xl"></div>
-                
-                <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-bold text-[#FDF6E9] mb-6 leading-tight">
                   {t('title.part1')}
                   <br />
-                  <span className="bg-gradient-to-r from-[#1A7D3D] to-[#1A7D3D]/70 bg-clip-text text-transparent">
+                  <span className="text-[#FDF6E9]">
                     {t('title.part2')}
                   </span>
                 </h2>
