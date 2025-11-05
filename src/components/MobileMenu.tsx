@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/Sheet";
 import { Link } from "@/i18n/navigation";
 import { ROUTES, EXTERNAL_LINKS } from "@/config/links";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 
@@ -17,7 +17,6 @@ export default function MobileMenu() {
   const t = useTranslations('navigation');
   
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(true);
 
   const handleMenuClose = () => {
     setIsOpen(false);

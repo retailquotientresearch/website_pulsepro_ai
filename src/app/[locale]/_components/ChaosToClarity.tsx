@@ -3,6 +3,7 @@
 import { cn } from "../../../lib/utils";
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from 'next-intl';
+import Image from "next/image";
 
 type ScatterIcon = {
   icon: string;
@@ -544,9 +545,11 @@ export default function ChaosToClarity() {
               }}
             >
               {item.icon.startsWith('/') ? (
-                <img
+                <Image
                   src={item.icon}
-                  alt=""
+                  alt={(item.icon.split('/').pop()?.replace(/\.[^/.]+$/, "") || "icon").replace(/[_-]/g, " ")}
+                  width={72}
+                  height={72}
                   className="w-16 h-16 md:w-18 md:h-18 object-contain"
                   style={{
                     filter: item.tone === "red" 
@@ -585,9 +588,11 @@ export default function ChaosToClarity() {
               }}
             >
               {item.icon.startsWith('/') ? (
-                <img
+                <Image
                   src={item.icon}
-                  alt=""
+                  alt={(item.icon.split('/').pop()?.replace(/\.[^/.]+$/, "") || "icon").replace(/[_-]/g, " ")}
+                  width={72}
+                  height={72}
                   className="w-16 h-16 md:w-18 md:h-18 object-contain"
                   style={{
                     filter: item.tone === "red" 
