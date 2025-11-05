@@ -135,17 +135,17 @@ export default function FeaturesPage() {
             </div>
             
             {/* Footer Stats */}
-            <div className="text-lg text-gray-600 font-medium border-t border-green-200 pt-6">
-              <div className="flex items-center justify-center space-x-6">
-                <span className="flex items-center">
+            <div className="text-base sm:text-lg text-gray-600 font-medium border-t border-green-200 pt-6">
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-6 gap-y-2">
+                <span className="flex items-center justify-center w-full sm:w-auto text-center">
                   <CheckCircleIcon className="w-5 h-5 mr-2 text-[var(--brand-green)]" />
                   {t('hero.stats.features.value')} {t('hero.stats.features.label')}
                 </span>
-                <span className="flex items-center">
+                <span className="flex items-center justify-center w-full sm:w-auto text-center">
                   <CogIcon className="w-5 h-5 mr-2 text-[var(--brand-green)]" />
                   {t('hero.stats.customizable.value')} {t('hero.stats.customizable.label')}
                 </span>
-                <span className="flex items-center">
+                <span className="flex items-center justify-center w-full sm:w-auto text-center">
                   <ClockIcon className="w-5 h-5 mr-2 text-[var(--brand-green)]" />
                   {t('hero.stats.availability.value')} {t('hero.stats.availability.label')}
                 </span>

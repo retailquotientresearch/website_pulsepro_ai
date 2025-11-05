@@ -45,11 +45,25 @@ export default function MobileMenu() {
               {t("features")}
             </Link>
             <Link
+              href={ROUTES.howItWorks}
+              className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"
+              onClick={handleMenuClose}
+            >
+              {t("howItWorks")}
+            </Link>
+            <Link
               href={ROUTES.pricing}
               className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"
               onClick={handleMenuClose}
             >
               {t("pricing")}
+            </Link>
+            <Link
+              href={ROUTES.bookDemo}
+              className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"
+              onClick={handleMenuClose}
+            >
+              {t("bookDemo")}
             </Link>
 
             <div className="pt-4 mt-2 border-t border-gray-200 space-y-2">

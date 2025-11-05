@@ -16,10 +16,10 @@ function ConcernCard({ concern, index }: { concern: Concern; index: number }) {
   
   return (
     <div className={`bg-[#FDF6E9] rounded-3xl p-6 w-[320px] mx-1 flex-shrink-0 flex flex-col items-center justify-center text-center ${height}`}>
-      <div className="text-base font-medium text-gray-900 mb-3 leading-snug">
+      <div className="text-base md:text-lg font-medium text-gray-900 mb-3 leading-snug">
         {concern.question}
       </div>
-      <div className="text-gray-700 leading-relaxed text-sm">
+      <div className="text-gray-700 leading-relaxed text-sm md:text-base">
         {concern.answer}
       </div>
     </div>
@@ -63,7 +63,7 @@ export default function CommonWorries() {
           <div className="text-center mb-12 px-4">
             <div className="max-w-5xl mx-auto relative">
               <div className="relative inline-block">
-                <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-bold text-[#FDF6E9] mb-6 leading-tight">
+                <h2 className="relative text-3xl md:text-4xl lg:text-5xl font-bold text-[#FDF6E9] mb-6 leading-tight">
                   {t('title.part1')}
                   <br />
                   <span className="text-[#FDF6E9]">

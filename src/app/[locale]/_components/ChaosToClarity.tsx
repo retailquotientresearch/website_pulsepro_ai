@@ -370,19 +370,19 @@ function PhoneUI({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void })
                   {/* Bottom 40%: Q&A */}
                   <div className="flex flex-col p-3 gap-2 bg-gradient-to-t from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-950">
                     <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Question</div>
-                    <div className="text-base md:text-lg font-medium leading-snug">
+                    <div className="text-base md:text-lg lg:text-xl font-medium leading-snug">
                       {questions[questionIndex].text}
                     </div>
                     <div className="mt-1 flex items-center gap-3">
                       <button
                         onClick={() => handleAnswer("yes")}
-                        className="flex-1 inline-flex items-center justify-center h-10 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm font-medium shadow-sm transition-colors"
+                        className="flex-1 inline-flex items-center justify-center h-10 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm md:text-base font-medium shadow-sm transition-colors"
                       >
                         Yes
                       </button>
                       <button
                         onClick={() => handleAnswer("no")}
-                        className="flex-1 inline-flex items-center justify-center h-10 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-medium shadow-sm transition-colors"
+                        className="flex-1 inline-flex items-center justify-center h-10 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm md:text-base font-medium shadow-sm transition-colors"
                       >
                         No
                       </button>
@@ -676,7 +676,7 @@ export default function ChaosToClarity() {
 
       <div className="full-bleed relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8 pt-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             {t('title')}
           </h2>
           <p className="mt-3 text-base md:text-lg text-muted-foreground">
@@ -700,7 +700,7 @@ export default function ChaosToClarity() {
                   <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-red-500/20 dark:bg-red-500/30 flex items-center justify-center">
                     <i
                       className={cn(
-                        "text-2xl md:text-3xl text-red-600 dark:text-red-400",
+                        "text-xl md:text-2xl text-red-600 dark:text-red-400",
                         storyPairs[currentStoryIndex].problem.icon
                       )}
                     />
@@ -733,7 +733,7 @@ export default function ChaosToClarity() {
                   <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-green-500/20 dark:bg-green-500/30 flex items-center justify-center">
                     <i
                       className={cn(
-                        "text-2xl md:text-3xl text-green-600 dark:text-green-400",
+                        "text-xl md:text-2xl text-green-600 dark:text-green-400",
                         storyPairs[currentStoryIndex].solution.icon
                       )}
                     />

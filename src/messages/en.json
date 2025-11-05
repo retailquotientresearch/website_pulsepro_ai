@@ -3,6 +3,7 @@
     "features": "Features",
     "allFeatures": "All Features",
     "pricing": "Pricing",
+  "howItWorks": "How It Works",
     "integrations": "Integrations",
     "apiIntegration": "API Integration",
     "resources": "Resources",
@@ -43,7 +44,7 @@
     "secondaryCta": "Book a Demo",
     "stats": {
       "sitesManaged": {
-        "value": "100000+",
+        "value": "100,000+",
         "label": "Sites Managed"
       },
       "uptime": {
@@ -1032,6 +1033,66 @@
         "community": "Community"
       },
       "copyright": "© 2024 Pulse. Built for teams who value reliability and efficiency."
+    }
+  }
+  ,
+  "howItWorks": {
+    "hero": {
+      "title": "How Pulse Works",
+      "subtitle": "From field capture to insights and action — a simple flow that teams love."
+    },
+    "steps": {
+      "badge": "Step",
+      "capture": {
+        "title": "Capture on Mobile",
+        "description": "Teams collect photos, notes, and responses in seconds — even offline.",
+        "imageAlt": "Capture step screenshot"
+      },
+      "verify": {
+        "title": "Verify with Proof",
+        "description": "Geo-tags, time stamps, and required evidence ensure reliable data.",
+        "imageAlt": "Verification step screenshot"
+      },
+      "report": {
+        "title": "Report Instantly",
+        "description": "PDFs and analytics are generated automatically — share in one click.",
+        "imageAlt": "Reporting step screenshot"
+      },
+      "improve": {
+        "title": "Close the Loop & Improve",
+        "description": "Create actions, assign owners, and track closure with escalations.",
+        "imageAlt": "Improvement step screenshot"
+      }
+    },
+    "cta": {
+      "title": "Ready to see it live?",
+      "subtitle": "Start a free trial or book a personalized demo to explore the full flow.",
+      "primary": "Start Free Trial",
+      "secondary": "Book Demo"
+    }
+  },
+  "bookDemo": {
+    "title": "Book a Demo",
+    "subtitle": "Schedule a personalized demo at your preferred time",
+    "description": "This demo aims to showcase:",
+    "features": [
+      "How to set up your own customized templates",
+      "What the mobile inspection experience looks like for your business", 
+      "How to assign corrective actions in real-time",
+      "What analytics are available for a quick birds-eye-view of your operations"
+    ],
+    "form": {
+      "selectDay": "Select a Day",
+      "selectTime": "Select a Time", 
+      "timeZone": "Time zone",
+      "yourInfo": "Your Information",
+      "firstName": "First Name *",
+      "lastName": "Last Name *",
+      "email": "Email Address *",
+      "company": "Company Name *",
+      "phone": "Phone Number",
+      "message": "Additional Message (Optional)",
+      "submit": "Schedule Demo"
     }
   }
 }

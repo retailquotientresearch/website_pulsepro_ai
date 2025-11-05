@@ -72,11 +72,11 @@ export default function TrustedBy() {
         <div className="w-full rounded-[36px] md:rounded-[48px] lg:rounded-[64px] overflow-hidden bg-[#111111] text-white px-2 sm:px-4 lg:px-8 py-16 md:py-20 lg:py-24 min-h-[60vh] md:min-h-[65vh] flex items-center">
           <div className="max-w-[1400px] mx-auto w-full">
             <div className="text-center">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-3 inline-block transform -rotate-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 inline-block transform -rotate-2">
                 {t('title')}
               </h2>
-              <h3 className="text-3xl md:text-4xl font-semibold">{t('subtitle')}</h3>
-              <p className="text-gray-300 mt-4 text-lg">{t('description')}</p>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold">{t('subtitle')}</h3>
+              <p className="text-gray-300 mt-4 text-base md:text-lg">{t('description')}</p>
             </div>
 
             <div className="mt-12 space-y-8">

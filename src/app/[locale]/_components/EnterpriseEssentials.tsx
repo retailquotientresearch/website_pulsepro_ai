@@ -17,6 +17,10 @@ interface EnterpriseFeature {
   bgColor: string;
   iconColor: string;
   zIndex: number;
+  // Optional styling overrides for grid layout (desktop)
+  titleColor?: string;
+  descColor?: string;
+  shadowClass?: string;
 }
 
 // Clean layout with responsive spacing - compact on mobile, spread out on desktop
@@ -131,158 +135,105 @@ const enterpriseFeatures: EnterpriseFeature[] = [
   },
 ];
 
-// Desktop positioning with more spacing for larger screens
-const desktopFeatures: EnterpriseFeature[] = [
-  {
-    title: "Single Sign-On",
-    description: "Azure AD, Okta, Google",
-    icon: "fa-user-shield",
-    size: "medium",
-    position: { top: "0px", left: "2%", transform: "rotate(-4deg)" },
-    bgColor: "bg-gradient-to-br from-blue-50 to-blue-100",
-    iconColor: "text-blue-600",
-    zIndex: 25,
-  },
-  {
-    title: "Role Permissions",
-    description: "Granular access control",
-    icon: "fa-users-cog",
-    size: "small",
-    position: { top: "10px", right: "2%", transform: "rotate(6deg)" },
-    bgColor: "bg-gradient-to-br from-purple-50 to-purple-100",
-    iconColor: "text-purple-600",
-    zIndex: 20,
-  },
-  {
-    title: "Multi-Factor Auth",
-    description: "Enhanced security",
-    icon: "fa-shield-halved",
-    size: "small",
-    position: { top: "90px", left: "5%", transform: "rotate(-8deg)" },
-    bgColor: "bg-gradient-to-br from-amber-50 to-amber-100",
-    iconColor: "text-amber-600",
-    zIndex: 15,
-  },
-  {
-    title: "Audit Logs",
-    description: "Complete tracking",
-    icon: "fa-file-lines",
-    size: "small",
-    position: { top: "100px", right: "5%", transform: "rotate(8deg)" },
-    bgColor: "bg-gradient-to-br from-orange-50 to-orange-100",
-    iconColor: "text-orange-600",
-    zIndex: 18,
-  },
-  {
-    title: "99.9% Uptime",
-    description: "High availability hosting",
-    icon: "fa-chart-line",
-    size: "large",
-    position: {
-      top: "160px",
-      left: "50%",
-      transform: "translate(-50%, 0) rotate(2deg)",
-    },
-    bgColor: "bg-gradient-to-br from-emerald-50 to-emerald-100",
-    iconColor: "text-emerald-600",
-    zIndex: 35,
-  },
-  {
-    title: "Data Residency",
-    description: "Global compliance",
-    icon: "fa-globe",
-    size: "medium",
-    position: { top: "300px", left: "5%", transform: "rotate(-3deg)" },
-    bgColor: "bg-gradient-to-br from-indigo-50 to-indigo-100",
-    iconColor: "text-indigo-600",
-    zIndex: 22,
-  },
-  {
-    title: "API Integration",
-    description: "Connect tools",
-    icon: "fa-plug",
-    size: "medium",
-    position: { top: "310px", right: "5%", transform: "rotate(4deg)" },
-    bgColor: "bg-gradient-to-br from-rose-50 to-rose-100",
-    iconColor: "text-rose-600",
-    zIndex: 24,
-  },
-  {
-    title: "Performance Scale",
-    description: "Enterprise-grade",
-    icon: "fa-rocket",
-    size: "small",
-    position: { top: "400px", left: "20%", transform: "rotate(-6deg)" },
-    bgColor: "bg-gradient-to-br from-cyan-50 to-cyan-100",
-    iconColor: "text-cyan-600",
-    zIndex: 12,
-  },
-  {
-    title: "Incident Tracking",
-    description: "Real-time monitoring",
-    icon: "fa-exclamation-triangle",
-    size: "small",
-    position: { top: "410px", right: "20%", transform: "rotate(7deg)" },
-    bgColor: "bg-gradient-to-br from-red-50 to-red-100",
-    iconColor: "text-red-600",
-    zIndex: 14,
-  },
-  {
-    title: "SOC 2 Certified",
-    description: "Security compliance",
-    icon: "fa-certificate",
-    size: "medium",
-    position: {
-      top: "480px",
-      left: "50%",
-      transform: "translate(-50%, 0) rotate(-2deg)",
-    },
-    bgColor: "bg-gradient-to-br from-teal-50 to-teal-100",
-    iconColor: "text-teal-600",
-    zIndex: 16,
-  },
-];
 
 function EnterpriseCard({
   feature,
   isInView,
   index,
+  layout = "free",
 }: {
   feature: EnterpriseFeature;
   isInView: boolean;
   index: number;
+  layout?: "free" | "grid";
 }) {
-  const getSizeClasses = (size: string) => {
+  const getFreeSizeClasses = (size: string) => {
     switch (size) {
       case "small":
-        return "w-24 h-16 sm:w-28 sm:h-18 p-2";
+        return "w-24 h-20 sm:w-32 sm:h-24 lg:w-40 lg:h-28 p-2 sm:p-3";
       case "large":
-        return "w-40 h-24 sm:w-48 sm:h-28 p-3";
+        return "w-40 h-32 sm:w-52 sm:h-40 lg:w-64 lg:h-44 p-3 sm:p-4";
       default:
-        return "w-32 h-20 sm:w-36 sm:h-22 p-2 sm:p-3";
+        return "w-32 h-28 sm:w-40 sm:h-32 lg:w-48 lg:h-36 p-2.5 sm:p-3 lg:p-4";
     }
   };
 
-  const getDelay = (index: number) => `${index * 80}ms`;
+  const getGridSizeClasses = (size: string) => {
+    switch (size) {
+      case "small":
+  // Desktop grid sizing: auto height like reference
+  return "w-full p-6";
+      case "large":
+  return "w-full p-6";
+      default:
+  return "w-full p-6";
+    }
+  };
 
+  const baseClasses =
+    layout === "free" ? getFreeSizeClasses(feature.size) : getGridSizeClasses(feature.size);
+
+  const getDelay = (i: number) => `${i * 80}ms`;
+
+  // No rotation in grid mode (keep clean, aligned look for desktop)
+  const gridRotation = "0deg";
+
+  const containerBase = `${layout === "free" ? "absolute" : "relative"} ${baseClasses} ${feature.bgColor} ${
+    layout === "free" ? "rounded-xl border border-white/40" : "rounded-2xl border-0"
+  } transition-all duration-600 ${
+    isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+  }`;
+
+  if (layout === "grid") {
+    return (
+      <div
+        className={`${containerBase} ${feature.shadowClass ?? "shadow-lg shadow-gray-500/5"} hover:-translate-y-1 ease-in-out group`}
+        style={{
+          zIndex: feature.zIndex,
+          transitionDelay: isInView ? getDelay(index) : "0ms",
+          boxShadow: undefined,
+          transform: `rotate(${gridRotation})`,
+        }}
+      >
+        <div className="h-full w-full flex items-center justify-between">
+          <div className="pr-3">
+            <div className={`text-base md:text-lg font-semibold leading-tight mb-1 ${feature.titleColor ?? "text-gray-900"}`}>
+              {feature.title}
+            </div>
+            <div className={`text-sm md:text-base ${feature.descColor ?? "text-gray-700/90"}`}>
+              {feature.description}
+            </div>
+          </div>
+          <div
+            className={`flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-white/70 ${feature.iconColor} shadow-sm text-base opacity-90`}
+          >
+            <i className={`fa-solid ${feature.icon}`}></i>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // free layout (mobile scattered)
   return (
     <div
-      className={`absolute ${getSizeClasses(feature.size)} ${
-        feature.bgColor
-      } rounded-xl shadow-md border border-white/40 transition-all duration-600 ${
-        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      } hover:shadow-lg hover:scale-105 cursor-pointer group`}
+      className={`${containerBase} overflow-hidden cursor-pointer group`}
       style={{
-        ...feature.position,
+        ...(layout === "free" ? (feature.position as React.CSSProperties) : {}),
         zIndex: feature.zIndex,
         transitionDelay: isInView ? getDelay(index) : "0ms",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.03)",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.04)",
+        transform: feature.position.transform,
       }}
     >
+      {layout === "free" && (
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-3 rounded-sm bg-yellow-200/80 shadow-sm mix-blend-multiply rotate-[-2deg]" />
+      )}
+
       <div className="h-full flex flex-col justify-between relative">
-        <div className="flex items-center justify-between mb-1">
+        <div className="flex items-center justify-between mb-2">
           <div
-            className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.iconColor} rounded-lg bg-white/70 shadow-sm flex items-center justify-center text-xs group-hover:scale-110 transition-transform duration-300`}
+            className={`w-6 h-6 sm:w-7 sm:h-7 ${feature.iconColor} rounded-lg bg-white/70 shadow-sm flex items-center justify-center text-sm group-hover:scale-110 transition-transform duration-300`}
           >
             <i className={`fa-solid ${feature.icon}`}></i>
           </div>
@@ -297,12 +248,12 @@ function EnterpriseCard({
         </div>
 
         <div>
-          <div className="text-xs sm:text-sm font-bold text-gray-800 leading-tight mb-1">
+          <div className="text-sm md:text-base lg:text-lg font-bold text-gray-800 leading-tight mb-1 break-words">
             {feature.title}
           </div>
 
           {(feature.size === "medium" || feature.size === "large") && (
-            <div className="text-xs text-gray-600 leading-tight opacity-80">
+            <div className="text-xs sm:text-sm md:text-base text-gray-700 leading-snug opacity-90 break-words line-clamp-2 sm:line-clamp-none">
               {feature.description}
             </div>
           )}
@@ -316,11 +267,166 @@ export default function EnterpriseEssentials() {
   const { ref, isInView } = useInView({ threshold: 0.2 });
   const desktopTagline =
     "From SSO to uptime, everything you need to run securely at enterprise scale.";
-  const words = desktopTagline.split(" ").filter(Boolean);
+
+  // Desktop grid columns grouped like the screenshot
+  const desktopColumns: {
+    heading: string;
+    subheading: string;
+    items: EnterpriseFeature[];
+  }[] = [
+    {
+      heading: "Security & Access",
+      subheading: "Robust controls for your organization.",
+      items: [
+        {
+          title: "Single Sign-On",
+          description: "Azure AD, Okta, Google",
+          icon: "fa-key",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-blue-100/50",
+          iconColor: "text-blue-400",
+          titleColor: "text-blue-900",
+          descColor: "text-blue-700",
+          shadowClass: "shadow-lg shadow-blue-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "Multi-Factor Auth",
+          description: "An extra layer of security.",
+          icon: "fa-shield-halved",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-yellow-100/50",
+          iconColor: "text-yellow-400",
+          titleColor: "text-yellow-900",
+          descColor: "text-yellow-700",
+          shadowClass: "shadow-lg shadow-yellow-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "Role Permissions",
+          description: "Granular access control.",
+          icon: "fa-user-lock",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-purple-100/50",
+          iconColor: "text-purple-400",
+          titleColor: "text-purple-900",
+          descColor: "text-purple-700",
+          shadowClass: "shadow-lg shadow-purple-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "SOC 2 Certified",
+          description: "Security compliance you can trust.",
+          icon: "fa-certificate",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-teal-100/50",
+          iconColor: "text-teal-400",
+          titleColor: "text-teal-900",
+          descColor: "text-teal-700",
+          shadowClass: "shadow-lg shadow-teal-500/5",
+          zIndex: 1,
+        },
+      ],
+    },
+    {
+  heading: "Reliability & Performance",
+  subheading: "Built for scale and availability.",
+      items: [
+        {
+          title: "99.9% Uptime",
+          description: "High availability hosting.",
+          icon: "fa-server",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-green-100/50",
+          iconColor: "text-green-400",
+          titleColor: "text-green-900",
+          descColor: "text-green-700",
+          shadowClass: "shadow-lg shadow-green-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "Performance Scale",
+          description: "Handles enterprise workloads.",
+          icon: "fa-gauge-high",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-sky-100/50",
+          iconColor: "text-sky-400",
+          titleColor: "text-sky-900",
+          descColor: "text-sky-700",
+          shadowClass: "shadow-lg shadow-sky-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "Data Residency",
+          description: "Global compliance and control.",
+          icon: "fa-globe",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-indigo-100/50",
+          iconColor: "text-indigo-400",
+          titleColor: "text-indigo-900",
+          descColor: "text-indigo-700",
+          shadowClass: "shadow-lg shadow-indigo-500/5",
+          zIndex: 1,
+        },
+      ],
+    },
+    {
+  heading: "Operations & Integration",
+  subheading: "Tools to streamline your workflow.",
+      items: [
+        {
+          title: "Audit Logs",
+          description: "Complete visibility of actions.",
+          icon: "fa-clipboard-list",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-orange-100/50",
+          iconColor: "text-orange-400",
+          titleColor: "text-orange-900",
+          descColor: "text-orange-700",
+          shadowClass: "shadow-lg shadow-orange-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "API Integration",
+          description: "Connect the tools you already use.",
+          icon: "fa-plug",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-pink-100/50",
+          iconColor: "text-pink-400",
+          titleColor: "text-pink-900",
+          descColor: "text-pink-700",
+          shadowClass: "shadow-lg shadow-pink-500/5",
+          zIndex: 1,
+        },
+        {
+          title: "Incident Tracking",
+          description: "Monitor and respond to issues.",
+          icon: "fa-triangle-exclamation",
+          size: "medium",
+          position: { transform: "none" },
+          bgColor: "bg-rose-100/50",
+          iconColor: "text-rose-400",
+          titleColor: "text-rose-900",
+          descColor: "text-rose-700",
+          shadowClass: "shadow-lg shadow-rose-500/5",
+          zIndex: 1,
+        },
+      ],
+    },
+  ];
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-[#FDF6E9]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 bg-[#FDF6E9]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
           ref={ref}
@@ -328,13 +434,11 @@ export default function EnterpriseEssentials() {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="font-['Poppins',sans-serif] text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 transform -rotate-1">
+          <h2 className="font-['Inter',sans-serif] text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
             Enterprise Essentials
           </h2>
-          {/* Mobile/tablet subheading (hidden on desktop) */}
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed lg:hidden">
-            From SSO to uptime, everything you need to run securely at
-            enterprise scale.
+          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            {desktopTagline}
           </p>
         </div>
 
@@ -352,43 +456,31 @@ export default function EnterpriseEssentials() {
           </div>
         </div>
 
-        {/* Desktop layout - 70/30 split */}
-        <div className="hidden lg:flex items-center gap-8">
-          {/* Left: 70% boxes area */}
-          <div className="relative h-[560px] basis-[70%] min-w-0">
-            {desktopFeatures.map((feature, index) => (
-              <EnterpriseCard
-                key={feature.title}
-                feature={feature}
-                isInView={isInView}
-                index={index}
-              />
-            ))}
-          </div>
-
-          {/* Right: 30% vertical subheading */}
-          <div className="basis-[30%] h-[560px] flex items-center justify-center">
-            <div className="z-40 flex flex-col items-center">
-              <span className="block w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
-              <div className="mt-2 flex flex-col items-center gap-1.5">
-                {words.map((w, i) => (
-                  <span
-                    key={`${w}-${i}`}
-                    className={
-                      `select-none rounded-md border border-white/60 bg-white/70 px-2 py-1 text-[11px] font-semibold uppercase tracking-widest text-gray-800/80 shadow-sm backdrop-blur-sm transition-all duration-500 ` +
-                      (isInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6") +
-                      (i % 2 === 0 ? " -rotate-1" : " rotate-1") +
-                      " hover:scale-105 hover:shadow-md"
-                    }
-                    style={{ transitionDelay: isInView ? `${i * 60}ms` : "0ms" }}
-                  >
-                    {w}
-                  </span>
+  {/* Desktop layout - 3 columns like the screenshot */}
+  <div className="hidden lg:grid grid-cols-3 gap-8">
+          {desktopColumns.map((col, cIdx) => (
+      <div key={col.heading} className={`flex flex-col ${cIdx === 1 ? "md:mt-16" : ""}`}>
+              <div className="mb-4">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900">
+                  {col.heading}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 mt-1">
+                  {col.subheading}
+                </p>
+              </div>
+              <div className="space-y-4">
+                {col.items.map((feature, i) => (
+                  <EnterpriseCard
+                    key={feature.title}
+                    feature={feature}
+                    isInView={isInView}
+                    index={cIdx * 10 + i}
+                    layout="grid"
+                  />
                 ))}
               </div>
-              <span className="mt-2 block w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -35,10 +35,22 @@ export default function Navigation() {
               {t('features')}
             </Link>
             <Link
+              href={ROUTES.howItWorks}
+              className="hover:text-[#1A7D3D] transition-colors"
+            >
+              {t('howItWorks')}
+            </Link>
+            <Link
               href={ROUTES.pricing}
               className="hover:text-[#1A7D3D] transition-colors"
             >
               {t('pricing')}
+            </Link>
+            <Link
+              href={ROUTES.bookDemo}
+              className="hover:text-[#1A7D3D] transition-colors"
+            >
+              {t('bookDemo')}
             </Link>
           </nav>
 

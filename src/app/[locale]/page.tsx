@@ -7,6 +7,7 @@ import CallToAction from "./_components/CallToAction";
 import EverythingYoureLookingFor from "./_components/EverythingYoureLookingFor";
 import ChaosToClarity from "./_components/ChaosToClarity";
 import EnterpriseEssentials from "./_components/EnterpriseEssentials";
+import HowItWorks from "./how-it-works/page";
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -32,18 +33,21 @@ export default async function HomePage({ params }: HomePageProps) {
       {/* Section 4: Your Concerns, Already Solved */}
       <CommonWorries/>
 
-      {/* Section 5: Enterprise Essentials */}
-      <EnterpriseEssentials />
+     
+  {/* Section 5: Chaos to Clarity visual */}
+  <ChaosToClarity />
       
   {/* Section 6: Use Cases / Industries */}
   <UseCases />
 
-  {/* Section 6.5: Chaos to Clarity visual */}
-  <ChaosToClarity />
-  
-    
-      {/* Section 7: Call to Action */}
+   {/* Section 7: Enterprise Essentials */}
+      <EnterpriseEssentials />
+
+      {/* Section 8: Call to Action */}
       <CallToAction />
+
+      {/* Section 9: How it Works */}
+      <HowItWorks />
     </main>
   );
 }

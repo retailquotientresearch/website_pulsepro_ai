@@ -8,6 +8,8 @@ import Container from '@/components/ui/Container'
 import Section from '@/components/ui/Section'
 import Testimonials from '@/components/Testimonials'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
+import { Link } from '@/i18n/navigation'
+import { ROUTES } from '@/config/links'
 
 export default function PricingPage() {
   const t = useTranslations('pricing')
@@ -116,8 +118,8 @@ export default function PricingPage() {
                   {t('hero.cta.primary')}
                 </Button>
               </a>
-              <a href={EXTERNAL_LINKS.howItWorks} target="_blank" rel="noopener noreferrer">
-        <Button
+      <Link href={ROUTES.howItWorks}>
+    <Button
                   variant='outline'
                   size='lg'
                   className='flex items-center gap-3 bg-white border-2 rounded-full px-8 py-4 shadow-md hover:shadow-lg transition-all duration-300 hover:bg-green-50 w-full'
@@ -129,7 +131,7 @@ export default function PricingPage() {
                   <i className='ri-phone-fill text-xl'></i>
                   {t('hero.cta.secondary')}
                 </Button>
-              </a>
+      </Link>
             </div>
           </div>
         </Container>
@@ -187,7 +189,7 @@ export default function PricingPage() {
                           {t('hero.cta.primary')}
                         </Button>
                       </a>
-                      <a href={EXTERNAL_LINKS.howItWorks} target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Link href={ROUTES.howItWorks} className="flex-1">
                         <Button
                           variant='outline'
                           size='lg'
@@ -197,7 +199,7 @@ export default function PricingPage() {
                           <i className='ri-phone-fill text-xl'></i>
                           {t('hero.cta.secondary')}
                         </Button>
-                      </a>
+                      </Link>
                     </div>
 
                     {/* Quick perks */}
@@ -353,7 +355,7 @@ export default function PricingPage() {
 
             <AnimatedCard delay={200} direction='up'>
               <div className='flex flex-col sm:flex-row gap-6 justify-center items-center mb-8'>
-                <a href={EXTERNAL_LINKS.howItWorks} target="_blank" rel="noopener noreferrer">
+                <Link href={ROUTES.howItWorks}>
                   <Button
                     size='lg'
                     className='flex items-center gap-3 text-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300'
@@ -364,7 +366,7 @@ export default function PricingPage() {
                     <i className='ri-play-fill text-2xl'></i>
                     {t('faq.cta')}
                   </Button>
-                </a>
+                </Link>
               </div>
             </AnimatedCard>
           </div>

@@ -66,7 +66,7 @@ function FeatureTile({ label }: { label: string }) {
   return (
     <Badge
       variant="outline"
-      className="w-auto h-12 sm:h-12 rounded-full border-2 border-[#f0d7ff]/60 text-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-start px-4 sm:px-4 text-sm sm:text-sm font-semibold"
+      className="w-auto h-12 sm:h-12 rounded-full border-2 border-[#f0d7ff]/60 text-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-start px-4 sm:px-4 text-sm md:text-base font-semibold"
       style={{
         backgroundColor: "#f0d7ff",
         borderColor: "#e6c7ff",
@@ -141,7 +141,7 @@ function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
                   <Icon className="size-3.5 lg:size-6" aria-hidden="true" />
                 </span>
                 <span
-                  className="font-bold text-sm lg:text-2xl whitespace-nowrap"
+                  className="font-bold text-sm md:text-xl lg:text-2xl whitespace-nowrap"
                   style={{
                     color: color.text,
                     fontFamily: "ui-serif, Georgia, serif",
@@ -172,7 +172,7 @@ export default function EverythingYoureLookingFor() {
       <div className="w-full px-2 sm:px-4 lg:px-6">
         {/* Title */}
         <div className="text-center mb-6 lg:mb-8">
-          <h2 className="text-3xl lg:text-5xl xl:text-6xl font-black leading-tight text-gray-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900">
             {t("title.part1")}{" "}
             <span className="bg-gradient-to-r from-[#1A7D3D] via-[#22A456] to-[#1A7D3D] bg-clip-text text-transparent">
               {t("title.highlight")}

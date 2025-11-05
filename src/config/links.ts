@@ -5,13 +5,14 @@ export const ROUTES = {
   home: "/",
   features: "/features",
   pricing: "/pricing",
+  howItWorks: "/how-it-works",
+  bookDemo: "/book-demo",
 } as const;
 
 export const EXTERNAL_LINKS = {
   signIn: "https://ng-app.pulsepro.ai/login",
   register: "https://ng-app.pulsepro.ai/register?plan=PROM",
   howItWorks: "https://www.pulsepro.ai/how-it-works/",
-  demoWatch: "https://www.pulsepro.ai/pulse-watch-demo/",
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;
