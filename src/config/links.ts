@@ -8,6 +8,7 @@ export const ROUTES = {
 } as const;
 
 export const EXTERNAL_LINKS = {
+  signIn: "https://ng-app.pulsepro.ai/login",
   register: "https://ng-app.pulsepro.ai/register?plan=PROM",
   howItWorks: "https://www.pulsepro.ai/how-it-works/",
   demoWatch: "https://www.pulsepro.ai/pulse-watch-demo/",

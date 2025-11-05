@@ -37,7 +37,28 @@ const REEL_ICONS: Record<string, LucideIcon> = {
   "Image Upload": ImageIcon,
   Signatures: PenLine,
   "Geo Check In": MapPin,
+  // Additional tiles (lavender badges only)
+  "PDF Reports": PenLine,
+  "Reminders & Alerts": Bell,
+  Scheduling: CheckSquare,
+  "Custom Branding": ImageIcon,
+  "Offline Capability": MapPin,
 };
+
+// Lavender feature tiles list (includes existing REELS titles + requested additions)
+const TILE_LABELS: string[] = [
+  "Analytics",
+  "Actions",
+  "Notifications",
+  "Image Upload",
+  "Signatures",
+  "Geo Check In",
+  "PDF Reports",
+  "Reminders & Alerts",
+  "Scheduling",
+  "Custom Branding",
+  "Offline Capability",
+];
 
 function FeatureTile({ label }: { label: string }) {
   const Icon = REEL_ICONS[label] ?? CircleHelp;
@@ -45,14 +66,14 @@ function FeatureTile({ label }: { label: string }) {
   return (
     <Badge
       variant="outline"
-      className="w-auto h-12 sm:h-12 rounded-full border-2 border-[#f0d7ff]/60 text-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 justify-start px-6 sm:px-6 text-sm sm:text-sm font-semibold"
+      className="w-auto h-12 sm:h-12 rounded-full border-2 border-[#f0d7ff]/60 text-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-start px-4 sm:px-4 text-sm sm:text-sm font-semibold"
       style={{
         backgroundColor: "#f0d7ff",
         borderColor: "#e6c7ff",
       }}
     >
-      <span className="inline-flex size-7 items-center justify-center rounded-full bg-white/90 border-2 border-white/60 text-gray-700 shadow-sm">
-        <Icon className="size-4" aria-hidden="true" />
+      <span className="inline-flex size-6 items-center justify-center rounded-full bg-white/90 border-2 border-white/60 text-gray-700 shadow-sm">
+        <Icon className="size-3.5" aria-hidden="true" />
       </span>
       {label}
     </Badge>
@@ -161,20 +182,11 @@ export default function EverythingYoureLookingFor() {
 
         {/* Feature Tiles */}
         <div className="mb-8 lg:mb-12">
-          {/* Desktop: Horizontal Layout */}
-          <div className="hidden lg:flex justify-center items-center gap-6 xl:gap-8 flex-wrap">
-      {REELS.map((reel, idx) => (
-              <AnimatedCard key={reel.title} delay={idx * 60} direction="up">
-        <FeatureTile label={reel.title} />
-              </AnimatedCard>
-            ))}
-          </div>
-
-          {/* Mobile: Vertical Layout */}
-          <div className="lg:hidden flex flex-col items-center gap-3 sm:gap-4">
-      {REELS.map((reel, idx) => (
-              <AnimatedCard key={reel.title} delay={idx * 60} direction="up">
-        <FeatureTile label={reel.title} />
+          {/* All breakpoints: centered, wrapping flex layout for lavender tiles */}
+          <div className="mx-auto max-w-3xl flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
+            {TILE_LABELS.map((label, idx) => (
+              <AnimatedCard key={label} delay={idx * 60} direction="up">
+                <FeatureTile label={label} />
               </AnimatedCard>
             ))}
           </div>

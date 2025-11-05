@@ -314,6 +314,9 @@ function EnterpriseCard({
 
 export default function EnterpriseEssentials() {
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  const desktopTagline =
+    "From SSO to uptime, everything you need to run securely at enterprise scale.";
+  const words = desktopTagline.split(" ").filter(Boolean);
 
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-[#FDF6E9]">
@@ -328,7 +331,8 @@ export default function EnterpriseEssentials() {
           <h2 className="font-['Poppins',sans-serif] text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 transform -rotate-1">
             Enterprise Essentials
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          {/* Mobile/tablet subheading (hidden on desktop) */}
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed lg:hidden">
             From SSO to uptime, everything you need to run securely at
             enterprise scale.
           </p>
@@ -348,9 +352,10 @@ export default function EnterpriseEssentials() {
           </div>
         </div>
 
-        {/* Desktop layout - spread out */}
-        <div className="hidden lg:flex justify-center">
-          <div className="relative w-full max-w-4xl mx-auto h-[560px]">
+        {/* Desktop layout - 70/30 split */}
+        <div className="hidden lg:flex items-center gap-8">
+          {/* Left: 70% boxes area */}
+          <div className="relative h-[560px] basis-[70%] min-w-0">
             {desktopFeatures.map((feature, index) => (
               <EnterpriseCard
                 key={feature.title}
@@ -359,6 +364,30 @@ export default function EnterpriseEssentials() {
                 index={index}
               />
             ))}
+          </div>
+
+          {/* Right: 30% vertical subheading */}
+          <div className="basis-[30%] h-[560px] flex items-center justify-center">
+            <div className="z-40 flex flex-col items-center">
+              <span className="block w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
+              <div className="mt-2 flex flex-col items-center gap-1.5">
+                {words.map((w, i) => (
+                  <span
+                    key={`${w}-${i}`}
+                    className={
+                      `select-none rounded-md border border-white/60 bg-white/70 px-2 py-1 text-[11px] font-semibold uppercase tracking-widest text-gray-800/80 shadow-sm backdrop-blur-sm transition-all duration-500 ` +
+                      (isInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6") +
+                      (i % 2 === 0 ? " -rotate-1" : " rotate-1") +
+                      " hover:scale-105 hover:shadow-md"
+                    }
+                    style={{ transitionDelay: isInView ? `${i * 60}ms` : "0ms" }}
+                  >
+                    {w}
+                  </span>
+                ))}
+              </div>
+              <span className="mt-2 block w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
+            </div>
           </div>
         </div>
       </div>

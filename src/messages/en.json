@@ -43,7 +43,7 @@
     "secondaryCta": "Book a Demo",
     "stats": {
       "sitesManaged": {
-        "value": "10000+",
+        "value": "100000+",
         "label": "Sites Managed"
       },
       "uptime": {
@@ -353,7 +353,7 @@
     },
     "stats": {
       "sites": {
-        "value": "10000+",
+        "value": "100000+",
         "label": "Enterprise Sites"
       },
       "setup": {

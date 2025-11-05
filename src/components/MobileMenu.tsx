@@ -11,16 +11,13 @@ import { Link } from "@/i18n/navigation";
 import { ROUTES, EXTERNAL_LINKS } from "@/config/links";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { Menu } from "lucide-react";
 
 export default function MobileMenu() {
   const t = useTranslations('navigation');
   
   const [isOpen, setIsOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const [isClient, setIsClient] = useState(true);
 
   const handleMenuClose = () => {
     setIsOpen(false);
@@ -29,16 +26,8 @@ export default function MobileMenu() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <button className="lg:hidden w-10 h-10 flex items-center justify-center">
-          {isClient ? (
-            <i className="fa-solid fa-bars text-xl text-[#1A1A1A]"></i>
-          ) : (
-            <div className="w-5 h-5">
-              <div className="w-full h-0.5 bg-[#1A1A1A] mb-1"></div>
-              <div className="w-full h-0.5 bg-[#1A1A1A] mb-1"></div>
-              <div className="w-full h-0.5 bg-[#1A1A1A]"></div>
-            </div>
-          )}
+        <button aria-label="Open menu" className="lg:hidden w-10 h-10 flex items-center justify-center">
+          <Menu className="text-[#1A1A1A]" size={24} />
         </button>
       </SheetTrigger>
 
@@ -64,7 +53,16 @@ export default function MobileMenu() {
               {t("pricing")}
             </Link>
 
-            <div className="pt-4 mt-2 border-t border-gray-200">
+            <div className="pt-4 mt-2 border-t border-gray-200 space-y-2">
+              <a
+                href={EXTERNAL_LINKS.signIn}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-[#1A7D3D] text-center py-3 px-4 rounded-lg border border-[#1A7D3D]/30 bg-white hover:bg-gray-50 hover:border-[#166534] hover:text-[#166534] transition-colors font-medium"
+                onClick={handleMenuClose}
+              >
+                {t('signIn')}
+              </a>
               <a
                 href={EXTERNAL_LINKS.register}
                 target="_blank"
@@ -72,7 +70,7 @@ export default function MobileMenu() {
                 className="block w-full bg-[#1A7D3D] text-white text-center py-3 px-4 rounded-lg hover:bg-[#166534] transition-colors font-medium"
                 onClick={handleMenuClose}
               >
-                Get Started
+                {t('getStarted')}
               </a>
             </div>
           </nav>

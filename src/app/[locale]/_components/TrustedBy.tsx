@@ -18,11 +18,11 @@ const ROW_ONE: Client[] = [
 ];
 
 const ROW_TWO: Client[] = [
-  { name: "GCC Government", logo: "/images/clients/unnamed%20(4).png" },
-  { name: "BlueOrbit", logo: "/images/clients/unnamed.png" },
-  { name: "Vertex Labs", logo: "/images/clients/unnamed%20(2).png" },
-  { name: "TerraGrid", logo: "/images/clients/unnamed%20(3).png" },
-  { name: "Astra Foods", logo: "/images/clients/unnamed%20(1).png" },
+  { name: "Battery Smart", logo: "/images/clients/batterysmart.png" },
+  { name: "Leica", logo: "/images/clients/Leica.jpg" },
+  { name: "South Beach Hotels", logo: "/images/clients/south_beach.png" },
+  { name: "Tim Hortons", logo: "/images/clients/Tim_hortons.png" },
+  { name: "Travel Food Services", logo: "/images/clients/travel_food_services.png" },
 ];
 
 function LogosRow({ clients, reverse = false, speed = 30 }: { clients: Client[]; reverse?: boolean; speed?: number }) {
@@ -43,20 +43,17 @@ function LogosRow({ clients, reverse = false, speed = 30 }: { clients: Client[];
         {[...clients, ...clients].map((client, idx) => (
           <div
             key={`${client.name}-${idx}`}
-            className="shrink-0 rounded-xl bg-white/5 ring-1 ring-white/15 backdrop-blur px-8 py-5 hover:bg-white/10 transition-colors"
+            className="shrink-0 px-1 py-1"
             aria-label={client.name}
           >
-            <div className="flex items-center gap-4">
-              <div className="relative h-16 w-16 rounded-lg overflow-hidden bg-white/90">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  fill
-                  sizes="64px"
-                  className="object-contain p-2"
-                />
-              </div>
-              <span className="text-lg md:text-xl text-gray-100 whitespace-nowrap font-semibold">{client.name}</span>
+            <div className="relative h-16 w-28 rounded-lg overflow-hidden bg-white/90">
+              <Image
+                src={client.logo}
+                alt={client.name}
+                fill
+                sizes="112px"
+                className="object-contain p-2"
+              />
             </div>
           </div>
         ))}

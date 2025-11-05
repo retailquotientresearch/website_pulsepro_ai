@@ -26,7 +26,7 @@ type StoryPair = {
 
 const CHAOS_ICONS: ScatterIcon[] = [
   {
-    icon: "ri-apps-2-fill",
+    icon: "/images/icons/one_drive.png",
     size: 52,
     rotate: -18,
     x: "8%",
@@ -50,7 +50,7 @@ const CHAOS_ICONS: ScatterIcon[] = [
     tone: "red",
   },
   {
-    icon: "ri-file-text-fill",
+    icon: "/images/icons/whats_app.png",
     size: 48,
     rotate: 32,
     x: "4%",
@@ -58,7 +58,7 @@ const CHAOS_ICONS: ScatterIcon[] = [
     tone: "amber",
   },
   {
-    icon: "ri-database-2-fill",
+    icon: "/images/icons/paper.png",
     size: 42,
     rotate: -26,
     x: "46%",
@@ -66,7 +66,7 @@ const CHAOS_ICONS: ScatterIcon[] = [
     tone: "red",
   },
   {
-    icon: "ri-mail-fill",
+    icon: "/images/icons/one_drive.png",
     size: 56,
     rotate: 14,
     x: "28%",
@@ -543,12 +543,25 @@ export default function ChaosToClarity() {
                 filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})`, // Brighten cards at flow peaks
               }}
             >
-              <i
-                className={cn("text-4xl md:text-5xl", item.icon, tone)}
-                aria-hidden="true"
-              />
+              {item.icon.startsWith('/') ? (
+                <img
+                  src={item.icon}
+                  alt=""
+                  className="w-16 h-16 md:w-18 md:h-18 object-contain"
+                  style={{
+                    filter: item.tone === "red" 
+                      ? "drop-shadow(0 2px 8px rgba(239,68,68,0.3))" 
+                      : "drop-shadow(0 2px 8px rgba(245,158,11,0.3))"
+                  }}
+                />
+              ) : (
+                <i
+                  className={cn("text-4xl md:text-5xl", item.icon, tone)}
+                  aria-hidden="true"
+                />
+              )}
               <span className="sr-only">
-                {item.icon.replace(/ri-|-/g, " ")}
+                {item.icon.startsWith('/') ? item.icon.split('/').pop()?.replace(/\.[^/.]+$/, "") : item.icon.replace(/ri-|-/g, " ")}
               </span>
             </div>
           );
@@ -571,10 +584,23 @@ export default function ChaosToClarity() {
                 filter: `brightness(${1 + Math.abs(offset) / (ampParam * 2)})`, // Brighten cards at flow peaks
               }}
             >
-              <i
-                className={cn("text-4xl md:text-5xl", item.icon, tone)}
-                aria-hidden="true"
-              />
+              {item.icon.startsWith('/') ? (
+                <img
+                  src={item.icon}
+                  alt=""
+                  className="w-16 h-16 md:w-18 md:h-18 object-contain"
+                  style={{
+                    filter: item.tone === "red" 
+                      ? "drop-shadow(0 2px 8px rgba(239,68,68,0.3))" 
+                      : "drop-shadow(0 2px 8px rgba(245,158,11,0.3))"
+                  }}
+                />
+              ) : (
+                <i
+                  className={cn("text-4xl md:text-5xl", item.icon, tone)}
+                  aria-hidden="true"
+                />
+              )}
             </div>
           );
         })}

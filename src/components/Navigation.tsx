@@ -27,7 +27,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-700">
+          <nav className="hidden lg:flex items-center space-x-8 text-base lg:text-lg font-medium text-gray-700">
             <Link
               href={ROUTES.features}
               className="hover:text-[#1A7D3D] transition-colors"
@@ -43,7 +43,15 @@ export default function Navigation() {
           </nav>
 
           {/* Right side actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
+            <a
+              href={EXTERNAL_LINKS.signIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:block text-[#1A7D3D] hover:text-[#166534] border border-[#1A7D3D]/30 hover:border-[#166534] px-5 py-2 rounded-full transition-colors font-medium bg-white/60 hover:bg-white"
+            >
+              {t('signIn')}
+            </a>
             <a
               href={EXTERNAL_LINKS.register}
               target="_blank"
