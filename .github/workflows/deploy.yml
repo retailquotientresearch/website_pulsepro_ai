@@ -6,80 +6,67 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write   # For GitHub OIDC
+  id-token: write
   contents: read
 
 env:
   NODE_VERSION: '20.x'
-  S3_BUCKET: ${{ secrets.S3_BUCKET }}
-  AWS_REGION: ${{ secrets.AWS_REGION }}
-  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js
       - name: Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
 
-      # Step 3: Enable Corepack for Yarn Berry
       - name: Enable Corepack
         run: corepack enable
 
-      # Step 4: Install dependencies
       - name: Install dependencies
         run: yarn install --immutable
 
-      # Step 5: Lint (optional)
       - name: Lint
         run: yarn lint
 
-      # Step 6: Build Next.js site
       - name: Build Next.js
         run: yarn build && yarn export
 
-      # Step 7a: Configure AWS credentials (OIDC role)
+      # Configure AWS credentials using OIDC role if set
       - name: Configure AWS credentials (OIDC)
         if: ${{ secrets.AWS_ROLE_TO_ASSUME != '' }}
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 7b: Configure AWS credentials (Access keys)
+      # Configure AWS credentials using access keys if no OIDC role
       - name: Configure AWS credentials (Access Keys)
         if: ${{ secrets.AWS_ROLE_TO_ASSUME == '' }}
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 8: Sync static files to S3
       - name: Deploy to S3
         run: |
           if [ ! -d "out" ]; then
-            echo "Error: ./out directory not found. Make sure Next.js builds to ./out" >&2
+            echo "Error: ./out directory not found" >&2
             exit 1
           fi
-          # Long-lived assets
-          aws s3 sync ./out s3://$S3_BUCKET --delete --cache-control max-age=31536000,public --exclude "*.html" --exclude "_next/data/*"
-          # HTML and JSON data (short-lived)
-          aws s3 sync ./out s3://$S3_BUCKET --delete --exclude "*" --include "**/*.html" --include "_next/data/*" --cache-control max-age=300,public,must-revalidate
+          aws s3 sync ./out s3://${{ secrets.S3_BUCKET }} --delete --cache-control max-age=31536000,public --exclude "*.html" --exclude "_next/data/*"
+          aws s3 sync ./out s3://${{ secrets.S3_BUCKET }} --delete --exclude "*" --include "**/*.html" --include "_next/data/*" --cache-control max-age=300,public,must-revalidate
 
-      # Step 9: Invalidate CloudFront cache
       - name: Invalidate CloudFront
         if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" \
             --paths "/index.html" "/_next/data/*" "/**/*.html"
