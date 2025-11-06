@@ -83,9 +83,9 @@ function StepsSection() {
                   <div className="flex items-center justify-center w-12 h-12 bg-[#1A7D3D] text-white font-bold text-xl rounded-full">
                     {step.number}
                   </div>
-                  <span className="text-[#1A7D3D] font-medium text-base md:text-lg">
+                  {/* <span className="text-[#1A7D3D] font-medium text-base md:text-lg">
                     {t('steps.badge')} {step.number}
-                  </span>
+                  </span> */}
                 </div>
                 
                 <h2 className="font-['Poppins',sans-serif] text-3xl md:text-4xl lg:text-5xl font-bold text-[#111111] leading-tight">

@@ -58,6 +58,15 @@ export default function MobileMenu() {
             >
               {t("pricing")}
             </Link>
+            <a
+              href={EXTERNAL_LINKS.blog}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"
+              onClick={handleMenuClose}
+            >
+              {t('blog', { default: 'Blog' })}
+            </a>
             <Link
               href={ROUTES.bookDemo}
               className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"

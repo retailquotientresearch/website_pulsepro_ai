@@ -87,167 +87,9 @@ const STREAMLINED_ICONS: string[] = [
 
 type PhoneSize = { width: number; height: number };
 
-type Question = { id: number; text: string };
-
-function PieChart({ segments, label }: { segments: { value: number; color: string }[]; label?: string }) {
-  const total = segments.reduce((a, b) => a + b.value, 0) || 1;
-  let acc = 0;
-  const stops = segments
-    .map((s) => {
-      const start = (acc / total) * 100;
-      acc += s.value;
-      const end = (acc / total) * 100;
-      return `${s.color} ${start}% ${end}%`;
-    })
-    .join(", ");
-  const gradient = `conic-gradient(${stops})`;
-  const primaryPct = Math.round((segments[0]?.value ?? 0) / total * 100);
-  return (
-    <div className="h-full w-full flex flex-col items-center justify-center gap-3">
-      <div className="relative">
-        <div
-          className="size-40 md:size-44 rounded-full shadow-sm"
-          style={{ backgroundImage: gradient }}
-          aria-label="Donut chart"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="size-24 md:size-28 rounded-full bg-white dark:bg-neutral-900 shadow-inner border border-border/50 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold">{primaryPct}%</div>
-              <div className="text-[10px] md:text-xs text-muted-foreground">{label ?? "Primary"}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex items-center gap-3 flex-wrap justify-center">
-        {segments.map((s, i) => (
-          <div key={i} className="flex items-center gap-2 text-[11px] md:text-xs">
-            <span className="inline-block size-2.5 rounded-sm" style={{ backgroundColor: s.color }} />
-            <span className="text-muted-foreground">{Math.round((s.value / total) * 100)}%</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Sparkline({ points }: { points: number[] }) {
-  const max = Math.max(1, ...points);
-  return (
-    <div className="h-12 w-full flex items-end gap-1">
-      {points.map((p, i) => (
-        <div
-          key={i}
-          className="flex-1 bg-gradient-to-t from-blue-500/50 to-blue-400/70 rounded-t"
-          style={{ height: `${Math.max(3, (p / max) * 100)}%` }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function InsightList() {
-  return (
-  <div className="min-h-full w-full p-3 grid grid-cols-2 gap-3">
-      <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-3">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-blue-500/15 text-blue-600 flex items-center justify-center">
-            <i className="ri-clipboard-check-line text-base" />
-          </div>
-          <div className="text-[10px] text-muted-foreground">Inspections Completed</div>
-        </div>
-        <div className="mt-1 text-lg font-semibold">1,128</div>
-        <div className="mt-2 h-1.5 w-full bg-black/5 dark:bg-white/10 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-blue-600 to-cyan-400" style={{ width: '76%' }} />
-        </div>
-      </div>
-  <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-3">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-amber-500/15 text-amber-600 flex items-center justify-center">
-            <i className="ri-file-list-3-line text-base" />
-          </div>
-          <div className="text-[10px] text-muted-foreground">Audits Scheduled</div>
-        </div>
-        <div className="mt-1 text-lg font-semibold">24</div>
-        <div className="mt-2 h-1.5 w-full bg-black/5 dark:bg-white/10 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-amber-500 to-yellow-400" style={{ width: '45%' }} />
-        </div>
-      </div>
-  <div className="rounded-lg bg-white/70 dark:bg:white/10 border border-border p-3">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-emerald-500/15 text-emerald-600 flex items-center justify-center">
-            <i className="ri-shield-check-line text-base" />
-          </div>
-          <div className="text-[10px] text-muted-foreground">Compliance Score</div>
-        </div>
-        <div className="mt-1 text-lg font-semibold">92%</div>
-        <div className="mt-2 h-1.5 w-full bg-black/5 dark:bg-white/10 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-emerald-500 to-green-400" style={{ width: '92%' }} />
-        </div>
-      </div>
-  <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-3">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-rose-500/15 text-rose-600 flex items-center justify-center">
-            <i className="ri-time-line text-base" />
-          </div>
-          <div className="text-[10px] text-muted-foreground">Avg. Resolution</div>
-        </div>
-        <div className="mt-1 text-lg font-semibold">2.4 days</div>
-        <div className="mt-2 h-1.5 w-full bg-black/5 dark:bg-white/10 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-rose-500 to-red-400" style={{ width: '40%' }} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function DashboardPlaceholder() {
-  // Previously tracked small-screen state here, but it was unused; removed to satisfy ESLint.
-
-  return (
-    <div className="min-h-full w-full p-3 grid grid-rows-[auto_minmax(0,1fr)_auto] gap-3">
-      <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-3">
-          <div className="text-[10px] text-muted-foreground">Active Users</div>
-          <div className="text-lg font-semibold">1,248</div>
-          <Sparkline points={[2, 3, 4, 3, 5, 6, 7]} />
-        </div>
-        <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-3">
-          <div className="text-[10px] text-muted-foreground">Conversion</div>
-          <div className="text-lg font-semibold">4.7%</div>
-          <Sparkline points={[1, 2, 1, 3, 2, 4, 5]} />
-        </div>
-        <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-3">
-          <div className="text-[10px] text-muted-foreground">Churn</div>
-          <div className="text-lg font-semibold">1.2%</div>
-          <Sparkline points={[3, 2, 2, 1, 2, 2, 1]} />
-        </div>
-      </div>
-  <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border overflow-hidden">
-        <InsightList />
-      </div>
-      <div className="rounded-lg bg-white/70 dark:bg-white/10 border border-border p-2 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <i className="ri-notification-3-line text-blue-600" />
-          <span className="text-xs">3 alerts need attention</span>
-        </div>
-        <button className="text-xs px-2 py-1 rounded-md bg-blue-600 text-white">Review</button>
-      </div>
-    </div>
-  );
-}
-
 function PhoneUI({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const screenRef = useRef<HTMLDivElement>(null);
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [showDefault, setShowDefault] = useState(true);
-  const [lastAnswer, setLastAnswer] = useState<"yes" | "no" | null>(null);
-
-  const questions: Question[] = [
-    { id: 1, text: "Do you segment your inspections and audits?" },
-    { id: 2, text: "Do you automate audit follow-ups?" },
-  ];
 
   useEffect(() => {
     const target = screenRef.current;
@@ -273,31 +115,6 @@ function PhoneUI({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void })
     if (r.width && r.height) onScreenSize?.({ width: Math.round(r.width), height: Math.round(r.height) });
   }, [onScreenSize]);
 
-  const handleAnswer = (answer: "yes" | "no") => {
-    setShowDefault(false);
-    setLastAnswer(answer);
-    // Alternate between the two questions
-    setQuestionIndex((prev) => (prev + 1) % questions.length);
-  };
-
-  const handleHeaderClick = () => {
-    setShowDefault(true);
-  };
-
-  const pieData = lastAnswer === "yes"
-    ? [
-        { value: 48, color: "#22c55e" },
-        { value: 22, color: "#3b82f6" },
-        { value: 18, color: "#f59e0b" },
-        { value: 12, color: "#ef4444" },
-      ]
-    : [
-        { value: 30, color: "#ef4444" },
-        { value: 28, color: "#3b82f6" },
-        { value: 22, color: "#22c55e" },
-        { value: 20, color: "#f59e0b" },
-      ];
-
   return (
     <div
       ref={containerRef}
@@ -312,7 +129,7 @@ function PhoneUI({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void })
           <div className="absolute -left-1 top-36 h-16 w-1.5 rounded-r bg-black/70" />
           <div className="absolute -right-1 top-28 h-16 w-1.5 rounded-l bg-black/70" />
           {/* Bezel */}
-          <div className="p-2">
+          <div className="p-1">
             {/* Screen */}
             <div
         ref={screenRef}
@@ -335,57 +152,237 @@ function PhoneUI({ onScreenSize }: { onScreenSize?: (size: PhoneSize) => void })
                 </div>
               </div>
               {/* Actual content */}
-              <div className="absolute inset-2 rounded-[22px] overflow-hidden">
-                <div className="grid h-full w-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
-                  {/* Header 10% */}
-                  <div
-                    className="relative flex items-center justify-between px-3 border-b border-border/60 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-950 cursor-pointer select-none"
-                    onClick={handleHeaderClick}
-                    role="button"
-                    aria-label="Show default dashboard"
-                  >
-                    <button className="inline-flex items-center justify-center size-8 rounded-md hover:bg-black/5 dark:hover:bg-white/5">
-                      <i className="ri-menu-2-line text-lg" />
-                    </button>
-                    <div className="text-sm md:text-base font-semibold tracking-wide">PulsePro</div>
+              <div className="absolute inset-0 rounded-[26px] overflow-hidden">
+                {/* Status Bar */}
+                <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-4 py-1 flex justify-between items-center text-sm">
+                  <span className="font-medium text-white">9:41</span>
+                  <div className="flex space-x-1 text-white/90">
+                    <i className="ri-signal-wifi-line text-xs"></i>
+                    <i className="ri-wifi-line text-xs"></i>
+                    <i className="ri-battery-2-line text-xs"></i>
+                  </div>
+                </div>
+
+                {/* App Header */}
+                <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-4 py-3 relative overflow-hidden">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h1 className="text-lg font-bold">Control Dashboard</h1>
+                      <p className="text-slate-300 text-xs">Live monitoring</p>
+                    </div>
                     <div className="relative">
-                      <button className="inline-flex items-center justify-center size-8 rounded-md hover:bg-black/5 dark:hover:bg-white/5 relative">
-                        <i className="ri-notification-3-line text-lg" />
-                        <span className="absolute -top-0.5 -right-0.5 inline-flex items-center justify-center text-[10px] leading-none size-4 rounded-full bg-red-600 text-white">3</span>
-                      </button>
+                      <div className="bg-white/10 backdrop-blur-sm rounded-full p-2">
+                        <i className="ri-notification-3-line text-sm"></i>
+                      </div>
+                      <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium">3</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Scrollable Content Area */}
+                <div className="flex-1 bg-gray-50 overflow-y-auto" style={{ height: 'calc(100% - 170px)' }}>
+                  {/* Key Metrics Grid */}
+                  <div className="px-3 py-3">
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                        <div className="text-2xl font-bold text-emerald-600">94%</div>
+                        <div className="text-xs text-gray-600 font-medium">Completion</div>
+                      </div>
+                      <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                        <div className="text-2xl font-bold text-blue-600">142</div>
+                        <div className="text-xs text-gray-600 font-medium">Active Issues</div>
+                      </div>
+                      <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                        <div className="text-2xl font-bold text-orange-600">2.4h</div>
+                        <div className="text-xs text-gray-600 font-medium">Avg Response</div>
+                      </div>
+                      <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                        <div className="text-2xl font-bold text-purple-600">28</div>
+                        <div className="text-xs text-gray-600 font-medium">Pending</div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Middle content grows and can scroll */}
-                  <div className="relative bg-white/70 dark:bg-white/5 overflow-y-auto">
-                    {showDefault ? (
-                      <DashboardPlaceholder />
-                    ) : questionIndex === 0 ? (
-                      <PieChart segments={pieData} label={lastAnswer === "yes" ? "Yes" : "No"} />
-                    ) : (
-                      <InsightList />
-                    )}
+                  {/* Performance Chart */}
+                  <div className="px-3 py-1">
+                    <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                      <h3 className="font-semibold text-gray-900 mb-3 text-sm">Performance Trend</h3>
+                      <div className="h-32">
+                        <svg width="100%" height="100%" viewBox="0 0 280 100" className="overflow-visible">
+                          <defs>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" style={{ stopColor: '#3B82F6', stopOpacity: 1 }} />
+                              <stop offset="100%" style={{ stopColor: '#1D4ED8', stopOpacity: 1 }} />
+                            </linearGradient>
+                          </defs>
+                          <polyline
+                            points="10,70 50,50 90,75 130,30 170,45 210,25 250,40"
+                            fill="none"
+                            stroke="url(#lineGradient)"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          {[10, 50, 90, 130, 170, 210, 250].map((x, i) => {
+                            const y = [70, 50, 75, 30, 45, 25, 40][i];
+                            return (
+                              <circle
+                                key={i}
+                                cx={x}
+                                cy={y}
+                                r="3"
+                                fill="#3B82F6"
+                                className="drop-shadow-sm"
+                              />
+                            );
+                          })}
+                          <text x="10" y="90" fontSize="10" fill="#6B7280">Mon</text>
+                          <text x="90" y="90" fontSize="10" fill="#6B7280">Wed</text>
+                          <text x="170" y="90" fontSize="10" fill="#6B7280">Fri</text>
+                          <text x="250" y="90" fontSize="10" fill="#6B7280">Sun</text>
+                        </svg>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Bottom 40%: Q&A */}
-                  <div className="flex flex-col p-3 gap-2 bg-gradient-to-t from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-950">
-                    <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Question</div>
-                    <div className="text-base md:text-lg lg:text-xl font-medium leading-snug">
-                      {questions[questionIndex].text}
+                  {/* Issue Distribution */}
+                  <div className="px-3 py-1">
+                    <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                      <h3 className="font-semibold text-gray-900 mb-3 text-sm">Issue Distribution</h3>
+                      <div className="h-32 flex items-center justify-center">
+                        <div className="relative">
+                          <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle
+                              cx="60"
+                              cy="60"
+                              r="45"
+                              fill="none"
+                              stroke="#EF4444"
+                              strokeWidth="12"
+                              strokeDasharray="28 252"
+                              strokeDashoffset="0"
+                              transform="rotate(-90 60 60)"
+                            />
+                            <circle
+                              cx="60"
+                              cy="60"
+                              r="45"
+                              fill="none"
+                              stroke="#F97316"
+                              strokeWidth="12"
+                              strokeDasharray="67 213"
+                              strokeDashoffset="-28"
+                              transform="rotate(-90 60 60)"
+                            />
+                            <circle
+                              cx="60"
+                              cy="60"
+                              r="45"
+                              fill="none"
+                              stroke="#EAB308"
+                              strokeWidth="12"
+                              strokeDasharray="108 172"
+                              strokeDashoffset="-95"
+                              transform="rotate(-90 60 60)"
+                            />
+                            <circle
+                              cx="60"
+                              cy="60"
+                              r="45"
+                              fill="none"
+                              stroke="#22C55E"
+                              strokeWidth="12"
+                              strokeDasharray="137 143"
+                              strokeDashoffset="-203"
+                              transform="rotate(-90 60 60)"
+                            />
+                            <circle
+                              cx="60"
+                              cy="60"
+                              r="25"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
-                    <div className="mt-1 flex items-center gap-3">
-                      <button
-                        onClick={() => handleAnswer("yes")}
-                        className="flex-1 inline-flex items-center justify-center h-10 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm md:text-base font-medium shadow-sm transition-colors"
-                      >
-                        Yes
+                  </div>
+
+                  {/* Recent Activity */}
+                  <div className="px-3 py-1">
+                    <div className="bg-white rounded-xl p-3 shadow-sm border border-gray-100">
+                      <h3 className="font-semibold text-gray-900 mb-3 text-sm">Recent Activity</h3>
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <div className="flex-1">
+                            <p className="text-xs text-gray-800 font-medium">Issue #1247 resolved</p>
+                            <p className="text-xs text-gray-500">2 min ago</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                          <div className="flex-1">
+                            <p className="text-xs text-gray-800 font-medium">New inspection added</p>
+                            <p className="text-xs text-gray-500">8 min ago</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="flex-1">
+                            <p className="text-xs text-gray-800 font-medium">Report generated</p>
+                            <p className="text-xs text-gray-500">15 min ago</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="px-3 py-2">
+                    <div className="grid grid-cols-3 gap-2">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-2 px-2 text-xs font-semibold flex flex-col items-center space-y-1 shadow-sm transition-colors">
+                        <i className="ri-download-line text-sm"></i>
+                        <span>Download Report</span>
                       </button>
-                      <button
-                        onClick={() => handleAnswer("no")}
-                        className="flex-1 inline-flex items-center justify-center h-10 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm md:text-base font-medium shadow-sm transition-colors"
-                      >
-                        No
+                      <button className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl py-3 px-2 text-xs font-semibold flex flex-col items-center space-y-1 shadow-sm transition-colors">
+                        <i className="ri-task-line text-sm"></i>
+                        <span>Follow-up</span>
                       </button>
+                      <button className="bg-purple-600 hover:bg-purple-700 text-white rounded-xl py-3 px-2 text-xs font-semibold flex flex-col items-center space-y-1 shadow-sm transition-colors">
+                        <i className="ri-eye-line text-sm"></i>
+                        <span>View Status</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Navigation */}
+                <div className="bg-gray-50 border-t border-gray-200 px-4 py-2">
+                  <div className="flex justify-around">
+                    <div className="text-center">
+                      <div className="bg-gray-200 rounded-lg p-2 mb-1">
+                        <i className="ri-home-line text-gray-400 text-sm"></i>
+                      </div>
+                      <p className="text-xs text-gray-400">Home</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-slate-800 rounded-lg p-2 mb-1">
+                        <i className="ri-bar-chart-line text-white text-sm"></i>
+                      </div>
+                      <p className="text-xs text-slate-800 font-medium">Analytics</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-gray-200 rounded-lg p-2 mb-1">
+                        <i className="ri-clipboard-line text-gray-400 text-sm"></i>
+                      </div>
+                      <p className="text-xs text-gray-400">Tasks</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-gray-200 rounded-lg p-2 mb-1">
+                        <i className="ri-user-line text-gray-400 text-sm"></i>
+                      </div>
+                      <p className="text-xs text-gray-400">Profile</p>
                     </div>
                   </div>
                 </div>

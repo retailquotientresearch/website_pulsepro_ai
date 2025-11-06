@@ -33,6 +33,8 @@ function LogosRow({ clients, reverse = false, speed = 30 }: { clients: Client[];
         className={[
           "flex items-center gap-8 w-max",
           reverse ? "marquee-reverse" : "marquee",
+          // Pause the marquee when the user hovers the section
+          "group-hover:[animation-play-state:paused]",
         ].join(" ")}
         style={{
           // Allow each usage to have a different speed
@@ -46,13 +48,19 @@ function LogosRow({ clients, reverse = false, speed = 30 }: { clients: Client[];
             className="shrink-0 px-1 py-1"
             aria-label={client.name}
           >
-            <div className="relative h-16 w-28 rounded-lg overflow-hidden bg-white/90">
+            <div
+              className="relative h-16 md:h-20 w-32 md:w-36 rounded-xl overflow-hidden bg-white/95 ring-1 ring-white/10 shadow-sm hover:shadow-md transition-shadow"
+              title={client.name}
+            >
               <Image
                 src={client.logo}
-                alt={client.name}
+                alt={`${client.name} logo`}
                 fill
-                sizes="112px"
-                className="object-contain p-2"
+                sizes="(max-width: 768px) 128px, 160px"
+                className="object-contain p-2 md:p-3 contrast-110 opacity-100 transition duration-300 ease-out"
+                draggable={false}
+                // Hide duplicate set from screen readers for better a11y
+                aria-hidden={idx >= clients.length}
               />
             </div>
           </div>

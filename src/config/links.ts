@@ -13,6 +13,7 @@ export const EXTERNAL_LINKS = {
   signIn: "https://ng-app.pulsepro.ai/login",
   register: "https://ng-app.pulsepro.ai/register?plan=PROM",
   howItWorks: "https://www.pulsepro.ai/how-it-works/",
+  blog: "https://blog.pulsepro.ai",
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;

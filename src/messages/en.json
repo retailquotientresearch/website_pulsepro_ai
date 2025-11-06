@@ -4,6 +4,7 @@
     "allFeatures": "All Features",
     "pricing": "Pricing",
   "howItWorks": "How It Works",
+  "blog": "Blog",
     "integrations": "Integrations",
     "apiIntegration": "API Integration",
     "resources": "Resources",
@@ -354,7 +355,7 @@
     },
     "stats": {
       "sites": {
-        "value": "100000+",
+        "value": "100,000+",
         "label": "Enterprise Sites"
       },
       "setup": {

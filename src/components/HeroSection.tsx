@@ -27,6 +27,8 @@ export default function HeroSection({
   imageHeight = 400,
   customIllustration
 }: HeroSectionProps) {
+  // Ensure we always provide an alt text; fall back to title if none supplied
+  const effectiveAlt = imageAlt || title;
   return (
     <Section className='pt-32 pb-16 relative overflow-hidden'>
       {/* Background matching the landing page design */}
@@ -72,7 +74,7 @@ export default function HeroSection({
               ) : (
                 <Image
                   src={imageSrc!}
-                  alt={imageAlt!}
+                  alt={effectiveAlt}
                   width={imageWidth}
                   height={imageHeight}
                   className='w-full h-full object-contain'

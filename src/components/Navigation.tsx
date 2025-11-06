@@ -46,6 +46,14 @@ export default function Navigation() {
             >
               {t('pricing')}
             </Link>
+            <a
+              href={EXTERNAL_LINKS.blog}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1A7D3D] transition-colors"
+            >
+              {t('blog', { default: 'Blog' })}
+            </a>
             <Link
               href={ROUTES.bookDemo}
               className="hover:text-[#1A7D3D] transition-colors"

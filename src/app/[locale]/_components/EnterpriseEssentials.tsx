@@ -204,11 +204,11 @@ function EnterpriseCard({
               {feature.description}
             </div>
           </div>
-          <div
-            className={`flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-white/70 ${feature.iconColor} shadow-sm text-base opacity-90`}
+          {/* <div
+            className={`flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-white/70 ${feature.iconColor} shadow-sm text-base opacity-90`}
           >
             <i className={`fa-solid ${feature.icon}`}></i>
-          </div>
+          </div> */}
         </div>
       </div>
     );
@@ -232,11 +232,11 @@ function EnterpriseCard({
 
       <div className="h-full flex flex-col justify-between relative">
         <div className="flex items-center justify-between mb-2">
-          <div
-            className={`w-6 h-6 sm:w-7 sm:h-7 ${feature.iconColor} rounded-lg bg-white/70 shadow-sm flex items-center justify-center text-sm group-hover:scale-110 transition-transform duration-300`}
+          {/* <div
+            className={`w-6 h-6 sm:w-7 sm:h-7 ${feature.iconColor} rounded-full bg-white/70 shadow-sm flex items-center justify-center text-sm group-hover:scale-110 transition-transform duration-300`}
           >
             <i className={`fa-solid ${feature.icon}`}></i>
-          </div>
+          </div> */}
 
           {feature.size === "large" && (
             <div className="hidden sm:flex space-x-1">
