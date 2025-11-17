@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   // Essential for deployment outside Vercel
-  output: 'export',
+  output: 'standalone',
   
   // Performance optimizations (Next.js 15 defaults)
   compress: true,
