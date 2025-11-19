@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
               {/* Effective Date */}
               <div className='mb-8 pb-6 border-b border-green-200'>
                 <p className='text-sm text-gray-500'>
-                  Effective date: August 02, 2020
+                  Effective date: August 02, 2025
                 </p>
               </div>
 
@@ -802,7 +802,7 @@ export default function PrivacyPolicyPage() {
                   Your data protection rights, described above, are covered by
                   the CCPA, short for the California Consumer Privacy Act. To
                   find out more, visit the official California Legislative
-                  Information website. The CCPA took effect on 01/01/2020.
+                  Information website. The CCPA took effect on 01/01/2025.
                 </p>
               </section>
 

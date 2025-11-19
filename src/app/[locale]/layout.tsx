@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import "@/globals.css";
 
 const inter = Inter({
@@ -80,7 +81,7 @@ export default async function RootLayout({
           >
             <Navigation />
             {children}
-            {/* <Footer /> */}
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
