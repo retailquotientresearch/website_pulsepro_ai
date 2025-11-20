@@ -8,14 +8,32 @@ interface Concern {
   answer: string;
 }
 
-// Generate different heights for variety - increased heights
-const heights = ['h-56', 'h-64', 'h-60', 'h-68', 'h-52', 'h-66', 'h-58', 'h-62', 'h-54'];
+// Map content length to height classes (adjust breakpoints as needed)
+function getHeightValues(concern: Concern, index: number) {
+  const length = (concern.question + concern.answer).length;
+  // Base min height derived from content length
+  let base: number;
+  if (length < 120) base = 200; // ~h-52
+  else if (length < 180) base = 224; // ~h-56
+  else if (length < 240) base = 240; // ~h-60
+  else if (length < 300) base = 256; // ~h-64
+  else if (length < 360) base = 272; // ~between 64 & 68
+  else base = 288; // ~h-72
+
+  // Add a visual variance pattern (small, none, larger, none ...)
+  const variancePattern = [0, -24, 20, -8, 32]; // stronger visual variety
+  const variance = variancePattern[index % variancePattern.length];
+  const minHeight = Math.max(180, base + variance); // keep a safe floor
+  return { minHeight };
+}
 
 function ConcernCard({ concern, index }: { concern: Concern; index: number }) {
-  const height = heights[index % heights.length];
-  
+  const { minHeight } = getHeightValues(concern, index);
   return (
-    <div className={`bg-[#FDF6E9] rounded-3xl p-6 w-[320px] mx-1 flex-shrink-0 flex flex-col items-center justify-center text-center ${height}`}>
+    <div
+      className={`bg-[#FDF6E9] rounded-3xl p-6 w-[320px] mx-1 flex-shrink-0 flex flex-col items-center justify-start text-center`}
+      style={{ minHeight }}
+    >
       <div className="text-base md:text-lg font-medium text-gray-900 mb-3 leading-snug">
         {concern.question}
       </div>
