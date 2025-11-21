@@ -122,11 +122,11 @@ export default function UseCases() {
                       {/* Main content */}
                       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
                         <div className="space-y-2">
-                          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight tracking-tight">
+                          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight tracking-tight text-black">
                             Built for every
                           </h3>
                           <div className="flex items-center justify-center space-x-2">
-                            <span className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">industry.</span>
+                            <span className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight text-black">industry.</span>
                             <div className="w-2 h-2 bg-[#111111] rounded-full animate-pulse"></div>
                           </div>
                           <p className="text-lg md:text-xl lg:text-2xl font-semibold text-[#111111]/70 mt-3 italic">
