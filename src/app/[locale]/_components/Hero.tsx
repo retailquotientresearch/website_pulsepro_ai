@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { EXTERNAL_LINKS, ROUTES } from '@/config/links';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import WorkflowDiagram from '@/components/WorkflowDiagram';
 
 export default function Hero() {
   const [isClient, setIsClient] = useState(false);

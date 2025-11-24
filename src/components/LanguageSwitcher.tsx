@@ -53,23 +53,12 @@ export default function LanguageSwitcher() {
         <DropdownMenuItem asChild>
           <Link
             href={pathname}
-            locale="fr"
+            locale="ar"
             className={`${
-              currentLocale === "fr" ? "bg-gray-100 dark:bg-gray-700 text-black dark:text-white" : ""
+              currentLocale === "ar" ? "bg-gray-100 dark:bg-gray-700 text-black dark:text-white" : ""
             }`}
           >
-            Français
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link
-            href={pathname}
-            locale="hi"
-            className={`${
-              currentLocale === "hi" ? "bg-gray-100 dark:bg-gray-700 text-black dark:text-white" : ""
-            }`}
-          >
-            हिन्दी
+            العربية
           </Link>
         </DropdownMenuItem>
           </DropdownMenuContent>

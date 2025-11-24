@@ -1,13 +1,13 @@
 import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
-  // A list of all locales that are supported
-  locales: ['en'],
-  
-  // Used when no locale matches
+  // Supported locales (removed fr & hi, added ar per request)
+  locales: ['en', 'ar'],
+
+  // Default locale
   defaultLocale: 'en',
-  
-  // Always show locale prefix in URLs (e.g., /en/about, /es/acerca)
+
+  // Always show locale prefix in URLs (e.g., /en/about, /ar/whatever)
   localePrefix: 'always'
 });
 

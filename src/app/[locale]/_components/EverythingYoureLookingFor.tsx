@@ -6,10 +6,16 @@ import Image from "next/image";
 import {
   Bell,
   BarChart3,
-  CheckSquare,
+  Check,
   Image as ImageIcon,
   MapPin,
   PenLine,
+  FileText,
+  BellDot,
+  Calendar,
+  Star,
+  CloudOff,
+  GitBranch,
   CircleHelp,
   type LucideIcon,
 } from "lucide-react";
@@ -27,22 +33,35 @@ const REELS: Reel[] = [
   { title: "Notifications", image: "/images/Notification_card.png" },
   { title: "Image Upload", image: "/images/Image_upload.png" },
   { title: "Signatures", image: "/images/Digital_signature.png" },
-  { title: "Geo Check In", image: "/images/Geolocation.png" },
+  { title: "Geo Check-in", image: "/images/Geolocation.png" },
 ];
 
+// Icon mapping per requested specifications
+// Analytics → graph bars
+// Actions → checkmark
+// Notifications → bell
+// Image Upload → image frame
+// Signatures → pen
+// Geo Check-in → pin
+// PDF → document icon
+// Reminders → bell with small marker
+// Scheduling → calendar
+// Custom Branding → star
+// Offline capability → offline/refresh symbol
+// Workflows → branching symbol
 const REEL_ICONS: Record<string, LucideIcon> = {
   Analytics: BarChart3,
-  Actions: CheckSquare,
+  Actions: Check,
   Notifications: Bell,
   "Image Upload": ImageIcon,
   Signatures: PenLine,
-  "Geo Check In": MapPin,
-  // Additional tiles (lavender badges only)
-  "PDF Reports": PenLine,
-  "Reminders & Alerts": Bell,
-  Scheduling: CheckSquare,
-  "Custom Branding": ImageIcon,
-  "Offline Capability": MapPin,
+  "Geo Check-in": MapPin,
+  PDF: FileText,
+  Reminders: BellDot,
+  Scheduling: Calendar,
+  "Custom Branding": Star,
+  "Offline capability": CloudOff,
+  Workflows: GitBranch,
 };
 
 // Lavender feature tiles list (includes existing REELS titles + requested additions)
@@ -52,12 +71,13 @@ const TILE_LABELS: string[] = [
   "Notifications",
   "Image Upload",
   "Signatures",
-  "Geo Check In",
-  "PDF Reports",
-  "Reminders & Alerts",
+  "Geo Check-in",
+  "PDF",
+  "Reminders",
   "Scheduling",
   "Custom Branding",
-  "Offline Capability",
+  "Offline capability",
+  "Workflows",
 ];
 
 function FeatureTile({ label }: { label: string }) {
@@ -73,7 +93,7 @@ function FeatureTile({ label }: { label: string }) {
       }}
     >
       <span className="inline-flex size-6 items-center justify-center rounded-full bg-white/90 border-2 border-white/60 text-gray-700 shadow-sm">
-        <Icon className="size-3.5" aria-hidden="true" />
+        <Icon className="size-6" aria-hidden="true" />
       </span>
       {label}
     </Badge>
