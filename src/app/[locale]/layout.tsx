@@ -67,8 +67,10 @@ export default async function RootLayout({
   // Providing all messages to the client side is the easiest way to get started
   const messages = await getMessages();
 
+  const dir = locale === 'ar' ? 'rtl' : 'ltr';
+
   return (
-  <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${fraunces.variable} ${poppins.variable}`}>
+  <html lang={locale} dir={dir} suppressHydrationWarning className={`${inter.variable} ${fraunces.variable} ${poppins.variable}`}>
       <head>
         {/* Fonts are loaded via next/font; external links removed. */}
       </head>

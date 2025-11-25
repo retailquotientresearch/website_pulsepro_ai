@@ -668,6 +668,7 @@ export default function ChaosToClarity() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden py-0 md:py-0 bg-[#FDF6E9]"
+      dir="ltr"
     >
       {/* Replace scattered chaos with synchronized strip system */}
 

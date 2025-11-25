@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
+import { useTranslations } from 'next-intl';
 
 interface EnterpriseFeature {
   title: string;
@@ -265,8 +266,10 @@ function EnterpriseCard({
 
 export default function EnterpriseEssentials() {
   const { ref, isInView } = useInView({ threshold: 0.2 });
-  const desktopTagline =
-    "From SSO to uptime, everything you need to run securely at enterprise scale.";
+  const t = useTranslations('enterpriseEssentials');
+  const desktopTagline = t('subtitle');
+  const mobileFeatures = (t.raw('mobileFeatures') as {title:string;description:string}[]) || [];
+  const columns = (t.raw('columns') as {heading:string;subheading:string;items:{title:string;description:string}[]}[]) || [];
 
   // Desktop grid columns grouped like the screenshot
   const desktopColumns: {
@@ -435,7 +438,7 @@ export default function EnterpriseEssentials() {
           }`}
         >
           <h2 className="font-['Inter',sans-serif] text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
-            Enterprise Essentials
+            {t('title')}
           </h2>
           <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             {desktopTagline}
@@ -445,10 +448,19 @@ export default function EnterpriseEssentials() {
         {/* Mobile layout - compact */}
         <div className="flex justify-center lg:hidden">
           <div className="relative w-full max-w-xs sm:max-w-md mx-auto h-[460px] sm:h-[480px]">
-            {enterpriseFeatures.map((feature, index) => (
+            {mobileFeatures.map((feature, index) => (
               <EnterpriseCard
                 key={feature.title}
-                feature={feature}
+                feature={{
+                  title: feature.title,
+                  description: feature.description,
+                  icon: '',
+                  size: 'medium',
+                  position: { transform: 'rotate(0deg)' },
+                  bgColor: 'bg-gradient-to-br from-gray-50 to-gray-100',
+                  iconColor: 'text-gray-600',
+                  zIndex: 10
+                }}
                 isInView={isInView}
                 index={index}
               />
@@ -458,7 +470,7 @@ export default function EnterpriseEssentials() {
 
   {/* Desktop layout - 3 columns like the screenshot */}
   <div className="hidden lg:grid grid-cols-3 gap-8">
-          {desktopColumns.map((col, cIdx) => (
+          {columns.map((col, cIdx) => (
       <div key={col.heading} className={`flex flex-col ${cIdx === 1 ? "md:mt-16" : ""}`}>
               <div className="mb-4">
                 <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900">
@@ -472,7 +484,16 @@ export default function EnterpriseEssentials() {
                 {col.items.map((feature, i) => (
                   <EnterpriseCard
                     key={feature.title}
-                    feature={feature}
+                    feature={{
+                      title: feature.title,
+                      description: feature.description,
+                      icon: '',
+                      size: 'medium',
+                      position: { transform: 'none' },
+                      bgColor: 'bg-white',
+                      iconColor: 'text-gray-600',
+                      zIndex: 1
+                    }}
                     isInView={isInView}
                     index={cIdx * 10 + i}
                     layout="grid"

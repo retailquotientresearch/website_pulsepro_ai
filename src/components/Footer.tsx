@@ -13,38 +13,39 @@ import {
 } from "@/components/ui/tooltip";
 import { ROUTES, EXTERNAL_LINKS } from "@/config/links";
 
-type FooterLink = { name: string; href: string; external?: boolean };
+type FooterLink = { nameKey: string; href: string; external?: boolean };
 interface FooterGroup { titleKey: string; links: FooterLink[] }
 
 const groups: FooterGroup[] = [
   {
     titleKey: "links.product",
     links: [
-      { name: "Home", href: ROUTES.home },
-      { name: "Features", href: ROUTES.features },
-      { name: "How It Works", href: ROUTES.howItWorks },
-      { name: "Pricing", href: ROUTES.pricing },
-      { name: "API Integration", href: ROUTES.apiIntegration },
+      { nameKey: "home", href: ROUTES.home },
+      { nameKey: "features", href: ROUTES.features },
+      { nameKey: "howItWorks", href: ROUTES.howItWorks },
+      { nameKey: "pricing", href: ROUTES.pricing },
+      { nameKey: "apiIntegration", href: ROUTES.apiIntegration },
     ],
   },
   {
     titleKey: "links.company",
     links: [
-      { name: "Book a Demo", href: ROUTES.bookDemo },
-      { name: "Blog", href: EXTERNAL_LINKS.blog, external: true },
+      { nameKey: "bookDemo", href: ROUTES.bookDemo },
+      { nameKey: "blog", href: EXTERNAL_LINKS.blog, external: true },
     ],
   },
   {
     titleKey: "links.legal",
     links: [
-      { name: "Privacy Policy", href: ROUTES.privacyPolicy },
-      { name: "Terms of Service", href: ROUTES.termsOfService },
+      { nameKey: "privacyPolicy", href: ROUTES.privacyPolicy },
+      { nameKey: "termsOfService", href: ROUTES.termsOfService },
     ],
   },
 ];
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const tNav = useTranslations("navigation");
   const tooltipT = useTranslations("tooltips");
 
   return (
@@ -90,7 +91,7 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-2">
                   {group.links.map((link) => (
-                    <li key={link.name}>
+                    <li key={link.nameKey}>
                       {link.external ? (
                         <a
                           href={link.href}
@@ -99,7 +100,7 @@ export default function Footer() {
                           className="group inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-150 text-sm"
                         >
                           <span className="relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 after:transition-all after:duration-300 group-hover:after:w-full">
-                            {link.name}
+                            {tNav(link.nameKey)}
                           </span>
                           <i className="ri-arrow-right-up-line opacity-0 group-hover:opacity-60 translate-x-0 group-hover:translate-x-1 transition-all text-xs" />
                         </a>
@@ -109,7 +110,7 @@ export default function Footer() {
                           className="group inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-150 text-sm"
                         >
                           <span className="relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 after:transition-all after:duration-300 group-hover:after:w-full">
-                            {link.name}
+                            {tNav(link.nameKey)}
                           </span>
                           <i className="ri-arrow-right-line opacity-0 group-hover:opacity-60 translate-x-0 group-hover:translate-x-1 transition-all text-xs" />
                         </Link>
@@ -165,7 +166,7 @@ export default function Footer() {
               <span className="text-gray-500 text-xs tracking-wide">{t("copyright")}</span>
               <span className="h-px w-12 bg-gray-800" />
             </div>
-            <p className="text-xs text-gray-500 tracking-wide uppercase">Built for reliability & clarity</p>
+            <p className="text-xs text-gray-500 tracking-wide uppercase">{t("bottomTagline")}</p>
           </div>
         </div>
       </Container>

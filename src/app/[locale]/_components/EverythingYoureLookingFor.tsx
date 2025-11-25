@@ -22,19 +22,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
-type Reel = {
-  title: string;
-  image: string;
-};
-
-const REELS: Reel[] = [
-  { title: "Analytics", image: "/images/Analytics_card.png" },
-  { title: "Actions", image: "/images/Action_card.png" },
-  { title: "Notifications", image: "/images/Notification_card.png" },
-  { title: "Image Upload", image: "/images/Image_upload.png" },
-  { title: "Signatures", image: "/images/Digital_signature.png" },
-  { title: "Geo Check-in", image: "/images/Geolocation.png" },
-];
+type Reel = { title: string; image: string };
 
 // Icon mapping per requested specifications
 // Analytics → graph bars
@@ -65,20 +53,8 @@ const REEL_ICONS: Record<string, LucideIcon> = {
 };
 
 // Lavender feature tiles list (includes existing REELS titles + requested additions)
-const TILE_LABELS: string[] = [
-  "Analytics",
-  "Actions",
-  "Notifications",
-  "Image Upload",
-  "Signatures",
-  "Geo Check-in",
-  "PDF",
-  "Reminders",
-  "Scheduling",
-  "Custom Branding",
-  "Offline capability",
-  "Workflows",
-];
+// Will be loaded from translations
+let TILE_LABELS: string[] = [];
 
 function FeatureTile({ label }: { label: string }) {
   const Icon = REEL_ICONS[label] ?? CircleHelp;
@@ -186,6 +162,9 @@ function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
 
 export default function EverythingYoureLookingFor() {
   const t = useTranslations("everythingYoureLookingFor");
+  // Load tiles & reels from translation JSON (raw to preserve structure)
+  TILE_LABELS = (t.raw('tiles') as string[]) || [];
+  const REELS: Reel[] = (t.raw('reels') as Reel[]) || [];
 
   return (
     <section className="w-full bg-gradient-to-br from-[#FDF6E9] via-[#FEFBF3] to-[#F8F4E6] py-6 lg:py-8">

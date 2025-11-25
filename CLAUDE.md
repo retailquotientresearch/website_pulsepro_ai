@@ -40,7 +40,7 @@ yarn lint
 - `src/components/` - Reusable React components
 - `src/components/ui/` - shadcn/ui components
 - `src/i18n/` - Internationalization configuration
-- `src/messages/` - Translation files (en.json, fr.json, hi.json)
+- `src/messages/` - Translation files (en.json, ar.json)
 
 ### Key Files
 - `src/i18n/routing.ts` - Locale routing configuration (always show locale prefix)

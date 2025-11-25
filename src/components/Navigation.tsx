@@ -5,13 +5,17 @@ import { Link } from "@/i18n/navigation";
 import { ROUTES, EXTERNAL_LINKS } from "@/config/links";
 import { useTranslations } from "next-intl";
 import MobileMenu from "./MobileMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 
 export default function Navigation() {
   const t = useTranslations('navigation');
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FDF6E9]/90 backdrop-blur-md border-b border-gray-200">
+  <nav className={`fixed top-0 left-0 right-0 z-50 bg-[#FDF6E9]/90 backdrop-blur-md border-b border-gray-200 ${isRTL ? 'direction-rtl' : ''}`}> {/* direction-rtl utility can be added in CSS if needed */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -27,7 +31,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 text-base lg:text-lg font-medium text-gray-700">
+          <nav className={`hidden lg:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'} text-base lg:text-lg font-medium text-gray-700`}>
             <Link
               href={ROUTES.features}
               className="hover:text-[#1A7D3D] transition-colors"
@@ -63,7 +67,8 @@ export default function Navigation() {
           </nav>
 
           {/* Right side actions */}
-          <div className="flex items-center space-x-3">
+          <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
+            <LanguageSwitcher />
             <a
               href={EXTERNAL_LINKS.signIn}
               target="_blank"

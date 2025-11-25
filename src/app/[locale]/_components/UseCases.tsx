@@ -119,18 +119,18 @@ export default function UseCases() {
                         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/20"></div>
                       </div>
                       
-                      {/* Main content */}
+                      {/* Main content (localized headline) */}
                       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
                         <div className="space-y-2">
                           <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight tracking-tight text-black">
-                            Built for every
+                            {t("headline.part1")}
                           </h3>
-                          <div className="flex items-center justify-center space-x-2">
-                            <span className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight text-black">industry.</span>
-                            <div className="w-2 h-2 bg-[#111111] rounded-full animate-pulse"></div>
+                          <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse">
+                            <span className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight text-black">{t("headline.highlight")}</span>
+                            <div className="w-2 h-2 bg-[#111111] rounded-full animate-pulse" aria-hidden="true"></div>
                           </div>
                           <p className="text-lg md:text-xl lg:text-2xl font-semibold text-[#111111]/70 mt-3 italic">
-                            Tailored to yours.
+                            {t("headline.subtitle")}
                           </p>
                         </div>
                         

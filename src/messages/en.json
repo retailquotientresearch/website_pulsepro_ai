@@ -19,6 +19,9 @@
     "supportCenter": "Support Center",
     "signIn": "Sign In",
     "getStarted": "Get Started",
+  "home": "Home",
+  "privacyPolicy": "Privacy Policy",
+  "termsOfService": "Terms of Service",
     "mobileMenuTitle": "Navigation Menu",
     "mobileMenuDescription": "Access navigation links, features, pricing, integrations, and support options"
   },
@@ -39,7 +42,8 @@
     "title": {
       "part1": "Inspection",
       "part2": "Platform",
-      "highlight": "Built for Enterprises"
+      "part3": "Built for",
+      "part4": "Enterprises"
     },
     "cta": "See It In Action",
     "secondaryCta": "Book a Demo",
@@ -68,6 +72,29 @@
       "part1": "Everything you're",
       "highlight": "looking for"
     }
+    ,
+    "tiles": [
+      "Analytics",
+      "Actions",
+      "Notifications",
+      "Image Upload",
+      "Signatures",
+      "Geo Check-in",
+      "PDF",
+      "Reminders",
+      "Scheduling",
+      "Custom Branding",
+      "Offline capability",
+      "Workflows"
+    ],
+    "reels": [
+      { "title": "Analytics", "image": "/images/Analytics_card.png" },
+      { "title": "Actions", "image": "/images/Action_card.png" },
+      { "title": "Notifications", "image": "/images/Notification_card.png" },
+      { "title": "Image Upload", "image": "/images/Image_upload.png" },
+      { "title": "Signatures", "image": "/images/Digital_signature.png" },
+      { "title": "Geo Check-in", "image": "/images/Geolocation.png" }
+    ]
   },
   "commonWorries": {
     "title": {
@@ -148,15 +175,112 @@
         "answer": "Yes. You can automatically add stakeholders in CC to distribute reports to multiple recipients."
       }
     ]
+    ,
+    "labels": {
+      "problem": "Problem",
+      "solution": "Solution"
+    },
+    "phone": {
+      "dashboardTitle": "Control Dashboard",
+      "dashboardSubtitle": "Live monitoring",
+      "metrics": {
+        "completion": "Completion",
+        "activeIssues": "Active Issues",
+        "avgResponse": "Avg Response",
+        "pending": "Pending"
+      },
+      "performanceTrend": "Performance Trend",
+      "issueDistribution": "Issue Distribution",
+      "recentActivity": "Recent Activity",
+      "activities": {
+        "issueResolved": "Issue #1247 resolved",
+        "newInspection": "New inspection added",
+        "reportGenerated": "Report generated",
+        "issueResolvedAgo": "2 min ago",
+        "newInspectionAgo": "8 min ago",
+        "reportGeneratedAgo": "15 min ago"
+      },
+      "actions": {
+        "downloadReport": "Download Report",
+        "followUp": "Follow-up",
+        "viewStatus": "View Status"
+      },
+      "bottomNav": {
+        "home": "Home",
+        "analytics": "Analytics",
+        "tasks": "Tasks",
+        "profile": "Profile"
+      },
+      "days": {
+        "mon": "Mon",
+        "wed": "Wed",
+        "fri": "Fri",
+        "sun": "Sun"
+      }
+    }
+    ,
+    "banner": {
+      "part1": "Built for every",
+      "industryWord": "industry.",
+      "tagline": "Tailored to yours."
+    }
   },
   "enterpriseEssentials": {
     "title": "Enterprise Essentials",
     "subtitle": "From SSO to uptime, everything you need to run securely at scale."
+    ,
+    "mobileFeatures": [
+      { "title": "Single Sign-On", "description": "Azure AD, Okta, Google" },
+      { "title": "Role Permissions", "description": "Granular access control" },
+      { "title": "Multi-Factor Auth", "description": "Enhanced security" },
+      { "title": "Audit Logs", "description": "Complete tracking" },
+      { "title": "99.9% Uptime", "description": "High availability hosting" },
+      { "title": "Data Residency", "description": "Global compliance" },
+      { "title": "API Integration", "description": "Connect tools" },
+      { "title": "Performance Scale", "description": "Enterprise-grade" },
+      { "title": "Incident Tracking", "description": "Real-time monitoring" },
+      { "title": "SOC 2 Certified", "description": "Security compliance" }
+    ],
+    "columns": [
+      {
+        "heading": "Security & Access",
+        "subheading": "Robust controls for your organization.",
+        "items": [
+          { "title": "Single Sign-On", "description": "Azure AD, Okta, Google" },
+          { "title": "Multi-Factor Auth", "description": "An extra layer of security." },
+          { "title": "Role Permissions", "description": "Granular access control." },
+          { "title": "SOC 2 Certified", "description": "Security compliance you can trust." }
+        ]
+      },
+      {
+        "heading": "Reliability & Performance",
+        "subheading": "Built for scale and availability.",
+        "items": [
+          { "title": "99.9% Uptime", "description": "High availability hosting." },
+          { "title": "Performance Scale", "description": "Handles enterprise workloads." },
+          { "title": "Data Residency", "description": "Global compliance and control." }
+        ]
+      },
+      {
+        "heading": "Operations & Integration",
+        "subheading": "Tools to streamline your workflow.",
+        "items": [
+          { "title": "Audit Logs", "description": "Complete visibility of actions." },
+          { "title": "API Integration", "description": "Connect the tools you already use." },
+          { "title": "Incident Tracking", "description": "Monitor and respond to issues." }
+        ]
+      }
+    ]
   },
   "useCases": {
     "title": {
       "part1": "Pulse is made",
       "highlight": "for you"
+    },
+    "headline": {
+      "part1": "Built for every",
+      "highlight": "industry.",
+      "subtitle": "Tailored to yours."
     },
     "getStarted": "Get Started",
     "downloadButton": "Download for free",
@@ -581,7 +705,8 @@
       "company": "Company",
       "support": "Support",
       "legal": "Legal"
-    }
+  },
+  "bottomTagline": "Built for reliability & clarity"
   },
   "whyChooseUs": {
     "tagline": "Why Choose Us",
@@ -1081,6 +1206,8 @@
   "bookDemo": {
     "title": "Book a Demo",
     "subtitle": "Schedule a personalized demo at your preferred time",
+  "heroTitle": "See how Pulse fits your workflows — not the other way around.",
+  "heroIntro": "In this walkthrough, we’ll show how you can set up your own checklists, assign actions in real time, and view instant analytics — all in the way your business already works.",
     "description": "This demo aims to showcase:",
     "features": [
       "How to set up your own customized templates",

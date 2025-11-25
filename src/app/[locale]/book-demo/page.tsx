@@ -2,9 +2,10 @@
 
 import React from 'react';
 import CalendlyWidget from '@/components/CalendlyWidget';
+import { useTranslations } from 'next-intl';
 
 export default function BookDemoPage() {
-  // const t = useTranslations('bookDemo');
+  const t = useTranslations('bookDemo');
 
 
   return (
@@ -19,10 +20,10 @@ export default function BookDemoPage() {
             <div className="space-y-8">
               <div>
                 <h1 className="text-4xl font-bold text-gray-900 mb-6">
-                  See how Pulse fits your workflows — not the other way around.
+                  {t('heroTitle')}
                 </h1>
                 <p className="text-lg text-gray-700 mb-8">
-                  In this walkthrough, we’ll show how you can set up your own checklists, assign actions in real time, and view instant analytics — all in the way your business already works
+                  {t('heroIntro')}
                 </p>
                 
                 {/* ...feature list removed... */}
@@ -36,10 +37,10 @@ export default function BookDemoPage() {
               <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
                 <div className="p-6 border-b border-gray-200">
                   <h2 className="text-2xl font-bold text-gray-900 text-center">
-                    Schedule Your Demo
+                    {t('form.submit')}
                   </h2>
                   <p className="text-gray-600 text-center mt-2">
-                    Choose a time that works best for you
+                    {t('subtitle')}
                   </p>
                 </div>
                 

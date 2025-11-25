@@ -355,7 +355,7 @@ export default function PricingPage() {
 
             <AnimatedCard delay={200} direction='up'>
               <div className='flex flex-col sm:flex-row gap-6 justify-center items-center mb-8'>
-                <Link href={ROUTES.howItWorks}>
+                <a href={EXTERNAL_LINKS.register} target="_blank" rel="noopener noreferrer">
                   <Button
                     size='lg'
                     className='flex items-center gap-3 text-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300'
@@ -363,10 +363,10 @@ export default function PricingPage() {
                     onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--brand-green-600)'}
                     onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--brand-green)'}
                   >
-                    <i className='ri-play-fill text-2xl'></i>
+                    <i className='ri-rocket-fill text-2xl'></i>
                     {t('faq.cta')}
                   </Button>
-                </Link>
+                </a>
               </div>
             </AnimatedCard>
           </div>
