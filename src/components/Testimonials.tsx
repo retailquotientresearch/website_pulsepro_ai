@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import {
   Carousel,
@@ -8,44 +10,20 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-const testimonials = [
-  {
-    name: "Arpita Aditi",
-    title: "Founder of Dil Foods",
-    initials: "AA",
-    image: `/images/testimonials/arpita-aditi.jpg`,
-    quote:
-      "We absolutely love using Pulse, as it has revolutionized our ability to monitor the health of each of our outlets remotely. The intuitive interface ensures that team members at all levels can seamlessly navigate and complete audits with ease. One of the standout features is the simplicity and flexibility in creating and customizing templates. It's so user-friendly that it hardly feels like using outsourced software. Kudos to the team for achieving Product-Market Fit (PMF)!",
-  },
-  {
-    name: "Jaydeep Barman",
-    title: "Founder of Rebel Foods",
-    initials: "JB",
-    image: `/images/testimonials/jaydeep-barman.jpg`,
-    quote:
-      "At Rebel Foods, we prioritize food safety and customer experience. Pulse helps manage over 4,000 internet restaurants across 450 kitchens in 4 countries, ensuring compliance through self-reporting and QA checks. The Pulse app streamlines data collection with time-stamped, geo-tagged images and instant reports, ensuring transparency, accountability, and operational excellence.",
-  },
-  {
-    name: "Rashmi Daga",
-    title: "Founder of FreshMenu",
-    initials: "RD",
-    image: `/images/testimonials/rashmi-daga.jpg`,
-    quote:
-      "At FreshMenu, we are always eager to adopt new intuitive technology to deliver high-quality food within the hygiene protocols to our consumers. Thus, we collaborated with Pulse. It is an easy-to-use tool that provides high visibility in the form of insightful data and visual proofs accessible in real-time from anywhere. It has helped us in resolving issues faster and creating an overall safety culture.",
-  },
-  {
-    name: "Dr. Shikha Lakhanpal",
-    title: "Co-Founder of Living Food",
-    initials: "SL",
-    image: `/images/testimonials/shikha-lakhanpal.jpg`,
-    quote:
-      "Pulse has been a game-changer for us. The app's intuitive interface and robust features make data collection and reporting seamless. We are able to track actions, reporting in real-time and it has made remote management very easy for us. Kudos to Pulse team for providing a great experience. An indispensable tool for any organization looking to enhance their operational excellence and ensure compliance. Highly recommended!",
-  },
-];
-
 export default function Testimonials() {
+  const t = useTranslations("testimonials");
+  const locale = useLocale();
+  const testimonials = t.raw("items") as Array<{
+    name: string;
+    title: string;
+    initials: string;
+    image: string;
+    quote: string;
+  }>;
+
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const avatarsContainerRef = useRef<HTMLDivElement | null>(null);
 
   // Handle testimonial change with animation
   const handleTestimonialChange = (index: number) => {
@@ -58,10 +36,29 @@ export default function Testimonials() {
     }, 150);
   };
 
+  const prev = () => {
+    const nextIndex = (activeTestimonial - 1 + testimonials.length) % testimonials.length;
+    handleTestimonialChange(nextIndex);
+  };
+
+  const next = () => {
+    const nextIndex = (activeTestimonial + 1) % testimonials.length;
+    handleTestimonialChange(nextIndex);
+  };
+
+  // Keep the selected avatar visible/centered in the lower palette
+  useEffect(() => {
+    if (!avatarsContainerRef.current) return;
+    const el = avatarsContainerRef.current.querySelector<HTMLElement>(`[data-index="${activeTestimonial}"]`);
+    if (el && typeof el.scrollIntoView === "function") {
+      el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+  }, [activeTestimonial]);
+
   return (
     <>
       {/* Main Testimonial Card */}
-      <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden mb-12 border border-gray-200 dark:border-gray-700">
+  <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden mb-12 border border-gray-200 dark:border-gray-700">
         <div className="flex flex-col md:flex-row">
           {/* Profile Image - On top for mobile, right side for desktop */}
           <div className="order-1 md:order-2 md:w-96 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/20 dark:to-gray-700/20 flex items-center justify-center p-8">
@@ -143,6 +140,7 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
+            {/* Controls moved to the small carousel below */}
           </div>
         </div>
       </div>
@@ -150,6 +148,21 @@ export default function Testimonials() {
       {/* Customer Avatars Carousel */}
       <div className="px-0">
         <div className="relative">
+          {/* Left/Right controls for small avatars carousel */}
+          <button
+            aria-label={t("controls.prev")}
+            onClick={prev}
+            className="absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-300 bg-white text-gray-700 shadow hover:bg-gray-50"
+          >
+            <i className={locale === "ar" ? "ri-arrow-right-line" : "ri-arrow-left-line"}></i>
+          </button>
+          <button
+            aria-label={t("controls.next")}
+            onClick={next}
+            className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-300 bg-white text-gray-700 shadow hover:bg-gray-50"
+          >
+            <i className={locale === "ar" ? "ri-arrow-left-line" : "ri-arrow-right-line"}></i>
+          </button>
           <Carousel
             opts={{
               align: "center",
@@ -158,11 +171,12 @@ export default function Testimonials() {
             className="w-full max-w-6xl mx-auto"
           >
             <div className="relative px-2 sm:px-8">
-              <CarouselContent className="-ml-1 px-4">
+              <CarouselContent ref={avatarsContainerRef} className="-ml-1 px-4">
                 {testimonials.map((person, index) => (
                   <CarouselItem
                     key={index}
                     className="pl-1 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                    data-index={index}
                   >
                     <div className="px-2 sm:px-2 py-3">
                       <button

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { EXTERNAL_LINKS, ROUTES } from '@/config/links';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-// import WorkflowDiagram from '@/components/WorkflowDiagram';
+import WorkflowDiagram from '@/components/WorkflowDiagram';
 
 export default function Hero() {
   const [isClient, setIsClient] = useState(false);
@@ -50,11 +50,11 @@ export default function Hero() {
       </div>
 
       {/* Right Visual: Workflow Diagram (hidden on mobile) */}
-      {/* <div className="hidden md:flex w-full md:w-1/2 relative h-full items-center justify-center">
+      <div className="hidden md:flex w-full md:w-1/2 relative h-full items-center justify-center">
         <div className="relative w-full max-w-[580px] h-[580px]">
           <WorkflowDiagram />
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }

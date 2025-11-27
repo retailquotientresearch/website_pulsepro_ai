@@ -79,17 +79,8 @@ function FeatureTile({ label }: { label: string }) {
 function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
   const Icon = REEL_ICONS[reel.title] ?? CircleHelp;
 
-  // Sticky note colors with black borders
-  const colors = [
-    { bg: "#fef3c7", text: "#374151" }, // Yellow
-    { bg: "#d1fae5", text: "#374151" }, // Green
-    { bg: "#fce7f3", text: "#374151" }, // Pink
-    { bg: "#dbeafe", text: "#374151" }, // Blue
-    { bg: "#f3e8ff", text: "#374151" }, // Purple
-    { bg: "#fed7d7", text: "#374151" }, // Red
-  ];
-
-  const color = colors[index % colors.length];
+  // Use the same color scheme as the pills above
+  const pillColor = { bg: "#f0d7ff", border: "#e6c7ff", text: "#1f2937" }; // text: gray-800
   const rotations = [-8, 5, -6, 7, -4, 6];
   const rotation = rotations[index % rotations.length];
   const isLeft = index % 2 === 0;
@@ -119,27 +110,29 @@ function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
             style={{ transform: `rotate(${rotation}deg)` }}
           >
             <div
-              className="px-4 py-2.5 lg:px-8 lg:py-5 rounded-md shadow-lg border-2 lg:border-4 border-black hover:shadow-xl transition-all duration-300 hover:scale-110"
+              className="px-3.5 py-2 lg:px-6 lg:py-4 rounded-md shadow-lg border-2 lg:border-[3px] hover:shadow-xl transition-all duration-300 hover:scale-105"
               style={{
-                backgroundColor: color.bg,
+                backgroundColor: pillColor.bg,
+                borderColor: pillColor.border,
                 filter:
-                  "drop-shadow(1px 2px 3px rgba(0,0,0,0.2)) lg:drop-shadow(2px 4px 6px rgba(0,0,0,0.3))",
+                  "drop-shadow(1px 2px 3px rgba(0,0,0,0.18)) lg:drop-shadow(2px 4px 6px rgba(0,0,0,0.28))",
               }}
             >
               <div className="flex items-center gap-2 lg:gap-3">
                 <span
-                  className="inline-flex size-6 lg:size-10 items-center justify-center rounded-full border-2 lg:border-3 border-black"
+                  className="inline-flex size-5 lg:size-8 items-center justify-center rounded-full border-2 lg:border-[3px]"
                   style={{
                     backgroundColor: "rgba(255,255,255,0.95)",
-                    color: color.text,
+                    color: pillColor.text,
+                    borderColor: pillColor.border,
                   }}
                 >
-                  <Icon className="size-3.5 lg:size-6" aria-hidden="true" />
+                  <Icon className="size-3 lg:size-5" aria-hidden="true" />
                 </span>
                 <span
-                  className="font-bold text-sm md:text-xl lg:text-2xl whitespace-nowrap"
+                  className="font-bold text-xs md:text-lg lg:text-xl whitespace-nowrap"
                   style={{
-                    color: color.text,
+                    color: pillColor.text,
                     fontFamily: "ui-serif, Georgia, serif",
                   }}
                 >

@@ -568,6 +568,7 @@
       "title": "Pulse Pro",
       "subtitle": "Best for enterprises and growing businesses",
       "badge": "Pro Unlimited",
+  "mostPopularLabel": "Most Popular",
       "items": [
         "Every feature we offer, plus…",
         "Best data security protocols",
@@ -581,6 +582,8 @@
       "badge": "No card needed",
       "title": "One simple plan with a 2 weeks trial",
       "subtitle": "Absolutely everything included in our refreshingly simple pricing",
+  "whatYouGetTitle": "What you get",
+  "allElseNote": "And everything else in Pulse Pro.",
       "features": [
         "Every feature you need",
         "Unlimited data storage",
@@ -670,6 +673,44 @@
       "description": "Don't hesitate to reach out with any questions, whether you're interested in learning more before making a purchase, you're an existing customer needing assistance, or you have other inquiries. Contact us, and we promise to respond within an hour. No question is too small; we're here to help!"
     }
   },
+  "testimonials": {
+    "items": [
+      {
+        "name": "Arpita Aditi",
+        "title": "Founder of Dil Foods",
+        "initials": "AA",
+        "image": "/images/testimonials/arpita-aditi.jpg",
+        "quote": "We absolutely love using Pulse, as it has revolutionized our ability to monitor the health of each of our outlets remotely. The intuitive interface ensures that team members at all levels can seamlessly navigate and complete audits with ease. One of the standout features is the simplicity and flexibility in creating and customizing templates. It's so user-friendly that it hardly feels like using outsourced software. Kudos to the team for achieving Product-Market Fit (PMF)!"
+      },
+      {
+        "name": "Jaydeep Barman",
+        "title": "Founder of Rebel Foods",
+        "initials": "JB",
+        "image": "/images/testimonials/jaydeep-barman.jpg",
+        "quote": "At Rebel Foods, we prioritize food safety and customer experience. Pulse helps manage over 4,000 internet restaurants across 450 kitchens in 4 countries, ensuring compliance through self-reporting and QA checks. The Pulse app streamlines data collection with time-stamped, geo-tagged images and instant reports, ensuring transparency, accountability, and operational excellence."
+      },
+      {
+        "name": "Rashmi Daga",
+        "title": "Founder of FreshMenu",
+        "initials": "RD",
+        "image": "/images/testimonials/rashmi-daga.jpg",
+        "quote": "At FreshMenu, we are always eager to adopt new intuitive technology to deliver high-quality food within the hygiene protocols to our consumers. Thus, we collaborated with Pulse. It is an easy-to-use tool that provides high visibility in the form of insightful data and visual proofs accessible in real-time from anywhere. It has helped us in resolving issues faster and creating an overall safety culture."
+      },
+      {
+        "name": "Dr. Shikha Lakhanpal",
+        "title": "Co-Founder of Living Food",
+        "initials": "SL",
+        "image": "/images/testimonials/shikha-lakhanpal.jpg",
+        "quote": "Pulse has been a game-changer for us. The app's intuitive interface and robust features make data collection and reporting seamless. We are able to track actions, reporting in real-time and it has made remote management very easy for us. Kudos to Pulse team for providing a great experience. An indispensable tool for any organization looking to enhance their operational excellence and ensure compliance. Highly recommended!"
+      }
+    ],
+    "controls": {
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "rating": "Rating"
+  }
+  ,
   "apiIntegration": {
     "hero": {
       "title": "Connect your existing applications with Pulse",

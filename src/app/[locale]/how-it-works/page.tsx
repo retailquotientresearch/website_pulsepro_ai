@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { EXTERNAL_LINKS, ROUTES } from "@/config/links";
 import { Link } from "@/i18n/navigation";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function HowItWorksPage() {
   return (
@@ -152,6 +153,47 @@ function CtaSection() {
               {t('cta.secondary')}
             </Link>
           </div>
+
+          {/* Store icons (image-only, enhanced) */}
+          <TooltipProvider>
+            <div className="flex flex-col items-center justify-center pt-5">
+              <span className="text-sm text-gray-600">Available on</span>
+              <div className="flex items-center justify-center gap-5 pt-3">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a
+                    href="https://apps.apple.com/us/app/pulse-audits-inspections/id1533113519"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download on the App Store"
+                    className="group inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-black/10 shadow-sm transition-colors duration-200 hover:border-[#1A7D3D] focus:outline-none focus:ring-2 focus:ring-[#1A7D3D]/30"
+                  >
+                      <Image src="/images/icons/apple.svg" alt="App Store" width={28} height={28} className="opacity-90 group-hover:opacity-100" />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent side="top" className="text-sm">
+                  App Store
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.innovative.pulsepro"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Get it on Google Play"
+                    className="group inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-black/10 shadow-sm transition-colors duration-200 hover:border-[#1A7D3D] focus:outline-none focus:ring-2 focus:ring-[#1A7D3D]/30"
+                  >
+                      <Image src="/images/icons/google-play.svg" alt="Google Play" width={28} height={28} className="opacity-90 group-hover:opacity-100" />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent side="top" className="text-sm">
+                  Google Play
+                </TooltipContent>
+              </Tooltip>
+              </div>
+            </div>
+          </TooltipProvider>
         </div>
       </Container>
     </section>

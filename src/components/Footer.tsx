@@ -156,6 +156,42 @@ export default function Footer() {
                     <p>{tooltipT("socialMedia.linkedin")}</p>
                   </TooltipContent>
                 </Tooltip>
+
+                {/* App Store */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://apps.apple.com/us/app/pulse-audits-inspections/id1533113519"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                      aria-label="App Store"
+                    >
+                      <Image src="/images/icons/apple.svg" alt="App Store" width={24} height={24} className="opacity-90 group-hover:opacity-100 invert" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>App Store</p>
+                  </TooltipContent>
+                </Tooltip>
+
+                {/* Google Play */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.innovative.pulsepro"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                      aria-label="Google Play"
+                    >
+                      <Image src="/images/icons/google-play.svg" alt="Google Play" width={24} height={24} className="opacity-90 group-hover:opacity-100" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Google Play</p>
+                  </TooltipContent>
+                </Tooltip>
               </div>
             </TooltipProvider>
           </div>

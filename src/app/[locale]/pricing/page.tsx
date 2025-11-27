@@ -151,7 +151,7 @@ export default function PricingPage() {
                       <span className='text-white px-3 py-1 rounded-full text-xs font-semibold' style={{ backgroundColor: 'var(--brand-green)' }}>
                         {t('features.badge')}
                       </span>
-                      <span className='text-xs font-medium border rounded-full px-3 py-1' style={{ color: 'var(--brand-green-400)', borderColor: 'var(--brand-green-200)' }}>Most Popular</span>
+                      <span className='text-xs font-medium border rounded-full px-3 py-1' style={{ color: 'var(--brand-green-400)', borderColor: 'var(--brand-green-200)' }}>{t('features.mostPopularLabel')}</span>
                     </div>
                     <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-2' style={{ color: 'var(--brand-green-400)' }}>
                       {t('features.title')}
@@ -169,9 +169,9 @@ export default function PricingPage() {
                             : t('hero.price.monthly')
                           : t('hero.price.yearly')}
                       </span>
-                      <span className='text-gray-500 font-medium'>per user</span>
+                      <span className='text-gray-500 font-medium'>{t('hero.subtitle.part3')}</span>
                       <span className='text-sm font-semibold rounded-full px-2 py-1 border' style={{ color: 'var(--brand-green-300)', borderColor: 'var(--brand-green-200)' }}>
-                        {activeTab === 'yearly' ? 'Billed Yearly' : 'Billed Monthly'}
+                        {activeTab === 'yearly' ? t('tabs.yearly') : t('tabs.monthly')}
                       </span>
                     </div>
 
@@ -222,7 +222,7 @@ export default function PricingPage() {
                   {/* Right: Plan Highlight Card */}
                   <div className='w-full lg:max-w-sm'>
                     <div className='rounded-2xl border border-green-200 bg-white p-6 shadow-sm'>
-                      <h3 className='text-xl font-bold text-gray-900 mb-2'>What you get</h3>
+                      <h3 className='text-xl font-bold text-gray-900 mb-2'>{t('plan.whatYouGetTitle')}</h3>
                       <ul className='space-y-3 text-sm'>
                         {t
                           .raw('plan.features')
@@ -235,7 +235,7 @@ export default function PricingPage() {
                           ))}
                       </ul>
                       <div className='mt-6 text-xs text-gray-500'>
-                        And everything else in Pulse Pro.
+                        {t('plan.allElseNote')}
                       </div>
                     </div>
                   </div>
@@ -379,7 +379,7 @@ export default function PricingPage() {
           <div className='max-w-6xl mx-auto'>
             <AnimatedCard delay={200} direction='up'>
       <h2 className='text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12'>
-                Don&apos;t just take our word for it
+                {t('testimonials.title')}
               </h2>
             </AnimatedCard>
 
@@ -394,7 +394,7 @@ export default function PricingPage() {
           <AnimatedCard delay={200} direction='up'>
             <div className='text-center max-w-4xl mx-auto'>
               <h2 className='text-3xl md:text-4xl font-bold mb-6 text-gray-900'>
-                We&apos;re Here to <span style={{ color: 'var(--brand-green-200)' }}>Support You</span>
+                {t('support.title')}
               </h2>
               <p className='text-xl text-gray-600 leading-relaxed'>
                 {t('support.description')}
