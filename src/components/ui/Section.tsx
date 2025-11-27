@@ -5,14 +5,14 @@ interface SectionProps {
   children: ReactNode
   className?: string
   padding?: 'sm' | 'md' | 'lg' | 'xl'
-  background?: 'default' | 'gray' | 'gradient'
+  background?: 'transparent' | 'default' | 'gray' | 'gradient'
 }
 
 export default function Section({ 
   children, 
   className,
   padding = 'lg',
-  background = 'default'
+  background = 'transparent'
 }: SectionProps) {
   const paddings = {
     sm: 'py-8',
@@ -22,6 +22,7 @@ export default function Section({
   }
   
   const backgrounds = {
+    transparent: '',
     default: 'bg-white dark:bg-gray-900',
     gray: 'bg-gray-50 dark:bg-gray-800',
     gradient: 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 dark:from-purple-900/20 dark:via-pink-900/20 dark:to-purple-900/20'

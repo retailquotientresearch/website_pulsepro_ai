@@ -16,7 +16,7 @@ export default function Navigation() {
 
   return (
   <nav className={`fixed top-0 left-0 right-0 z-50 bg-[#FDF6E9]/90 backdrop-blur-md border-b border-gray-200 ${isRTL ? 'direction-rtl' : ''}`}> {/* direction-rtl utility can be added in CSS if needed */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="w-full px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href={ROUTES.home} className="flex items-center group">
@@ -30,8 +30,8 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className={`hidden lg:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'} text-base lg:text-lg font-medium text-gray-700`}>
+          {/* Desktop Navigation (now only on xl screens) */}
+          <nav className={`hidden xl:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'} text-base xl:text-lg font-medium text-gray-700`}>
             <Link
               href={ROUTES.features}
               className="hover:text-[#1A7D3D] transition-colors"
@@ -49,6 +49,12 @@ export default function Navigation() {
               className="hover:text-[#1A7D3D] transition-colors"
             >
               {t('pricing')}
+            </Link>
+            <Link
+              href={ROUTES.enterpriseEssentials}
+              className="hover:text-[#1A7D3D] transition-colors"
+            >
+              {t('enterpriseEssentials')}
             </Link>
             <a
               href={EXTERNAL_LINKS.blog}
@@ -73,7 +79,7 @@ export default function Navigation() {
               href={EXTERNAL_LINKS.signIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:block text-[#1A7D3D] hover:text-[#166534] border border-[#1A7D3D]/30 hover:border-[#166534] px-5 py-2 rounded-full transition-colors font-medium bg-white/60 hover:bg-white"
+              className="hidden xl:block text-[#1A7D3D] hover:text-[#166534] border border-[#1A7D3D]/30 hover:border-[#166534] px-5 py-2 rounded-full transition-colors font-medium bg-white/60 hover:bg-white"
             >
               {t('signIn')}
             </a>
@@ -81,7 +87,7 @@ export default function Navigation() {
               href={EXTERNAL_LINKS.register}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:block bg-[#1A7D3D] text-white px-6 py-2 rounded-full hover:bg-[#166534] transition-colors font-medium"
+              className="hidden xl:block bg-[#1A7D3D] text-white px-6 py-2 rounded-full hover:bg-[#166534] transition-colors font-medium"
             >
               {t('getStarted')}
             </a>

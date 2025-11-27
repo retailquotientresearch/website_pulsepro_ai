@@ -12,6 +12,7 @@ export const ROUTES = {
   privacyPolicy: "/privacy-policy",
   termsOfService: "/companies-terms-of-service",
   bookDemo: "/book-demo",
+  enterpriseEssentials: "/enterprise-essentials",
 } as const;
 
 export const EXTERNAL_LINKS = {

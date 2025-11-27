@@ -22,6 +22,7 @@
   "home": "Home",
   "privacyPolicy": "Privacy Policy",
   "termsOfService": "Terms of Service",
+  "enterpriseEssentials": "Enterprise Essentials",
     "mobileMenuTitle": "Navigation Menu",
     "mobileMenuDescription": "Access navigation links, features, pricing, integrations, and support options"
   },
@@ -226,48 +227,51 @@
     }
   },
   "enterpriseEssentials": {
-    "title": "Enterprise Essentials",
-    "subtitle": "From SSO to uptime, everything you need to run securely at scale."
-    ,
+    "title": "enterprise essentials",
+    "subtitle": "everything you need to run securely, reliably, and at scale",
     "mobileFeatures": [
-      { "title": "Single Sign-On", "description": "Azure AD, Okta, Google" },
-      { "title": "Role Permissions", "description": "Granular access control" },
-      { "title": "Multi-Factor Auth", "description": "Enhanced security" },
-      { "title": "Audit Logs", "description": "Complete tracking" },
-      { "title": "99.9% Uptime", "description": "High availability hosting" },
-      { "title": "Data Residency", "description": "Global compliance" },
-      { "title": "API Integration", "description": "Connect tools" },
-      { "title": "Performance Scale", "description": "Enterprise-grade" },
-      { "title": "Incident Tracking", "description": "Real-time monitoring" },
-      { "title": "SOC 2 Certified", "description": "Security compliance" }
+      { "title": "single sign-on (sso)", "description": "azure ad, okta, google" },
+      { "title": "multi-factor authentication", "description": "extra verification for high-risk actions" },
+      { "title": "granular permissions", "description": "detailed access control across modules" },
+      { "title": "soc 2 practices", "description": "secure, audited infrastructure and processes" },
+      { "title": "99.9% uptime sla", "description": "reliable, always-on hosting" },
+      { "title": "high performance", "description": "handles large organizations and heavy workloads" },
+      { "title": "on-premise or any-cloud deployment", "description": "run pulse in your own servers, or deploy on aws, azure, gcp, oci — or any cloud provider" },
+      { "title": "flexible data residency", "description": "choose your preferred storage environment" },
+      { "title": "api integration", "description": "open apis, power bi–ready" },
+      { "title": "audit logs", "description": "full visibility into every user action" },
+      { "title": "incident & action tracking", "description": "monitor, assign, and close the loop" },
+      { "title": "data workflows", "description": "connect, sync, and automate data across systems" }
     ],
     "columns": [
       {
-        "heading": "Security & Access",
-        "subheading": "Robust controls for your organization.",
+        "heading": "security & access",
+        "subheading": "",
         "items": [
-          { "title": "Single Sign-On", "description": "Azure AD, Okta, Google" },
-          { "title": "Multi-Factor Auth", "description": "An extra layer of security." },
-          { "title": "Role Permissions", "description": "Granular access control." },
-          { "title": "SOC 2 Certified", "description": "Security compliance you can trust." }
+          { "title": "single sign-on (sso)", "description": "azure ad, okta, google" },
+          { "title": "multi-factor authentication", "description": "extra verification for high-risk actions" },
+          { "title": "granular permissions", "description": "detailed access control across modules" },
+          { "title": "soc 2 practices", "description": "secure, audited infrastructure and processes" }
         ]
       },
       {
-        "heading": "Reliability & Performance",
-        "subheading": "Built for scale and availability.",
+        "heading": "reliability & performance",
+        "subheading": "",
         "items": [
-          { "title": "99.9% Uptime", "description": "High availability hosting." },
-          { "title": "Performance Scale", "description": "Handles enterprise workloads." },
-          { "title": "Data Residency", "description": "Global compliance and control." }
+          { "title": "99.9% uptime sla", "description": "reliable, always-on hosting" },
+          { "title": "high performance", "description": "handles large organizations and heavy workloads" },
+          { "title": "on-premise or any-cloud deployment", "description": "run pulse in your own servers, or deploy on aws, azure, gcp, oci — or any cloud provider" },
+          { "title": "flexible data residency", "description": "choose your preferred storage environment" }
         ]
       },
       {
-        "heading": "Operations & Integration",
-        "subheading": "Tools to streamline your workflow.",
+        "heading": "integrations & operations",
+        "subheading": "",
         "items": [
-          { "title": "Audit Logs", "description": "Complete visibility of actions." },
-          { "title": "API Integration", "description": "Connect the tools you already use." },
-          { "title": "Incident Tracking", "description": "Monitor and respond to issues." }
+          { "title": "api integration", "description": "open apis, power bi–ready" },
+          { "title": "audit logs", "description": "full visibility into every user action" },
+          { "title": "incident & action tracking", "description": "monitor, assign, and close the loop" },
+          { "title": "data workflows", "description": "connect, sync, and automate data across systems" }
         ]
       }
     ]
@@ -906,6 +910,390 @@
     "hero": {
       "title": "Privacy Policy",
       "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information."
+    },
+    "effectiveDate": "Effective date: August 02, 2025",
+    "sections": {
+      "introduction": {
+        "title": "1. Introduction",
+        "paragraphs": [
+          "Welcome to Pulse Business Solutions Inc.",
+          "Pulse Business Solutions Inc (\"us\", \"we\", or \"our\") operates https://www.pulsepro.ai and Pulse mobile application (hereinafter referred to as \"Service\").",
+          "Our Privacy Policy governs your visit to https://www.pulsepro.ai and Pulse mobile application, and explains how we collect, safeguard and disclose information that results from your use of our Service.",
+          "We use your data to provide and improve Service. By using Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.",
+          "Our Terms and Conditions (\"Terms\") govern all use of our Service and together with the Privacy Policy constitutes your agreement with us (\"agreement\")."
+        ]
+      },
+      "definitions": {
+        "title": "2. Definitions",
+        "items": [
+          {
+            "term": "SERVICE",
+            "definition": "means the https://www.pulsepro.ai website and Pulse mobile application operated by Pulse Business Solutions Inc."
+          },
+          {
+            "term": "PERSONAL DATA",
+            "definition": "means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession)."
+          },
+          {
+            "term": "USAGE DATA",
+            "definition": "is data collected automatically either generated by the use of Service or from Service infrastructure itself (for example, the duration of a page visit)."
+          },
+          {
+            "term": "COOKIES",
+            "definition": "are small files stored on your device (computer or mobile device)."
+          },
+          {
+            "term": "DATA CONTROLLER",
+            "definition": "means a natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal data are, or are to be, processed. For the purpose of this Privacy Policy, we are a Data Controller of your data."
+          },
+          {
+            "term": "DATA PROCESSORS (OR SERVICE PROVIDERS)",
+            "definition": "means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively."
+          },
+          {
+            "term": "DATA SUBJECT",
+            "definition": "is any living individual who is the subject of Personal Data."
+          },
+          {
+            "term": "THE USER",
+            "definition": "is the individual using our Service. The User corresponds to the Data Subject, who is the subject of Personal Data."
+          }
+        ]
+      },
+      "informationCollection": {
+        "title": "3. Information Collection and Use",
+        "content": "We collect several different types of information for various purposes to provide and improve our Service to you."
+      },
+      "typesOfData": {
+        "title": "4. Types of Data Collected",
+        "personalData": {
+          "subtitle": "Personal Data",
+          "intro": "While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (\"Personal Data\"). Personally identifiable information may include, but is not limited to:",
+          "items": [
+            "Email address",
+            "First name and last name",
+            "Phone number",
+            "Address, State, Province, ZIP/Postal code, City",
+            "Cookies and Usage Data"
+          ],
+          "outro": "We may use your Personal Data to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or by emailing at hello@pulsepro.ai."
+        },
+        "usageData": {
+          "subtitle": "Usage Data",
+          "paragraphs": [
+            "We may also collect information that your browser sends whenever you visit our Service or when you access Service by or through a mobile device (\"Usage Data\").",
+            "This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.",
+            "When you access Service with a mobile device, this Usage Data may include information such as the type of mobile device you use, your mobile device unique ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browser you use, unique device identifiers and other diagnostic data."
+          ]
+        },
+        "locationData": {
+          "subtitle": "Location Data",
+          "paragraphs": [
+            "We may use and store information about your location if you give us permission to do so (\"Location Data\"). We use this data to provide features of our Service, to improve and customize our Service.",
+            "You can enable or disable location services when you use our Service at any time by way of your device settings."
+          ]
+        },
+        "trackingCookies": {
+          "subtitle": "Tracking Cookies Data",
+          "intro": "We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information.",
+          "paragraphs": [
+            "Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyze our Service.",
+            "You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.",
+            "Examples of Cookies we use:"
+          ],
+          "cookieTypes": [
+            "Session Cookies: We use Session Cookies to operate our Service.",
+            "Preference Cookies: We use Preference Cookies to remember your preferences and various settings.",
+            "Security Cookies: We use Security Cookies for security purposes.",
+            "Advertising Cookies: Advertising Cookies are used to serve you with advertisements that may be relevant to you and your interests."
+          ]
+        },
+        "otherData": {
+          "subtitle": "Other Data",
+          "content": "While using our Service, we may also collect the following information: sex, age, date of birth, place of birth, passport details, citizenship, registration at place of residence and actual address, telephone number (work, mobile), details of documents on education, qualification, professional training, employment agreements, non-disclosure agreements, information on bonuses and compensation, information on marital status, family members, social security (or other taxpayer identification) number, office location and other data."
+        }
+      },
+      "useOfData": {
+        "title": "5. Use of Data",
+        "intro": "Pulse Business Solutions Inc uses the collected data for various purposes:",
+        "purposes": [
+          "to provide and maintain our Service;",
+          "to notify you about changes to our Service;",
+          "to allow you to participate in interactive features of our Service when you choose to do so;",
+          "to provide customer support;",
+          "to gather analysis or valuable information so that we can improve our Service;",
+          "to monitor the usage of our Service;",
+          "to detect, prevent and address technical issues;",
+          "to fulfill any other purpose for which you provide it;",
+          "to carry out our obligations and enforce our rights arising from any contracts entered into between you and us, including for billing and collection;",
+          "to provide you with notices about your account and/or subscription, including expiration and renewal notices, email-instructions, etc.;",
+          "to provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information;",
+          "in any other way we may describe when you provide the information;",
+          "for any other purpose with your consent."
+        ]
+      },
+      "retentionOfData": {
+        "title": "6. Retention of Data",
+        "paragraphs": [
+          "We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.",
+          "We will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period, except when this data is used to strengthen the security or to improve the functionality of our Service, or we are legally obligated to retain this data for longer time periods."
+        ]
+      },
+      "transferOfData": {
+        "title": "7. Transfer of Data",
+        "paragraphs": [
+          "Your information, including Personal Data, may be transferred to – and maintained on – computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.",
+          "If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.",
+          "Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.",
+          "Pulse Business Solutions Inc will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information."
+        ]
+      },
+      "disclosureOfData": {
+        "title": "8. Disclosure of Data",
+        "intro": "We may disclose personal information that we collect, or you provide:",
+        "disclosureTypes": [
+          {
+            "type": "Disclosure for Law Enforcement",
+            "content": "Under certain circumstances, we may be required to disclose your Personal Data if required to do so by law or in response to valid requests by public authorities."
+          },
+          {
+            "type": "Business Transaction",
+            "content": "If we or our subsidiaries are involved in a merger, acquisition or asset sale, your Personal Data may be transferred."
+          },
+          {
+            "type": "Other cases",
+            "intro": "We may disclose your information also:",
+            "items": [
+              "to our subsidiaries and affiliates;",
+              "to contractors, service providers, and other third parties we use to support our business;",
+              "to fulfill the purpose for which you provide the information;",
+              "for the purpose of including your company's logo on our website;",
+              "for any other purpose disclosed by us when you provide the information;",
+              "with your consent in any other cases;",
+              "if we believe disclosure is necessary or appropriate to protect the rights, property, or safety of the Company, our customers, or others."
+            ]
+          }
+        ]
+      },
+      "securityOfData": {
+        "title": "9. Security of Data",
+        "content": "The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security."
+      },
+      "gdprRights": {
+        "title": "10. Your Data Protection Rights Under General Data Protection Regulation (GDPR)",
+        "intro": "If you are a resident of the European Union (EU) and European Economic Area (EEA), you have certain data protection rights, covered by GDPR.",
+        "paragraphs": [
+          "We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data.",
+          "If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please email us at hello@pulsepro.ai.",
+          "In certain circumstances, you have the following data protection rights:"
+        ],
+        "rights": [
+          "the right to access, update or to delete the information we have on you;",
+          "the right of rectification. You have the right to have your information rectified if that information is inaccurate or incomplete;",
+          "the right to object. You have the right to object to our processing of your Personal Data;",
+          "the right of restriction. You have the right to request that we restrict the processing of your personal information;",
+          "the right to data portability. You have the right to be provided with a copy of your Personal Data in a structured, machine-readable and commonly used format;",
+          "the right to withdraw consent. You also have the right to withdraw your consent at any time where we rely on your consent to process your personal information;"
+        ],
+        "outro": [
+          "Please note that we may ask you to verify your identity before responding to such requests. Please note, we may not able to provide Service without some necessary data.",
+          "You have the right to complain to a Data Protection Authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA)."
+        ]
+      },
+      "caloppaRights": {
+        "title": "11. Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)",
+        "intro": "CalOPPA is the first state law in the USA to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require a person or company in the United States (and conceivable the world) that operates websites collecting personally identifiable information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals with whom it is being shared, and to comply with this policy.",
+        "agreement": "According to CalOPPA we agree to the following:",
+        "agreements": [
+          "users can visit our site anonymously;",
+          "our Privacy Policy link includes the word \"Privacy\", and can easily be found on the page specified above on the home page of our website;",
+          "users will be notified of any privacy policy changes on our Privacy Policy Page;",
+          "users are able to change their personal information by emailing us at hello@pulsepro.ai."
+        ],
+        "dntPolicy": {
+          "title": "Our Policy on \"Do Not Track\" Signals:",
+          "paragraphs": [
+            "We honor Do Not Track signals and do not track, plant cookies, or use advertising when a Do Not Track browser mechanism is in place. Do Not Track is a preference you can set in your web browser to inform websites that you do not want to be tracked.",
+            "You can enable or disable Do Not Track by visiting the Preferences or Settings page of your web browser."
+          ]
+        }
+      },
+      "ccpaRights": {
+        "title": "12. Your Data Protection Rights under the California Consumer Privacy Act (CCPA)",
+        "intro": "If you are a California resident, you are entitled to learn what data we collect about you, ask to delete your data and not to sell (share) it. To exercise your data protection rights, you can make certain requests and ask us:",
+        "requests": [
+          {
+            "type": "What personal information we have about you",
+            "intro": "If you make this request, we will return to you:",
+            "items": [
+              "The categories of personal information we have collected about you.",
+              "The categories of sources from which we collect your personal information.",
+              "The business or commercial purpose for collecting or selling your personal information.",
+              "The categories of third parties with whom we share personal information.",
+              "The specific pieces of personal information we have collected about you.",
+              "A list of categories of personal information that we have sold, along with the category of any other company we sold it to. If we have not sold your personal information, we will inform you of that fact.",
+              "A list of categories of personal information that we have disclosed for a business purpose, along with the category of any other company we shared it with."
+            ],
+            "note": "Please note, you are entitled to ask us to provide you with this information up to two times in a rolling twelve-month period. When you make this request, the information provided may be limited to the personal information we collected about you in the previous 12 months."
+          },
+          {
+            "type": "To delete your personal information",
+            "content": "If you make this request, we will delete the personal information we hold about you as of the date of your request from our records and direct any service providers to do the same. In some cases, deletion may be accomplished through de-identification of the information. If you choose to delete your personal information, you may not be able to use certain functions that require your personal information to operate."
+          },
+          {
+            "type": "To stop selling your personal information",
+            "content": "We don't sell or rent your personal information to any third parties for any purpose. You are the only owner of your Personal Data and can request disclosure or deletion at any time."
+          }
+        ],
+        "notes": [
+          "Please note, if you ask us to delete or stop selling your data, it may impact your experience with us, and you may not be able to participate in certain programs or membership services which require the usage of your personal information to function. But in no circumstances, we will discriminate against you for exercising your rights.",
+          "To exercise your California data protection rights described above, please send your request(s) by email: hello@pulsepro.ai",
+          "Your data protection rights, described above, are covered by the CCPA, short for the California Consumer Privacy Act. To find out more, visit the official California Legislative Information website. The CCPA took effect on 01/01/2025."
+        ]
+      },
+      "serviceProviders": {
+        "title": "13. Service Providers",
+        "paragraphs": [
+          "We may employ third party companies and individuals to facilitate our Service (\"Service Providers\"), provide Service on our behalf, perform Service-related services or assist us in analysing how our Service is used.",
+          "These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose."
+        ]
+      },
+      "analytics": {
+        "title": "14. Analytics",
+        "intro": "We may use third-party Service Providers to monitor and analyze the use of our Service.",
+        "providers": [
+          {
+            "name": "Google Analytics",
+            "description": "Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualise and personalise the ads of its own advertising network.",
+            "links": [
+              "For more information on the privacy practices of Google, please visit the Google Privacy Terms web page.",
+              "We also encourage you to review the Google's policy for safeguarding your data."
+            ]
+          },
+          {
+            "name": "Firebase",
+            "description": "Firebase is analytics service provided by Google Inc.",
+            "info": [
+              "You may opt-out of certain Firebase features through your mobile device settings, such as your device advertising settings or by following the instructions provided by Google in their Privacy Policy.",
+              "For more information on what type of information Firebase collects, please visit the Google Privacy Terms web page."
+            ]
+          },
+          {
+            "name": "Cloudflare analytics",
+            "description": "Cloudflare analytics is a web analytics service operated by Cloudflare Inc."
+          }
+        ]
+      },
+      "cicdTools": {
+        "title": "15. CI/CD tools",
+        "intro": "We may use third-party Service Providers to automate the development process of our Service.",
+        "tools": [
+          {
+            "name": "GitHub",
+            "providerText": "GitHub is provided by GitHub, Inc.",
+            "description": "GitHub is a development platform to host and review code, manage projects, and build software.",
+            "link": "For more information on what data GitHub collects for what purpose and how the protection of the data is ensured, please visit GitHub Privacy Policy page."
+          },
+          {
+            "name": "GitLab CI/CD",
+            "providerText": "GitLab CI/CD is provided by GitLab, Inc.",
+            "descriptions": [
+              "GitLab CI (Continuous Integration) service is a part of GitLab that build and test the software whenever developer pushes code to application.",
+              "GitLab CD (Continuous Deployment) is a software service that places the changes of every code in the production which results in every day deployment of production."
+            ],
+            "link": "For more information on what data GitLab CI/CD collects for what purpose and how the protection of the data is ensured, please visit GitLab CI/CD Privacy Policy page."
+          },
+          {
+            "name": "CircleCI",
+            "providerText": "CircleCI is provided by Circle Internet Services, Inc.",
+            "description": "CircleCI is Continuous Integration, a development practice which is being used by software teams allowing them to build, test and deploy applications easier and quicker on multiple platforms.",
+            "link": "For more information on what data Circle CI collects for what purpose and how the protection of the data is ensured, please visit Circle CI Privacy Policy page."
+          }
+        ]
+      },
+      "advertising": {
+        "title": "16. Advertising",
+        "intro": "We may use third-party Service Providers to show advertisements to you to help support and maintain our Service.",
+        "provider": {
+          "name": "Google AdSense DoubleClick Cookie",
+          "description": "Google, as a third party vendor, uses cookies to serve ads on our Service. Google's use of the DoubleClick cookie enables it and its partners to serve ads to our users based on their visit to our Service or other websites on the Internet.",
+          "optOut": "You may opt out of the use of the DoubleClick Cookie for interest-based advertising by visiting the Google Ads Settings web page."
+        }
+      },
+      "behavioralRemarketing": {
+        "title": "17. Behavioral Remarketing",
+        "intro": "Pulse Business Solutions Inc uses remarketing services to advertise on third party websites to you after you visited our Service. We and our third-party vendors use cookies to inform, optimise and serve ads based on your past visits to our Service.",
+        "services": [
+          {
+            "name": "Google Ads (AdWords)",
+            "providerText": "Google Ads (AdWords) remarketing service is provided by Google Inc.",
+            "info": [
+              "You can opt-out of Google Analytics for Display Advertising and customize the Google Display Network ads by visiting the Google Ads Settings page.",
+              "Google also recommends installing the Google Analytics Opt-out Browser Add-on for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics.",
+              "For more information on the privacy practices of Google, please visit the Google Privacy Terms web page."
+            ]
+          },
+          {
+            "name": "Facebook",
+            "providerText": "Facebook remarketing service is provided by Facebook Inc.",
+            "info": [
+              "You can learn more about interest-based advertising from Facebook by visiting this page.",
+              "To opt-out from Facebook's interest-based ads, follow these instructions from Facebook.",
+              "Facebook adheres to the Self-Regulatory Principles for Online Behavioural Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the Digital Advertising Alliance in the USA, the Digital Advertising Alliance of Canada in Canada or the European Interactive Digital Advertising Alliance in Europe, or opt-out using your mobile device settings.",
+              "For more information on the privacy practices of Facebook, please visit Facebook's Data Policy."
+            ]
+          }
+        ]
+      },
+      "payments": {
+        "title": "18. Payments",
+        "intro": [
+          "We may provide paid products and/or services within Service. In that case, we use third-party services for payment processing (e.g. payment processors).",
+          "We will not store or collect your payment card details. That information is provided directly to our third-party payment processors whose use of your personal information is governed by their Privacy Policy. These payment processors adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, Mastercard, American Express and Discover. PCI-DSS requirements help ensure the secure handling of payment information.",
+          "The payment processors we work with are:"
+        ],
+        "processors": [
+          {
+            "name": "PayPal or Braintree",
+            "info": "Their Privacy Policy can be viewed at the specified link."
+          },
+          {
+            "name": "Apple Store In-App Payments",
+            "info": "Their Privacy Policy can be viewed at the specified links."
+          },
+          {
+            "name": "Google Play In-App Payments",
+            "info": "Their Privacy Policy can be viewed at the specified links."
+          }
+        ]
+      },
+      "linksToOtherSites": {
+        "title": "19. Links to Other Sites",
+        "paragraphs": [
+          "Our Service may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.",
+          "We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
+        ]
+      },
+      "childrensPrivacy": {
+        "title": "20. Children's Privacy",
+        "paragraphs": [
+          "Our Services are not intended for use by children under the age of 18 (\"Child\" or \"Children\").",
+          "We do not knowingly collect personally identifiable information from Children under 18. If you become aware that a Child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from Children without verification of parental consent, we take steps to remove that information from our servers."
+        ]
+      },
+      "changesToPolicy": {
+        "title": "21. Changes to This Privacy Policy",
+        "paragraphs": [
+          "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.",
+          "We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update \"effective date\" at the top of this Privacy Policy.",
+          "You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page."
+        ]
+      },
+      "contactUs": {
+        "title": "22. Contact Us",
+        "intro": "If you have any questions about this Privacy Policy, please contact us:",
+        "email": "By email: hello@pulsepro.ai"
+      }
     }
   },
   "featuresPage": {
@@ -1269,5 +1657,102 @@
       "message": "Additional Message (Optional)",
       "submit": "Schedule Demo"
     }
+  },
+  "companiesTermsOfService": {
+    "hero": {
+      "title": "Companies Terms Of Service",
+      "subtitle": "Services Agreement: Companies / Employers"
+    },
+    "lastUpdate": "Last update: February 25, 2025",
+    "intro": {
+      "paragraph1": "This Companies Services Agreement (\"Agreement\") governs the use of Pulse's Platform and related services by companies, employers, and other organizations (\"Customer\" or \"you\") that utilize Pulse to engage with independent contractors and personnel.",
+      "paragraph2": "By accessing or using the Pulse Platform or Services, you agree to be bound by these terms. If you do not agree, you may not use the Services. Please read this Agreement carefully."
+    },
+    "definitions": {
+      "title": "1. DEFINITIONS",
+      "intro": "In this Agreement, the following terms shall have the meanings set forth below:",
+      "pulseApp": "<strong>Pulse App</strong> means the mobile and web applications provided by Pulse to enable Customers and Contractors to interact with the Pulse Platform.",
+      "pulseData": "<strong>Pulse Data</strong> means all data and information submitted, generated, or collected through the Pulse Platform.",
+      "pulseNotice": "<strong>Pulse Notice</strong> means any notification sent by Pulse to Customer via email or in-app messaging.",
+      "pulsePlatform": "<strong>Pulse Platform</strong> means Pulse's proprietary software platform, which enables Customers to post Work Requests, manage engagements with Contractors, and access related tools and services.",
+      "workRequest": "<strong>Work Request</strong> means a request for services posted by Customer on the Pulse Platform for completion by a Contractor."
+    },
+    "services": {
+      "title": "2. THE SERVICES",
+      "grantOfAccess": "<strong>2.1 Grant of Access.</strong> Subject to the terms of this Agreement, Pulse grants Customer a limited, non-exclusive, non-transferable right to access and use the Pulse Platform and Services.",
+      "workRequests": "<strong>2.2 Work Requests.</strong> Customer may post Work Requests to the Pulse Platform, which may be accepted by Contractors registered on the Platform. Pulse does not guarantee acceptance or completion of any Work Request.",
+      "directHires": "<strong>2.3 Direct Hires.</strong> Customer acknowledges that Pulse may permit direct hiring of Contractors subject to payment of applicable fees. Pulse retains the right to set or modify such fees at its sole discretion.",
+      "accounts": "<strong>2.4 Accounts.</strong> Customer shall create and maintain one or more user accounts to access the Pulse Platform. Customer is responsible for all activities conducted through its accounts.",
+      "accountRequirements": "<strong>2.5 Account Requirements.</strong> Customer agrees to provide accurate, complete, and current information when creating accounts and to update such information as needed.",
+      "textMessaging": "<strong>2.6 Text Messaging.</strong> By using the Services, Customer consents to receive text messages from Pulse for service-related communications. Standard messaging rates may apply.",
+      "restrictions": "<strong>2.7 Restrictions.</strong> Customer agrees not to (i) use the Platform for unlawful purposes; (ii) interfere with the security or integrity of the Platform; or (iii) attempt to gain unauthorized access to any part of the Platform.",
+      "thirdParty": "<strong>2.8 Third-Party Services.</strong> The Platform may integrate with third-party services. Pulse is not responsible for the availability or reliability of such services."
+    },
+    "fees": {
+      "title": "3. FEES AND PAYMENT",
+      "engagementFees": "<strong>3.1 Engagement Fees.</strong> Customer agrees to pay Pulse's fees as specified in the applicable fee schedule or as otherwise agreed between Customer and Pulse.",
+      "contractorPayments": "<strong>3.2 Contractor Payments.</strong> Customer is responsible for paying Contractors through the Pulse Platform for accepted Work Requests. Pulse may facilitate such payments but is not a party to the agreement between Customer and Contractor.",
+      "lateCancellation": "<strong>3.3 Late Cancellation Fees.</strong> Customer may be charged cancellation fees for Work Requests canceled within the timeframe specified in the Platform or fee schedule.",
+      "taxes": "<strong>3.4 Taxes.</strong> All fees are exclusive of applicable taxes, which shall be the responsibility of the Customer.",
+      "gratuity": "<strong>3.5 Gratuity.</strong> Any gratuities paid by Customer to Contractors are voluntary and not part of Pulse's fees.",
+      "latePayment": "<strong>3.6 Late Payment.</strong> Late payments may incur interest charges and may result in suspension of access to the Platform."
+    },
+    "ipOwnership": {
+      "title": "4. INTELLECTUAL PROPERTY OWNERSHIP",
+      "ownership": "<strong>4.1 Ownership.</strong> Pulse retains all rights, title, and interest in and to the Pulse Platform, including all associated intellectual property rights. Customer retains ownership of Pulse Data submitted by Customer.",
+      "suggestions": "<strong>4.2 Suggestions.</strong> Any suggestions, feedback, or ideas provided by Customer to Pulse regarding the Services may be used by Pulse without restriction or compensation to Customer."
+    },
+    "confidentiality": {
+      "title": "5. CONFIDENTIALITY",
+      "definition": "<strong>5.1 Confidential Information.</strong> \"Confidential Information\" means information disclosed by one party to the other that is marked as confidential or, given the nature of the information or circumstances of disclosure, reasonably should be understood to be confidential.",
+      "protection": "<strong>5.2 Protection.</strong> Each party agrees to use the same degree of care to protect the other party's Confidential Information as it uses for its own confidential information, but in no event less than reasonable care.",
+      "exceptions": "<strong>5.3 Exceptions.</strong> Confidential Information does not include information that (i) is or becomes publicly available through no breach of this Agreement; (ii) is rightfully received from a third party without restriction; or (iii) is independently developed without use of Confidential Information.",
+      "workRequests": "<strong>5.4 Work Requests.</strong> Customer acknowledges that Work Request details may be shared with Contractors as necessary to complete services.",
+      "disclosure": "<strong>5.5 Required Disclosure.</strong> Either party may disclose Confidential Information to the extent required by law, provided that the disclosing party gives reasonable notice to the other party."
+    },
+    "disclaimers": {
+      "title": "6. DISCLAIMERS",
+      "content": "THE PULSE PLATFORM AND SERVICES ARE PROVIDED \\\"AS IS\\\" AND \\\"AS AVAILABLE\\\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. PULSE DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE."
+    },
+    "liability": {
+      "title": "7. LIMITATION OF LIABILITY",
+      "content": "TO THE MAXIMUM EXTENT PERMITTED BY LAW, PULSE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (A) CUSTOMER'S USE OF OR INABILITY TO USE THE SERVICES; (B) ANY UNAUTHORIZED ACCESS TO OR USE OF CUSTOMER'S DATA; OR (C) ANY OTHER MATTER RELATING TO THE SERVICES. PULSE'S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY CUSTOMER TO PULSE IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM."
+    },
+    "relationships": {
+      "title": "8. RELATIONSHIPS BETWEEN PULSE, CONTRACTORS AND CUSTOMERS; INSURANCE",
+      "contractors": "<strong>8.1 Independent Contractors.</strong> Contractors are independent contractors and not employees of Pulse or Customer. Pulse is not responsible for the acts or omissions of Contractors.",
+      "documentation": "<strong>8.2 Documentation.</strong> Customer is responsible for verifying that Contractors have appropriate documentation, licenses, and insurance coverage as required for the services they provide.",
+      "pulseCustomer": "<strong>8.3 Pulse-Customer Relationship.</strong> The relationship between Pulse and Customer is that of independent contractors. Nothing in this Agreement creates an agency, partnership, or joint venture.",
+      "classification": "<strong>8.4 Worker Classification.</strong> Customer is solely responsible for the classification and treatment of Contractors for tax, employment law, and regulatory purposes.",
+      "insurance": "<strong>8.5 Insurance.</strong> Customer shall maintain adequate insurance coverage for its business operations, including general liability and workers' compensation insurance as required by law."
+    },
+    "termination": {
+      "title": "9. TERMINATION",
+      "term": "<strong>9.1 Term.</strong> This Agreement commences when Customer first accesses the Services and continues until terminated by either party.",
+      "terminationClause": "<strong>9.2 Termination.</strong> Either party may terminate this Agreement at any time by providing written notice to the other party. Pulse may suspend or terminate access immediately if Customer breaches this Agreement.",
+      "effect": "<strong>9.3 Effect of Termination.</strong> Upon termination, Customer's right to access the Services ceases immediately. Customer remains responsible for any outstanding fees. Provisions that by their nature should survive termination shall survive."
+    },
+    "miscellaneous": {
+      "title": "10. MISCELLANEOUS",
+      "law": "<strong>10.1 Governing Law.</strong> This Agreement shall be governed by the laws of [Jurisdiction], without regard to conflicts of law principles.",
+      "severability": "<strong>10.2 Severability.</strong> If any provision of this Agreement is found to be unenforceable, the remaining provisions shall remain in full force and effect.",
+      "assignment": "<strong>10.3 Assignment.</strong> Customer may not assign this Agreement without Pulse's prior written consent. Pulse may assign this Agreement to any affiliate or successor.",
+      "notices": "<strong>10.4 Notices.</strong> All notices under this Agreement shall be in writing and sent to the addresses specified in Customer's account or as otherwise provided by the parties.",
+      "waiver": "<strong>10.5 Waiver.</strong> No waiver of any provision of this Agreement shall be deemed or constitute a waiver of any other provision, nor shall any waiver constitute a continuing waiver.",
+      "entireAgreement": "<strong>10.6 Entire Agreement.</strong> This Agreement constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior agreements and understandings.",
+      "modifications": "<strong>10.7 Modifications.</strong> Pulse may modify this Agreement from time to time by posting a revised version on the Platform or by providing notice to Customer. Continued use of the Services after such modifications constitutes acceptance of the modified Agreement."
+    }
+  }
+  ,
+  "workflowDiagram": {
+    "reportSubmitted": "report submitted",
+    "initialReview": "initial review",
+    "qualityVerification": "quality verification",
+    "managerApproval": "manager approval",
+    "operationsReview": "operations review",
+    "workflowCompleted": "workflow completed",
+    "allStepsApproved": "all steps approved",
+    "addStep": "add step",
+    "flexibleMultiStepWorkflows": "flexible multi-step workflows"
   }
 }
