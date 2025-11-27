@@ -59,6 +59,10 @@ function MarqueeRow({ concerns }: { concerns: Concern[] }) {
         {concerns.map((concern, index) => (
           <ConcernCard key={`second-${index}`} concern={concern} index={index + concerns.length} />
         ))}
+        {/* one more set for seamless loop */}
+        {concerns.map((concern, index) => (
+          <ConcernCard key={`third-${index}`} concern={concern} index={index + 2 * concerns.length} />
+        ))}
       </div>
     </div>
   );
@@ -70,7 +74,7 @@ export default function CommonWorries() {
   const concerns = t.raw('concerns') as Concern[];
 
   return (
-  <section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]">
+  <section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]" dir='ltr'>
       {/* Full-bleed wrapper with top curves only */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         <div ref={ref} className="w-full rounded-t-[36px] md:rounded-t-[48px] lg:rounded-t-[64px] overflow-hidden bg-[#034f46] px-4 sm:px-8 lg:px-16 py-20 md:py-24 lg:py-28 relative min-h-[70vh] md:min-h-[80vh]">

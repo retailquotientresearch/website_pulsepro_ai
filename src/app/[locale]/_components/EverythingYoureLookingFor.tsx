@@ -79,8 +79,15 @@ function FeatureTile({ label }: { label: string }) {
 function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
   const Icon = REEL_ICONS[reel.title] ?? CircleHelp;
 
-  // Use the same color scheme as the pills above
-  const pillColor = { bg: "#f0d7ff", border: "#e6c7ff", text: "#1f2937" }; // text: gray-800
+  // Sticky note color palettes (cycle by index). Defaults are lavender.
+  const palettes = [
+    { bg: "#FDF3C8", border: "#F6E08B", text: "#1f2937", tape: "#f5f5f5" }, // soft yellow
+    { bg: "#CCE8FF", border: "#9FD0FF", text: "#0f172a", tape: "#eef2ff" }, // light blue
+    { bg: "#F0D7FF", border: "#E6C7FF", text: "#1f2937", tape: "#f5f5f5" }, // lavender (current)
+    { bg: "#DFF6DD", border: "#BEE6BA", text: "#0f172a", tape: "#e9fbe8" }, // mint
+    { bg: "#FFE2E2", border: "#FFC4C4", text: "#1f2937", tape: "#fff1f2" }, // blush
+  ];
+  const pillColor = palettes[index % palettes.length];
   const rotations = [-8, 5, -6, 7, -4, 6];
   const rotation = rotations[index % rotations.length];
   const isLeft = index % 2 === 0;
@@ -144,7 +151,7 @@ function PhoneWithStickyNote({ reel, index }: { reel: Reel; index: number }) {
             {/* Paper tape effect for realistic sticky note */}
             <div
               className="absolute -top-1 lg:-top-2 left-1/2 -translate-x-1/2 w-8 lg:w-10 h-3 lg:h-4 rounded-sm opacity-60 border border-black"
-              style={{ backgroundColor: "#f5f5f5" }}
+              style={{ backgroundColor: pillColor.tape ?? "#f5f5f5" }}
             ></div>
           </div>
         </div>
