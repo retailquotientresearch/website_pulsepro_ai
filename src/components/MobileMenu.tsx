@@ -31,9 +31,9 @@ export default function MobileMenu() {
       </SheetTrigger>
 
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-        <SheetTitle hidden>Navigation Menu</SheetTitle>
+        <SheetTitle hidden>{t('mobileMenuTitle')}</SheetTitle>
         <SheetDescription hidden>
-          Access navigation links, features, pricing, and get started
+          {t('mobileMenuDescription')}
         </SheetDescription>
         <div className="px-4 py-4">
           <nav className="flex flex-col gap-3 text-base font-medium text-gray-700">
@@ -57,6 +57,13 @@ export default function MobileMenu() {
               onClick={handleMenuClose}
             >
               {t("pricing")}
+            </Link>
+            <Link
+              href={ROUTES.enterpriseEssentials}
+              className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"
+              onClick={handleMenuClose}
+            >
+              {t('enterpriseEssentials')}
             </Link>
             <a
               href={EXTERNAL_LINKS.blog}
