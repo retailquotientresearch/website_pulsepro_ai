@@ -227,6 +227,114 @@
     }
   },
   "enterpriseEssentials": {
+    "page": {
+      "hero": {
+        "barTag": "Enterprise-Grade Platform",
+        "title": "Enterprise Essentials",
+        "subtitle": "Secure. Reliable. Built for scale."
+      },
+      "sections": {
+        "securityAccess": {
+          "number": "01",
+          "title": { "part1": "Security &", "highlight": "Access" },
+          "subtitle": "Robust identity and access controls.",
+          "items": [
+            { "text": "Single Sign-On (SSO): Azure AD, Okta, Google" },
+            { "text": "Session & IP Controls" },
+            { "text": "Granular Permissions" },
+            { "text": "Multi-Factor Authentication" },
+            { "text": "SOC 2 Aligned Practices" },
+            { "text": "Encryption Standards: AES-256 at rest, TLS 1.2 in transit" }
+          ]
+        },
+        "complianceGovernance": {
+          "number": "02",
+          "title": { "part1": "Compliance &", "highlight": "Governance" },
+          "subtitle": "Built-in compliance workflows and governance controls.",
+          "items": [
+            { "text": "Data Retention Policies" },
+            { "text": "Access Logs" },
+            { "text": "Right-to-Erase Workflows" },
+            { "text": "Data Exportability: CSV, XLS, API, SFTP" },
+            { "text": "Audit Trails" }
+          ]
+        },
+        "deploymentOptions": {
+          "number": "03",
+          "title": { "part1": "Deployment", "highlight": "Options" },
+          "subtitle": "Run Pulse your way.",
+          "banner": "On-Premise or Any-Cloud Deployment: AWS, Azure, GCP, OCI, custom cloud",
+          "items": [
+            { "text": "Customizable Deployment Workflows" },
+            { "text": "Secure Private Cloud Setups" },
+            { "text": "Enterprise-Grade Migration Support" }
+          ]
+        },
+        "performanceScalability": {
+          "number": "04",
+          "title": { "part1": "Performance at Enterprise", "highlight": "Scale" },
+          "subtitle": "Engineered for heavy workloads and global operations.",
+          "items": [
+            { "text": "99.9% Uptime SLA" },
+            { "text": "High Performance Engines" },
+            { "text": "Parallel Processing" },
+            { "text": "Query Optimization" },
+            { "text": "Auto-Scaling" }
+          ]
+        },
+        "dataGovernance": {
+          "number": "05",
+          "title": { "part1": "Data", "highlight": "Governance" },
+          "subtitle": "Full control over where and how your data is stored.",
+          "banner": "Flexible Data Residency: US, Europe, Middle East, UAE, APAC",
+          "items": [
+            { "text": "Custom Retention Policies" },
+            { "text": "Customer-Controlled Backups" },
+            { "text": "Encrypted Everywhere: AES-256, TLS 1.2" }
+          ]
+        },
+        "integrationsEcosystem": {
+          "number": "06",
+          "title": { "part1": "Integrations &", "highlight": "Ecosystem" },
+          "subtitle": "Connect Pulse to your enterprise stack.",
+          "items": [
+            { "text": "API Integration: Open APIs, Power BI-ready" },
+            { "text": "Power BI Integration" },
+            { "text": "Webhooks" },
+            { "text": "SharePoint / OneDrive Workflows" },
+            { "text": "SFTP Support" }
+          ]
+        },
+        "auditabilityMonitoring": {
+          "number": "07",
+          "title": { "part1": "Auditability &", "highlight": "Monitoring" },
+          "subtitle": "Complete visibility into system activity.",
+          "items": [
+            { "text": "Audit Logs" },
+            { "text": "System Monitoring: uptime, errors, latency" },
+            { "text": "Export Logs" },
+            { "text": "Object-Level Audit Trails" },
+            { "text": "API Logs: request history with timestamps" }
+          ]
+        },
+        "enterpriseServices": {
+          "number": "08",
+          "title": { "part1": "Enterprise Services &", "highlight": "Support" },
+          "subtitle": "Dedicated assistance for your enterprise.",
+          "items": [
+            { "text": "Dedicated Onboarding" },
+            { "text": "Dedicated CSM" },
+            { "text": "Go-Live in 24 Hours" },
+            { "text": "24×7 Enterprise Support" },
+            { "text": "Training & Enablement" }
+          ]
+        }
+      },
+      "footer": {
+        "title": "Built for enterprises that demand reliability, control, and scale.",
+        "subtitle": "PulsePro.ai — Enterprise Essentials"
+      }
+    },
     "title": "enterprise essentials",
     "subtitle": "everything you need to run securely, reliably, and at scale",
     "mobileFeatures": [

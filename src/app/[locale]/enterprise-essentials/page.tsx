@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Enterprise Essentials",
@@ -13,6 +13,7 @@ interface PageProps {
 export default async function EnterpriseEssentialsPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "enterpriseEssentials.page" });
 
   return (
     <main className="bg-white text-gray-900">
@@ -24,13 +25,13 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
         }
       `}</style>
 
-      {/* Hero */}
+  {/* Hero */}
   <section id="hero-bar" className="relative bg-[#FDF6E9] editorial-grain py-24">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="text-center">
-            <p className="text-[10px] text-gray-500 tracking-[0.25em] uppercase mb-6 font-medium">Enterprise-Grade Platform</p>
-            <h1 className="text-[48px] font-semibold tracking-tight mb-4 text-gray-900">Enterprise Essentials</h1>
-            <p className="text-[16px] text-gray-600 tracking-wide">Secure. Reliable. Built for scale.</p>
+    <p className="text-[10px] text-gray-500 tracking-[0.25em] uppercase mb-6 font-medium">{t("hero.barTag")}</p>
+    <h1 className="text-[48px] font-semibold tracking-tight mb-4 text-gray-900">{t("hero.title")}</h1>
+    <p className="text-[16px] text-gray-600 tracking-wide">{t("hero.subtitle")}</p>
           </div>
         </div>
       </section>
@@ -41,49 +42,26 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">01</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.securityAccess.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Security &{" "}
+                {t("sections.securityAccess.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Access
+                  {t("sections.securityAccess.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Robust identity and access controls.
+                {t("sections.securityAccess.subtitle")}
               </p>
-
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">Single Sign-On (SSO):</span> Azure AD, Okta, Google
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Session & IP Controls</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Granular Permissions</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Multi-Factor Authentication</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">SOC 2 Aligned Practices</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">Encryption Standards:</span> AES-256 at rest, TLS 1.2 in transit
-                  </p>
-                </div>
+                {t.raw("sections.securityAccess.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`security-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -96,43 +74,26 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">02</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.complianceGovernance.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Compliance &{" "}
+                {t("sections.complianceGovernance.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Governance
+                  {t("sections.complianceGovernance.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Built-in compliance workflows and governance controls.
+                {t("sections.complianceGovernance.subtitle")}
               </p>
-
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Data Retention Policies</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Access Logs</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Right-to-Erase Workflows</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">Data Exportability:</span> CSV, XLS, API, SFTP
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Audit Trails</p>
-                </div>
+                {t.raw("sections.complianceGovernance.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`compliance-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -145,37 +106,29 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">03</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.deploymentOptions.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Deployment{" "}
+                {t("sections.deploymentOptions.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Options
+                  {t("sections.deploymentOptions.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
-              <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">Run Pulse your way.</p>
+              <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">{t("sections.deploymentOptions.subtitle")}</p>
 
               <div className="bg-[#FDF6E9] border border-[#E8E5D8] rounded-[3px] p-6 mb-6">
-                <p className="text-[16px] text-gray-700 leading-relaxed">
-                  <span className="font-semibold">On-Premise or Any-Cloud Deployment:</span> AWS, Azure, GCP, OCI, custom cloud
-                </p>
+                <p className="text-[16px] text-gray-700 leading-relaxed">{t("sections.deploymentOptions.banner")}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Customizable Deployment Workflows</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Secure Private Cloud Setups</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Enterprise-Grade Migration Support</p>
-                </div>
+                {t.raw("sections.deploymentOptions.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`deploy-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -188,41 +141,26 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">04</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.performanceScalability.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Performance at Enterprise{" "}
+                {t("sections.performanceScalability.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Scale
+                  {t("sections.performanceScalability.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Engineered for heavy workloads and global operations.
+                {t("sections.performanceScalability.subtitle")}
               </p>
-
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">99.9% Uptime SLA</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">High Performance Engines</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Parallel Processing</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Query Optimization</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Auto-Scaling</p>
-                </div>
+                {t.raw("sections.performanceScalability.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`perf-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -235,41 +173,30 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">05</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.dataGovernance.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Data{" "}
+                {t("sections.dataGovernance.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Governance
+                  {t("sections.dataGovernance.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Full control over where and how your data is stored.
+                {t("sections.dataGovernance.subtitle")}
               </p>
-
               <div className="bg-[#FDF6E9] border border-[#E8E5D8] rounded-[3px] p-6 mb-6">
-                <p className="text-[16px] text-gray-700 leading-relaxed">
-                  <span className="font-semibold">Flexible Data Residency:</span> US, Europe, Middle East, UAE, APAC
-                </p>
+                <p className="text-[16px] text-gray-700 leading-relaxed">{t("sections.dataGovernance.banner")}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Custom Retention Policies</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Customer-Controlled Backups</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">Encrypted Everywhere:</span> AES-256, TLS 1.2
-                  </p>
-                </div>
+                {t.raw("sections.dataGovernance.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`data-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -282,43 +209,26 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">06</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.integrationsEcosystem.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Integrations &{" "}
+                {t("sections.integrationsEcosystem.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Ecosystem
+                  {t("sections.integrationsEcosystem.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Connect Pulse to your enterprise stack.
+                {t("sections.integrationsEcosystem.subtitle")}
               </p>
-
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">API Integration:</span> Open APIs, Power BI-ready
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Power BI Integration</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Webhooks</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">SharePoint / OneDrive Workflows</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">SFTP Support</p>
-                </div>
+                {t.raw("sections.integrationsEcosystem.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`integrations-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -331,45 +241,26 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">07</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.auditabilityMonitoring.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Auditability &{" "}
+                {t("sections.auditabilityMonitoring.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Monitoring
+                  {t("sections.auditabilityMonitoring.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Complete visibility into system activity.
+                {t("sections.auditabilityMonitoring.subtitle")}
               </p>
-
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Audit Logs</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">System Monitoring:</span> uptime, errors, latency
-                  </p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Export Logs</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Object-Level Audit Trails</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed">
-                    <span className="font-medium">API Logs:</span> request history with timestamps
-                  </p>
-                </div>
+                {t.raw("sections.auditabilityMonitoring.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`audit-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -382,41 +273,26 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
             <div className="mb-6">
-              <span className="text-5xl font-extralight text-[#D1D1D1]">08</span>
+              <span className="text-5xl font-extralight text-[#D1D1D1]">{t("sections.enterpriseServices.number")}</span>
             </div>
             <div>
               <h2 className="text-[22px] font-semibold text-gray-900 mb-2 tracking-tight">
-                Enterprise Services &{" "}
+                {t("sections.enterpriseServices.title.part1")}{" "}
                 <span className="relative inline-block">
-                  Support
+                  {t("sections.enterpriseServices.title.highlight")}
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#E4B702]" />
                 </span>
               </h2>
               <p className="text-[11px] text-gray-500 mb-8 mt-4 uppercase tracking-[0.12em] font-medium">
-                Dedicated assistance for your enterprise.
+                {t("sections.enterpriseServices.subtitle")}
               </p>
-
               <div className="grid grid-cols-2 gap-x-20 gap-y-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Dedicated Onboarding</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Dedicated CSM</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Go-Live in 24 Hours</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">24×7 Enterprise Support</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
-                  <p className="text-[16px] text-gray-700 leading-relaxed font-medium">Training & Enablement</p>
-                </div>
+                {t.raw("sections.enterpriseServices.items").map((item: { text: string }, idx: number) => (
+                  <div className="flex items-start gap-3" key={`service-item-${idx}`}>
+                    <span className="text-gray-400 mt-1 font-light text-[16px]">—</span>
+                    <p className="text-[16px] text-gray-700 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -424,12 +300,12 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Footer note (layout already renders global footer) */}
-  <section id="footer-note" className="bg-[#FDF6E9] border-t border-[#E8E5D8] py-16">
+      <section id="footer-note" className="bg-[#FDF6E9] border-t border-[#E8E5D8] py-16">
         <div className="max-w-[820px] mx-auto px-8 text-center">
           <p className="text-[11px] text-gray-700 tracking-[0.18em] mb-3 font-semibold uppercase">
-            Built for enterprises that demand reliability, control, and scale.
+            {t("footer.title")}
           </p>
-          <p className="text-[10px] text-gray-400 tracking-[0.15em] uppercase">PulsePro.ai — Enterprise Essentials</p>
+          <p className="text-[10px] text-gray-400 tracking-[0.15em] uppercase">{t("footer.subtitle")}</p>
         </div>
       </section>
     </main>
