@@ -2,6 +2,48 @@
 
 import { useTranslations } from 'next-intl'
 
+// Type definitions for privacy policy data structures
+interface DisclosureType {
+  type: string
+  content?: string
+  intro?: string
+  items?: string[]
+}
+
+interface CcpaRequest {
+  type: string
+  intro?: string
+  items?: string[]
+  note?: string
+  content?: string
+}
+
+interface AnalyticsProvider {
+  name: string
+  description: string
+  links?: string[]
+  info?: string[]
+}
+
+interface CicdTool {
+  name: string
+  provider?: string
+  description?: string
+  descriptions?: string[]
+  link?: string
+}
+
+interface RemarketingService {
+  name: string
+  provider?: string
+  info?: string[]
+}
+
+interface PaymentProcessor {
+  name: string
+  info: string
+}
+
 export default function PrivacyPolicyPage() {
   const t = useTranslations('privacyPolicy')
   return (
@@ -194,7 +236,7 @@ export default function PrivacyPolicyPage() {
                   {t('sections.disclosureOfData.intro')}
                 </p>
                 <div className='space-y-6'>
-                  {t.raw('sections.disclosureOfData.disclosureTypes').map((disclosure: any, idx: number) => (
+                  {t.raw('sections.disclosureOfData.disclosureTypes').map((disclosure: DisclosureType, idx: number) => (
                     <div key={idx}>
                       <h3 className='text-lg font-semibold text-[#111111] mb-2'>
                         {disclosure.type}
@@ -315,7 +357,7 @@ export default function PrivacyPolicyPage() {
                   {t('sections.ccpaRights.intro')}
                 </p>
                 <div className='pl-6 text-gray-700 space-y-4 mb-6'>
-                  {t.raw('sections.ccpaRights.requests').map((request: any, idx: number) => (
+                  {t.raw('sections.ccpaRights.requests').map((request: CcpaRequest, idx: number) => (
                     <div key={idx}>
                       <p className='font-semibold mb-2'>
                         ({String.fromCharCode(97 + idx)}) {request.type}
@@ -374,7 +416,7 @@ export default function PrivacyPolicyPage() {
                   {t('sections.analytics.intro')}
                 </p>
                 <div className='space-y-6'>
-                  {t.raw('sections.analytics.providers').map((provider: any, idx: number) => (
+                  {t.raw('sections.analytics.providers').map((provider: AnalyticsProvider, idx: number) => (
                     <div key={idx} className='bg-green-50 p-6 rounded-xl border border-green-200'>
                       <h3 className='text-xl font-semibold text-[#111111] mb-4'>
                         {provider.name}
@@ -406,7 +448,7 @@ export default function PrivacyPolicyPage() {
                   {t('sections.cicdTools.intro')}
                 </p>
                 <div className='space-y-6'>
-                  {t.raw('sections.cicdTools.tools').map((tool: any, idx: number) => (
+                  {t.raw('sections.cicdTools.tools').map((tool: CicdTool, idx: number) => (
                     <div key={idx} className='bg-green-50 p-6 rounded-xl border border-green-200'>
                       <h3 className='text-xl font-semibold text-[#111111] mb-4'>
                         {tool.name}
@@ -466,7 +508,7 @@ export default function PrivacyPolicyPage() {
                   {t('sections.behavioralRemarketing.intro')}
                 </p>
                 <div className='space-y-6'>
-                  {t.raw('sections.behavioralRemarketing.services').map((service: any, idx: number) => (
+                  {t.raw('sections.behavioralRemarketing.services').map((service: RemarketingService, idx: number) => (
                     <div key={idx} className='bg-green-50 p-6 rounded-xl border border-green-200'>
                       <h3 className='text-xl font-semibold text-[#111111] mb-4'>
                         {service.name}
@@ -497,7 +539,7 @@ export default function PrivacyPolicyPage() {
                   </p>
                 ))}
                 <div className='space-y-6'>
-                  {t.raw('sections.payments.processors').map((processor: any, idx: number) => (
+                  {t.raw('sections.payments.processors').map((processor: PaymentProcessor, idx: number) => (
                     <div key={idx} className='bg-green-50 p-6 rounded-xl border border-green-200'>
                       <h3 className='text-xl font-semibold text-[#111111] mb-4'>
                         {processor.name}

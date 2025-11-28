@@ -23,8 +23,26 @@ interface EnterpriseFeature {
   shadowClass?: string;
 }
 
+interface MobileFeature {
+  title: string;
+  description: string;
+}
+
+interface Messages {
+  enterpriseEssentials?: {
+    mobileFeatures?: MobileFeature[];
+    columns?: Array<{
+      heading: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    }>;
+  };
+}
+
 // Mobile feature set will be built from i18n messages
-function getEnterpriseFeatures(messages: any): EnterpriseFeature[] {
+function getEnterpriseFeatures(messages: Messages): EnterpriseFeature[] {
   const mobile = messages?.enterpriseEssentials?.mobileFeatures ?? [];
   const defaults: Omit<EnterpriseFeature, "title" | "description">[] = [
     { icon: "fa-user-shield", size: "medium", position: { top: "0px", left: "5%", transform: "rotate(-3deg)" }, bgColor: "#F3F0FF", iconColor: "text-purple-600", zIndex: 25 },
@@ -40,7 +58,7 @@ function getEnterpriseFeatures(messages: any): EnterpriseFeature[] {
     { icon: "fa-exclamation-triangle", size: "small", position: { top: "550px", right: "15%", transform: "rotate(4deg)" }, bgColor: "#FDF2F8", iconColor: "text-pink-600", zIndex: 14 },
     { icon: "fa-database", size: "small", position: { top: "630px", left: "50%", transform: "translate(-50%,0) rotate(-2deg)" }, bgColor: "#F3F0FF", iconColor: "text-purple-600", zIndex: 13 }
   ];
-  return mobile.slice(0, 12).map((m: any, i: number) => ({
+  return mobile.slice(0, 12).map((m: MobileFeature, i: number) => ({
     title: m.title,
     description: m.description,
     ...defaults[i]
@@ -126,10 +144,10 @@ export default function EnterpriseEssentials() {
   const desktopHeading = t("title");
   const desktopTagline = t("subtitle");
   // Build desktop columns from localized messages
-  const columns = (messages as any)?.enterpriseEssentials?.columns ?? [];
-  const desktopColumns = columns.map((col: any) => ({
+  const columns = (messages as Messages)?.enterpriseEssentials?.columns ?? [];
+  const desktopColumns = columns.map((col) => ({
     heading: col.heading,
-    cards: col.items.map((item: any) => ({
+    cards: col.items.map((item) => ({
       title: item.title,
       desc: item.description,
       // visual styling stays the same based on semantic grouping
