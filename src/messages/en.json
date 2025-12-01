@@ -897,10 +897,17 @@
       "title": "Security at Pulse",
       "subtitle": "Your data's safety is our top priority. Learn about the measures we take to protect your information."
     },
+    "lastUpdate": "Last updated: August 02, 2025",
     "intro": {
       "paragraph1": "Pulse prides itself on placing a priority on security so that we can safely deliver results that are enjoyable to our customers. We have enacted several types of security procedures around our product, the making of it, and how we handle data that is produced. We understand that an inspection contains sensitive company information, and we take data security very seriously.",
       "paragraph2": "Pulse's software is trusted by a large number of companies around the world, including some of the Fortune 500. Our application is designed to support large, security-sensitive enterprise organizations. Pulse's experienced team has built world-class, security-first products at former companies.",
-      "paragraph3": "Below is a summary of the security measures at Pulse. If you have additional questions, please reach out to our team at"
+      "paragraph3": "Below is a summary of the security measures at Pulse. If you have additional questions, please reach out to our team at",
+      "paragraphs": [
+        "Pulse prides itself on placing a priority on security so that we can safely deliver results fast that are enjoyable to our customers.",
+        "We have enacted several types of security procedures around our product, the making of it, and how we handle data that is produced. We understand that an inspection/audit contains sensitive company information, and we take data security very seriously.",
+        "Pulse’s software is trusted by a large number of companies around the world, including some of the Fortune 100. Our application is designed to support large, security-sensitive enterprise organizations. Pulse’s experienced team has built world-class, security-first products at former companies.",
+        "Below is a summary of the security measures at Pulse. If you have additional questions, please reach out to our team at security@pulsepro.ai"
+      ]
     },
     "infrastructure": {
       "title": "Infrastructure",
@@ -1012,6 +1019,105 @@
       "subtitle": "Make problem solving quick with Pulse.",
       "primaryButton": "Try it for free",
       "secondaryButton": "Book a demo today"
+    },
+    "sections": [
+      {
+        "title": "Data Security",
+        "paragraphs": [
+          "All Pulse systems are built with a defense-first approach, assuming that an attack can happen at any time. While our process ideally prevents attacks, we also work to mitigate the damage of an attack by separating systems from each other. Systems only contain the software for a single application (so-called “single-use systems”) and never share the same system for different types of software.",
+          "Pulse’s physical infrastructure is hosted and managed within Amazon secure data centers and utilizes the Amazon Web Services (AWS) technology. Amazon continually manages risk and undergoes recurring assessments to ensure compliance with industry standards.",
+          "Amazon data center operations have been accredited under: ISO/IEC 27001."
+        ]
+      },
+      {
+        "title": "Application & Database",
+        "paragraphs": [
+          "The Pulse application runs within an isolated environment and manages its infrastructure in an AWS environment (ap-south-1a).",
+          "All applications run in self-contained environments that isolate processes, memory, and file systems using Linux Containers while host-based firewalls restrict applications from establishing local network connections.",
+          "Pulse stores customer data in an access-controlled AWS RDS Postgres database unique to our application. Customer data is encrypted at rest using AES-256 block-level storage."
+        ]
+      },
+      {
+        "title": "Network Protection",
+        "paragraphs": [
+          "All Pulse servers are hosted inside a private virtual network within AWS, which ensures communication between Pulse servers remains encrypted and separated from public Internet traffic. Communication between servers over external (or public) networks is always encrypted with industry-standard SSL.",
+          "Servers are only allowed to accept network communications on approved ports. All servers utilize a firewall to limit what incoming and outgoing connections they accept. Our servers have a ‘default deny’ policy in place for any network communications.",
+          "Where possible, two-factor authentication and strong passwords are enforced when system or console access is required. This policy ensures that access to such systems are increasingly difficult to attack."
+        ]
+      },
+      {
+        "title": "Logging and Monitoring",
+        "paragraphs": [
+          "All systems write log data to a centralized logging storage system that utilizes a write-only policy. Log data cannot be altered or deleted in the log system. This log data is available for 1 year as per PCI compliance policies.",
+          "All systems generate events to a third-party service in a write-only event stream. This ensures that our applications and servers can be monitored without accessing systems, and ensures that our event data cannot be tampered with."
+        ]
+      },
+      {
+        "title": "Data Resource Isolation",
+        "paragraphs": [
+          "Pulse is a multi-tenant platform, where customer data is logically separated by a unique identifier and access control is strongly enforced at the application level. Permissions follow a least privilege process where explicit access to resources must be granted.",
+          "Since Pulse uses AWS for its infrastructure, each server is by default denied access to all other AWS resources unless explicitly approved. One environment cannot read from another environment. This is made available through extensive use of IAM policies with whitelisted permissions."
+        ]
+      },
+      {
+        "title": "Penetration and Vulnerability Testing",
+        "paragraphs": [
+          "Pulse processes are designed to proactively remediate security risks. Pulse is notified of vulnerabilities through internal and external assessments, system patch monitoring, and third party mailing lists and services. Each vulnerability is reviewed to determine if it is applicable to Pulse’s environment, ranked based on risk, and assigned to the appropriate team for resolution.",
+          "New systems are deployed with the latest updates, security fixes, and configurations and existing systems are decommissioned after migrating the application to the new instances. This process allows us to keep the environment up-to-date. Since Pulse’s application runs in isolated environments, they are unaffected by these core system updates."
+        ]
+      },
+      {
+        "title": "Privacy",
+        "paragraphs": [
+          "At Pulse, we take your privacy seriously. We’re committed to protecting the privacy of the personal information you provide us. To learn more, read our Privacy Policy."
+        ]
+      },
+      {
+        "title": "Best-In-Class Service",
+        "paragraphs": [
+          "All systems fail. At Pulse, we pride ourselves on expecting this eventuality and ensuring that the impact of the failure is minimized. We value our incident response skills on the ability to act quickly to recover from failure.",
+          "Our application has 99.99% uptime; the current status of our application and any past incidents can be seen on our status page.",
+          "Our Enterprise Plans also include features and services designed to ensure that Pulse is managed as securely as possible at your organization. These include: Single Sign-On, Enhanced Password Security, Advanced Admin Management, Restriction on Data Sharing."
+        ]
+      },
+      {
+        "title": "Service Providers",
+        "paragraphs": [
+          "Pulse hosts all application services on Amazon Web Services (AWS). In addition, a Level 1 PCI-DSS compliant payment processor is used for handling credit card payments. Full credit card data passes between the customer browser and the payment processor, and is never sent to or accessible by Pulse.",
+          "Log data, which may contain sensitive information but not payment information, is stored with a third-party, centralized append-only log storage company. Only approved employees have access to logging data, for troubleshooting or auditing purposes.",
+          "All service providers are expected to be PCI compliant before their services are put into use."
+        ]
+      },
+      {
+        "title": "Compliance Concerns",
+        "paragraphs": [
+          "PCI: Pulse is a PCI Level 4 Merchant and has successfully completed all SAQ A-EP requirements. We process your credit card with a third party payment processor, and neither store nor access your full credit card details. PCI compliance helps customers understand that there are policies and procedures in place to securely process credit card data in our systems.",
+          "Any compliance certification not listed here is assumed to not be present or in use at Pulse.",
+          "EU data privacy and the compliance controls around it are still a dynamic situation. Pulse is actively monitoring the legislative and regulatory efforts surrounding EU data privacy that are being ratified, and will comply with those controls as required by law."
+        ]
+      },
+      {
+        "title": "Bug Bounties and Other Programs",
+        "paragraphs": [
+          "Pulse does not currently have a formal bug bounty for security researchers, nor does it participate in any other bounty programs. We are evaluating possible programs but, as of this writing, nothing is currently available and any situation is dealt with on a case-by-case basis."
+        ]
+      },
+      {
+        "title": "Common Security Vulnerabilities",
+        "paragraphs": [
+          "SQL and Other Injection Techniques: All input from customers or any external system is considered untrusted, and must pass a whitelist before being inserted into a database or other system. Our application also sanitises output from the database to prevent accidental insertion of SQL injection data from being displayed to customers.",
+          "Cross Site Scripting: All input data from users is escaped to prevent XSS exploits. We also continuously run automated security scanners targeting this specific vulnerability.",
+          "Authentication / Session Management: All authentication credentials are forced to transmit in an encrypted manner over SSL, and cookies are only accessible securely.",
+          "Cross-Site Request Forgery: CSRF tokens are required on all forms in Pulse’s app. This prevention is audited by an automated scanner that targets this specific vulnerability.",
+          "Security Configuration Management: Pulse systems are updated regularly to use the latest patches and code for the OS and vendor software. All systems undergo security hardening procedures. All system configuration is stored as code and peer-reviewed before being put into live operation.",
+          "Cryptographic Key Management: Pulse hashes all passwords using bcrypt with a higher than average work factor to thwart brute-force attacks. At no time can a Pulse employee access a customer password."
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contact",
+      "content": "To report security or privacy issues that affect Pulse or our web servers, please contact:",
+      "email": "security@pulsepro.ai"
     }
   },
   "privacyPolicy": {

@@ -37,6 +37,7 @@ const groups: FooterGroup[] = [
   {
     titleKey: "links.legal",
     links: [
+  { nameKey: "security", href: ROUTES.security },
       { nameKey: "privacyPolicy", href: ROUTES.privacyPolicy },
       { nameKey: "termsOfService", href: ROUTES.termsOfService },
     ],
