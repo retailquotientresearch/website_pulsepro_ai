@@ -8,14 +8,13 @@ type Props = {
   slug: string;
   excerpt?: string;
   featured_image_url?: string;
-  category?: string;
   tags?: string;
   author_name?: string;
   published_at?: string | null;
   className?: string;
 };
 
-export function BlogCard({ locale, title, slug, excerpt, featured_image_url, category, tags, author_name, published_at, className }: Props) {
+export function BlogCard({ locale, title, slug, excerpt, featured_image_url, tags, author_name, published_at, className }: Props) {
   const tagList = (tags || "")
     .split(",")
     .map((t) => t.trim())

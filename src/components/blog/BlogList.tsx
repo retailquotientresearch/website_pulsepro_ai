@@ -26,7 +26,7 @@ export function BlogList({ locale }: Props) {
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
-  }, [params.page, params.page_size]);
+  }, [params]);
 
   return (
     <div className="space-y-8">
@@ -50,7 +50,6 @@ export function BlogList({ locale }: Props) {
               slug={b.slug}
               excerpt={b.excerpt}
               featured_image_url={b.featured_image_url}
-              category={b.category}
               tags={b.tags}
               author_name={b.author_name}
               published_at={b.published_at}
