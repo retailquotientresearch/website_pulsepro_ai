@@ -56,14 +56,12 @@ export default function Navigation() {
             >
               {t('enterpriseEssentials')}
             </Link>
-            <a
-              href={EXTERNAL_LINKS.blog}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={ROUTES.blog}
               className="hover:text-[#1A7D3D] transition-colors"
             >
               {t('blog', { default: 'Blog' })}
-            </a>
+            </Link>
             <Link
               href={ROUTES.bookDemo}
               className="hover:text-[#1A7D3D] transition-colors"
