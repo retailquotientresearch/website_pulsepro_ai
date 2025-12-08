@@ -335,7 +335,7 @@
         "subtitle": "PulsePro.ai — Enterprise Essentials"
       }
     },
-    "title": "enterprise essentials",
+    "title": "Enterprise essentials",
     "subtitle": "everything you need to run securely, reliably, and at scale",
     "mobileFeatures": [
       { "title": "single sign-on (sso)", "description": "azure ad, okta, google" },

@@ -22,7 +22,7 @@ export default function UseCases() {
   const current = useCaseItems.find((i) => i.key === active) ?? useCaseItems[0];
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]">
+    <section className="py-12 md:py-16 lg:py-20 bg-[#FFFFEB]">
       {/* Full-bleed wrapper */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         <div className="w-full rounded-[36px] md:rounded-[48px] lg:rounded-[64px] overflow-hidden bg-[#111111] text-white px-4 sm:px-8 lg:px-16 py-12 md:py-16 lg:py-20 min-h-[60vh] sm:min-h-[68vh] lg:h-[80vh] flex items-center">

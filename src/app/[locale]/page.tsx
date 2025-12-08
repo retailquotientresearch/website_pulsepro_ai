@@ -20,7 +20,7 @@ export default async function HomePage({ params }: HomePageProps) {
   setRequestLocale(locale);
 
   return (
-  <main className="min-h-screen bg-[#FDF6E9] overflow-x-hidden">
+  <main className="min-h-screen bg-[#FFFFEB] overflow-x-hidden">
       {/* Section 1: Hero */}
       <Hero />
       

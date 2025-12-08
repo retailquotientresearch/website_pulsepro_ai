@@ -32,9 +32,9 @@ export default function PricingPage() {
   }
 
   return (
-    <main className='bg-[#FDF6E9]'>
+    <main className='bg-[#FFFFEB]'>
       {/* Hero Section */}
-      <Section className='bg-[#FDF6E9] pt-24 pb-12'>
+      <Section className='bg-[#FFFFEB] pt-24 pb-12'>
         <Container>
           <div className='text-center max-w-4xl mx-auto'>
             {/* Billing Toggle */}
@@ -138,7 +138,7 @@ export default function PricingPage() {
       </Section>
 
       {/* Features Section */}
-      <Section className='py-16 bg-[#FDF6E9]'>
+      <Section className='py-16 bg-[#FFFFEB]'>
         <Container>
           <div className='max-w-6xl mx-auto'>
             {/* Features Box */}
@@ -279,7 +279,7 @@ export default function PricingPage() {
       </Section>
 
       {/* Customer Feedback Section */}
-      <Section className='py-16 bg-[#FDF6E9]'>
+      <Section className='py-16 bg-[#FFFFEB]'>
         <Container>
           <div className='max-w-6xl mx-auto'>
             <AnimatedCard delay={100} direction='up'>
@@ -374,7 +374,7 @@ export default function PricingPage() {
       </Section>
 
       {/* Testimonials Section */}
-  <Section className='py-16 bg-[#FDF6E9]'>
+  <Section className='py-16 bg-[#FFFFEB]'>
     <Container>
           <div className='max-w-6xl mx-auto'>
             <AnimatedCard delay={200} direction='up'>
@@ -389,7 +389,7 @@ export default function PricingPage() {
       </Section>
 
       {/* Support Section */}
-      <Section className='py-16 bg-[#FDF6E9]'>
+      <Section className='py-16 bg-[#FFFFEB]'>
         <Container>
           <AnimatedCard delay={200} direction='up'>
             <div className='text-center max-w-4xl mx-auto'>

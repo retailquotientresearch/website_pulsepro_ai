@@ -23,12 +23,14 @@ export default function Testimonials() {
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const avatarsContainerRef = useRef<HTMLDivElement | null>(null);
 
   // Handle testimonial change with animation
   const handleTestimonialChange = (index: number) => {
     if (index === activeTestimonial) return;
 
+    setHasUserInteracted(true);
     setIsAnimating(true);
     setTimeout(() => {
       setActiveTestimonial(index);
@@ -47,13 +49,14 @@ export default function Testimonials() {
   };
 
   // Keep the selected avatar visible/centered in the lower palette
+  // Only scroll into view after user has interacted to prevent auto-scrolling on page load
   useEffect(() => {
-    if (!avatarsContainerRef.current) return;
+    if (!avatarsContainerRef.current || !hasUserInteracted) return;
     const el = avatarsContainerRef.current.querySelector<HTMLElement>(`[data-index="${activeTestimonial}"]`);
     if (el && typeof el.scrollIntoView === "function") {
       el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
-  }, [activeTestimonial]);
+  }, [activeTestimonial, hasUserInteracted]);
 
   return (
     <>

@@ -113,12 +113,12 @@ export default function FeaturesPage() {
   }, []);
 
   return (
-    <main className="bg-[#FDF6E9] font-inter min-h-screen">
+    <main className="bg-[#FFFFEB] font-inter min-h-screen">
       {/* Navigation */}
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-[#FDF6E9] py-16 mt-16">{/* Added mt-16 for nav spacing */}
+      <section className="bg-[#FFFFEB] py-16 mt-16">{/* Added mt-16 for nav spacing */}
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">{t('hero.title')}</h1>
           
@@ -156,7 +156,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Interactive Features Accordion */}
-      <section className="py-16 bg-[#FDF6E9]">
+      <section className="py-16 bg-[#FFFFEB]">
         <div className="max-w-6xl mx-auto px-6">
           {categories.map((category) => (
             <div

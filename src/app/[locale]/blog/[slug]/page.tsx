@@ -30,7 +30,7 @@ export default async function BlogDetailPage({ params }: Props) {
 
   return (
     <>
-      <Section className="bg-[#FDF6E9] pt-28 pb-6">
+      <Section className="bg-[#FFFFEB] pt-28 pb-6">
         <Container>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">{blog.title}</h1>
           {blog.category && <p className="mt-2 text-sm text-gray-600">{blog.category}</p>}

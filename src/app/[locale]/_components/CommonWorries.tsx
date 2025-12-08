@@ -31,7 +31,7 @@ function ConcernCard({ concern, index }: { concern: Concern; index: number }) {
   const { minHeight } = getHeightValues(concern, index);
   return (
     <div
-      className={`bg-[#FDF6E9] rounded-3xl p-6 w-[320px] mx-1 flex-shrink-0 flex flex-col items-center justify-start text-center`}
+      className={`bg-[#FFFFEB] rounded-3xl p-6 w-[320px] mx-1 flex-shrink-0 flex flex-col items-center justify-start text-center`}
       style={{ minHeight }}
     >
       <div className="text-base md:text-lg font-medium text-gray-900 mb-3 leading-snug">
@@ -74,7 +74,7 @@ export default function CommonWorries() {
   const concerns = t.raw('concerns') as Concern[];
 
   return (
-  <section className="py-12 md:py-16 lg:py-20 bg-[#FDF6E9]" dir='ltr'>
+  <section className="py-12 md:py-16 lg:py-20 bg-[#FFFFEB]" dir='ltr'>
       {/* Full-bleed wrapper with top curves only */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         <div ref={ref} className="w-full rounded-t-[36px] md:rounded-t-[48px] lg:rounded-t-[64px] overflow-hidden bg-[#034f46] px-4 sm:px-8 lg:px-16 py-20 md:py-24 lg:py-28 relative min-h-[70vh] md:min-h-[80vh]">
@@ -85,10 +85,10 @@ export default function CommonWorries() {
           <div className="text-center mb-12 px-4">
             <div className="max-w-5xl mx-auto relative">
               <div className="relative inline-block">
-                <h2 className="relative text-3xl md:text-4xl lg:text-5xl font-bold text-[#FDF6E9] mb-6 leading-tight">
+                <h2 className="relative text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFFFEB] mb-6 leading-tight">
                   {t('title.part1')}
                   <br />
-                  <span className="text-[#FDF6E9]">
+                  <span className="text-[#FFFFEB]">
                     {t('title.part2')}
                   </span>
                 </h2>

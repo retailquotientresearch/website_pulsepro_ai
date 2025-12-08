@@ -26,7 +26,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       `}</style>
 
   {/* Hero */}
-  <section id="hero-bar" className="relative bg-[#FDF6E9] editorial-grain py-24">
+  <section id="hero-bar" className="relative bg-[#FFFFEB] editorial-grain py-24">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="text-center">
     <p className="text-[10px] text-gray-500 tracking-[0.25em] uppercase mb-6 font-medium">{t("hero.barTag")}</p>

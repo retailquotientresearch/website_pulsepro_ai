@@ -167,7 +167,7 @@ export default function EverythingYoureLookingFor() {
   const REELS: Reel[] = (t.raw('reels') as Reel[]) || [];
 
   return (
-    <section className="w-full bg-gradient-to-br from-[#FDF6E9] via-[#FEFBF3] to-[#F8F4E6] py-6 lg:py-8">
+    <section className="w-full bg-[#FFFFEB] py-6 lg:py-8">
       <div className="w-full px-2 sm:px-4 lg:px-6">
         {/* Title */}
         <div className="text-center mb-6 lg:mb-8">

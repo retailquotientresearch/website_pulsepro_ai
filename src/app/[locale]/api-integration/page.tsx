@@ -54,7 +54,7 @@ const Hero: React.FC<{ title: string; subtitle?: string } & { customIllustration
 export default function APIIntegrationPage() {
   const t = useTranslations("apiIntegration");
   return (
-    <main className="min-h-screen bg-[#FDF6E9] overflow-x-hidden">
+    <main className="min-h-screen bg-[#FFFFEB] overflow-x-hidden">
       {/* Hero Section */}
       <Hero
         title={t("hero.title")}

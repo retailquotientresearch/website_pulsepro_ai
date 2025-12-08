@@ -667,7 +667,7 @@ export default function ChaosToClarity() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-0 md:py-0 bg-[#FDF6E9]"
+      className="relative overflow-hidden py-0 md:py-0 bg-[#FFFFEB]"
       dir="ltr"
     >
       {/* Replace scattered chaos with synchronized strip system */}
@@ -794,7 +794,7 @@ export default function ChaosToClarity() {
           {/* Left: chaos strip flowing INTO the phone */}
           <div className="hidden md:flex lg:order-1 order-1 self-stretch h-full items-stretch flex-1 min-w-0 relative">
             {/* Flowing gradient overlay to show flow direction */}
-            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#FDF6E9] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#FFFFEB] to-transparent z-10 pointer-events-none"></div>
             <div
               ref={chaosContainerRef}
               className="w-full overflow-hidden py-6 h-[300px] sm:h-[340px] md:h-[380px] flex items-center relative"
@@ -814,7 +814,7 @@ export default function ChaosToClarity() {
           {/* Right: clarity strip flowing OUT of the phone */}
           <div className="hidden md:flex lg:order-3 order-2 self-stretch h-full items-stretch flex-1 min-w-0 relative">
             {/* Flowing gradient overlay to show flow direction */}
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#FDF6E9] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#FFFFEB] to-transparent z-10 pointer-events-none"></div>
             <div
               ref={clarityContainerRef}
               className="w-full overflow-hidden py-6 h-[280px] sm:h-[320px] md:h-[360px] flex items-center relative"

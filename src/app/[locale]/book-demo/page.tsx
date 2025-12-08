@@ -9,46 +9,41 @@ export default function BookDemoPage() {
 
 
   return (
-  <main className="bg-[#FDF6E9] font-inter min-h-screen">
+    <main className="bg-[#FFFFEB] font-inter overflow-hidden">
       
-      {/* Main Content - Vertically Centered */}
-      <div className="min-h-screen flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Main Content - Optimized Layout - No Scrolling */}
+      <div className="h-screen flex items-center justify-center py-24">
+        <div className="max-w-[1600px] mx-auto px-6 w-full h-full flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center w-full">
             
-            {/* Left Column - Demo Information */}
-            <div className="space-y-8">
+            {/* Left Column - Demo Information (1/3 width) - Vertically Centered */}
+            <div className="space-y-6">
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   {t('heroTitle')}
                 </h1>
-                <p className="text-lg text-gray-700 mb-8">
+                <p className="text-base text-gray-700">
                   {t('heroIntro')}
                 </p>
-                
-                {/* ...feature list removed... */}
               </div>
-
-              {/* Removed benefits section as requested */}
             </div>
 
-            {/* Right Column - Calendly Booking Widget */}
-            <div className="lg:pl-8">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div className="p-6 border-b border-gray-200">
-                  <h2 className="text-2xl font-bold text-gray-900 text-center">
+            {/* Right Column - Calendly Booking Widget (2/3 width - double width) */}
+            <div className="lg:col-span-2 h-[calc(100vh-12rem)]">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 h-full flex flex-col overflow-hidden">
+                <div className="p-4 border-b border-gray-200 flex-shrink-0">
+                  <h2 className="text-xl font-bold text-gray-900 text-center">
                     {t('form.submit')}
                   </h2>
-                  <p className="text-gray-600 text-center mt-2">
+                  <p className="text-sm text-gray-600 text-center mt-1">
                     {t('subtitle')}
                   </p>
                 </div>
                 
-                {/* Calendly Widget - vertically centered within its container */}
-                <div className="flex items-center justify-center h-[58vh] sm:h-[60vh] md:h-[62vh] lg:h-[65vh] xl:h-[68vh] min-h-[360px] max-h-[640px]">
-                  <CalendlyWidget height={520} />
+                {/* Calendly Widget - Full height, no scrolling */}
+                <div className="flex-1 overflow-hidden">
+                  <CalendlyWidget height="100%" />
                 </div>
-                {/* Removed fallback link */}
               </div>
             </div>
           </div>

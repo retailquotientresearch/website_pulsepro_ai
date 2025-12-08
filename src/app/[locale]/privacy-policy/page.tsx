@@ -48,9 +48,9 @@ export default function PrivacyPolicyPage() {
   const t = useTranslations('privacyPolicy')
   return (
     <>
-    <main className="min-h-screen bg-[#FDF6E9] overflow-x-hidden">
+    <main className="min-h-screen bg-[#FFFFEB] overflow-x-hidden">
       {/* Hero - aligned with home page style */}
-      <section className="bg-[#FDF6E9] pt-28 pb-6">
+      <section className="bg-[#FFFFEB] pt-28 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="font-['Poppins',sans-serif] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-[#111111]">

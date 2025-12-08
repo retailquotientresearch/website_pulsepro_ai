@@ -15,7 +15,7 @@ export default function CallToAction() {
   const features = t.raw('features') as CTAFeature[];
 
   return (
-  <section className="pt-12 md:pt-16 lg:pt-20 pb-0 bg-[#FDF6E9]">
+  <section className="pt-12 md:pt-16 lg:pt-20 pb-0 bg-[#FFFFEB]">
       {/* Full-bleed wrapper matching the site's pattern */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
         <div className="w-full rounded-t-[36px] md:rounded-t-[48px] lg:rounded-t-[64px] overflow-hidden bg-[#2A2A2A] px-4 sm:px-8 lg:px-16 py-20 md:py-24 lg:py-28 relative">
@@ -42,7 +42,7 @@ export default function CallToAction() {
               {/* Left side - Benefits */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between h-full">
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="bg-[#FDF6E9] p-3 rounded-xl">
+                  <div className="bg-[#FFFFEB] p-3 rounded-xl">
                     <Check className="w-6 h-6 text-[#2A2A2A]" />
                   </div>
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">{t('whatIncluded')}</h3>
@@ -51,7 +51,7 @@ export default function CallToAction() {
                 <div className="space-y-8 flex-1 flex flex-col justify-evenly">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="bg-[#FDF6E9] rounded-full p-1.5 mt-1 flex-shrink-0">
+                      <div className="bg-[#FFFFEB] rounded-full p-1.5 mt-1 flex-shrink-0">
                         <Check className="w-4 h-4 text-[#2A2A2A]" />
                       </div>
                       <div>

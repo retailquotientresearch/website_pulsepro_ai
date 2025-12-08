@@ -9,7 +9,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen bg-[#FDF6E9] overflow-x-hidden">
+    <main className="min-h-screen bg-[#FFFFEB] overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection />
       
@@ -26,7 +26,7 @@ function HeroSection() {
   const t = useTranslations('howItWorks');
   
   return (
-    <section className="bg-[#FDF6E9] pt-32">
+    <section className="bg-[#FFFFEB] pt-32">
       <Container>
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="font-['Poppins',sans-serif] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-[#111111] mb-6">
@@ -73,7 +73,7 @@ function StepsSection() {
   ];
 
   return (
-    <section className="bg-[#FDF6E9] py-16 lg:py-24">
+    <section className="bg-[#FFFFEB] py-16 lg:py-24">
       <Container>
         <div className="space-y-24 lg:space-y-32">
           {steps.map((step, index) => (
@@ -123,7 +123,7 @@ function CtaSection() {
   const t = useTranslations('howItWorks');
   
   return (
-    <section className="bg-[#FDF6E9] py-16 lg:py-24">
+    <section className="bg-[#FFFFEB] py-16 lg:py-24">
       <Container>
         <div className="text-center max-w-4xl mx-auto space-y-2">
           <h2 className="font-['Poppins',sans-serif] text-3xl md:text-4xl lg:text-5xl font-bold text-[#111111] leading-tight">

@@ -25,7 +25,7 @@ export default function MobileMenu() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-  <button aria-label="Open menu" className="xl:hidden w-10 h-10 flex items-center justify-center">
+        <button aria-label="Open menu" className="lg:hidden w-10 h-10 flex items-center justify-center">
           <Menu className="text-[#1A1A1A]" size={24} />
         </button>
       </SheetTrigger>
