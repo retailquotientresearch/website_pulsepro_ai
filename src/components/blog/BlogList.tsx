@@ -3,13 +3,14 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchBlogList, BlogItem } from "@/lib/blogApi";
 import { cn } from "@/lib/utils";
 import { BlogCard } from "./BlogCard";
+import ReactPaginate from "react-paginate";
 
 type Props = { locale: string };
 
 export function BlogList({ locale }: Props) {
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
   const [page, setPage] = useState(1);
-  const pageSize = 6;
+  const pageSize = 10;
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -57,24 +58,36 @@ export function BlogList({ locale }: Props) {
           ))}
         </div>
       )}
-      <div className="flex flex-wrap items-center justify-center gap-2">
-        {Array.from({ length: Math.max(totalPages, 1) }).map((_, i) => {
-          const pageNum = i + 1;
-          const active = pageNum === page;
-          return (
-            <button
-              key={pageNum}
-              onClick={() => setPage(pageNum)}
-              className={cn(
-                "min-w-10 h-10 px-3 rounded-md border text-sm font-medium transition-colors",
-                active ? "bg-indigo-600 text-white border-indigo-600" : "bg-white hover:bg-indigo-50"
-              )}
-              disabled={active}
-            >
-              {pageNum}
-            </button>
-          );
-        })}
+      <div className="flex justify-center mt-8">
+        <ReactPaginate
+          previousLabel={"← Prev"}
+          nextLabel={"Next →"}
+          pageCount={totalPages}
+          onPageChange={({ selected }) => setPage(selected + 1)}
+          forcePage={page - 1}
+          containerClassName="flex items-center gap-2"
+          pageClassName="inline-block"
+          pageLinkClassName={cn(
+            "min-w-10 h-10 px-3 rounded-md border text-sm font-medium transition-colors flex items-center justify-center",
+            "bg-white hover:bg-indigo-50 text-gray-700 border-gray-300"
+          )}
+          activeLinkClassName="!bg-indigo-600 !text-white !border-indigo-600 hover:!bg-indigo-700"
+          previousClassName="inline-block"
+          nextClassName="inline-block"
+          previousLinkClassName={cn(
+            "px-4 h-10 rounded-md border text-sm font-medium transition-colors flex items-center justify-center",
+            "bg-white hover:bg-indigo-50 text-gray-700 border-gray-300"
+          )}
+          nextLinkClassName={cn(
+            "px-4 h-10 rounded-md border text-sm font-medium transition-colors flex items-center justify-center",
+            "bg-white hover:bg-indigo-50 text-gray-700 border-gray-300"
+          )}
+          disabledClassName="opacity-50 cursor-not-allowed"
+          disabledLinkClassName="hover:bg-white cursor-not-allowed"
+          breakLabel="..."
+          breakClassName="inline-block"
+          breakLinkClassName="min-w-10 h-10 px-3 flex items-center justify-center text-gray-700"
+        />
       </div>
     </div>
   );

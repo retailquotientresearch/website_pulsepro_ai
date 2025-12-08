@@ -37,7 +37,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 01: Security & Access */}
-      <section id="security-access" className="relative py-12 bg-white">
+      <section id="security-access" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -69,7 +69,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 02: Compliance & Governance */}
-      <section id="compliance-governance" className="relative py-12 bg-white">
+      <section id="compliance-governance" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -101,7 +101,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 03: Deployment Options */}
-      <section id="deployment-options" className="relative py-12 bg-white">
+      <section id="deployment-options" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -136,7 +136,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 04: Performance & Scalability */}
-      <section id="performance-scalability" className="relative py-12 bg-white">
+      <section id="performance-scalability" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -168,7 +168,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 05: Data Governance */}
-      <section id="data-governance" className="relative py-12 bg-white">
+      <section id="data-governance" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -204,7 +204,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 06: Integrations & Ecosystem */}
-      <section id="integrations-ecosystem" className="relative py-12 bg-white">
+      <section id="integrations-ecosystem" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -236,7 +236,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 07: Auditability & Monitoring */}
-      <section id="auditability-monitoring" className="relative py-12 bg-white">
+      <section id="auditability-monitoring" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -268,7 +268,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Section 08: Enterprise Services */}
-      <section id="enterprise-services" className="relative py-12 bg-white">
+      <section id="enterprise-services" className="relative py-6 bg-white">
         <div className="max-w-[820px] mx-auto px-8">
           <div className="w-[12%] h-[1px] bg-[#DADADA] mb-12 mx-auto" />
           <div className="relative mb-8">
@@ -300,7 +300,7 @@ export default async function EnterpriseEssentialsPage({ params }: PageProps) {
       </section>
 
       {/* Footer note (layout already renders global footer) */}
-      <section id="footer-note" className="bg-[#FDF6E9] border-t border-[#E8E5D8] py-16">
+      <section id="footer-note" className="bg-white border-t border-[#DADADA] py-16">
         <div className="max-w-[820px] mx-auto px-8 text-center">
           <p className="text-[11px] text-gray-700 tracking-[0.18em] mb-3 font-semibold uppercase">
             {t("footer.title")}
