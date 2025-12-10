@@ -1,6 +1,7 @@
  'use client'
 
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 export default function SecurityPage() {
   const t = useTranslations('security')
@@ -35,13 +36,53 @@ export default function SecurityPage() {
               ))}
             </section>
 
+            
+
             {/* Sections from content */}
             {t.raw('sections').map((sec: {title: string, paragraphs: string[]}, idx: number) => (
               <section key={idx} className='mb-12'>
                 <h2 className='text-2xl font-bold text-[#111111] mb-6'>{sec.title}</h2>
-                {sec.paragraphs.map((para: string, pidx: number) => (
-                  <p key={pidx} className='text-gray-700 leading-relaxed mb-4'>{para}</p>
-                ))}
+                {sec.paragraphs.map((para: string, pidx: number) => {
+                  const text = (para || '').toLowerCase()
+                  const matchesAccredited = text.includes('accredited under') || text.includes('amazon data center operations') || text.includes('iso/iec 27001')
+                  return (
+                    <div key={pidx} className='mb-4'>
+                      <p className='text-gray-700 leading-relaxed mb-2'>{para}</p>
+                      {matchesAccredited && (
+                        <div className='flex flex-wrap items-center gap-8 mt-4'>
+                          <div className='w-24 h-24 relative'>
+                            <Image
+                              src="/images/iso-27001.png"
+                              alt="ISO/IEC 27001"
+                              width={96}
+                              height={96}
+                              className="object-contain"
+                              priority
+                            />
+                          </div>
+                          <div className='w-24 h-24 relative'>
+                            <Image
+                              src="/images/aicpa-soc.jpeg"
+                              alt="SOC 2 (AICPA)"
+                              width={96}
+                              height={96}
+                              className="object-contain"
+                            />
+                          </div>
+                          <div className='w-24 h-24 relative'>
+                            <Image
+                              src="/images/fr-certification.jpeg"
+                              alt="FR Certification"
+                              width={96}
+                              height={96}
+                              className="object-contain"
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
               </section>
             ))}
 

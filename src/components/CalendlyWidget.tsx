@@ -34,7 +34,7 @@ export default function CalendlyWidget({
   <div className={className} style={containerStyle}>
       <InlineWidget
         url={calendlyUrl}
-        styles={{ height: "100%", minWidth: "320px" }}
+        styles={{ height: "100%", minWidth: "900px", width: "100%" }}
         pageSettings={{
           backgroundColor: "ffffff",
           hideEventTypeDetails: false,
