@@ -78,6 +78,15 @@ export default function SecurityPage() {
                               className="object-contain"
                             />
                           </div>
+                          <div className='w-24 h-24 relative'>
+                            <Image
+                              src="/images/icons8-aws-logo-480.png"
+                              alt="FR Certification"
+                              width={96}
+                              height={96}
+                              className="object-contain"
+                            />
+                          </div>
                         </div>
                       )}
                     </div>
