@@ -168,7 +168,7 @@ function CtaSection() {
                     aria-label="Download on the App Store"
                     className="group inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-black/10 shadow-sm transition-colors duration-200 hover:border-[#1A7D3D] focus:outline-none focus:ring-2 focus:ring-[#1A7D3D]/30"
                   >
-                      <Image src="/images/icons/apple.svg" alt="App Store" width={28} height={28} className="opacity-90 group-hover:opacity-100" />
+                      <Image src="/images/icons/apple.png" alt="App Store" width={28} height={28} className="opacity-90 group-hover:opacity-100" />
                   </a>
                 </TooltipTrigger>
                 <TooltipContent side="top" className="text-sm">
@@ -184,7 +184,7 @@ function CtaSection() {
                     aria-label="Get it on Google Play"
                     className="group inline-flex h-14 w-14 items-center justify-center rounded-full bg-white border border-black/10 shadow-sm transition-colors duration-200 hover:border-[#1A7D3D] focus:outline-none focus:ring-2 focus:ring-[#1A7D3D]/30"
                   >
-                      <Image src="/images/icons/google-play.svg" alt="Google Play" width={28} height={28} className="opacity-90 group-hover:opacity-100" />
+                      <Image src="/images/icons/google-play.png" alt="Google Play" width={28} height={28} className="opacity-90 group-hover:opacity-100" />
                   </a>
                 </TooltipTrigger>
                 <TooltipContent side="top" className="text-sm">

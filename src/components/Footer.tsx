@@ -168,7 +168,7 @@ export default function Footer() {
                       className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
                       aria-label="App Store"
                     >
-                      <Image src="/images/icons/apple.svg" alt="App Store" width={24} height={24} className="opacity-90 group-hover:opacity-100 invert" />
+                      <Image src="/images/icons/apple.png" alt="App Store" width={24} height={24} className="opacity-90 group-hover:opacity-100 invert" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -186,7 +186,7 @@ export default function Footer() {
                       className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
                       aria-label="Google Play"
                     >
-                      <Image src="/images/icons/google-play.svg" alt="Google Play" width={24} height={24} className="opacity-90 group-hover:opacity-100" />
+                      <Image src="/images/icons/google-play.png" alt="Google Play" width={24} height={24} className="opacity-90 group-hover:opacity-100" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent>
