@@ -193,6 +193,31 @@ export default function Footer() {
                     <p>Google Play</p>
                   </TooltipContent>
                 </Tooltip>
+
+                {/* SAP Ariba Network Badge */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={EXTERNAL_LINKS.aribaProfile}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-md ring-1 ring-white/15 hover:ring-white/25 transition-colors"
+                      aria-label="SAP Ariba Network Profile"
+                    >
+                      <Image
+                        src="https://service.ariba.com/an/p/Ariba/badge_180x55.jpg"
+                        alt="SAP Ariba Network"
+                        width={180}
+                        height={55}
+                        className="h-12 w-auto object-contain"
+                        priority={false}
+                      />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>SAP Ariba Network</p>
+                  </TooltipContent>
+                </Tooltip>
               </div>
             </TooltipProvider>
           </div>

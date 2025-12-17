@@ -24,6 +24,7 @@ export const EXTERNAL_LINKS = {
   twitter: "https://x.com/pulsepro_ai",
   linkedin: "http://linkedin.com/company/pulse-smart-checklists-inspections-audits",
   youtube: "https://www.youtube.com/@pulseproai",
+  aribaProfile: "https://discovery.ariba.com/profile/AN11185489216",
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;
