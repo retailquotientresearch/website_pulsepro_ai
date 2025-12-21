@@ -66,7 +66,7 @@ export default function MobileMenu() {
               {t('enterpriseEssentials')}
             </Link>
             <a
-              href={EXTERNAL_LINKS.blog}
+              href={ROUTES.blog}
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"
