@@ -20,7 +20,6 @@ export const EXTERNAL_LINKS = {
   signIn: "https://ng-app.pulsepro.ai/login",
   register: "https://ng-app.pulsepro.ai/register?plan=PROM",
   howItWorks: "https://www.pulsepro.ai/how-it-works/",
-  blog: "https://blog.pulsepro.ai/blog",
   twitter: "https://x.com/pulsepro_ai",
   linkedin: "http://linkedin.com/company/pulse-smart-checklists-inspections-audits",
   youtube: "https://www.youtube.com/@pulseproai",
