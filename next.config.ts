@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/an/p/Ariba/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ng-api.pulsepro.ai',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   
