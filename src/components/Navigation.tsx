@@ -30,8 +30,8 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Desktop Navigation - Shows on larger screens with adaptive breakpoints */}
-          <nav className={`hidden lg:flex items-center ${isRTL ? 'space-x-reverse' : ''} gap-3 xl:gap-6 2xl:gap-8 text-sm lg:text-[15px] xl:text-base font-medium text-gray-700 flex-shrink-0`}>
+          {/* Desktop Navigation - Shows on >=1350px */}
+          <nav className={`hidden min-[1350px]:flex items-center ${isRTL ? 'space-x-reverse' : ''} gap-3 xl:gap-6 2xl:gap-8 text-sm lg:text-[15px] xl:text-base font-medium text-gray-700 flex-shrink-0`}>
             <Link
               href={ROUTES.features}
               className="hover:text-[#1A7D3D] transition-colors whitespace-nowrap"
@@ -77,7 +77,7 @@ export default function Navigation() {
               href={EXTERNAL_LINKS.signIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:block text-[#1A7D3D] hover:text-[#166534] border border-[#1A7D3D]/30 hover:border-[#166534] px-3 xl:px-4 2xl:px-5 py-1.5 xl:py-2 rounded-full transition-colors font-medium bg-white/60 hover:bg-white text-sm xl:text-base whitespace-nowrap"
+              className="hidden min-[1350px]:block text-[#1A7D3D] hover:text-[#166534] border border-[#1A7D3D]/30 hover:border-[#166534] px-3 xl:px-4 2xl:px-5 py-1.5 xl:py-2 rounded-full transition-colors font-medium bg-white/60 hover:bg-white text-sm xl:text-base whitespace-nowrap"
             >
               {t('signIn')}
             </a>
@@ -85,7 +85,7 @@ export default function Navigation() {
               href={EXTERNAL_LINKS.register}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:block bg-[#1A7D3D] text-white px-3 xl:px-5 2xl:px-6 py-1.5 xl:py-2 rounded-full hover:bg-[#166534] transition-colors font-medium text-sm xl:text-base whitespace-nowrap"
+              className="hidden min-[1350px]:block bg-[#1A7D3D] text-white px-3 xl:px-5 2xl:px-6 py-1.5 xl:py-2 rounded-full hover:bg-[#166534] transition-colors font-medium text-sm xl:text-base whitespace-nowrap"
             >
               {t('getStarted')}
             </a>
