@@ -28,9 +28,8 @@ export function BlogHeader() {
           </h1>
           
           <p className="max-w-3xl text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-            Insights on <span className="font-semibold text-gray-900 dark:text-white">safety</span>, <span className="font-semibold text-gray-900 dark:text-white">inspections</span>, <span className="font-semibold text-gray-900 dark:text-white">digitization</span>, and operational excellence. 
-            <br className="hidden md:block" />
-            Explore practical guides, product updates, and industry trends.
+            Insights on <span className="font-semibold text-gray-900 dark:text-white">safety</span>, <span className="font-semibold text-gray-900 dark:text-white">inspections</span>, <span className="font-semibold text-gray-900 dark:text-white">digitization</span>, and operational excellence.
+            <br className="hidden md:block" />{' '}Explore practical guides, product updates, and industry trends.
           </p>
         </div>
 
