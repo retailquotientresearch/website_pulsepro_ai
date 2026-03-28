@@ -142,7 +142,7 @@ export default function ROICalculator({ compact = false }: { compact?: boolean }
               sub={`at $${INSPECTOR_HOURLY}/hr avg`}
             />
             <StatCard
-              label="PulsePro investment"
+              label="PULSE investment"
               value={formatCurrency(results.pulseProCostPerYear)}
               sub="per year"
             />
@@ -156,7 +156,7 @@ export default function ROICalculator({ compact = false }: { compact?: boolean }
           <StatCard
             label="Net savings per year"
             value={formatCurrency(results.netSavings)}
-            sub={`${results.roiPct.toLocaleString()}% ROI on your PulsePro investment`}
+            sub={`${results.roiPct.toLocaleString()}% ROI on your PULSE investment`}
             highlight
           />
 

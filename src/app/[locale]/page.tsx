@@ -49,7 +49,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <section className="bg-white border-y border-gray-100 py-10">
         <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <p className="text-lg font-bold text-gray-900">Wondering if PulsePro.ai pays for itself?</p>
+            <p className="text-lg font-bold text-gray-900">Wondering if PULSE pays for itself?</p>
             <p className="text-gray-500 text-sm mt-1">Most teams see ROI in under 30 days. See your numbers in 30 seconds.</p>
           </div>
           <Link

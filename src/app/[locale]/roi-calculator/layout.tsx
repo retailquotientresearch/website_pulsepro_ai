@@ -2,11 +2,11 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ROI Calculator — See How Much You Save with PulsePro.ai',
+  title: 'ROI Calculator — See How Much You Save with PULSE',
   description:
-    'Calculate your inspection ROI in 30 seconds. See how many hours you save, your cost reduction, and payback period when you switch to PulsePro.ai.',
+    'Calculate your inspection ROI in 30 seconds. See how many hours you save, your cost reduction, and payback period when you switch to PULSE.',
   openGraph: {
-    title: 'Inspection ROI Calculator | PulsePro.ai',
+    title: 'Inspection ROI Calculator | PULSE',
     description:
       'Enter your sites, inspectors, and current method. Instantly see hours saved, cost reduction, and payback period.',
     url: 'https://www.pulsepro.ai/en/roi-calculator',

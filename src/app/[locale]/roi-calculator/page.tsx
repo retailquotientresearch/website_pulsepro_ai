@@ -30,7 +30,7 @@ export default function ROICalculatorPage() {
       {/* Assumptions note */}
       <section className="max-w-3xl mx-auto px-6 pb-10 text-center">
         <p className="text-xs text-gray-400">
-          Assumptions: paper inspections take ~45 min, spreadsheets ~30 min, other tools ~20 min. PulsePro.ai averages 10 min.
+          Assumptions: paper inspections take ~45 min, spreadsheets ~30 min, other tools ~20 min. PULSE averages 10 min.
           Inspector cost estimated at $50/hr. Actual results vary.
         </p>
       </section>
