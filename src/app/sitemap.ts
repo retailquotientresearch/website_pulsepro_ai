@@ -16,8 +16,14 @@ const pages: { path: string; priority: number; changeFrequency: ChangeFreq }[] =
   { path: '/book-demo',              priority: 0.8, changeFrequency: 'weekly'  },
   { path: '/blog',                   priority: 0.8, changeFrequency: 'daily'   },
   { path: '/faq',                    priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/privacy-policy',         priority: 0.3, changeFrequency: 'yearly'  },
-  { path: '/companies-terms-of-service', priority: 0.3, changeFrequency: 'yearly' },
+  { path: '/roi-calculator',                          priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/inspection-software-for-retail',          priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/inspection-software-for-food-beverage',   priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/inspection-software-for-construction',    priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/inspection-software-for-hospitality',     priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/inspection-software-for-healthcare',      priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/privacy-policy',                          priority: 0.3, changeFrequency: 'yearly'  },
+  { path: '/companies-terms-of-service',              priority: 0.3, changeFrequency: 'yearly'  },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
