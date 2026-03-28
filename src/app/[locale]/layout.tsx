@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 import "@/globals.css";
 
 const inter = Inter({
@@ -187,6 +188,21 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
         />
       </head>
+      {/* Google Analytics 4 */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-QDR0LR3MTX"
+        strategy="afterInteractive"
+      />
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QDR0LR3MTX', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
       <body className="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
