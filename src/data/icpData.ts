@@ -33,6 +33,10 @@ export interface ICPData {
   metaTitle: string
   metaDescription: string
   canonicalSlug: string
+  /** Override the pain-points section sub-headline (defaults to generic copy using industry) */
+  painPointsSubheadline?: string
+  /** Override the features section sub-headline (defaults to generic copy using industry) */
+  featuresSubheadline?: string
 }
 
 export const ICP_DATA: Record<string, ICPData> = {

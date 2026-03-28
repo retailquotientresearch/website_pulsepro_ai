@@ -91,7 +91,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
               We know what keeps you up at night
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              These are the problems every {data.industry} operations team lives with. PULSE was built to eliminate them.
+              {data.painPointsSubheadline ?? `These are the problems every ${data.industry} operations team lives with. PULSE was built to eliminate them.`}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -116,7 +116,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
               Here&apos;s how PULSE solves it
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Purpose-built for {data.industry} operations — not a generic tool bolted onto your workflow.
+              {data.featuresSubheadline ?? `Purpose-built for ${data.industry} operations — not a generic tool bolted onto your workflow.`}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">

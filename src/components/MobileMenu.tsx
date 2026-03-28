@@ -64,21 +64,36 @@ export default function MobileMenu() {
                 </svg>
               </button>
               {solutionsOpen && (
-                <div className="pl-4 flex flex-col gap-1 mt-1">
-                  <Link href={ROUTES.icpRetail} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                <div className="pl-4 flex flex-col gap-0.5 mt-1">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pt-1 pb-0.5">By Industry</p>
+                  <Link href={ROUTES.icpRetail} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
                     Retail & QSR
                   </Link>
-                  <Link href={ROUTES.icpFoodBeverage} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                  <Link href={ROUTES.icpFoodBeverage} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
                     Food & Beverage
                   </Link>
-                  <Link href={ROUTES.icpConstruction} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                  <Link href={ROUTES.icpConstruction} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
                     Construction & Infrastructure
                   </Link>
-                  <Link href={ROUTES.icpHospitality} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                  <Link href={ROUTES.icpHospitality} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
                     Hotels & Hospitality
                   </Link>
-                  <Link href={ROUTES.icpHealthcare} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                  <Link href={ROUTES.icpHealthcare} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
                     Healthcare & Diagnostics
+                  </Link>
+                  <div className="my-1.5 border-t border-gray-200" />
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pb-0.5">By Feature</p>
+                  <Link href={ROUTES.featureTraining} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Training Management
+                  </Link>
+                  <Link href={ROUTES.featureTasks} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Corrective Actions
+                  </Link>
+                  <Link href={ROUTES.featureAttendance} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Attendance Tracking
+                  </Link>
+                  <Link href={ROUTES.featureAnnouncements} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Operations Announcements
                   </Link>
                 </div>
               )}

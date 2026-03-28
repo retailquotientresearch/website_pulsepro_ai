@@ -54,21 +54,36 @@ export default function Navigation() {
                 </svg>
               </button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 hidden group-hover:block z-50">
-                <div className="bg-white border border-gray-200 rounded-xl shadow-lg py-2 min-w-[240px]">
-                  <Link href={ROUTES.icpRetail} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                <div className="bg-white border border-gray-200 rounded-xl shadow-lg py-2 min-w-[260px]">
+                  <p className="px-4 pt-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">By Industry</p>
+                  <Link href={ROUTES.icpRetail} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
                     Retail & QSR
                   </Link>
-                  <Link href={ROUTES.icpFoodBeverage} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                  <Link href={ROUTES.icpFoodBeverage} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
                     Food & Beverage
                   </Link>
-                  <Link href={ROUTES.icpConstruction} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                  <Link href={ROUTES.icpConstruction} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
                     Construction & Infrastructure
                   </Link>
-                  <Link href={ROUTES.icpHospitality} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                  <Link href={ROUTES.icpHospitality} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
                     Hotels & Hospitality
                   </Link>
-                  <Link href={ROUTES.icpHealthcare} className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                  <Link href={ROUTES.icpHealthcare} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
                     Healthcare & Diagnostics
+                  </Link>
+                  <div className="my-2 border-t border-gray-100" />
+                  <p className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">By Feature</p>
+                  <Link href={ROUTES.featureTraining} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                    Training Management
+                  </Link>
+                  <Link href={ROUTES.featureTasks} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                    Corrective Actions
+                  </Link>
+                  <Link href={ROUTES.featureAttendance} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                    Attendance Tracking
+                  </Link>
+                  <Link href={ROUTES.featureAnnouncements} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                    Operations Announcements
                   </Link>
                 </div>
               </div>

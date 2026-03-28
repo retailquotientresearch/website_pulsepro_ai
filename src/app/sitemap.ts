@@ -22,6 +22,10 @@ const pages: { path: string; priority: number; changeFrequency: ChangeFreq }[] =
   { path: '/inspection-software-for-construction',    priority: 0.9, changeFrequency: 'monthly' },
   { path: '/inspection-software-for-hospitality',     priority: 0.9, changeFrequency: 'monthly' },
   { path: '/inspection-software-for-healthcare',      priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/training-management-software',            priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/corrective-action-software',              priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/attendance-tracking-software',            priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/operations-announcements-software',       priority: 0.8, changeFrequency: 'monthly' },
   { path: '/privacy-policy',                          priority: 0.3, changeFrequency: 'yearly'  },
   { path: '/companies-terms-of-service',              priority: 0.3, changeFrequency: 'yearly'  },
 ]

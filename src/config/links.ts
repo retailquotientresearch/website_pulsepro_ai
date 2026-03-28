@@ -20,6 +20,10 @@ export const ROUTES = {
   icpConstruction: "/inspection-software-for-construction",
   icpHospitality: "/inspection-software-for-hospitality",
   icpHealthcare: "/inspection-software-for-healthcare",
+  featureTraining: "/training-management-software",
+  featureTasks: "/corrective-action-software",
+  featureAttendance: "/attendance-tracking-software",
+  featureAnnouncements: "/operations-announcements-software",
 } as const;
 
 export const EXTERNAL_LINKS = {
