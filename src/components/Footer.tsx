@@ -12,6 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ROUTES, EXTERNAL_LINKS } from "@/config/links";
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 
 type FooterLink = { nameKey: string; href: string; external?: boolean };
 interface FooterGroup { titleKey: string; links: FooterLink[] }
@@ -222,7 +223,18 @@ export default function Footer() {
             </TooltipProvider>
           </div>
 
-          <div className="text-center text-gray-400 text-sm mt-10">
+          {/* Email capture */}
+          <div className="mt-10 mb-8 max-w-xl mx-auto text-center">
+            <p className="text-sm text-gray-400 mb-3">Stay updated — get product news and inspection tips.</p>
+            <LeadCaptureForm
+              source="footer"
+              variant="dark"
+              placeholder="Your work email"
+              buttonText="Subscribe"
+            />
+          </div>
+
+          <div className="text-center text-gray-400 text-sm">
             <div className="flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-12 bg-gray-800" />
               <span className="text-gray-500 text-xs tracking-wide">{t("copyright")}</span>

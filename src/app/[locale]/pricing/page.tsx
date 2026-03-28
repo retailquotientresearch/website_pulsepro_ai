@@ -10,6 +10,7 @@ import Testimonials from '@/components/Testimonials'
 import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { Link } from '@/i18n/navigation'
 import { ROUTES } from '@/config/links'
+import LeadCaptureForm from '@/components/LeadCaptureForm'
 
 export default function PricingPage() {
   const t = useTranslations('pricing')
@@ -385,6 +386,29 @@ export default function PricingPage() {
 
             <Testimonials />
           </div>
+        </Container>
+      </Section>
+
+      {/* Lead Capture Section */}
+      <Section className='py-16 bg-[#FFFFEB]'>
+        <Container>
+          <AnimatedCard delay={150} direction='up'>
+            <div className='max-w-2xl mx-auto text-center'>
+              <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-3'>
+                Not ready to sign up yet?
+              </h2>
+              <p className='text-gray-600 mb-6'>
+                Leave your email and we&apos;ll send you a personalised walkthrough of how PulsePro.ai works for your industry.
+              </p>
+              <LeadCaptureForm
+                source='pricing-page'
+                placeholder='Enter your work email'
+                buttonText='Send Me a Walkthrough'
+                className='max-w-xl mx-auto'
+              />
+              <p className='mt-3 text-xs text-gray-400'>No spam. Unsubscribe any time.</p>
+            </div>
+          </AnimatedCard>
         </Container>
       </Section>
 
