@@ -15,6 +15,11 @@ export const ROUTES = {
   enterpriseEssentials: "/enterprise-essentials",
   blog: "/blog",
   roiCalculator: "/roi-calculator",
+  icpRetail: "/inspection-software-for-retail",
+  icpFoodBeverage: "/inspection-software-for-food-beverage",
+  icpConstruction: "/inspection-software-for-construction",
+  icpHospitality: "/inspection-software-for-hospitality",
+  icpHealthcare: "/inspection-software-for-healthcare",
 } as const;
 
 export const EXTERNAL_LINKS = {

@@ -17,6 +17,7 @@ export default function MobileMenu() {
   const t = useTranslations('navigation');
   
   const [isOpen, setIsOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   const handleMenuClose = () => {
     setIsOpen(false);
@@ -51,6 +52,38 @@ export default function MobileMenu() {
             >
               {t("howItWorks")}
             </Link>
+            {/* Solutions expandable section */}
+            <div>
+              <button
+                className="flex items-center justify-between w-full py-2 hover:text-[#1A7D3D] transition-colors"
+                onClick={() => setSolutionsOpen(o => !o)}
+              >
+                <span>Solutions</span>
+                <svg className={`w-4 h-4 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {solutionsOpen && (
+                <div className="pl-4 flex flex-col gap-1 mt-1">
+                  <Link href={ROUTES.icpRetail} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Retail & QSR
+                  </Link>
+                  <Link href={ROUTES.icpFoodBeverage} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Food & Beverage
+                  </Link>
+                  <Link href={ROUTES.icpConstruction} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Construction & Infrastructure
+                  </Link>
+                  <Link href={ROUTES.icpHospitality} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Hotels & Hospitality
+                  </Link>
+                  <Link href={ROUTES.icpHealthcare} className="block py-2 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
+                    Healthcare & Diagnostics
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link
               href={ROUTES.pricing}
               className="block w-full py-2 hover:text-[#1A7D3D] transition-colors"

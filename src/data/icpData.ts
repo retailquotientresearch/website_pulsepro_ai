@@ -15,7 +15,7 @@ export interface Stat {
 
 export interface Client {
   name: string
-  logo: string
+  logo?: string
 }
 
 export interface ICPData {
@@ -315,7 +315,11 @@ export const ICP_DATA: Record<string, ICPData> = {
       { value: '100%', label: 'tamper-proof digital records' },
       { value: '24 hrs', label: 'from sign-up to first inspection' },
     ],
-    clients: [],
+    clients: [
+      { name: 'Suburban Diagnostics' },
+      { name: 'Dr Lal PathLabs' },
+      { name: 'Progenesis IVF' },
+    ],
     libraryUrl: 'https://library.pulsepro.ai/checklist/industries/',
     libraryLabel: 'free healthcare & clinical audit checklists',
     metaTitle: 'Healthcare Inspection Software — Clinical Compliance & Audits | PULSE',

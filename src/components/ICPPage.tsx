@@ -41,21 +41,30 @@ export default function ICPPage({ data }: { data: ICPData }) {
 
           {/* Client logos */}
           {data.clients.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <span className="text-sm text-gray-400 font-medium">Trusted by</span>
               {data.clients.map(client => (
-                <div
-                  key={client.name}
-                  className="relative h-12 w-32 bg-white rounded-xl shadow-sm ring-1 ring-gray-100 flex items-center justify-center px-3"
-                >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    fill
-                    sizes="128px"
-                    className="object-contain p-2"
-                  />
-                </div>
+                client.logo ? (
+                  <div
+                    key={client.name}
+                    className="relative h-12 w-32 bg-white rounded-xl shadow-sm ring-1 ring-gray-100 flex items-center justify-center px-3"
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      fill
+                      sizes="128px"
+                      className="object-contain p-2"
+                    />
+                  </div>
+                ) : (
+                  <span
+                    key={client.name}
+                    className="bg-white border border-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded-xl shadow-sm"
+                  >
+                    {client.name}
+                  </span>
+                )
               ))}
             </div>
           )}
