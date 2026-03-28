@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   description:
     'Enterprise-grade security: end-to-end encryption, SOC 2 compliance, role-based access control, audit trails, and 99.9% uptime SLA. Your inspection data is always safe.',
   openGraph: {
-    title: 'Security & Compliance | PulsePro.ai',
+    title: 'Security & Compliance | PULSE',
     description:
-      'SOC 2, data encryption, RBAC, full audit trails, and 99.9% uptime. Enterprise security built into every layer of PulsePro.ai.',
+      'SOC 2, data encryption, RBAC, full audit trails, and 99.9% uptime. Enterprise security built into every layer of PULSE.',
     url: 'https://www.pulsepro.ai/en/security',
   },
   alternates: {

@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Inspection Management Features',
   description:
-    'Custom checklists, real-time analytics, corrective actions, digital signatures, geolocation tagging, and automated workflows — explore all PulsePro.ai features for enterprise field teams.',
+    'Custom checklists, real-time analytics, corrective actions, digital signatures, geolocation tagging, and automated workflows — explore all PULSE features for enterprise field teams.',
   openGraph: {
-    title: 'Inspection Management Features | PulsePro.ai',
+    title: 'Inspection Management Features | PULSE',
     description:
       'Everything your field team needs: custom checklists, corrective actions, analytics, and integrations. Built for enterprises managing 100+ locations.',
     url: 'https://www.pulsepro.ai/en/features',

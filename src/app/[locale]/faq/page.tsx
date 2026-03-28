@@ -5,11 +5,11 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
   description:
-    'Answers to common questions about PulsePro.ai — pricing, features, security, integrations, data export, onboarding, and getting started with our inspection platform.',
+    'Answers to common questions about PULSE — pricing, features, security, integrations, data export, onboarding, and getting started with our inspection platform.',
   openGraph: {
-    title: 'FAQ | PulsePro.ai',
+    title: 'FAQ | PULSE',
     description:
-      'Everything you need to know about PulsePro.ai. From pricing and security to onboarding and integrations.',
+      'Everything you need to know about PULSE. From pricing and security to onboarding and integrations.',
     url: 'https://www.pulsepro.ai/en/faq',
   },
   alternates: {
@@ -70,7 +70,7 @@ export default async function FaqPage({ params }: PageProps) {
               Frequently Asked Questions
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Everything you need to know about PulsePro.ai. Can&apos;t find your answer?{' '}
+              Everything you need to know about PULSE. Can&apos;t find your answer?{' '}
               <Link
                 href="/en/book-demo"
                 className="text-green-700 dark:text-green-400 underline underline-offset-2 hover:no-underline"

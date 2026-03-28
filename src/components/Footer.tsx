@@ -132,7 +132,7 @@ export default function Footer() {
               <div className="relative h-14 w-48 flex items-center justify-center">
                 <Image
                   src="/images/pulse-white.png"
-                  alt="PulsePro.ai"
+                  alt="PULSE"
                   width={1184}
                   height={372}
                   className="h-12 w-auto object-contain drop-shadow-lg"

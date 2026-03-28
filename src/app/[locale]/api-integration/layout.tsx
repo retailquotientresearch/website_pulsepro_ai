@@ -4,11 +4,11 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'API & Integrations',
   description:
-    'Connect PulsePro.ai to your existing systems. REST APIs, webhooks, and native integrations with popular enterprise tools including SAP Ariba, AWS, and more.',
+    'Connect PULSE to your existing systems. REST APIs, webhooks, and native integrations with popular enterprise tools including SAP Ariba, AWS, and more.',
   openGraph: {
-    title: 'API & Integrations | PulsePro.ai',
+    title: 'API & Integrations | PULSE',
     description:
-      'REST APIs, webhooks, and native integrations. Connect PulsePro.ai to ERP, CMMS, BI tools, and custom workflows.',
+      'REST APIs, webhooks, and native integrations. Connect PULSE to ERP, CMMS, BI tools, and custom workflows.',
     url: 'https://www.pulsepro.ai/en/api-integration',
   },
   alternates: {

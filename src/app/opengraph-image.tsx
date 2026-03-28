@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'PulsePro.ai — Enterprise Inspection Platform'
+export const alt = 'PULSE — Enterprise Inspection Platform'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -44,7 +44,7 @@ export default async function Image() {
             <div style={{ color: '#fff', fontSize: 28, fontWeight: 700 }}>P</div>
           </div>
           <span style={{ fontSize: 36, fontWeight: 700, color: '#111' }}>
-            PulsePro.ai
+            PULSE
           </span>
         </div>
 

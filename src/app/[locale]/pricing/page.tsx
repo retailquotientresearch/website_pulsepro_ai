@@ -430,7 +430,7 @@ export default function PricingPage() {
                 Not ready to sign up yet?
               </h2>
               <p className='text-gray-600 mb-6'>
-                Leave your email and we&apos;ll send you a personalised walkthrough of how PulsePro.ai works for your industry.
+                Leave your email and we&apos;ll send you a personalised walkthrough of how PULSE works for your industry.
               </p>
               <LeadCaptureForm
                 source='pricing-page'

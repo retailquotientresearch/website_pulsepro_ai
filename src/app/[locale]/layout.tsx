@@ -35,11 +35,11 @@ const BASE_URL = 'https://www.pulsepro.ai'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    template: '%s | PulsePro.ai',
-    default: 'PulsePro.ai — Enterprise Inspection Platform',
+    template: '%s | PULSE',
+    default: 'PULSE — Enterprise Inspection Platform',
   },
   description:
-    'PulsePro.ai helps enterprises manage inspections, corrective actions, and field teams across 100,000+ sites. Mobile-first. Up and running in 24 hours.',
+    'PULSE helps enterprises manage inspections, corrective actions, and field teams across 100,000+ sites. Mobile-first. Up and running in 24 hours.',
   keywords: [
     'inspection management software',
     'audit management platform',
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
     'inspection checklist app',
     'store audit software',
   ],
-  authors: [{ name: 'PulsePro.ai', url: BASE_URL }],
-  creator: 'PulsePro.ai',
-  publisher: 'PulsePro.ai',
+  authors: [{ name: 'PULSE', url: BASE_URL }],
+  creator: 'PULSE',
+  publisher: 'PULSE',
   robots: {
     index: true,
     follow: true,
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'PulsePro.ai',
-    title: 'PulsePro.ai — Enterprise Inspection Platform',
+    siteName: 'PULSE',
+    title: 'PULSE — Enterprise Inspection Platform',
     description:
       'Manage inspections, corrective actions, and field teams across 100,000+ sites. Mobile-first. Up and running in 24 hours.',
     url: BASE_URL,
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'PulsePro.ai — Enterprise Inspection Platform',
+        alt: 'PULSE — Enterprise Inspection Platform',
       },
     ],
   },
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@pulsepro_ai',
     creator: '@pulsepro_ai',
-    title: 'PulsePro.ai — Enterprise Inspection Platform',
+    title: 'PULSE — Enterprise Inspection Platform',
     description:
       'Manage inspections, corrective actions, and field teams across 100,000+ sites.',
     images: ['/opengraph-image'],
@@ -109,7 +109,7 @@ export function generateStaticParams() {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'PulsePro.ai',
+  name: 'PULSE',
   url: BASE_URL,
   logo: `${BASE_URL}/images/favicon.ico`,
   sameAs: [
@@ -127,7 +127,7 @@ const organizationSchema = {
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'PulsePro.ai',
+  name: 'PULSE',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web, iOS, Android',
   description:
@@ -146,7 +146,7 @@ const softwareSchema = {
   },
   publisher: {
     '@type': 'Organization',
-    name: 'PulsePro.ai',
+    name: 'PULSE',
     url: BASE_URL,
   },
   aggregateRating: {

@@ -4,11 +4,11 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Book a Free Demo',
   description:
-    'See PulsePro.ai in action. Book a free 30-minute demo with our team and discover how leading enterprises manage inspections across 100,000+ sites.',
+    'See PULSE in action. Book a free 30-minute demo with our team and discover how leading enterprises manage inspections across 100,000+ sites.',
   openGraph: {
-    title: 'Book a Free Demo | PulsePro.ai',
+    title: 'Book a Free Demo | PULSE',
     description:
-      'Book a free 30-minute personalized demo. See how enterprises use PulsePro.ai to cut inspection time by 60% and close corrective actions 3x faster.',
+      'Book a free 30-minute personalized demo. See how enterprises use PULSE to cut inspection time by 60% and close corrective actions 3x faster.',
     url: 'https://www.pulsepro.ai/en/book-demo',
   },
   alternates: {

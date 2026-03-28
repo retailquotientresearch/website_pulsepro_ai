@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC'
 
-    const emailBody = `New lead captured on PulsePro.ai
+    const emailBody = `New lead captured on PULSE
 
 Email:     ${email}
 Source:    ${source}
@@ -28,7 +28,7 @@ Time:      ${timestamp}
 URL:       https://www.pulsepro.ai
 
 ---
-This is an automated notification from the PulsePro.ai website.`
+This is an automated notification from the PULSE website.`
 
     const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
@@ -38,7 +38,7 @@ This is an automated notification from the PulsePro.ai website.`
       },
       body: JSON.stringify({
         personalizations: [{ to: [{ email: NOTIFICATION_EMAIL }] }],
-        from: { email: FROM_EMAIL, name: 'PulsePro.ai Website' },
+        from: { email: FROM_EMAIL, name: 'PULSE Website' },
         subject: `New Lead: ${email} (via ${source})`,
         content: [{ type: 'text/plain', value: emailBody }],
       }),

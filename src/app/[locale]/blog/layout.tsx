@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Insights, best practices, and guides on inspection management, operational excellence, corrective actions, and field team productivity from the PulsePro.ai team.',
+    'Insights, best practices, and guides on inspection management, operational excellence, corrective actions, and field team productivity from the PULSE team.',
   openGraph: {
-    title: 'Blog | PulsePro.ai',
+    title: 'Blog | PULSE',
     description:
       'Practical guides and insights on running efficient inspection programs, managing field teams, and driving operational excellence at scale.',
     url: 'https://www.pulsepro.ai/en/blog',
