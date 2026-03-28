@@ -11,6 +11,7 @@ import { AnimatedCard } from '@/components/ui/AnimatedCard'
 import { Link } from '@/i18n/navigation'
 import { ROUTES } from '@/config/links'
 import LeadCaptureForm from '@/components/LeadCaptureForm'
+import ROICalculator from '@/components/ROICalculator'
 
 export default function PricingPage() {
   const t = useTranslations('pricing')
@@ -106,7 +107,7 @@ export default function PricingPage() {
             </p>
 
             {/* CTA Buttons */}
-            <div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
+            <div className='flex flex-col sm:flex-row gap-4 justify-center mb-4'>
               <a href={EXTERNAL_LINKS.register} target="_blank" rel="noopener noreferrer">
                 <Button
                   size='lg'
@@ -124,7 +125,7 @@ export default function PricingPage() {
                   variant='outline'
                   size='lg'
                   className='flex items-center gap-3 bg-white border-2 rounded-full px-8 py-4 shadow-md hover:shadow-lg transition-all duration-300 hover:bg-green-50 w-full'
-                  style={{ 
+                  style={{
           borderColor: 'var(--brand-green-400)',
           color: 'var(--brand-green-400)'
                   }}
@@ -134,6 +135,13 @@ export default function PricingPage() {
                 </Button>
       </Link>
             </div>
+
+            <p className='text-sm text-gray-500 mb-12'>
+              Managing 500+ sites?{' '}
+              <Link href={ROUTES.bookDemo} className='text-[#16803C] underline underline-offset-2 hover:no-underline font-medium'>
+                Let&apos;s talk enterprise pricing.
+              </Link>
+            </p>
           </div>
         </Container>
       </Section>
@@ -385,6 +393,30 @@ export default function PricingPage() {
             </AnimatedCard>
 
             <Testimonials />
+          </div>
+        </Container>
+      </Section>
+
+      {/* ROI Calculator Section */}
+      <Section className='py-16 bg-[#FFFFEB]'>
+        <Container>
+          <div className='max-w-5xl mx-auto'>
+            <AnimatedCard delay={100} direction='up'>
+              <div className='text-center mb-10'>
+                <span className='inline-block bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full mb-3'>
+                  ROI Calculator
+                </span>
+                <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-3'>
+                  See exactly what you save
+                </h2>
+                <p className='text-gray-600 max-w-xl mx-auto'>
+                  Adjust the sliders to match your operation. Results update instantly.
+                </p>
+              </div>
+            </AnimatedCard>
+            <AnimatedCard delay={150} direction='up'>
+              <ROICalculator compact />
+            </AnimatedCard>
           </div>
         </Container>
       </Section>

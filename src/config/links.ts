@@ -14,6 +14,7 @@ export const ROUTES = {
   bookDemo: "/book-demo",
   enterpriseEssentials: "/enterprise-essentials",
   blog: "/blog",
+  roiCalculator: "/roi-calculator",
 } as const;
 
 export const EXTERNAL_LINKS = {
