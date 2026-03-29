@@ -881,6 +881,9 @@
     "cta": "Get Started Today",
     "secondaryCta": "Schedule a Demo",
     "copyright": "© 2025 PulsePro.ai. All rights reserved.",
+    "newsletterTagline": "Stay updated — get product news and inspection tips.",
+    "newsletterPlaceholder": "Your work email",
+    "newsletterButton": "Subscribe",
     "links": {
       "product": "Product",
       "company": "Company",

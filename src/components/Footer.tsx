@@ -225,12 +225,12 @@ export default function Footer() {
 
           {/* Email capture */}
           <div className="mt-10 mb-8 max-w-xl mx-auto text-center">
-            <p className="text-sm text-gray-400 mb-3">Stay updated — get product news and inspection tips.</p>
+            <p className="text-sm text-gray-400 mb-3">{t('newsletterTagline')}</p>
             <LeadCaptureForm
               source="footer"
               variant="dark"
-              placeholder="Your work email"
-              buttonText="Subscribe"
+              placeholder={t('newsletterPlaceholder')}
+              buttonText={t('newsletterButton')}
             />
           </div>
 
