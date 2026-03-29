@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { fetchBlogBySlug } from "@/lib/blogApi";
 import { routing } from "@/i18n/routing";
@@ -5,6 +6,53 @@ import Section from "@/components/ui/Section";
 import Container from "@/components/ui/Container";
 
 type Props = { params: Promise<{ locale: (typeof routing.locales)[number]; slug: string }> };
+
+const BASE_URL = "https://www.pulsepro.ai";
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  try {
+    const { blog } = await fetchBlogBySlug(slug);
+    const canonical = `${BASE_URL}/${locale}/blog/${slug}`;
+    const description = blog.excerpt || `Read ${blog.title} on the PULSE blog — insights on inspection management and operational excellence.`;
+
+    return {
+      title: { absolute: `${blog.title} | PULSE Blog` },
+      description,
+      openGraph: {
+        title: blog.title,
+        description,
+        url: canonical,
+        type: "article",
+        ...(blog.published_at && { publishedTime: blog.published_at }),
+        ...(blog.author_name && { authors: [blog.author_name] }),
+        ...(blog.category && { section: blog.category }),
+        ...(blog.tags && { tags: blog.tags.split(",").map((t: string) => t.trim()) }),
+        ...(blog.featured_image_url && {
+          images: [{ url: blog.featured_image_url, width: 1200, height: 630, alt: blog.title }],
+        }),
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: blog.title,
+        description,
+        ...(blog.featured_image_url && { images: [blog.featured_image_url] }),
+      },
+      alternates: {
+        canonical,
+        languages: {
+          en: `${BASE_URL}/en/blog/${slug}`,
+          ar: `${BASE_URL}/ar/blog/${slug}`,
+        },
+      },
+    };
+  } catch {
+    return {
+      title: { absolute: "Blog | PULSE" },
+      description: "Insights and guides on inspection management, field operations, and operational excellence.",
+    };
+  }
+}
 
 export default async function BlogDetailPage({ params }: Props) {
   const { locale, slug } = await params;
@@ -28,8 +76,27 @@ export default async function BlogDetailPage({ params }: Props) {
     contentHtml = contentHtml.replace(/(<p>\s*<\/p>){2,}/g, "<p></p>");
   }
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.excerpt || "",
+    url: `${BASE_URL}/${locale}/blog/${blog.slug}`,
+    ...(blog.featured_image_url && { image: blog.featured_image_url }),
+    ...(blog.published_at && { datePublished: blog.published_at }),
+    ...(blog.author_name && {
+      author: { "@type": "Person", name: blog.author_name },
+    }),
+    publisher: {
+      "@type": "Organization",
+      name: "PULSE",
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/images/favicon.ico` },
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
       <Section className="bg-[#FFFFEB] pt-28 pb-6">
         <Container>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">{blog.title}</h1>
