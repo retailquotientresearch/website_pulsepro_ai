@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import { Link } from '@/i18n/navigation';
 import { ROUTES } from '@/config/links';
+import LeadCaptureForm from '@/components/LeadCaptureForm';
 
 // Simple icon components
 const ChevronDownIcon = ({ className }: { className?: string }) => (
@@ -228,6 +229,25 @@ export default function FeaturesPage() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Lead Capture */}
+      <section className="py-16 bg-[#FFFFEB]">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            See every feature in action
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Get a personalised walkthrough of the features that matter most to your team. No commitment required.
+          </p>
+          <LeadCaptureForm
+            source="features-page"
+            placeholder="Enter your work email"
+            buttonText="Get Early Access"
+            className="max-w-xl mx-auto"
+          />
+          <p className="mt-3 text-xs text-gray-400">No spam. Unsubscribe any time.</p>
         </div>
       </section>
 
