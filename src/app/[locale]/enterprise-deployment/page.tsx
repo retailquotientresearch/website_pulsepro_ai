@@ -501,9 +501,9 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
             buttonText="Talk to Enterprise Team"
             className="max-w-xl mx-auto"
           />
-          <p className="mt-4 text-xs text-gray-600">
+          <p className="mt-4 text-sm text-gray-400">
             Or{' '}
-            <Link href={ROUTES.bookDemo} className="text-[#16803C] hover:underline">
+            <Link href={ROUTES.bookDemo} className="text-white underline hover:text-gray-200">
               book a 30-minute demo
             </Link>{' '}
             with our solutions team.
