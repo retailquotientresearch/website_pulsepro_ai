@@ -378,6 +378,42 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
 
       </div>
 
+      {/* ── MCP callout ── */}
+      <section className="bg-[#FFFFEB] border-y border-black/5 py-14">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-[#0D1117] rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+            {/* Icon */}
+            <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-xl bg-[#16803C]/15 border border-[#16803C]/25">
+              <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7 text-[#16803C]" stroke="currentColor" strokeWidth={1.6}>
+                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 001.357 2.057l.183.088m-5.04-7.859V3.104m5.04 0c.248.023.496.05.744.082M19.5 4.5c-.69.386-1.396.74-2.115 1.058M5.25 4.5C5.94 4.886 6.646 5.24 7.365 5.558M12 12.75h.008v.008H12v-.008z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            {/* Text */}
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#16803C]">AI-Ready by Default</span>
+                <span className="bg-[#16803C]/20 text-[#16803C] text-xs font-bold px-2 py-0.5 rounded">MCP</span>
+              </div>
+              <h3 className="text-white font-bold text-lg md:text-xl mb-2">
+                {t('mcpCallout.title')}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
+                {t('mcpCallout.subtitle')}
+              </p>
+            </div>
+            {/* CTA */}
+            <div className="flex-shrink-0">
+              <Link
+                href={ROUTES.apiIntegration}
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/10 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors whitespace-nowrap"
+              >
+                Learn more →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="bg-[#0D1117] py-20 mt-10">
         <div className="max-w-2xl mx-auto px-6 text-center">

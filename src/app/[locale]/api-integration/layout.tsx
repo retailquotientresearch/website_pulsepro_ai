@@ -1,25 +1,28 @@
 import { ReactNode } from 'react'
 import { Metadata } from 'next'
 
+const BASE_URL = 'https://www.pulsepro.ai'
+
 export const metadata: Metadata = {
-  title: 'API & Integrations',
+  title: 'API & MCP Integration | PULSE',
   description:
-    'Connect PULSE to your existing systems. REST APIs, webhooks, and native integrations with popular enterprise tools including SAP Ariba, AWS, and more.',
+    'Connect PULSE to Claude, Cursor, and any AI tool via the Model Context Protocol. 16 live MCP tools covering inspections, corrective actions, tickets, and analytics. REST API also available.',
   openGraph: {
-    title: 'API & Integrations | PULSE',
+    title: 'API & MCP Integration | PULSE Inspection Platform',
     description:
-      'REST APIs, webhooks, and native integrations. Connect PULSE to ERP, CMMS, BI tools, and custom workflows.',
-    url: 'https://www.pulsepro.ai/en/api-integration',
+      'Ask Claude about your operations data. PULSE exposes 16 real-time MCP tools — inspections, corrective actions, location scores, and more. Plus a full REST API.',
+    url: `${BASE_URL}/en/api-integration`,
   },
   twitter: {
-    title: 'API & Integrations | PULSE',
-    description: 'REST APIs, webhooks, and native integrations. Connect PULSE to ERP, CMMS, BI tools, and custom workflows.',
+    title: 'API & MCP Integration | PULSE',
+    description: 'Ask Claude about your operations data. 16 MCP tools + REST API. Connect PULSE to any AI tool in minutes.',
   },
   alternates: {
-    canonical: 'https://www.pulsepro.ai/en/api-integration',
+    canonical: `${BASE_URL}/en/api-integration`,
     languages: {
-      en: 'https://www.pulsepro.ai/en/api-integration',
-      ar: 'https://www.pulsepro.ai/ar/api-integration',
+      en: `${BASE_URL}/en/api-integration`,
+      ar: `${BASE_URL}/ar/api-integration`,
+      'x-default': `${BASE_URL}/en/api-integration`,
     },
   },
 }
