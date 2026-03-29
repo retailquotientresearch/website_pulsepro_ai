@@ -6,9 +6,13 @@ import { EXTERNAL_LINKS, ROUTES } from '@/config/links'
 import { type ICPData } from '@/data/icpData'
 import ROICalculator from '@/components/ROICalculator'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 export default function ICPPage({ data }: { data: ICPData }) {
   const t = useTranslations('icpPage')
+  const locale = useLocale()
+  // Merge Arabic overrides when locale is 'ar' and overrides exist
+  const d = locale === 'ar' && data.ar ? { ...data, ...data.ar } : data
   return (
     <main className="min-h-screen bg-[#FFFFEB]">
 
@@ -16,13 +20,13 @@ export default function ICPPage({ data }: { data: ICPData }) {
       <section className="bg-[#FFFFEB] py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <span className="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-            {data.badge}
+            {d.badge}
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-            {data.headline}
+            {d.headline}
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-            {data.subheadline}
+            {d.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
             <a
@@ -42,10 +46,10 @@ export default function ICPPage({ data }: { data: ICPData }) {
           </div>
 
           {/* Client logos */}
-          {data.clients.length > 0 && (
+          {d.clients.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-4">
               <span className="text-sm text-gray-400 font-medium">{t('trustedBy')}</span>
-              {data.clients.map(client => (
+              {d.clients.map(client => (
                 client.logo ? (
                   <div
                     key={client.name}
@@ -76,7 +80,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
       {/* ── Stats strip ──────────────────────────────────────────────── */}
       <section className="bg-[#16803C]">
         <div className="max-w-5xl mx-auto px-6 py-10 grid grid-cols-3 gap-6 text-center">
-          {data.stats.map(stat => (
+          {d.stats.map(stat => (
             <div key={stat.label}>
               <p className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</p>
               <p className="text-green-200 text-sm mt-1">{stat.label}</p>
@@ -93,11 +97,11 @@ export default function ICPPage({ data }: { data: ICPData }) {
               {t('painPointsTitle')}
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              {data.painPointsSubheadline ?? `These are the problems every ${data.industry} operations team lives with. PULSE was built to eliminate them.`}
+              {d.painPointsSubheadline ?? `These are the problems every ${d.industry} operations team lives with. PULSE was built to eliminate them.`}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {data.painPoints.map((p, i) => (
+            {d.painPoints.map((p, i) => (
               <div key={i} className="bg-[#FFFFEB] rounded-2xl p-6 border border-gray-100">
                 <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mb-4 text-red-500 font-bold text-sm">
                   {i + 1}
@@ -118,11 +122,11 @@ export default function ICPPage({ data }: { data: ICPData }) {
               {t('featuresTitle')}
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              {data.featuresSubheadline ?? `Purpose-built for ${data.industry} operations — not a generic tool bolted onto your workflow.`}
+              {d.featuresSubheadline ?? `Purpose-built for ${d.industry} operations — not a generic tool bolted onto your workflow.`}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {data.features.map((f, i) => (
+            {d.features.map((f, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-[#16803C]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -146,14 +150,14 @@ export default function ICPPage({ data }: { data: ICPData }) {
                 {t('freeTemplatesBadge')}
               </span>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                Get started with {data.libraryLabel}
+                {t('libraryIntro')} {d.libraryLabel}
               </h3>
               <p className="text-gray-600 text-sm max-w-md">
-                Download as PDF or Excel, or import directly into PULSE and go digital in minutes. No account needed to browse.
+                {t('libraryDownloadNote')}
               </p>
             </div>
             <a
-              href={data.libraryUrl}
+              href={d.libraryUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 bg-[#16803C] hover:bg-[#14703A] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors whitespace-nowrap"

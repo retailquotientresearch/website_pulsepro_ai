@@ -1996,7 +1996,9 @@
     "enterpriseNote": "هل تدير أكثر من ٥٠٠ موقع؟",
     "enterpriseLink": "تحدث معنا عن تسعير المؤسسات.",
     "heroStartFree": "ابدأ مجانًا — جاهز خلال ٢٤ ساعة",
-    "heroBookDemo": "احجز عرضًا لمدة ٣٠ دقيقة"
+    "heroBookDemo": "احجز عرضًا لمدة ٣٠ دقيقة",
+    "libraryIntro": "ابدأ بـ",
+    "libraryDownloadNote": "حمّل بصيغة PDF أو Excel، أو استورد مباشرةً إلى PULSE وانتقل للرقمي في دقائق. لا تحتاج حسابًا للتصفح."
   },
   "industrySolutions": {
     "badge": "مصمَّم لصناعتك",

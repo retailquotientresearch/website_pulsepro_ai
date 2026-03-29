@@ -37,6 +37,18 @@ export interface ICPData {
   painPointsSubheadline?: string
   /** Override the features section sub-headline (defaults to generic copy using industry) */
   featuresSubheadline?: string
+  /** Arabic content overrides — any field here replaces the English default when locale === 'ar' */
+  ar?: {
+    badge?: string
+    headline?: string
+    subheadline?: string
+    painPointsSubheadline?: string
+    featuresSubheadline?: string
+    painPoints?: PainPoint[]
+    features?: Feature[]
+    libraryLabel?: string
+    stats?: Stat[]
+  }
 }
 
 export const ICP_DATA: Record<string, ICPData> = {
@@ -96,6 +108,29 @@ export const ICP_DATA: Record<string, ICPData> = {
     metaDescription:
       'PULSE helps retail chains and QSR operators run consistent store audits, close corrective actions faster, and get real-time visibility across every location. Up in 24 hours.',
     canonicalSlug: 'inspection-software-for-retail',
+    ar: {
+      badge: 'للتجزئة والمطاعم السريعة',
+      headline: 'كل متجر، كل معيار، في كل وقت.',
+      subheadline: 'تخسر سلاسل التجزئة إيراداتها بسبب التفاوت في المعايير، وبطء الإجراءات التصحيحية، وانعدام الرؤية عبر المواقع. PULSE تحل الأمور الثلاثة.',
+      painPointsSubheadline: 'هذه هي المشكلات التي تعيشها فرق عمليات التجزئة يوميًا. PULSE بُنيت للقضاء عليها.',
+      featuresSubheadline: 'مُصممة لعمليات التجزئة تحديدًا — وليست أداة عامة مُلحقة بسير عملك.',
+      painPoints: [
+        { title: 'معايير غير متسقة عبر المواقع', description: 'يضع المقر الرئيسي المعايير. تُطبّقها الفروع بشكل مختلف. تتبعها عمليات التدقيق الفاشلة وشكاوى العملاء وأضرار العلامة التجارية — ولا تعرف بذلك إلا بعد فوات الأوان.' },
+        { title: 'الإجراءات التصحيحية تضيع في الفراغ', description: 'تُرصد المشكلات خلال التفتيش لكن لا يُتابع حلّها. تظهر المشكلات ذاتها أسبوعًا بعد أسبوع دون محاسبة.' },
+        { title: 'لا رؤية فورية عبر شبكتك', description: 'تعلم أن موقعًا ما يُقصّر حين يشكو عميل أو يُبلّغ متسوق سري — لا قبل ذلك. وهذا يأتي متأخرًا.' },
+      ],
+      features: [
+        { title: 'معيار واحد لكل موقع', description: 'أنشئ قالب التدقيق مرة واحدة. انشره عبر كل متجر فورًا. يرى كل مفتش القائمة ذاتها في كل مرة.' },
+        { title: 'إجراءات تصحيحية تُغلق نفسها', description: 'كل نتيجة تولّد إجراءً مُسندًا مع موعد نهائي. يتلقى المديرون تذكيرات. لا شيء يُهمَل. وتحصل على دليل الإغلاق.' },
+        { title: 'لوحة مباشرة لامتثال الفروع', description: 'اطّلع على درجة التفتيش لكل موقع في عرض واحد. صفّ حسب المنطقة أو الشكل أو المدير. اعرف من يتصدر ومن يحتاج مساعدة — الآن.' },
+      ],
+      libraryLabel: 'قوائم تدقيق مجانية للتجزئة والمطاعم السريعة',
+      stats: [
+        { value: '60%', label: 'تقليص في وقت التفتيش' },
+        { value: '3×', label: 'إغلاق أسرع للإجراءات التصحيحية' },
+        { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
+      ],
+    },
   },
 
   'food-beverage': {
@@ -155,6 +190,29 @@ export const ICP_DATA: Record<string, ICPData> = {
     metaDescription:
       'PULSE helps food & beverage operators run HACCP-compliant inspections, build tamper-proof audit records, and get real-time alerts on food safety failures. Up in 24 hours.',
     canonicalSlug: 'inspection-software-for-food-beverage',
+    ar: {
+      badge: 'للأغذية والمشروبات',
+      headline: 'اجتز كل تدقيق لسلامة الغذاء — من المرة الأولى.',
+      subheadline: 'إخفاقات سلامة الغذاء تكلف العلامات التجارية الملايين وتدمر الثقة بين عشية وضحاها. PULSE تمنح فريقك الأدوات اللازمة للحصول عليها بشكل صحيح قبل وصول المدقق.',
+      painPointsSubheadline: 'هذه هي مشكلات سلامة الغذاء التي تواجهها كل فرق عمليات الأغذية والمشروبات. PULSE بُنيت للقضاء عليها.',
+      featuresSubheadline: 'مُصممة لعمليات الأغذية والمشروبات تحديدًا — وليست أداة عامة مُلحقة بسير عملك.',
+      painPoints: [
+        { title: 'الامتثال التنظيمي يزداد صعوبةً', description: 'FSSAI وHACCP وISO 22000 — المتطلبات معقدة ومتجددة باستمرار. الأنظمة الورقية لا تواكب ذلك ولا تُثبت الامتثال عند التدقيق.' },
+        { title: 'السجلات اليدوية لا تصمد في عمليات التدقيق', description: 'قوائم التحقق المكتوبة بخط اليد تضيع أو تُعدَّل أو يُطعن فيها. حين يطلب مدقق أو عميل دليلًا، تحتاج سجلًا رقميًا لا يمكن التلاعب به.' },
+        { title: 'المشكلات الحرجة تمر دون أن يلاحظها أحد', description: 'تظهر انحرافات درجة الحرارة والثغرات الصحية ومخاطر التلوث في تقارير ورقية بعد أيام من حدوثها. حينئذٍ يكون الضرر قد وقع.' },
+      ],
+      features: [
+        { title: 'قوائم تحقق HACCP وسلامة الغذاء الجاهزة', description: 'ابدأ بقوالب جاهزة لامتثال FSSAI وISO 22000 وHACCP — أو أنشئ قوالبك الخاصة. تُنشر على كل موقع خلال دقائق.' },
+        { title: 'دليل مصور لكل نتيجة', description: 'يلتقط المفتشون الصور مباشرةً في التطبيق. كل نتيجة مرتبطة بطابع زمني وإحداثيات GPS وصورة — تلقائيًا ودون خطوات إضافية.' },
+        { title: 'تنبيهات فورية عند الإخفاقات الحرجة', description: 'حين يفشل اختبار درجة الحرارة أو بروتوكول النظافة، يُبلَّغ المدير المعني فورًا — لا في التقرير الأسبوعي القادم.' },
+      ],
+      libraryLabel: 'قوائم تحقق مجانية لسلامة الغذاء وHACCP',
+      stats: [
+        { value: '60%', label: 'تدقيقات سلامة غذاء أسرع' },
+        { value: '100%', label: 'سجلات رقمية محمية من التلاعب' },
+        { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
+      ],
+    },
   },
 
   construction: {
@@ -213,6 +271,29 @@ export const ICP_DATA: Record<string, ICPData> = {
     metaDescription:
       'PULSE helps construction and infrastructure teams run digital site safety inspections, track subcontractor compliance, and report incidents instantly. Up in 24 hours.',
     canonicalSlug: 'inspection-software-for-construction',
+    ar: {
+      badge: 'للبناء والبنية التحتية',
+      headline: 'الوصول لصفر حوادث يبدأ بالتفتيش الصحيح.',
+      subheadline: 'سلامة مواقع البناء غير قابلة للتفاوض. PULSE تمنح فرق HSE الأدوات اللازمة لرصد المخاطر مبكرًا وإغلاقها بسرعة وإثبات الامتثال في كل مرحلة.',
+      painPointsSubheadline: 'هذه هي مشكلات السلامة التي تعصف بفرق عمليات البناء. PULSE بُنيت للقضاء عليها.',
+      featuresSubheadline: 'مُصممة لعمليات البناء والبنية التحتية تحديدًا — وليست أداة عامة مُلحقة بسير عملك.',
+      painPoints: [
+        { title: 'رصد المخاطر يأتي متأخرًا — أو لا يأتي', description: 'عمليات التفتيش الورقية تفوّت مشكلات كانت قوائم التحقق الرقمية مع صور إلزامية ستكتشفها قبل أن تتحول إلى حوادث.' },
+        { title: 'امتثال المقاولين الفرعيين غير مرئي', description: 'أنت مسؤول عن سجلاتهم في السلامة — لكنك لا ترى إن كانت فرقهم تتبع معاييرك في الموقع.' },
+        { title: 'تقارير الحوادث تستغرق وقتًا طويلًا', description: 'بحلول وصول حادثة موقع إلى مكتب مدير HSE، تكون الأدلة قد اختفت والجداول الزمنية غير واضحة والنافذة التنظيمية ضاقت.' },
+      ],
+      features: [
+        { title: 'تفتيش موقعي بالهاتف — متصل أو غير متصل', description: 'يعمل المفتشون على الهاتف في مناطق بلا إشارة. تتزامن الصور والنتائج والتوقيعات تلقائيًا فور عودة الاتصال.' },
+        { title: 'تتبع امتثال المقاولين الفرعيين', description: 'أسند قوائم التحقق لفرق المقاولين الفرعيين. تابع الإتمام والتوقيع والإجراءات التصحيحية. جميع الأدلة في مكان واحد.' },
+        { title: 'تقارير الحوادث الفورية مع GPS', description: 'أبلِّغ عن الحوادث وصعّدها في الوقت الفعلي — مع موقع GPS وصور وتوقيعات رقمية ملتقطة في المكان.' },
+      ],
+      libraryLabel: 'قوائم تحقق مجانية للسلامة والبناء وHSE',
+      stats: [
+        { value: '80%', label: 'تفتيشات أمان موقع أسرع' },
+        { value: '100%', label: 'مسار تدقيق رقمي مُحدد GPS' },
+        { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
+      ],
+    },
   },
 
   hospitality: {
@@ -271,6 +352,29 @@ export const ICP_DATA: Record<string, ICPData> = {
     metaDescription:
       'PULSE helps hotel groups enforce brand standards, schedule property inspections, and get real-time compliance visibility across every location. Up in 24 hours.',
     canonicalSlug: 'inspection-software-for-hospitality',
+    ar: {
+      badge: 'للفنادق والضيافة',
+      headline: 'تجربة ضيوف خمس نجوم في كل عقار.',
+      subheadline: 'عقار واحد يُقصّر كفيل بتدمير سمعة بنيتها عبر محفظتك بأكملها. PULSE تمنح مجموعات الفنادق الرؤية والسيطرة على نطاق واسع.',
+      painPointsSubheadline: 'هذه هي المشكلات التي تعصف بفرق عمليات الفنادق والضيافة. PULSE بُنيت للقضاء عليها.',
+      featuresSubheadline: 'مُصممة لعمليات الفنادق والضيافة تحديدًا — وليست أداة عامة مُلحقة بسير عملك.',
+      painPoints: [
+        { title: 'معايير العلامة التجارية تتفاوت بين العقارات', description: 'ما يحدث في فندق واحد — غرفة متسخة، معيار خدمة مفقود، خلل أمني — يمكن أن يدمر ثقة العلامة التجارية التي بنيتها في جميعها.' },
+        { title: 'شكاوى الضيوف تكشف مشكلات فاتتك', description: 'تعرف أن عقارًا أخفق في معاييره حين تُنشر المراجعة على TripAdvisor — لا خلال جولة الجودة. هذا الترتيب معكوس.' },
+        { title: 'التحقق من امتثال الموظفين عن بُعد أمر مستحيل', description: 'لا يمكنك التواجد في كل عقار كل يوم. دون أدلة رقمية، لا تعرف إن كانت إجراءاتك التشغيلية المعيارية تُطبَّق فعلًا — أو تُوقَّع فحسب.' },
+      ],
+      features: [
+        { title: 'قوائم تحقق معايير العلامة التجارية عبر كل عقار', description: 'أنشئ معاييرك مرة واحدة. انشرها على كل عقار فورًا. كل مدير عام يُجري التفتيش ذاته — مع دليل رقمي مُرفق.' },
+        { title: 'جولات يومية ومراجعات ما قبل الوصول مجدولة', description: 'أتمِّت جدول التفتيش. تسير جولات التدبير المنزلي والمراجعات قبل الوصول وفحوصات الطعام في الوقت المحدد — في كل مرة.' },
+        { title: 'لوحة امتثال متعددة العقارات', description: 'اطّلع على درجة كل عقار في عرض واحد. تعمق في المقصّرين. تابع التحسّن بمرور الوقت. كل ذلك دون مغادرة مكتبك.' },
+      ],
+      libraryLabel: 'قوائم تحقق مجانية للفنادق والضيافة',
+      stats: [
+        { value: '60%', label: 'تقليص في وقت التفتيش' },
+        { value: '+100K', label: 'موقع مُدار على PULSE' },
+        { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
+      ],
+    },
   },
 
   healthcare: {
@@ -330,5 +434,28 @@ export const ICP_DATA: Record<string, ICPData> = {
     metaDescription:
       'PULSE helps hospitals, clinics, and diagnostic labs run NABH-compliant inspections, maintain tamper-proof records, and manage corrective actions. Up in 24 hours.',
     canonicalSlug: 'inspection-software-for-healthcare',
+    ar: {
+      badge: 'للرعاية الصحية والتشخيص',
+      headline: 'امتثال يمكنك إثباته. سلامة يمكنك الوثوق بها.',
+      subheadline: 'تواجه منشآت الرعاية الصحية متطلبات تنظيمية صارمة وتسامحًا صفريًا مع الإخفاقات. PULSE تمنح فريقك مسار تدقيق رقميًا يصمد أمام أي تدقيق.',
+      painPointsSubheadline: 'هذه هي مشكلات الامتثال التي تواجهها فرق الرعاية الصحية. PULSE بُنيت للقضاء عليها.',
+      featuresSubheadline: 'مُصممة لعمليات الرعاية الصحية تحديدًا — وليست أداة عامة مُلحقة بسير عملك.',
+      painPoints: [
+        { title: 'عمليات التدقيق التنظيمية غير متوقعة', description: 'يمكن أن يصل مفتشو NABH وJCI والسلطات الصحية الحكومية دون إشعار. هل سجلاتك جاهزة للعرض — أم مبعثرة في ملفات وجداول بيانات؟' },
+        { title: 'ثغرات مكافحة العدوى يصعب اكتشافها', description: 'دون فحوصات رقمية منهجية، يصعب التحقق من بروتوكولات النظافة وإجراءات التعقيم باستمرار عبر الأجنحة وغرف العمليات والمختبرات.' },
+        { title: 'سجلات المعدات الطبية الحيوية مبعثرة', description: 'سجلات صيانة المعدات الحرجة غالبًا ورقية أو ناقصة أو بحوزة تقنيين بعينهم. خدمة فائتة قد تعني تدقيقًا فاشلًا — أو أسوأ من ذلك.' },
+      ],
+      features: [
+        { title: 'قوائم تحقق الامتثال الصحي الجاهزة', description: 'ابدأ بقوالب لـ NABH ومكافحة العدوى وصيانة المعدات الطبية وجولات الأجنحة وفحوصات جودة المختبر — جميعها جاهزة للنشر.' },
+        { title: 'مسار تدقيق رقمي محمي من التلاعب', description: 'كل تفتيش مُوقَّت بطابع زمني ومُحدد جغرافيًا وموقَّع رقميًا. حين يصل المدقق، سجلاتك كاملة وقابلة للبحث ولا يمكن الطعن فيها.' },
+        { title: 'إدارة الإجراءات التصحيحية', description: 'كل ثغرة في الامتثال تولّد إجراءً تصحيحيًا مُسندًا مع موعد نهائي. تابع الحل حتى الإغلاق — مع الأدلة — لكل نتيجة.' },
+      ],
+      libraryLabel: 'قوائم تحقق مجانية للرعاية الصحية والتدقيق السريري',
+      stats: [
+        { value: '60%', label: 'تدقيقات امتثال أسرع' },
+        { value: '100%', label: 'سجلات رقمية محمية من التلاعب' },
+        { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
+      ],
+    },
   },
 }
