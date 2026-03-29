@@ -27,10 +27,13 @@ export const metadata: Metadata = {
 }
 import UseCases from "./_components/UseCases";
 import TrustedBy from "./_components/TrustedBy";
+import CustomerHighlights from "./_components/CustomerHighlights";
 import CommonWorries from "./_components/CommonWorries";
 import CallToAction from "./_components/CallToAction";
 import EverythingYoureLookingFor from "./_components/EverythingYoureLookingFor";
 import ChaosToClarity from "./_components/ChaosToClarity";
+import BeforeAfterPulse from "./_components/BeforeAfterPulse";
+import AIIntelligenceLayer from "./_components/AIIntelligenceLayer";
 import EnterpriseEssentials from "./_components/EnterpriseEssentials";
 import IndustrySolutions from "./_components/IndustrySolutions";
 import HowItWorks from "./how-it-works/page";
@@ -55,6 +58,9 @@ export default async function HomePage({ params }: HomePageProps) {
   {/* Section 2: Trusted by Enterprise Networks */}
   <TrustedBy />
 
+  {/* Section 2b: Featured customer highlights */}
+  <CustomerHighlights />
+
   {/* Section 3: Reels-like Showcase */}
   <EverythingYoureLookingFor />
       
@@ -64,12 +70,18 @@ export default async function HomePage({ params }: HomePageProps) {
      
   {/* Section 5: Chaos to Clarity visual */}
   <ChaosToClarity />
-      
+
+  {/* Section 5b: Before vs After table */}
+  <BeforeAfterPulse />
+
   {/* Section 6: Use Cases / Industries */}
   <UseCases />
 
   {/* Section 7: Built for your industry */}
   <IndustrySolutions />
+
+   {/* Section 7b: AI Intelligence Layer */}
+      <AIIntelligenceLayer />
 
    {/* Section 8: Enterprise Essentials */}
       <EnterpriseEssentials />

@@ -2059,5 +2059,86 @@
     "startSaving": "Start saving — free trial",
     "bookDemo": "Book a demo",
     "basedOn": "Based on {sites} sites × {inspections} inspections/month. Time savings vs {method}: {mins} min/inspection."
+  },
+  "customerHighlights": {
+    "eyebrow": "Trusted by leading enterprises",
+    "accor": {
+      "name": "Accor Group",
+      "badge": "Global Deployment",
+      "brands": "Pullman · Mövenpick · Accor",
+      "description": "Multi-brand hospitality audits and compliance programs across global properties."
+    },
+    "royalCommission": {
+      "name": "A Middle Eastern Royal Commission overseeing a flagship heritage & tourism destination",
+      "badge": "Public Sector",
+      "description": "Inspection, compliance, and operational oversight across tourism, cultural, and public infrastructure assets.",
+      "stat1": "Compliance Coverage",
+      "stat2Value": "Real-time",
+      "stat2": "Operational Oversight",
+      "stat3Value": "Enterprise",
+      "stat3": "Security Standards"
+    }
+  },
+  "aiSection": {
+    "badge": "AI-Powered",
+    "title": "AI: The Intelligence Layer Across Inspections & Execution",
+    "subtitle": "Pulse applies AI across inspections and audits to make operations predictable and risk-aware.",
+    "resultLabel": "Result:",
+    "capabilities": {
+      "auditFrequency": {
+        "title": "Smarter Audit Frequency",
+        "description": "AI analyzes each checkpoint and recommends the optimal audit cycle.",
+        "result": "Critical areas receive the right attention without unnecessary audits."
+      },
+      "visualCompliance": {
+        "title": "Higher Accuracy in Visual Compliance Checks",
+        "description": "AI reviews images and detects missing signage, misalignment, clutter, or branding issues.",
+        "result": "More accurate checks with reduced manual judgment."
+      },
+      "earlyDetection": {
+        "title": "Early Detection of Recurring or Emerging Issues",
+        "description": "AI identifies repeat failures, region-specific risks, and early signals of new issues.",
+        "result": "Stop issues before they spread and improve operational reliability."
+      },
+      "leadershipInsights": {
+        "title": "Instant, Leadership-Ready Insights",
+        "description": "AI converts audit data into clear summaries showing trends, risks, and key focus areas.",
+        "result": "Faster, clearer decision-making without manual report reviews."
+      }
+    }
+  },
+  "beforeAfter": {
+    "title": "The PULSE Difference",
+    "subtitle": "How operations change after teams switch to PULSE.",
+    "colArea": "Area",
+    "colBefore": "Before PULSE",
+    "colAfter": "After PULSE",
+    "rows": {
+      "auditExecution": {
+        "area": "Audit Execution",
+        "before": "Manual audits with scattered evidence and non-standard formats",
+        "after": "Structured, standardised audits with evidence captured at source"
+      },
+      "evidenceDocumentation": {
+        "area": "Evidence & Documentation",
+        "before": "Photos and records spread across WhatsApp, emails, and files",
+        "after": "Centralised, inspection-linked photo and video evidence"
+      },
+      "issueResolution": {
+        "area": "Issue Resolution",
+        "before": "Delayed feedback and unclear ownership of actions",
+        "after": "Clear actions with defined ownership and SLA-based closure"
+      },
+      "visibilityControl": {
+        "area": "Visibility & Control",
+        "before": "Limited visibility for central and regional teams",
+        "after": "Real-time, portfolio-level visibility across locations"
+      },
+      "decisionMaking": {
+        "area": "Decision Making",
+        "before": "Reactive decisions based on delayed or incomplete information",
+        "after": "Faster, data-backed decisions using live insights"
+      }
+    }
   }
 }
