@@ -2056,7 +2056,8 @@
     "heroStartFree": "ابدأ مجانًا — جاهز خلال ٢٤ ساعة",
     "heroBookDemo": "احجز عرضًا لمدة ٣٠ دقيقة",
     "libraryIntro": "ابدأ بـ",
-    "libraryDownloadNote": "حمّل بصيغة PDF أو Excel، أو استورد مباشرةً إلى PULSE وانتقل للرقمي في دقائق. لا تحتاج حسابًا للتصفح."
+    "libraryDownloadNote": "حمّل بصيغة PDF أو Excel، أو استورد مباشرةً إلى PULSE وانتقل للرقمي في دقائق. لا تحتاج حسابًا للتصفح.",
+    "narrativeBadge": "على أرض الواقع"
   },
   "industrySolutions": {
     "badge": "مصمَّم لصناعتك",

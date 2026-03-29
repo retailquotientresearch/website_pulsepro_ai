@@ -18,6 +18,12 @@ export interface Client {
   logo?: string
 }
 
+export interface OutcomeQuote {
+  text: string
+  role: string
+  company: string
+}
+
 export interface ICPData {
   slug: string
   industry: string
@@ -37,6 +43,10 @@ export interface ICPData {
   painPointsSubheadline?: string
   /** Override the features section sub-headline (defaults to generic copy using industry) */
   featuresSubheadline?: string
+  /** A 1-2 sentence vivid scenario showing a real team using PULSE */
+  narrative?: string
+  /** Anonymised testimonial with a specific outcome metric */
+  outcomeQuote?: OutcomeQuote
   /** Arabic content overrides — any field here replaces the English default when locale === 'ar' */
   ar?: {
     badge?: string
@@ -48,6 +58,8 @@ export interface ICPData {
     features?: Feature[]
     libraryLabel?: string
     stats?: Stat[]
+    narrative?: string
+    outcomeQuote?: OutcomeQuote
   }
 }
 
@@ -102,6 +114,12 @@ export const ICP_DATA: Record<string, ICPData> = {
       { name: 'Tim Hortons', logo: '/images/clients/Tim_hortons.png' },
       { name: 'Rebel Foods', logo: '/images/clients/Rebel_foods.png' },
     ],
+    narrative: "A VP Retail at a 200-store fashion chain deploys a planogram compliance checklist in an afternoon. By Friday, 87% of stores have completed it — and the remaining 13% have auto-assigned follow-up tasks waiting for their managers. The audit that used to take three days of coordinator chasing now closes itself.",
+    outcomeQuote: {
+      text: "We used to find out about VM compliance gaps when a district manager visited or a complaint came in. Now we know within hours of the inspection completing — and there's already a corrective action assigned before I open the report.",
+      role: "Head of Retail Operations",
+      company: "150-store fashion retail group",
+    },
     libraryUrl: 'https://library.pulsepro.ai/checklist/industries/',
     libraryLabel: 'free retail & QSR audit checklists',
     metaTitle: 'Retail Inspection Software — Store Audit & Compliance | PULSE',
@@ -130,6 +148,12 @@ export const ICP_DATA: Record<string, ICPData> = {
         { value: '3×', label: 'إغلاق أسرع للإجراءات التصحيحية' },
         { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
       ],
+      narrative: "تنشر نائبة رئيس العمليات في سلسلة أزياء تضم 200 متجر قائمة تحقق امتثال للطرح البصري في غضون ساعات. بحلول نهاية الأسبوع، أتمّ 87% من المتاجر التفتيش — وللـ 13% المتبقين مهام متابعة مُسندة تلقائيًا لمديريهم. عملية التدقيق التي كانت تستغرق ثلاثة أيام من المتابعة أصبحت تُغلق نفسها.",
+      outcomeQuote: {
+        text: "كنا نعلم بثغرات امتثال العرض البصري حين يزور مدير منطقة أو تصلنا شكوى. الآن نعلم في غضون ساعات من اكتمال التفتيش — وإجراء تصحيحي مُسند قبل أن أفتح التقرير.",
+        role: "رئيس عمليات التجزئة",
+        company: "سلسلة أزياء بـ 150 متجرًا",
+      },
     },
   },
 
@@ -184,6 +208,12 @@ export const ICP_DATA: Record<string, ICPData> = {
       { name: 'Tim Hortons', logo: '/images/clients/Tim_hortons.png' },
       { name: 'Travel Food Services', logo: '/images/clients/travel_food_services.png' },
     ],
+    narrative: "A food safety manager at a 500-kitchen cloud food brand sets up HACCP checklists for three kitchen formats in an afternoon. Temperature logs, cross-contamination checks, and allergen controls are captured digitally — with photo evidence and GPS timestamps on every entry. When a municipality health inspector arrives unannounced, all records for the past 18 months load in seconds.",
+    outcomeQuote: {
+      text: "Our municipal food safety audit used to take the team three days to prepare for. The last one took 45 minutes because everything was already in the system, timestamped and signed.",
+      role: "Food Safety Director",
+      company: "Multi-brand cloud kitchen operator, 500+ kitchens",
+    },
     libraryUrl: 'https://library.pulsepro.ai/checklist/industry/157/',
     libraryLabel: 'free food safety & HACCP checklists',
     metaTitle: 'Food Safety Inspection Software — HACCP & Audit Compliance | PULSE',
@@ -212,6 +242,12 @@ export const ICP_DATA: Record<string, ICPData> = {
         { value: '100%', label: 'سجلات رقمية محمية من التلاعب' },
         { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
       ],
+      narrative: "تُعد مديرة سلامة الغذاء في علامة طعام سحابي تضم 500 مطبخًا قوائم تحقق HACCP لثلاثة تنسيقات مطابخ في فترة بعد الظهر. تُسجَّل قراءات درجة الحرارة وفحوصات التلوث وضوابط مسببات الحساسية رقميًا — بأدلة مصورة وطوابع GPS لكل إدخال. حين يصل مفتش صحة بلدي دون إشعار، تظهر سجلات الـ 18 شهرًا الماضية في ثوانٍ.",
+      outcomeQuote: {
+        text: "كانت تدقيقات سلامة الغذاء البلدية تستغرق من فريقنا ثلاثة أيام للتحضير. الأخيرة أخذت 45 دقيقة لأن كل شيء كان في النظام، موثقًا بالتوقيت والتوقيع.",
+        role: "مديرة سلامة الغذاء",
+        company: "مشغّل مطابخ سحابية متعدد العلامات، 500+ مطبخ",
+      },
     },
   },
 
@@ -265,6 +301,12 @@ export const ICP_DATA: Record<string, ICPData> = {
       { name: 'Fichtner', logo: '/images/clients/Fichtner.png' },
       { name: 'Green Resources', logo: '/images/clients/Green_Resources.png' },
     ],
+    narrative: "An HSE director at a major infrastructure contractor deploys daily site safety checklists to 14 active sites — some without internet. Inspectors complete toolbox talk records and hazard walks offline on their phones, syncing when they return to the site office. Every finding is GPS-tagged, timestamped, and auto-generates a corrective action for the responsible contractor.",
+    outcomeQuote: {
+      text: "When we had a RIDDOR-reportable incident, the investigation was done in under two hours because all the site inspection data was in one place and exportable. Before PULSE, that would have taken days and involved chasing paper records across five teams.",
+      role: "Group HSE Manager",
+      company: "Infrastructure contractor, 14 active sites",
+    },
     libraryUrl: 'https://library.pulsepro.ai/checklist/industries/',
     libraryLabel: 'free construction safety & HSE checklists',
     metaTitle: 'Construction Site Inspection Software — HSE & Safety Audits | PULSE',
@@ -293,6 +335,12 @@ export const ICP_DATA: Record<string, ICPData> = {
         { value: '100%', label: 'مسار تدقيق رقمي مُحدد GPS' },
         { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
       ],
+      narrative: "ينشر مدير HSE في شركة بنية تحتية كبرى قوائم تفتيش السلامة اليومية على 14 موقعًا نشطًا — بعضها بلا إنترنت. يُتمّ المفتشون سجلات اجتماعات الأدوات وجولات المخاطر دون اتصال على هواتفهم، ويزامنونها عند العودة لمكاتب الموقع. كل نتيجة مُحددة GPS ومُوقَّتة وتولّد إجراءً تصحيحيًا للمقاول المسؤول.",
+      outcomeQuote: {
+        text: "حين وقع حادث مُبلَّغ عنه، انتهى التحقيق في أقل من ساعتين لأن بيانات تفتيش الموقع كانت في مكان واحد وقابلة للتصدير. قبل PULSE، كان ذلك يستغرق أيامًا بمطاردة سجلات ورقية بين خمسة فرق.",
+        role: "مدير HSE المجموعاتي",
+        company: "مقاول بنية تحتية، 14 موقعًا نشطًا",
+      },
     },
   },
 
@@ -346,6 +394,12 @@ export const ICP_DATA: Record<string, ICPData> = {
       { name: 'Accor', logo: '/images/clients/Accor.png' },
       { name: 'South Beach Hotels', logo: '/images/clients/south_beach.png' },
     ],
+    narrative: "A group quality director at an 80-property hotel group sets the brand standards inspection cadence once. Every property GM completes the same 60-point walkthrough on the same schedule — and the dashboard shows who's compliant and who isn't before the week ends. Issues that used to surface in guest reviews are now caught and closed internally.",
+    outcomeQuote: {
+      text: "We cut the number of guest complaint investigations linked to standards failures by close to half in six months. The team is catching issues before guests do now — which is exactly what a quality programme should do.",
+      role: "VP Quality Assurance",
+      company: "International hotel group, 80+ properties",
+    },
     libraryUrl: 'https://library.pulsepro.ai/checklist/industries/',
     libraryLabel: 'free hotel & hospitality audit checklists',
     metaTitle: 'Hotel Inspection Software — Brand Standards & Compliance | PULSE',
@@ -374,6 +428,12 @@ export const ICP_DATA: Record<string, ICPData> = {
         { value: '+100K', label: 'موقع مُدار على PULSE' },
         { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
       ],
+      narrative: "يضع مدير الجودة المجموعاتي في شركة تمتلك 80 عقارًا فندقيًا جدول تفتيش معايير العلامة التجارية مرة واحدة. كل مدير عام يُكمل الجولة التفصيلية ذات 60 نقطة بالجدول نفسه — واللوحة تُظهر من يمتثل ومن لا قبل نهاية الأسبوع. المشكلات التي كانت تظهر في مراجعات الضيوف باتت تُكتشف وتُعالج داخليًا.",
+      outcomeQuote: {
+        text: "خفّضنا تحقيقات شكاوى الضيوف المرتبطة بإخفاقات المعايير بنسبة تقترب من النصف في ستة أشهر. الفريق الآن يكتشف المشكلات قبل أن يفعل الضيوف — وهذا بالضبط ما يفترض ببرنامج الجودة تحقيقه.",
+        role: "نائب رئيس ضمان الجودة",
+        company: "مجموعة فنادق دولية، 80+ عقارًا",
+      },
     },
   },
 
@@ -428,6 +488,12 @@ export const ICP_DATA: Record<string, ICPData> = {
       { name: 'Dr Lal PathLabs' },
       { name: 'Progenesis IVF' },
     ],
+    narrative: "An infection control lead at a 400-bed hospital runs daily ward hygiene rounds using PULSE. Every deviation auto-generates a corrective action assigned to the duty supervisor with a 4-hour resolution deadline. When the NABH inspection team arrives, 24 months of digitally signed inspection records are presented within minutes — fully indexed, searchable, and court-defensible.",
+    outcomeQuote: {
+      text: "Our last NABH renewal preparation took three hours. It used to take three days of the quality team pulling records from binders and spreadsheets. The evidence was already in the system.",
+      role: "Quality & Compliance Manager",
+      company: "Multi-speciality hospital, 400 beds",
+    },
     libraryUrl: 'https://library.pulsepro.ai/checklist/industries/',
     libraryLabel: 'free healthcare & clinical audit checklists',
     metaTitle: 'Healthcare Inspection Software — Clinical Compliance & Audits | PULSE',
@@ -456,6 +522,12 @@ export const ICP_DATA: Record<string, ICPData> = {
         { value: '100%', label: 'سجلات رقمية محمية من التلاعب' },
         { value: '24 ساعة', label: 'من التسجيل إلى أول تفتيش' },
       ],
+      narrative: "تُجري مسؤولة مكافحة العدوى في مستشفى من 400 سرير جولات نظافة أجنحة يومية باستخدام PULSE. كل انحراف يولّد تلقائيًا إجراءً تصحيحيًا مُسندًا للمشرف المناوب بمهلة 4 ساعات. حين يصل فريق تفتيش NABH، تُقدَّم سجلات التفتيش الموقَّعة رقميًا لـ 24 شهرًا في دقائق — مفهرسة وقابلة للبحث وذات حجية قانونية.",
+      outcomeQuote: {
+        text: "استغرق تجديد اعتماد NABH الأخير ثلاث ساعات. كان يستغرق ثلاثة أيام من فريق الجودة لاستخراج السجلات من الملفات والجداول. الأدلة كانت في النظام.",
+        role: "مدير الجودة والامتثال",
+        company: "مستشفى متعدد التخصصات، 400 سرير",
+      },
     },
   },
 }
