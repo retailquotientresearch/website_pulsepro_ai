@@ -25,6 +25,21 @@ export const ROUTES = {
   featureTasks: "/corrective-action-software",
   featureAttendance: "/attendance-tracking-software",
   featureAnnouncements: "/operations-announcements-software",
+
+  // ── Future industry ICP pages (not yet built) ────────────────────────────
+  // These slugs reserve the URL namespace for upcoming SEO/ICP pages.
+  // When building a page, move it out of this block and wire up a real layout.
+  // Industries sourced from the UseCases component (removed from homepage 2026-03-29).
+  icpHospitalityFnb:       "/inspection-software-for-hospitality-food-beverage",   // Hotels, F&B
+  icpFinancialServices:    "/inspection-software-for-financial-services",
+  icpRetailSupermarkets:   "/inspection-software-for-retail-supermarkets",
+  icpElectricVehicles:     "/inspection-software-for-electric-vehicles",
+  icpDiagnosticLabs:       "/inspection-software-for-diagnostic-labs",
+  icpCloudKitchens:        "/inspection-software-for-cloud-kitchens",
+  icpForestryEnvironmental:"/inspection-software-for-forestry-environmental",
+  icpManufacturing:        "/inspection-software-for-manufacturing",
+  icpFoodProcessing:       "/inspection-software-for-food-processing",
+  icpAutomobileDealerships:"/inspection-software-for-automobile-dealerships",
 } as const;
 
 export const EXTERNAL_LINKS = {

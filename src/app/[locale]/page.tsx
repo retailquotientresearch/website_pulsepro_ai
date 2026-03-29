@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     },
   },
 }
-import UseCases from "./_components/UseCases";
 import TrustedBy from "./_components/TrustedBy";
 import CustomerHighlights from "./_components/CustomerHighlights";
 import CommonWorries from "./_components/CommonWorries";
@@ -73,9 +72,6 @@ export default async function HomePage({ params }: HomePageProps) {
 
   {/* Section 5b: Before vs After table */}
   <BeforeAfterPulse />
-
-  {/* Section 6: Use Cases / Industries */}
-  <UseCases />
 
   {/* Section 7: Built for your industry */}
   <IndustrySolutions />
