@@ -61,7 +61,7 @@ export default function BookDemoPage() {
 
               {/* Client logos hint */}
               <p className="text-xs text-gray-400 pt-1">
-                Trusted by teams at Accor Group, Royal Commission for AlUla, Tata Motors, and 500+ enterprise networks.
+                Trusted by teams at Accor Group, a Middle Eastern Royal Commission, Rebel Foods (500+ cloud kitchens), and 500+ enterprise networks worldwide.
               </p>
             </div>
 

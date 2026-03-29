@@ -174,38 +174,6 @@ export default function Footer() {
                   <TooltipContent><p>{tooltipT("socialMedia.linkedin")}</p></TooltipContent>
                 </Tooltip>
 
-                {/* Twitter / X */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href={EXTERNAL_LINKS.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
-                      aria-label="Twitter / X"
-                    >
-                      <i className="ri-twitter-x-fill text-lg text-gray-300 group-hover:text-white transition-colors"></i>
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent><p>{tooltipT("socialMedia.twitter")}</p></TooltipContent>
-                </Tooltip>
-
-                {/* YouTube */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href={EXTERNAL_LINKS.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
-                      aria-label="YouTube"
-                    >
-                      <i className="ri-youtube-fill text-xl text-gray-300 group-hover:text-red-400 transition-colors"></i>
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent><p>{tooltipT("socialMedia.youtube")}</p></TooltipContent>
-                </Tooltip>
-
                 {/* App Store */}
                 <Tooltip>
                   <TooltipTrigger asChild>
