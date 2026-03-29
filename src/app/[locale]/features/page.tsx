@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
+import { Link } from '@/i18n/navigation';
+import { ROUTES } from '@/config/links';
 
 // Simple icon components
 const ChevronDownIcon = ({ className }: { className?: string }) => (
@@ -226,6 +228,42 @@ export default function FeaturesPage() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Feature deep-dive links */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Go deeper on any feature</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              See how each module works in practice — with real use cases, pain points, and ROI numbers.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { href: ROUTES.featureTraining, label: 'Training Management', desc: 'Close the loop between inspection findings and team training.' },
+              { href: ROUTES.featureTasks, label: 'Corrective Actions', desc: 'Every finding becomes a tracked task with proof of closure.' },
+              { href: ROUTES.featureAttendance, label: 'Attendance Tracking', desc: 'GPS-verified digital check-ins tied to your inspection records.' },
+              { href: ROUTES.featureAnnouncements, label: 'Operations Announcements', desc: 'Push SOP updates to every location with read-receipt tracking.' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group bg-[#FFFFEB] hover:bg-[#16803C] border border-gray-200 hover:border-[#16803C] rounded-2xl p-6 transition-all duration-200"
+              >
+                <h3 className="font-bold text-gray-900 group-hover:text-white mb-2 transition-colors text-sm">
+                  {item.label}
+                </h3>
+                <p className="text-xs text-gray-500 group-hover:text-green-100 transition-colors leading-relaxed">
+                  {item.desc}
+                </p>
+                <span className="inline-block mt-4 text-[#16803C] group-hover:text-white text-xs font-medium transition-colors">
+                  Learn more →
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>

@@ -7,6 +7,7 @@ import CallToAction from "./_components/CallToAction";
 import EverythingYoureLookingFor from "./_components/EverythingYoureLookingFor";
 import ChaosToClarity from "./_components/ChaosToClarity";
 import EnterpriseEssentials from "./_components/EnterpriseEssentials";
+import IndustrySolutions from "./_components/IndustrySolutions";
 import HowItWorks from "./how-it-works/page";
 import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/config/links";
@@ -42,7 +43,10 @@ export default async function HomePage({ params }: HomePageProps) {
   {/* Section 6: Use Cases / Industries */}
   <UseCases />
 
-   {/* Section 7: Enterprise Essentials */}
+  {/* Section 7: Built for your industry */}
+  <IndustrySolutions />
+
+   {/* Section 8: Enterprise Essentials */}
       <EnterpriseEssentials />
 
       {/* ROI teaser strip */}
