@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Navigation from '@/components/Navigation';
 import { Link } from '@/i18n/navigation';
@@ -43,13 +43,6 @@ export default function FeaturesPage() {
       return;
     }
     setCurrentlyOpen(index);
-  };
-
-  const openFeatureModal = (title: string, description: string) => {
-    // For now, just log the feature click
-    console.log('Feature clicked:', title, description);
-    // In a real implementation, you would open a modal or navigate to the feature
-    alert(`Feature: ${title}\n\n${description}\n\nThis would normally open the feature in the platform.`);
   };
 
   const categories = [
@@ -109,11 +102,6 @@ export default function FeaturesPage() {
       features: ['customBranding', 'reportBranding', 'terminologyFit', 'permissionsByRole']
     }
   ];
-
-  useEffect(() => {
-    // Initialize first accordion open
-    setCurrentlyOpen(1);
-  }, []);
 
   return (
     <main className="bg-[#FFFFEB] font-inter min-h-screen">
@@ -197,13 +185,7 @@ export default function FeaturesPage() {
                           <div key={feature} className={`space-y-6 ${isFirstColumn ? '' : ''}`}>
                             <div>
                               <h3
-                                className="font-medium text-gray-800 hover:text-green-700 cursor-pointer transition-colors"
-                                onClick={() =>
-                                  openFeatureModal(
-                                    t(`categories.${category.key}.features.${feature}.title`),
-                                    t(`categories.${category.key}.features.${feature}.description`)
-                                  )
-                                }
+                                className="font-medium text-gray-800"
                               >
                                 {t(`categories.${category.key}.features.${feature}.title`)}
                               </h3>

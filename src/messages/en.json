@@ -37,7 +37,8 @@
     "featureTraining": "Training Management",
     "featureTasks": "Corrective Actions",
     "featureAttendance": "Attendance Tracking",
-    "featureAnnouncements": "Operations Announcements"
+    "featureAnnouncements": "Operations Announcements",
+    "roiCalculator": "ROI Calculator"
   },
   "tooltips": {
     "themeToggle": {
@@ -904,7 +905,8 @@
     "newsletterButton": "Subscribe",
     "links": {
       "product": "Product",
-      "company": "Company",
+      "solutions": "Solutions",
+      "company": "Platform",
       "support": "Support",
       "legal": "Legal"
   },

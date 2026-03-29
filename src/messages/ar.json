@@ -37,7 +37,8 @@
     "featureTraining": "إدارة التدريب",
     "featureTasks": "الإجراءات التصحيحية",
     "featureAttendance": "تتبع الحضور",
-    "featureAnnouncements": "إعلانات العمليات"
+    "featureAnnouncements": "إعلانات العمليات",
+    "roiCalculator": "حاسبة العائد على الاستثمار"
   },
   "tooltips": {
     "themeToggle": {
@@ -898,7 +899,8 @@
     "newsletterButton": "اشترك",
     "links": {
       "product": "المنتج",
-      "company": "الشركة",
+      "solutions": "الحلول",
+      "company": "المنصة",
       "support": "الدعم",
       "legal": "قانوني"
     }

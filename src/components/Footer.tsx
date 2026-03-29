@@ -27,6 +27,17 @@ const groups: FooterGroup[] = [
       { nameKey: "pricing", href: ROUTES.pricing },
       { nameKey: "apiIntegration", href: ROUTES.apiIntegration },
       { nameKey: "enterpriseDeployment", href: ROUTES.enterpriseDeployment },
+      { nameKey: "roiCalculator", href: ROUTES.roiCalculator },
+    ],
+  },
+  {
+    titleKey: "links.solutions",
+    links: [
+      { nameKey: "industryRetail", href: ROUTES.icpRetail },
+      { nameKey: "industryFoodBeverage", href: ROUTES.icpFoodBeverage },
+      { nameKey: "industryHospitality", href: ROUTES.icpHospitality },
+      { nameKey: "industryConstruction", href: ROUTES.icpConstruction },
+      { nameKey: "industryHealthcare", href: ROUTES.icpHealthcare },
     ],
   },
   {
@@ -34,12 +45,16 @@ const groups: FooterGroup[] = [
     links: [
       { nameKey: "bookDemo", href: ROUTES.bookDemo },
       { nameKey: "blog", href: ROUTES.blog, external: true },
+      { nameKey: "featureTraining", href: ROUTES.featureTraining },
+      { nameKey: "featureTasks", href: ROUTES.featureTasks },
+      { nameKey: "featureAttendance", href: ROUTES.featureAttendance },
+      { nameKey: "featureAnnouncements", href: ROUTES.featureAnnouncements },
     ],
   },
   {
     titleKey: "links.legal",
     links: [
-  { nameKey: "security", href: ROUTES.security },
+      { nameKey: "security", href: ROUTES.security },
       { nameKey: "privacyPolicy", href: ROUTES.privacyPolicy },
       { nameKey: "termsOfService", href: ROUTES.termsOfService },
     ],
@@ -85,7 +100,7 @@ export default function Footer() {
 
         {/* Links Section */}
         <div className="mb-12">
-          <div className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-14 justify-items-center">
+          <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-10">
             {groups.map((group) => (
               <div key={group.titleKey} className="w-full">
                 <h3 className="mb-5 font-semibold tracking-wide text-sm uppercase text-gray-200 flex items-center gap-3">
@@ -142,22 +157,53 @@ export default function Footer() {
             </div>
 
             <TooltipProvider>
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-4">
+                {/* LinkedIn */}
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
                       href={EXTERNAL_LINKS.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center justify-center h-12 w-12 rounded-full border border-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 shadow-[0_0_0_3px_rgba(10,102,194,0.15)] hover:shadow-[0_0_0_4px_rgba(10,102,194,0.25)] transition-all"
+                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-all"
                       aria-label="LinkedIn"
                     >
-                      <i className="ri-linkedin-fill text-[26px] text-[#0A66C2] group-hover:scale-110 transition-transform"></i>
+                      <i className="ri-linkedin-fill text-xl text-[#0A66C2] group-hover:scale-110 transition-transform"></i>
                     </a>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{tooltipT("socialMedia.linkedin")}</p>
-                  </TooltipContent>
+                  <TooltipContent><p>{tooltipT("socialMedia.linkedin")}</p></TooltipContent>
+                </Tooltip>
+
+                {/* Twitter / X */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={EXTERNAL_LINKS.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                      aria-label="Twitter / X"
+                    >
+                      <i className="ri-twitter-x-fill text-lg text-gray-300 group-hover:text-white transition-colors"></i>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent><p>{tooltipT("socialMedia.twitter")}</p></TooltipContent>
+                </Tooltip>
+
+                {/* YouTube */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={EXTERNAL_LINKS.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                      aria-label="YouTube"
+                    >
+                      <i className="ri-youtube-fill text-xl text-gray-300 group-hover:text-red-400 transition-colors"></i>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent><p>{tooltipT("socialMedia.youtube")}</p></TooltipContent>
                 </Tooltip>
 
                 {/* App Store */}
@@ -167,15 +213,13 @@ export default function Footer() {
                       href="https://apps.apple.com/us/app/pulse-audits-inspections/id1533113519"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
                       aria-label="App Store"
                     >
-                      <Image src="/images/icons/apple.png" alt="App Store" width={24} height={24} className="opacity-90 group-hover:opacity-100 invert" />
+                      <Image src="/images/icons/apple.png" alt="App Store" width={22} height={22} className="opacity-80 group-hover:opacity-100 invert" />
                     </a>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    <p>App Store</p>
-                  </TooltipContent>
+                  <TooltipContent><p>App Store</p></TooltipContent>
                 </Tooltip>
 
                 {/* Google Play */}
@@ -185,43 +229,34 @@ export default function Footer() {
                       href="https://play.google.com/store/apps/details?id=com.innovative.pulsepro"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                      className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
                       aria-label="Google Play"
                     >
-                      <Image src="/images/icons/google-play.png" alt="Google Play" width={24} height={24} className="opacity-90 group-hover:opacity-100" />
+                      <Image src="/images/icons/google-play.png" alt="Google Play" width={22} height={22} className="opacity-80 group-hover:opacity-100" />
                     </a>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Google Play</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                {/* SAP Ariba Network Badge */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href={EXTERNAL_LINKS.aribaProfile}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-md ring-1 ring-white/15 hover:ring-white/25 transition-colors"
-                      aria-label="SAP Ariba Network Profile"
-                    >
-                      <Image
-                        src="https://service.ariba.com/an/p/Ariba/badge_180x55.jpg"
-                        alt="SAP Ariba Network"
-                        width={180}
-                        height={55}
-                        className="h-12 w-auto object-contain"
-                        priority={false}
-                      />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>SAP Ariba Network</p>
-                  </TooltipContent>
+                  <TooltipContent><p>Google Play</p></TooltipContent>
                 </Tooltip>
               </div>
             </TooltipProvider>
+
+            {/* SAP Ariba — separate trust badge, not a social icon */}
+            <a
+              href={EXTERNAL_LINKS.aribaProfile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md ring-1 ring-white/15 hover:ring-white/25 transition-colors mt-4 md:mt-0"
+              aria-label="SAP Ariba Network Profile"
+            >
+              <Image
+                src="https://service.ariba.com/an/p/Ariba/badge_180x55.jpg"
+                alt="SAP Ariba Network"
+                width={140}
+                height={43}
+                className="h-10 w-auto object-contain"
+                priority={false}
+              />
+            </a>
           </div>
 
           {/* Email capture */}
