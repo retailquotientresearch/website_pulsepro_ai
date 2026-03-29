@@ -20,7 +20,7 @@ const METHOD_LABELS: Record<Method, string> = {
 
 const PULSEPRO_TIME = 10        // mins per inspection
 const INSPECTOR_HOURLY = 50     // USD — conservative avg
-const PRICE_PER_USER = 22       // USD/user/month
+const PRICE_PER_USER = 18       // USD/user/month (annual plan)
 
 function formatCurrency(n: number) {
   if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M'
