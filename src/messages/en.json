@@ -24,7 +24,19 @@
   "termsOfService": "Terms of Service",
   "enterpriseEssentials": "Enterprise Essentials",
     "mobileMenuTitle": "Navigation Menu",
-    "mobileMenuDescription": "Access navigation links, features, pricing, integrations, and support options"
+    "mobileMenuDescription": "Access navigation links, features, pricing, integrations, and support options",
+    "solutions": "Solutions",
+    "byIndustry": "By Industry",
+    "byFeature": "By Feature",
+    "industryRetail": "Retail & QSR",
+    "industryFoodBeverage": "Food & Beverage",
+    "industryConstruction": "Construction & Infrastructure",
+    "industryHospitality": "Hotels & Hospitality",
+    "industryHealthcare": "Healthcare & Diagnostics",
+    "featureTraining": "Training Management",
+    "featureTasks": "Corrective Actions",
+    "featureAttendance": "Attendance Tracking",
+    "featureAnnouncements": "Operations Announcements"
   },
   "tooltips": {
     "themeToggle": {
@@ -332,7 +344,7 @@
       },
       "footer": {
         "title": "Built for enterprises that demand reliability, control, and scale.",
-        "subtitle": "PulsePro.ai — Enterprise Essentials"
+        "subtitle": "PULSE — Enterprise Essentials"
       }
     },
     "title": "Enterprise essentials",
@@ -677,7 +689,7 @@
       }
     },
     "features": {
-      "title": "Pulse Pro",
+      "title": "PULSE",
       "subtitle": "Best for enterprises and growing businesses",
       "badge": "Pro Unlimited",
   "mostPopularLabel": "Most Popular",
@@ -695,7 +707,7 @@
       "title": "One simple plan with a 2 weeks trial",
       "subtitle": "Absolutely everything included in our refreshingly simple pricing",
   "whatYouGetTitle": "What you get",
-  "allElseNote": "And everything else in Pulse Pro.",
+  "allElseNote": "And everything else in PULSE.",
       "features": [
         "Every feature you need",
         "Unlimited data storage",
@@ -1968,5 +1980,63 @@
     "allStepsApproved": "all steps approved",
     "addStep": "add step",
     "flexibleMultiStepWorkflows": "flexible multi-step workflows"
+  },
+  "icpPage": {
+    "trustedBy": "Trusted by",
+    "painPointsTitle": "We know what keeps you up at night",
+    "featuresTitle": "Here's how PULSE solves it",
+    "freeTemplatesBadge": "Free templates",
+    "browseTemplates": "Browse free templates →",
+    "roiBadge": "ROI Calculator",
+    "roiTitle": "See what you save",
+    "roiSubtitle": "Adjust for your operation. Results update instantly.",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Up and running in 24 hours. No IT required. No long contracts.",
+    "startFreeTrial": "Start free trial",
+    "bookDemo": "Book a demo",
+    "enterpriseNote": "Managing 500+ sites?",
+    "enterpriseLink": "Let's talk enterprise pricing.",
+    "heroStartFree": "Start free — up in 24 hours",
+    "heroBookDemo": "Book a 30-min demo"
+  },
+  "industrySolutions": {
+    "badge": "Built for your industry",
+    "title": "PULSE works the way your industry works",
+    "subtitle": "Purpose-built for multi-site operations across five industries. See how teams like yours use PULSE.",
+    "seeHow": "See how it works →",
+    "notOnList": "Not on the list?",
+    "notOnListDesc": "PULSE works for any multi-site operation that runs audits, checks, or compliance workflows.",
+    "bookDemo": "Book a demo →",
+    "retail": "Retail & QSR",
+    "retailDesc": "Consistent standards across every store, every shift.",
+    "foodBeverage": "Food & Beverage",
+    "foodBeverageDesc": "Pass every food safety audit — the first time.",
+    "construction": "Construction",
+    "constructionDesc": "Zero incidents start with the right site inspection.",
+    "hospitality": "Hotels & Hospitality",
+    "hospitalityDesc": "Five-star guest experience at every property.",
+    "healthcare": "Healthcare",
+    "healthcareDesc": "Compliance you can prove. Safety you can trust."
+  },
+  "roiCalculator": {
+    "yourOperation": "Your current operation",
+    "numSites": "Number of sites / locations",
+    "numInspectors": "Number of inspectors",
+    "inspectionsPerSite": "Inspections per site per month",
+    "currentMethod": "Current inspection method",
+    "methodPaper": "Paper / Manual",
+    "methodSpreadsheet": "Spreadsheet",
+    "methodTool": "Another tool",
+    "hoursSaved": "Hours saved / month",
+    "costSaved": "Cost saved / year",
+    "pulseInvestment": "PULSE investment",
+    "perYear": "per year",
+    "paybackPeriod": "Payback period",
+    "breakEven": "to break even",
+    "netSavings": "Net savings per year",
+    "roiSuffix": "% ROI on your PULSE investment",
+    "startSaving": "Start saving — free trial",
+    "bookDemo": "Book a demo",
+    "basedOn": "Based on {sites} sites × {inspections} inspections/month. Time savings vs {method}: {mins} min/inspection."
   }
 }

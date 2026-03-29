@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from '@/i18n/navigation'
 import { EXTERNAL_LINKS, ROUTES } from '@/config/links'
+import { useTranslations } from 'next-intl'
 
 type Method = 'paper' | 'spreadsheet' | 'tool'
 
@@ -12,10 +13,10 @@ const METHOD_TIME: Record<Method, number> = {
   tool: 20,
 }
 
-const METHOD_LABELS: Record<Method, string> = {
-  paper: 'Paper / Manual',
-  spreadsheet: 'Spreadsheet',
-  tool: 'Another tool',
+const METHOD_KEYS: Record<Method, string> = {
+  paper: 'methodPaper',
+  spreadsheet: 'methodSpreadsheet',
+  tool: 'methodTool',
 }
 
 const PULSEPRO_TIME = 10        // mins per inspection
@@ -73,6 +74,7 @@ function StatCard({ label, value, sub, highlight = false }: { label: string; val
 }
 
 export default function ROICalculator({ compact = false }: { compact?: boolean }) {
+  const t = useTranslations('roiCalculator')
   const [sites, setSites] = useState(20)
   const [inspectors, setInspectors] = useState(10)
   const [inspectionsPerSite, setInspectionsPerSite] = useState(4)
@@ -103,16 +105,16 @@ export default function ROICalculator({ compact = false }: { compact?: boolean }
       <div className="grid md:grid-cols-2 gap-6 md:gap-8">
         {/* Inputs */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 space-y-7 shadow-sm">
-          <h3 className="text-base font-semibold text-gray-900">Your current operation</h3>
+          <h3 className="text-base font-semibold text-gray-900">{t('yourOperation')}</h3>
 
-          <Slider label="Number of sites / locations" value={sites} min={1} max={500} onChange={setSites} />
-          <Slider label="Number of inspectors" value={inspectors} min={1} max={200} onChange={setInspectors} />
-          <Slider label="Inspections per site per month" value={inspectionsPerSite} min={1} max={30} onChange={setInspectionsPerSite} />
+          <Slider label={t('numSites')} value={sites} min={1} max={500} onChange={setSites} />
+          <Slider label={t('numInspectors')} value={inspectors} min={1} max={200} onChange={setInspectors} />
+          <Slider label={t('inspectionsPerSite')} value={inspectionsPerSite} min={1} max={30} onChange={setInspectionsPerSite} />
 
           <div>
-            <p className="text-sm font-medium text-gray-700 mb-3">Current inspection method</p>
+            <p className="text-sm font-medium text-gray-700 mb-3">{t('currentMethod')}</p>
             <div className="flex flex-wrap gap-2">
-              {(Object.keys(METHOD_LABELS) as Method[]).map(m => (
+              {(Object.keys(METHOD_KEYS) as Method[]).map(m => (
                 <button
                   key={m}
                   onClick={() => setMethod(m)}
@@ -122,7 +124,7 @@ export default function ROICalculator({ compact = false }: { compact?: boolean }
                       : 'bg-white text-gray-600 border-gray-300 hover:border-[#16803C] hover:text-[#16803C]'
                   }`}
                 >
-                  {METHOD_LABELS[m]}
+                  {t(METHOD_KEYS[m])}
                 </button>
               ))}
             </div>
@@ -133,30 +135,30 @@ export default function ROICalculator({ compact = false }: { compact?: boolean }
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-3">
             <StatCard
-              label="Hours saved / month"
+              label={t('hoursSaved')}
               value={results.hoursSavedPerMonth.toLocaleString() + ' hrs'}
             />
             <StatCard
-              label="Cost saved / year"
+              label={t('costSaved')}
               value={formatCurrency(results.costSavedPerYear)}
               sub={`at $${INSPECTOR_HOURLY}/hr avg`}
             />
             <StatCard
-              label="PULSE investment"
+              label={t('pulseInvestment')}
               value={formatCurrency(results.pulseProCostPerYear)}
-              sub="per year"
+              sub={t('perYear')}
             />
             <StatCard
-              label="Payback period"
+              label={t('paybackPeriod')}
               value={results.paybackDays + ' days'}
-              sub="to break even"
+              sub={t('breakEven')}
             />
           </div>
 
           <StatCard
-            label="Net savings per year"
+            label={t('netSavings')}
             value={formatCurrency(results.netSavings)}
-            sub={`${results.roiPct.toLocaleString()}% ROI on your PULSE investment`}
+            sub={`${results.roiPct.toLocaleString()}${t('roiSuffix')}`}
             highlight
           />
 
@@ -167,19 +169,18 @@ export default function ROICalculator({ compact = false }: { compact?: boolean }
               rel="noopener noreferrer"
               className="flex-1 text-center bg-[#16803C] hover:bg-[#14703A] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors"
             >
-              Start saving — free trial
+              {t('startSaving')}
             </a>
             <Link
               href={ROUTES.bookDemo}
               className="flex-1 text-center border border-[#16803C] text-[#16803C] hover:bg-[#16803C]/5 font-semibold px-6 py-3 rounded-xl text-sm transition-colors"
             >
-              Book a demo
+              {t('bookDemo')}
             </Link>
           </div>
 
           <p className="text-xs text-gray-400 text-center">
-            Based on {sites} sites × {inspectionsPerSite} inspections/month.
-            Time savings vs {METHOD_LABELS[method].toLowerCase()}: {METHOD_TIME[method] - PULSEPRO_TIME} min/inspection.
+            {t('basedOn', { sites, inspections: inspectionsPerSite, method: t(METHOD_KEYS[method]).toLowerCase(), mins: METHOD_TIME[method] - PULSEPRO_TIME })}
           </p>
         </div>
       </div>

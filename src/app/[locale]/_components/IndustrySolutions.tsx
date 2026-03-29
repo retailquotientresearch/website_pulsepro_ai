@@ -2,57 +2,35 @@
 
 import { Link } from '@/i18n/navigation'
 import { ROUTES } from '@/config/links'
+import { useTranslations } from 'next-intl'
 
-const industries = [
-  {
-    href: ROUTES.icpRetail,
-    label: 'Retail & QSR',
-    description: 'Consistent standards across every store, every shift.',
-    icon: '🛒',
-  },
-  {
-    href: ROUTES.icpFoodBeverage,
-    label: 'Food & Beverage',
-    description: 'Pass every food safety audit — the first time.',
-    icon: '🍽️',
-  },
-  {
-    href: ROUTES.icpConstruction,
-    label: 'Construction',
-    description: 'Zero incidents start with the right site inspection.',
-    icon: '🏗️',
-  },
-  {
-    href: ROUTES.icpHospitality,
-    label: 'Hotels & Hospitality',
-    description: 'Five-star guest experience at every property.',
-    icon: '🏨',
-  },
-  {
-    href: ROUTES.icpHealthcare,
-    label: 'Healthcare',
-    description: 'Compliance you can prove. Safety you can trust.',
-    icon: '🏥',
-  },
+const INDUSTRIES = [
+  { href: ROUTES.icpRetail,       labelKey: 'retail',       descKey: 'retailDesc',       icon: '🛒' },
+  { href: ROUTES.icpFoodBeverage, labelKey: 'foodBeverage', descKey: 'foodBeverageDesc', icon: '🍽️' },
+  { href: ROUTES.icpConstruction, labelKey: 'construction', descKey: 'constructionDesc', icon: '🏗️' },
+  { href: ROUTES.icpHospitality,  labelKey: 'hospitality',  descKey: 'hospitalityDesc',  icon: '🏨' },
+  { href: ROUTES.icpHealthcare,   labelKey: 'healthcare',   descKey: 'healthcareDesc',   icon: '🏥' },
 ]
 
 export default function IndustrySolutions() {
+  const t = useTranslations('industrySolutions')
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-            Built for your industry
+            {t('badge')}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            PULSE works the way your industry works
+            {t('title')}
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            Purpose-built for multi-site operations across five industries. See how teams like yours use PULSE.
+            {t('subtitle')}
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {industries.map((item) => (
+          {INDUSTRIES.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -60,13 +38,13 @@ export default function IndustrySolutions() {
             >
               <div className="text-2xl mb-3">{item.icon}</div>
               <h3 className="font-bold text-gray-900 group-hover:text-white mb-1 transition-colors">
-                {item.label}
+                {t(item.labelKey)}
               </h3>
               <p className="text-sm text-gray-500 group-hover:text-green-100 transition-colors leading-relaxed">
-                {item.description}
+                {t(item.descKey)}
               </p>
               <span className="inline-block mt-4 text-[#16803C] group-hover:text-white text-sm font-medium transition-colors">
-                See how it works →
+                {t('seeHow')}
               </span>
             </Link>
           ))}
@@ -77,13 +55,13 @@ export default function IndustrySolutions() {
           >
             <div>
               <div className="text-2xl mb-3">💬</div>
-              <h3 className="font-bold text-white mb-1">Not on the list?</h3>
+              <h3 className="font-bold text-white mb-1">{t('notOnList')}</h3>
               <p className="text-sm text-green-100 leading-relaxed">
-                PULSE works for any multi-site operation that runs audits, checks, or compliance workflows.
+                {t('notOnListDesc')}
               </p>
             </div>
             <span className="inline-block mt-4 text-white text-sm font-medium">
-              Book a demo →
+              {t('bookDemo')}
             </span>
           </Link>
         </div>

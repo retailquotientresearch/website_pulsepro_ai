@@ -5,8 +5,10 @@ import { Link } from '@/i18n/navigation'
 import { EXTERNAL_LINKS, ROUTES } from '@/config/links'
 import { type ICPData } from '@/data/icpData'
 import ROICalculator from '@/components/ROICalculator'
+import { useTranslations } from 'next-intl'
 
 export default function ICPPage({ data }: { data: ICPData }) {
+  const t = useTranslations('icpPage')
   return (
     <main className="min-h-screen bg-[#FFFFEB]">
 
@@ -29,20 +31,20 @@ export default function ICPPage({ data }: { data: ICPData }) {
               rel="noopener noreferrer"
               className="bg-[#16803C] hover:bg-[#14703A] text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
             >
-              Start free — up in 24 hours
+              {t('heroStartFree')}
             </a>
             <Link
               href={ROUTES.bookDemo}
               className="border-2 border-[#16803C] text-[#16803C] hover:bg-[#16803C]/5 font-semibold px-8 py-4 rounded-xl text-base transition-colors"
             >
-              Book a 30-min demo
+              {t('heroBookDemo')}
             </Link>
           </div>
 
           {/* Client logos */}
           {data.clients.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <span className="text-sm text-gray-400 font-medium">Trusted by</span>
+              <span className="text-sm text-gray-400 font-medium">{t('trustedBy')}</span>
               {data.clients.map(client => (
                 client.logo ? (
                   <div
@@ -88,7 +90,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              We know what keeps you up at night
+              {t('painPointsTitle')}
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               {data.painPointsSubheadline ?? `These are the problems every ${data.industry} operations team lives with. PULSE was built to eliminate them.`}
@@ -113,7 +115,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Here&apos;s how PULSE solves it
+              {t('featuresTitle')}
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               {data.featuresSubheadline ?? `Purpose-built for ${data.industry} operations — not a generic tool bolted onto your workflow.`}
@@ -141,7 +143,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
           <div className="bg-[#FFFFEB] rounded-2xl border border-gray-200 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <span className="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                Free templates
+                {t('freeTemplatesBadge')}
               </span>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                 Get started with {data.libraryLabel}
@@ -156,7 +158,7 @@ export default function ICPPage({ data }: { data: ICPData }) {
               rel="noopener noreferrer"
               className="flex-shrink-0 bg-[#16803C] hover:bg-[#14703A] text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
-              Browse free templates →
+              {t('browseTemplates')}
             </a>
           </div>
         </div>
@@ -167,13 +169,13 @@ export default function ICPPage({ data }: { data: ICPData }) {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full mb-3">
-              ROI Calculator
+              {t('roiBadge')}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              See what you save
+              {t('roiTitle')}
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Adjust for your operation. Results update instantly.
+              {t('roiSubtitle')}
             </p>
           </div>
           <ROICalculator compact />
@@ -184,10 +186,10 @@ export default function ICPPage({ data }: { data: ICPData }) {
       <section className="py-20 bg-[#16803C]">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to get started?
+            {t('ctaTitle')}
           </h2>
           <p className="text-green-100 text-lg mb-8">
-            Up and running in 24 hours. No IT required. No long contracts.
+            {t('ctaSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -196,19 +198,19 @@ export default function ICPPage({ data }: { data: ICPData }) {
               rel="noopener noreferrer"
               className="bg-white text-[#16803C] hover:bg-gray-50 font-bold px-8 py-4 rounded-xl text-base transition-colors"
             >
-              Start free trial
+              {t('startFreeTrial')}
             </a>
             <Link
               href={ROUTES.bookDemo}
               className="border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl text-base transition-colors"
             >
-              Book a demo
+              {t('bookDemo')}
             </Link>
           </div>
           <p className="mt-6 text-green-200 text-sm">
-            Managing 500+ sites?{' '}
+            {t('enterpriseNote')}{' '}
             <Link href={ROUTES.bookDemo} className="text-white underline underline-offset-2 hover:no-underline">
-              Let&apos;s talk enterprise pricing.
+              {t('enterpriseLink')}
             </Link>
           </p>
         </div>

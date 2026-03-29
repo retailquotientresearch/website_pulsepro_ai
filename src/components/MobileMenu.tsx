@@ -58,42 +58,42 @@ export default function MobileMenu() {
                 className="flex items-center justify-between w-full py-2 hover:text-[#1A7D3D] transition-colors"
                 onClick={() => setSolutionsOpen(o => !o)}
               >
-                <span>Solutions</span>
+                <span>{t('solutions')}</span>
                 <svg className={`w-4 h-4 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {solutionsOpen && (
                 <div className="pl-4 flex flex-col gap-0.5 mt-1">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pt-1 pb-0.5">By Industry</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pt-1 pb-0.5">{t('byIndustry')}</p>
                   <Link href={ROUTES.icpRetail} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Retail & QSR
+                    {t('industryRetail')}
                   </Link>
                   <Link href={ROUTES.icpFoodBeverage} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Food & Beverage
+                    {t('industryFoodBeverage')}
                   </Link>
                   <Link href={ROUTES.icpConstruction} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Construction & Infrastructure
+                    {t('industryConstruction')}
                   </Link>
                   <Link href={ROUTES.icpHospitality} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Hotels & Hospitality
+                    {t('industryHospitality')}
                   </Link>
                   <Link href={ROUTES.icpHealthcare} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Healthcare & Diagnostics
+                    {t('industryHealthcare')}
                   </Link>
                   <div className="my-1.5 border-t border-gray-200" />
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pb-0.5">By Feature</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 pb-0.5">{t('byFeature')}</p>
                   <Link href={ROUTES.featureTraining} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Training Management
+                    {t('featureTraining')}
                   </Link>
                   <Link href={ROUTES.featureTasks} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Corrective Actions
+                    {t('featureTasks')}
                   </Link>
                   <Link href={ROUTES.featureAttendance} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Attendance Tracking
+                    {t('featureAttendance')}
                   </Link>
                   <Link href={ROUTES.featureAnnouncements} className="block py-1.5 text-sm text-gray-600 hover:text-[#1A7D3D] transition-colors" onClick={handleMenuClose}>
-                    Operations Announcements
+                    {t('featureAnnouncements')}
                   </Link>
                 </div>
               )}

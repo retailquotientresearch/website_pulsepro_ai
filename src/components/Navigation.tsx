@@ -48,42 +48,42 @@ export default function Navigation() {
             {/* Solutions dropdown */}
             <div className="relative group">
               <button className="hover:text-[#1A7D3D] transition-colors whitespace-nowrap flex items-center gap-1">
-                Solutions
+                {t('solutions')}
                 <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 hidden group-hover:block z-50">
                 <div className="bg-white border border-gray-200 rounded-xl shadow-lg py-2 min-w-[260px]">
-                  <p className="px-4 pt-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">By Industry</p>
+                  <p className="px-4 pt-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">{t('byIndustry')}</p>
                   <Link href={ROUTES.icpRetail} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Retail & QSR
+                    {t('industryRetail')}
                   </Link>
                   <Link href={ROUTES.icpFoodBeverage} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Food & Beverage
+                    {t('industryFoodBeverage')}
                   </Link>
                   <Link href={ROUTES.icpConstruction} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Construction & Infrastructure
+                    {t('industryConstruction')}
                   </Link>
                   <Link href={ROUTES.icpHospitality} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Hotels & Hospitality
+                    {t('industryHospitality')}
                   </Link>
                   <Link href={ROUTES.icpHealthcare} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Healthcare & Diagnostics
+                    {t('industryHealthcare')}
                   </Link>
                   <div className="my-2 border-t border-gray-100" />
-                  <p className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">By Feature</p>
+                  <p className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">{t('byFeature')}</p>
                   <Link href={ROUTES.featureTraining} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Training Management
+                    {t('featureTraining')}
                   </Link>
                   <Link href={ROUTES.featureTasks} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Corrective Actions
+                    {t('featureTasks')}
                   </Link>
                   <Link href={ROUTES.featureAttendance} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Attendance Tracking
+                    {t('featureAttendance')}
                   </Link>
                   <Link href={ROUTES.featureAnnouncements} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
-                    Operations Announcements
+                    {t('featureAnnouncements')}
                   </Link>
                 </div>
               </div>

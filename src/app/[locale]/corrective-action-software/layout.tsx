@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `https://www.pulsepro.ai/en/${d.canonicalSlug}`,
-    languages: { en: `https://www.pulsepro.ai/en/${d.canonicalSlug}` },
+    languages: { en: `https://www.pulsepro.ai/en/${d.canonicalSlug}`, ar: `https://www.pulsepro.ai/ar/${d.canonicalSlug}` },
   },
 }
 

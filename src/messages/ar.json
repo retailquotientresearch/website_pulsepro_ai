@@ -24,7 +24,19 @@
   "termsOfService": "شروط الخدمة",
   "enterpriseEssentials": "أساسيات المؤسسات",
     "mobileMenuTitle": "قائمة التنقل",
-    "mobileMenuDescription": "الوصول إلى روابط التنقل، والميزات، والأسعار، والتكاملات، وخيارات الدعم"
+    "mobileMenuDescription": "الوصول إلى روابط التنقل، والميزات، والأسعار، والتكاملات، وخيارات الدعم",
+    "solutions": "الحلول",
+    "byIndustry": "حسب الصناعة",
+    "byFeature": "حسب الميزة",
+    "industryRetail": "التجزئة والمطاعم السريعة",
+    "industryFoodBeverage": "الأغذية والمشروبات",
+    "industryConstruction": "البناء والبنية التحتية",
+    "industryHospitality": "الفنادق والضيافة",
+    "industryHealthcare": "الرعاية الصحية والتشخيص",
+    "featureTraining": "إدارة التدريب",
+    "featureTasks": "الإجراءات التصحيحية",
+    "featureAttendance": "تتبع الحضور",
+    "featureAnnouncements": "إعلانات العمليات"
   },
   "tooltips": {
     "themeToggle": {
@@ -326,7 +338,7 @@
       },
       "footer": {
         "title": "مصمم للمؤسسات التي تطالب بالموثوقية والتحكم والتوسع.",
-        "subtitle": "PulsePro.ai — أساسيات المؤسسات"
+        "subtitle": "PULSE — أساسيات المؤسسات"
       }
     },
     "title": "أساسيات المؤسسات",
@@ -1967,5 +1979,63 @@
     "allStepsApproved": "تمت الموافقة على جميع الخطوات",
     "addStep": "إضافة خطوة",
     "flexibleMultiStepWorkflows": "سير عمل مرن متعدد الخطوات"
+  },
+  "icpPage": {
+    "trustedBy": "موثوق به من قِبَل",
+    "painPointsTitle": "نحن نعرف ما يُقلقك",
+    "featuresTitle": "إليك كيف تحلّها PULSE",
+    "freeTemplatesBadge": "قوالب مجانية",
+    "browseTemplates": "تصفح القوالب المجانية ←",
+    "roiBadge": "حاسبة العائد على الاستثمار",
+    "roiTitle": "اكتشف ما توفره",
+    "roiSubtitle": "اضبط الإعدادات وفق عملياتك. تتحدث النتائج فورًا.",
+    "ctaTitle": "هل أنت مستعد للبدء؟",
+    "ctaSubtitle": "جاهز للعمل خلال ٢٤ ساعة. لا يلزم فريق تقني. لا عقود طويلة.",
+    "startFreeTrial": "ابدأ النسخة التجريبية المجانية",
+    "bookDemo": "احجز عرضًا توضيحيًا",
+    "enterpriseNote": "هل تدير أكثر من ٥٠٠ موقع؟",
+    "enterpriseLink": "تحدث معنا عن تسعير المؤسسات.",
+    "heroStartFree": "ابدأ مجانًا — جاهز خلال ٢٤ ساعة",
+    "heroBookDemo": "احجز عرضًا لمدة ٣٠ دقيقة"
+  },
+  "industrySolutions": {
+    "badge": "مصمَّم لصناعتك",
+    "title": "PULSE تعمل بالطريقة التي تعمل بها صناعتك",
+    "subtitle": "مُصمَّمة خصيصًا لعمليات متعددة المواقع في خمس صناعات. اكتشف كيف تستخدم فرق مثل فريقك PULSE.",
+    "seeHow": "اكتشف كيف يعمل ←",
+    "notOnList": "ألا تجد صناعتك؟",
+    "notOnListDesc": "PULSE تعمل لأي عملية متعددة المواقع تُجري عمليات تدقيق أو فحوصات أو سير عمل للامتثال.",
+    "bookDemo": "احجز عرضًا ←",
+    "retail": "التجزئة والمطاعم السريعة",
+    "retailDesc": "معايير متسقة في كل متجر وكل وردية.",
+    "foodBeverage": "الأغذية والمشروبات",
+    "foodBeverageDesc": "اجتز كل تدقيق لسلامة الغذاء — من المرة الأولى.",
+    "construction": "البناء",
+    "constructionDesc": "الوصول لصفر حوادث يبدأ بالتفتيش الصحيح على الموقع.",
+    "hospitality": "الفنادق والضيافة",
+    "hospitalityDesc": "تجربة ضيوف خمس نجوم في كل عقار.",
+    "healthcare": "الرعاية الصحية",
+    "healthcareDesc": "امتثال يمكنك إثباته. سلامة يمكنك الوثوق بها."
+  },
+  "roiCalculator": {
+    "yourOperation": "عمليتك الحالية",
+    "numSites": "عدد المواقع / الفروع",
+    "numInspectors": "عدد المفتشين",
+    "inspectionsPerSite": "عمليات التفتيش لكل موقع شهريًا",
+    "currentMethod": "طريقة التفتيش الحالية",
+    "methodPaper": "ورقي / يدوي",
+    "methodSpreadsheet": "جداول بيانات",
+    "methodTool": "أداة أخرى",
+    "hoursSaved": "ساعات موفَّرة / شهريًا",
+    "costSaved": "تكاليف موفَّرة / سنويًا",
+    "pulseInvestment": "استثمار PULSE",
+    "perYear": "سنويًا",
+    "paybackPeriod": "فترة الاسترداد",
+    "breakEven": "للوصول لنقطة التعادل",
+    "netSavings": "صافي التوفير سنويًا",
+    "roiSuffix": "% عائد على استثمار PULSE",
+    "startSaving": "ابدأ التوفير — نسخة تجريبية مجانية",
+    "bookDemo": "احجز عرضًا توضيحيًا",
+    "basedOn": "بناءً على {sites} موقعًا × {inspections} تفتيشًا/شهريًا. وفورات الوقت مقارنةً بـ {method}: {mins} دقيقة/تفتيش."
   }
 }
