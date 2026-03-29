@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'Everything your field team needs: custom checklists, corrective actions, analytics, and integrations. Built for enterprises managing 100+ locations.',
     url: 'https://www.pulsepro.ai/en/features',
   },
+  twitter: {
+    title: 'Inspection Management Features | PULSE',
+    description: 'Everything your field team needs: custom checklists, corrective actions, analytics, and integrations. Built for enterprises managing 100+ locations.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/features',
     languages: {

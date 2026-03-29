@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'Enter your sites, inspectors, and current method. Instantly see hours saved, cost reduction, and payback period.',
     url: 'https://www.pulsepro.ai/en/roi-calculator',
   },
+  twitter: {
+    title: 'Inspection ROI Calculator | PULSE',
+    description: 'Enter your sites, inspectors, and current method. Instantly see hours saved, cost reduction, and payback period.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/roi-calculator',
     languages: {

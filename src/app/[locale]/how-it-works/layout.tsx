@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'From field capture to corrective action in minutes. The simple 4-step workflow that field teams at 100,000+ sites rely on every day.',
     url: 'https://www.pulsepro.ai/en/how-it-works',
   },
+  twitter: {
+    title: 'How PULSE Works | Enterprise Inspection Platform',
+    description: 'From field capture to corrective action in minutes. The simple 4-step workflow that field teams at 100,000+ sites rely on every day.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/how-it-works',
     languages: {

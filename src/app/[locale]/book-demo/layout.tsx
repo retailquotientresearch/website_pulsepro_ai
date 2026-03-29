@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'Book a free 30-minute personalized demo. See how enterprises use PULSE to cut inspection time by 60% and close corrective actions 3x faster.',
     url: 'https://www.pulsepro.ai/en/book-demo',
   },
+  twitter: {
+    title: 'Book a Free Demo | PULSE',
+    description: 'Book a free 30-minute personalized demo. See how enterprises use PULSE to cut inspection time by 60% and close corrective actions 3x faster.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/book-demo',
     languages: {

@@ -2,8 +2,24 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Enterprise Essentials",
-  description: "Secure. Reliable. Built for scale.",
+  title: "Enterprise Essentials | PULSE",
+  description: "SSO, role-based access, data residency, 99.9% uptime SLA, and dedicated onboarding — everything large operations teams need to run PULSE at scale.",
+  openGraph: {
+    title: "Enterprise Essentials | PULSE",
+    description: "SSO, role-based access, data residency, 99.9% uptime SLA, and dedicated onboarding — enterprise-grade infrastructure for field operations at scale.",
+    url: "https://www.pulsepro.ai/en/enterprise-essentials",
+  },
+  twitter: {
+    title: "Enterprise Essentials | PULSE",
+    description: "SSO, role-based access, data residency, 99.9% uptime SLA — enterprise-grade infrastructure for field operations at scale.",
+  },
+  alternates: {
+    canonical: "https://www.pulsepro.ai/en/enterprise-essentials",
+    languages: {
+      en: "https://www.pulsepro.ai/en/enterprise-essentials",
+      ar: "https://www.pulsepro.ai/ar/enterprise-essentials",
+    },
+  },
 };
 
 interface PageProps {

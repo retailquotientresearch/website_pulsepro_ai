@@ -22,6 +22,20 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.pulsepro.ai/en' },
+    { '@type': 'ListItem', position: 2, name: 'Healthcare Inspection Software', item: `https://www.pulsepro.ai/en/${d.canonicalSlug}` },
+  ],
+}
+
 export default function Layout({ children }: { children: ReactNode }) {
-  return children
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {children}
+    </>
+  )
 }

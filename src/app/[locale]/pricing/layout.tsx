@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'Start for $22/user/month. 14-day free trial. No setup fees. Scale from 10 to 10,000 users. Enterprise pricing available.',
     url: 'https://www.pulsepro.ai/en/pricing',
   },
+  twitter: {
+    title: 'Pricing Plans | PULSE',
+    description: 'Start for $22/user/month. 14-day free trial. No setup fees. Scale from 10 to 10,000 users. Enterprise pricing available.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/pricing',
     languages: {

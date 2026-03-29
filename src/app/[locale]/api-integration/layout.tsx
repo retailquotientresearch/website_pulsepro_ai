@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'REST APIs, webhooks, and native integrations. Connect PULSE to ERP, CMMS, BI tools, and custom workflows.',
     url: 'https://www.pulsepro.ai/en/api-integration',
   },
+  twitter: {
+    title: 'API & Integrations | PULSE',
+    description: 'REST APIs, webhooks, and native integrations. Connect PULSE to ERP, CMMS, BI tools, and custom workflows.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/api-integration',
     languages: {

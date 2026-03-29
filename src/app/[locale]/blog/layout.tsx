@@ -11,6 +11,10 @@ export const metadata: Metadata = {
       'Practical guides and insights on running efficient inspection programs, managing field teams, and driving operational excellence at scale.',
     url: 'https://www.pulsepro.ai/en/blog',
   },
+  twitter: {
+    title: 'Blog | PULSE',
+    description: 'Practical guides and insights on running efficient inspection programs, managing field teams, and driving operational excellence at scale.',
+  },
   alternates: {
     canonical: 'https://www.pulsepro.ai/en/blog',
     languages: {
