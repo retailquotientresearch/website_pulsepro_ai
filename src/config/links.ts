@@ -13,6 +13,7 @@ export const ROUTES = {
   termsOfService: "/companies-terms-of-service",
   bookDemo: "/book-demo",
   enterpriseEssentials: "/enterprise-essentials",
+  enterpriseDeployment: "/enterprise-deployment",
   blog: "/blog",
   roiCalculator: "/roi-calculator",
   icpRetail: "/inspection-software-for-retail",

@@ -26,6 +26,7 @@ const groups: FooterGroup[] = [
       { nameKey: "howItWorks", href: ROUTES.howItWorks },
       { nameKey: "pricing", href: ROUTES.pricing },
       { nameKey: "apiIntegration", href: ROUTES.apiIntegration },
+      { nameKey: "enterpriseDeployment", href: ROUTES.enterpriseDeployment },
     ],
   },
   {
