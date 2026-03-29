@@ -1844,38 +1844,57 @@
   }
   ,
   "howItWorks": {
+    "label": "How It Works",
+    "stepLabel": "Step",
+    "timelineLabel": "End-to-end in a single shift",
+    "seeFullWalkthrough": "See the full walkthrough",
     "hero": {
-      "title": "How Pulse Works",
-      "subtitle": "From field capture to insights and action — a simple flow that teams love."
+      "title": "Five Steps to Operational Clarity",
+      "subtitle": "From blank template to actionable insights — in a single shift. No IT projects. No training marathons."
     },
     "steps": {
-      "badge": "Step",
-      "capture": {
-        "title": "Capture on Mobile",
-        "description": "Teams collect photos, notes, and responses in seconds — even offline.",
-        "imageAlt": "Capture step screenshot"
+      "build": {
+        "title": "Build Your Template",
+        "description": "Create digital inspection checklists from 300+ industry-verified templates, or build your own from scratch in minutes using our no-code editor.",
+        "buildBullet1": "300+ ready-made templates across retail, hospitality, food & beverage, healthcare, and construction",
+        "buildBullet2": "Drag-and-drop builder with conditional logic, scoring, and required media fields",
+        "buildBullet3": "Multi-language support — deploy the same template across global sites in any language"
       },
-      "verify": {
-        "title": "Verify with Proof",
-        "description": "Geo-tags, time stamps, and required evidence ensure reliable data.",
-        "imageAlt": "Verification step screenshot"
+      "schedule": {
+        "title": "Schedule & Assign",
+        "description": "Push inspections to the right person at the right time — by site, role, zone, or shift — with automated reminders so nothing is missed.",
+        "scheduleBullet1": "Recurring schedules with daily, weekly, or custom cadence",
+        "scheduleBullet2": "Role-based assignment — assign by job title, location, or team hierarchy",
+        "scheduleBullet3": "Automated SMS and push reminders escalate if a task is missed"
       },
-      "report": {
-        "title": "Report Instantly",
-        "description": "PDFs and analytics are generated automatically — share in one click.",
-        "imageAlt": "Reporting step screenshot"
+      "execute": {
+        "title": "Execute in the Field",
+        "description": "Field teams complete inspections on iOS or Android — capturing photos, GPS stamps, digital signatures, and notes — even with no internet connection.",
+        "executeBullet1": "Full offline mode syncs automatically when connectivity is restored",
+        "executeBullet2": "GPS geofencing ensures inspections are completed at the correct location",
+        "executeBullet3": "Time-stamped photos and mandatory evidence fields prevent shortcuts"
       },
-      "improve": {
-        "title": "Close the Loop & Improve",
-        "description": "Create actions, assign owners, and track closure with escalations.",
-        "imageAlt": "Improvement step screenshot"
+      "review": {
+        "title": "Review & Close Issues",
+        "description": "Flag non-conformances, assign corrective actions to responsible owners, set resolution deadlines, and track closure — with escalation if overdue.",
+        "reviewBullet1": "One-tap issue flagging with photo evidence and severity classification",
+        "reviewBullet2": "Auto-assign corrective actions to the right person based on issue type",
+        "reviewBullet3": "Escalation rules notify managers automatically when SLAs are breached"
+      },
+      "insights": {
+        "title": "Get Insights",
+        "description": "Auto-generated PDF reports, live dashboards, and AI-powered trend detection surface the issues that need leadership attention — before they become crises.",
+        "insightsBullet1": "Instant PDF report generation — shareable in one click after each inspection",
+        "insightsBullet2": "Cross-site analytics with drill-down by region, team, or template section",
+        "insightsBullet3": "AI anomaly detection flags repeat failures and low-scoring sites automatically"
       }
     },
     "cta": {
       "title": "Ready to see it live?",
-      "subtitle": "Start a free trial or book a personalized demo to explore the full flow.",
+      "subtitle": "Start a free trial or book a personalized walkthrough. Up and running in 24 hours.",
       "primary": "Start Free Trial",
-      "secondary": "Book a Demo"
+      "secondary": "Book a Demo",
+      "availableOn": "Available on iOS and Android"
     }
   },
   "bookDemo": {
@@ -2140,6 +2159,221 @@
         "before": "Reactive decisions based on delayed or incomplete information",
         "after": "Faster, data-backed decisions using live insights"
       }
+    }
+  },
+  "enterpriseDeploymentPage": {
+    "hero": {
+      "tag": "Enterprise Deployment",
+      "title": "Your cloud. Your rules.",
+      "titleLine2": "Enterprise-grade, every time.",
+      "subtitle": "PULSE deploys on your terms — Pulse-managed AWS, or your own infrastructure on AWS, Azure, OCI, GCP, or on-premise. SSO, IAM, private subnets, and L1–L3 support included.",
+      "cta1": "Talk to our enterprise team",
+      "cta2": "Enterprise features overview →"
+    },
+    "trustBar": [
+      "SOC2 Practices",
+      "SAML 2.0 / OAuth 2.0",
+      "99.5% Uptime SLA",
+      "L1–L3 Support",
+      "Pen Test Support",
+      "Data Residency Control"
+    ],
+    "deployment": {
+      "tag": "Deployment Models",
+      "title": "Two ways to deploy. Same platform. Full functionality.",
+      "subtitle": "Both options deliver identical platform capabilities and are covered under the same enterprise SLA framework.",
+      "optionA": {
+        "badge": "Option A — Most Popular",
+        "title": "Pulse-Managed AWS",
+        "subtitle": "Fully managed by the Pulse engineering team",
+        "items": [
+          "Dedicated AWS environment provisioned by Pulse",
+          "Multi-environment setup: Dev / Test / Production",
+          "High availability with auto-scaling (EKS)",
+          "Managed disaster recovery with cross-region backups",
+          "SSL, access controls, and security hardening included",
+          "AWS region configurable for data sovereignty",
+          "Zero IT burden on your team",
+          "Go-live in 10–12 weeks"
+        ]
+      },
+      "optionB": {
+        "title": "Your Cloud or On-Premise",
+        "subtitle": "Deployed on your infrastructure, managed by your IT team",
+        "items": [
+          "Deploy on AWS, Azure, OCI, GCP, or private servers",
+          "Client manages their own infrastructure",
+          "Full data sovereignty — data never leaves your environment",
+          "Pulse provides deployment documentation and support",
+          "VPN / IP restriction controls configured to your network",
+          "Suitable for air-gapped or highly regulated environments",
+          "Aligns with existing IT governance and procurement",
+          "Timeline depends on client infrastructure readiness"
+        ]
+      },
+      "table": {
+        "col1": "Criteria",
+        "col2": "Option A — Pulse AWS",
+        "col3": "Option B — Client Cloud / On-Prem",
+        "rows": [
+          ["Infrastructure Owner", "Pulse manages dedicated AWS environment", "Client manages own cloud or on-premise infrastructure"],
+          ["Setup Complexity", "Lower — fully managed by Pulse team", "Higher — requires client IT coordination"],
+          ["Hosting Responsibility", "Pulse", "Client"],
+          ["Data Sovereignty", "AWS region configurable", "Full client control"],
+          ["Supported Clouds", "AWS (all regions)", "AWS, Azure, OCI, GCP, or on-premise"],
+          ["Recommended For", "Rapid deployment, minimal IT overhead", "Existing cloud infra or strict data residency needs"]
+        ]
+      }
+    },
+    "identity": {
+      "tag": "Identity & Access",
+      "title": "Integrates with your existing identity stack",
+      "subtitle": "PULSE connects to corporate identity systems out of the box — no custom development required. Standard SSO and IAM integrations are included in the implementation scope.",
+      "note": "SSO and IAM integration support is included at no additional charge in the standard implementation scope.",
+      "items": [
+        {
+          "title": "Single Sign-On (SSO)",
+          "detail": "SAML 2.0 and OAuth 2.0 compatible. Works with Okta, Azure AD, Google Workspace, Active Directory Federation Services, and any standards-compliant IdP.",
+          "badge": "SAML 2.0 / OAuth 2.0"
+        },
+        {
+          "title": "Identity & Access Management (IAM)",
+          "detail": "Role mapping from corporate directory. Users sync from your AD or IdP — no manual provisioning. Group-based access assignment supported.",
+          "badge": "OpenID Connect"
+        },
+        {
+          "title": "Role-Based Access Control (RBAC)",
+          "detail": "Granular permissions by module, site, and function. Configurable approval hierarchies. Field users, managers, and admins have distinct access scopes.",
+          "badge": "Granular RBAC"
+        },
+        {
+          "title": "MFA & VPN / IP Restriction",
+          "detail": "Multi-factor authentication enforced at login. VPN or IP allowlist controls can be configured for network-level access restriction.",
+          "badge": "MFA + Network Controls"
+        }
+      ]
+    },
+    "security": {
+      "tag": "Security Standards",
+      "title": "Hardened to enterprise standards",
+      "subtitle": "Security is built into the architecture — not bolted on. Every deployment is hardened against enterprise security requirements from day one.",
+      "items": [
+        {
+          "title": "Encryption in Transit & at Rest",
+          "detail": "SSL/TLS enforced via Application Load Balancer. Data encrypted at rest using AES-256 on RDS and object storage.",
+          "icon": "🔒"
+        },
+        {
+          "title": "Private Network Architecture",
+          "detail": "Database hosted in private VPC subnets. Application services accessible only through controlled ingress paths. No direct public database exposure.",
+          "icon": "🏗️"
+        },
+        {
+          "title": "Secrets Management",
+          "detail": "Credentials and API keys managed via AWS Secrets Manager or equivalent. No secrets stored in code or configuration files.",
+          "icon": "🗝️"
+        },
+        {
+          "title": "SOC2 Practices",
+          "detail": "Platform follows SOC2-aligned security controls covering access, availability, confidentiality, and change management.",
+          "icon": "📋"
+        },
+        {
+          "title": "Penetration Testing Support",
+          "detail": "Client-led security assessments and penetration tests supported. Pulse provides environment access and engineering cooperation during assessments.",
+          "icon": "🛡️"
+        },
+        {
+          "title": "Audit Logs & Monitoring",
+          "detail": "Full application audit trail. Infrastructure monitoring via CloudWatch and CloudTrail. Centralised logging via Fluentd for compliance and incident response.",
+          "icon": "📊"
+        }
+      ]
+    },
+    "sla": {
+      "tag": "SLA & Support",
+      "title": "Structured L1–L3 support with defined response times",
+      "subtitle": "Enterprise support is active from day one of go-live. A dedicated account manager oversees the engagement, with monthly service reviews and a formal change request process.",
+      "responseLabel": "Response:",
+      "resolutionLabel": "Resolution:",
+      "priorities": [
+        { "priority": "P1 — Critical", "def": "Platform unavailable / data loss risk", "response": "1 hour", "resolution": "4 hours" },
+        { "priority": "P2 — High", "def": "Major functionality impaired", "response": "4 hours", "resolution": "1 business day" },
+        { "priority": "P3 — Medium", "def": "Non-critical issue affecting usability", "response": "1 business day", "resolution": "3 business days" },
+        { "priority": "P4 — Low", "def": "General query / enhancement request", "response": "2 business days", "resolution": "As agreed" }
+      ],
+      "uptime": {
+        "value": "99.5%",
+        "label": "Platform Availability",
+        "note": "Committed minimum for Option A (Pulse-managed AWS). Planned maintenance communicated at least 72 hours in advance."
+      },
+      "tiers": {
+        "title": "Support Tiers",
+        "items": [
+          { "tier": "L1 — Service Desk", "fn": "First Contact Resolution", "scope": "User queries, account management, access issues, ticket creation" },
+          { "tier": "L2 — Technical", "fn": "Application Support", "scope": "Platform config issues, integration queries, workflow troubleshooting" },
+          { "tier": "L3 — Engineering", "fn": "Product Engineering", "scope": "Bug fixes, environment-level issues, security incidents, release deployment" }
+        ]
+      },
+      "governance": {
+        "title": "Service Governance",
+        "items": ["Dedicated account manager", "Monthly service review reports", "Formal change request process"]
+      }
+    },
+    "integrations": {
+      "tag": "Enterprise Integrations",
+      "title": "Integrates with your enterprise IT ecosystem",
+      "subtitle": "Standard enterprise integrations are included in the implementation scope at no additional charge.",
+      "col1": "Integration",
+      "col2": "Status",
+      "col3": "Details",
+      "included": "Included",
+      "additional": "Additional",
+      "rows": [
+        ["Single Sign-On (SSO)", "Included", "SAML 2.0 / OAuth 2.0 compatible"],
+        ["Identity & Access Management (IAM)", "Included", "Role mapping from corporate directory"],
+        ["RESTful API", "Included", "Full API documentation provided; all platform functions exposed"],
+        ["VPN / IP Restriction Controls", "Included", "Network-level access control for private deployments"],
+        ["Security Validation & Pen Testing", "Included", "Support for client-led security assessments"],
+        ["ERP / CMMS Integration", "Additional", "Quoted separately based on integration complexity"],
+        ["BI / Analytics Tool Integration", "Additional", "Data export and API available as standard; connector build quoted"]
+      ]
+    },
+    "implementation": {
+      "tag": "Implementation",
+      "title": "Structured, phase-based delivery",
+      "subtitle": "A 7-phase implementation methodology designed for minimal disruption and rapid user adoption. Timelines shown are for Option A (Pulse-managed AWS).",
+      "optionBNote": "Option B note: Timeline for client-cloud deployments may extend further based on infrastructure readiness, internal approvals, and cross-team coordination. All phases depend on client IT, security, and project management teams.",
+      "phases": [
+        { "phase": "01", "name": "Project Initiation & Scoping", "weeks": "Week 1–2", "activities": "Project kickoff, stakeholder alignment, requirements confirmation, project plan finalisation" },
+        { "phase": "02", "name": "Environment Setup & Configuration", "weeks": "Week 2–4", "activities": "AWS environment provisioning, application deployment, multi-environment setup (Dev/Test/Prod), SSL and security configuration" },
+        { "phase": "03", "name": "Platform Configuration", "weeks": "Week 3–6", "activities": "Site/location hierarchy, user and role setup, workflow configuration, checklist and form build, notification rules, report setup" },
+        { "phase": "04", "name": "Integration & Security Validation", "weeks": "Week 5–7", "activities": "SSO/IAM integration setup, API integration setup, VPN/IP restrictions, security testing and validation" },
+        { "phase": "05", "name": "User Acceptance Testing (UAT)", "weeks": "Week 7–9", "activities": "UAT execution, defect resolution, sign-off, performance and stability testing" },
+        { "phase": "06", "name": "Training & Onboarding", "weeks": "Week 9–10", "activities": "Administrator training, end-user training, training material delivery, mobile app enablement" },
+        { "phase": "07", "name": "Go-Live & Hypercare", "weeks": "Week 10–12", "activities": "Production deployment, go-live support, hypercare period monitoring, handover to steady-state support" }
+      ]
+    },
+    "whyPulse": {
+      "tag": "Why PULSE",
+      "title": "What enterprise IT teams get",
+      "items": [
+        { "num": "01", "title": "Purpose-Built Platform", "detail": "Designed exclusively for operational management — not adapted from a generic project tool. Less configuration overhead, faster time-to-value." },
+        { "num": "02", "title": "Real AWS Enterprise Infrastructure", "detail": "EKS-based, Kubernetes-orchestrated, with HPA auto-scaling and RDS on private subnets. The same stack used for Tata Motors, Accor, and public sector deployments." },
+        { "num": "03", "title": "Cloud-Portable Architecture", "detail": "Same containerised application stack deploys identically on AWS EKS, Azure AKS, OCI OKE, or GKE. No cloud lock-in." },
+        { "num": "04", "title": "Transparent Commercials", "detail": "All-inclusive pricing: implementation, hosting, licensing, and support clearly itemised. No hidden fees or integration surcharges for standard SSO/IAM." },
+        { "num": "05", "title": "Security-First by Design", "detail": "SSL/TLS everywhere, RBAC enforced at the API layer, secrets in vault, pen test support, SOC2-aligned controls. Not an afterthought." },
+        { "num": "06", "title": "Continuous Product Investment", "detail": "All standard platform enhancements and new features are automatically available during the subscription — no upgrade fees, no version lock." }
+      ]
+    },
+    "cta": {
+      "title": "Ready to discuss your deployment requirements?",
+      "subtitle": "Share your infrastructure, SSO provider, and compliance requirements. Our enterprise team will scope a deployment plan specific to your environment.",
+      "formPlaceholder": "Enter your work email",
+      "formButton": "Talk to Enterprise Team",
+      "footerOr": "Or",
+      "footerLink": "book a 30-minute demo",
+      "footerSuffix": "with our solutions team."
     }
   }
 }

@@ -1,25 +1,28 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 
+const BASE_URL = 'https://www.pulsepro.ai';
+
 export const metadata: Metadata = {
-  title: 'How It Works',
+  title: 'How PULSE Works | 5-Step Inspection Workflow',
   description:
-    'See how PULSE works in 4 steps: capture findings on mobile, verify results, generate instant reports, and drive continuous improvement across all your sites.',
+    'From template to insight in one shift. See how enterprise teams use PULSE to build checklists, assign inspections, capture in the field, close corrective actions, and get real-time analytics.',
   openGraph: {
-    title: 'How PULSE Works | Enterprise Inspection Platform',
+    title: 'How PULSE Works | Enterprise Inspection Workflow',
     description:
-      'From field capture to corrective action in minutes. The simple 4-step workflow that field teams at 100,000+ sites rely on every day.',
-    url: 'https://www.pulsepro.ai/en/how-it-works',
+      'Five simple steps that turn field chaos into operational clarity. Trusted by teams at 100,000+ sites worldwide.',
+    url: `${BASE_URL}/en/how-it-works`,
   },
   twitter: {
-    title: 'How PULSE Works | Enterprise Inspection Platform',
-    description: 'From field capture to corrective action in minutes. The simple 4-step workflow that field teams at 100,000+ sites rely on every day.',
+    title: 'How PULSE Works | Enterprise Inspection Workflow',
+    description: 'Five simple steps that turn field chaos into operational clarity. Trusted by teams at 100,000+ sites worldwide.',
   },
   alternates: {
-    canonical: 'https://www.pulsepro.ai/en/how-it-works',
+    canonical: `${BASE_URL}/en/how-it-works`,
     languages: {
-      en: 'https://www.pulsepro.ai/en/how-it-works',
-      ar: 'https://www.pulsepro.ai/ar/how-it-works',
+      en: `${BASE_URL}/en/how-it-works`,
+      ar: `${BASE_URL}/ar/how-it-works`,
+      'x-default': `${BASE_URL}/en/how-it-works`,
     },
   },
 };

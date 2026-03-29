@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Navigation from '@/components/Navigation';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import { Link } from '@/i18n/navigation';
@@ -7,8 +7,6 @@ import { ROUTES } from '@/config/links';
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
-
-// ── Section components (server, no state needed) ────────────────────────────
 
 function SectionDivider() {
   return <div className="w-16 h-px bg-gray-200 mx-auto my-12" />;
@@ -34,11 +32,39 @@ function Check() {
   );
 }
 
-// ── Page ─────────────────────────────────────────────────────────────────────
+type PriorityRow = { priority: string; def: string; response: string; resolution: string; color: string };
+type TierRow = { tier: string; fn: string; scope: string };
+type IdentityItem = { title: string; detail: string; badge: string };
+type SecurityItem = { title: string; detail: string; icon: string };
+type GovernanceItem = string;
+type WhyItem = { num: string; title: string; detail: string };
+type Phase = { phase: string; name: string; weeks: string; activities: string };
 
 export default async function EnterpriseDeploymentPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('enterpriseDeploymentPage');
+
+  // Raw array data from translations
+  const trustBarItems = t.raw('trustBar') as string[];
+  const optionAItems = t.raw('deployment.optionA.items') as string[];
+  const optionBItems = t.raw('deployment.optionB.items') as string[];
+  const tableRows = t.raw('deployment.table.rows') as string[][];
+  const identityItems = t.raw('identity.items') as IdentityItem[];
+  const securityItems = t.raw('security.items') as SecurityItem[];
+  const priorities = t.raw('sla.priorities') as Omit<PriorityRow, 'color'>[];
+  const tierItems = t.raw('sla.tiers.items') as TierRow[];
+  const governanceItems = t.raw('sla.governance.items') as GovernanceItem[];
+  const integrationRows = t.raw('integrations.rows') as string[][];
+  const phases = t.raw('implementation.phases') as Phase[];
+  const whyItems = t.raw('whyPulse.items') as WhyItem[];
+
+  const priorityColors = [
+    'text-red-600 bg-red-50 border-red-200',
+    'text-orange-600 bg-orange-50 border-orange-200',
+    'text-yellow-700 bg-yellow-50 border-yellow-200',
+    'text-gray-600 bg-gray-50 border-gray-200',
+  ];
 
   return (
     <main className="bg-white min-h-screen">
@@ -47,26 +73,25 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
       {/* ── Hero ── */}
       <section className="bg-[#0D1117] text-white pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <Tag>Enterprise Deployment</Tag>
+          <Tag>{t('hero.tag')}</Tag>
           <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            Your cloud. Your rules.<br />Enterprise-grade, every time.
+            {t('hero.title')}<br />{t('hero.titleLine2')}
           </h1>
           <p className="mt-5 text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            PULSE deploys on your terms — Pulse-managed AWS, or your own infrastructure on AWS, Azure,
-            OCI, GCP, or on-premise. SSO, IAM, private subnets, and L1–L3 support included.
+            {t('hero.subtitle')}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={ROUTES.bookDemo}
               className="bg-[#16803C] hover:bg-[#14703A] text-white font-semibold px-8 py-3 rounded-xl transition-colors"
             >
-              Talk to our enterprise team
+              {t('hero.cta1')}
             </Link>
             <Link
               href={ROUTES.enterpriseEssentials}
               className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3 rounded-xl transition-colors"
             >
-              Enterprise features overview →
+              {t('hero.cta2')}
             </Link>
           </div>
         </div>
@@ -76,7 +101,7 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
       <section className="bg-[#111827] text-gray-400 py-5 border-b border-white/5">
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs font-medium uppercase tracking-widest">
-            {['SOC2 Practices', 'SAML 2.0 / OAuth 2.0', '99.5% Uptime SLA', 'L1–L3 Support', 'Pen Test Support', 'Data Residency Control'].map((item) => (
+            {trustBarItems.map((item) => (
               <span key={item} className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#16803C]" />
                 {item}
@@ -91,32 +116,21 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         {/* ── Deployment Options ── */}
         <section className="py-20">
           <div className="text-center mb-12">
-            <Tag>Deployment Models</Tag>
-            <h2 className="mt-4 text-3xl font-bold text-gray-900">Two ways to deploy. Same platform. Full functionality.</h2>
-            <p className="mt-3 text-gray-500 max-w-xl mx-auto">
-              Both options deliver identical platform capabilities and are covered under the same enterprise SLA framework.
-            </p>
+            <Tag>{t('deployment.tag')}</Tag>
+            <h2 className="mt-4 text-3xl font-bold text-gray-900">{t('deployment.title')}</h2>
+            <p className="mt-3 text-gray-500 max-w-xl mx-auto">{t('deployment.subtitle')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {/* Option A */}
             <div className="border-2 border-[#16803C] rounded-2xl p-8 relative">
               <span className="absolute -top-3 left-6 bg-[#16803C] text-white text-xs font-semibold px-3 py-1 rounded-full">
-                Option A — Most Popular
+                {t('deployment.optionA.badge')}
               </span>
-              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-1">Pulse-Managed AWS</h3>
-              <p className="text-sm text-gray-500 mb-6">Fully managed by the Pulse engineering team</p>
+              <h3 className="text-xl font-bold text-gray-900 mt-2 mb-1">{t('deployment.optionA.title')}</h3>
+              <p className="text-sm text-gray-500 mb-6">{t('deployment.optionA.subtitle')}</p>
               <ul className="space-y-3">
-                {[
-                  'Dedicated AWS environment provisioned by Pulse',
-                  'Multi-environment setup: Dev / Test / Production',
-                  'High availability with auto-scaling (EKS)',
-                  'Managed disaster recovery with cross-region backups',
-                  'SSL, access controls, and security hardening included',
-                  'AWS region configurable for data sovereignty',
-                  'Zero IT burden on your team',
-                  'Go-live in 10–12 weeks',
-                ].map((item) => (
+                {optionAItems.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-gray-700">
                     <Check />
                     {item}
@@ -127,19 +141,10 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
 
             {/* Option B */}
             <div className="border border-gray-200 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-1">Your Cloud or On-Premise</h3>
-              <p className="text-sm text-gray-500 mb-6">Deployed on your infrastructure, managed by your IT team</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">{t('deployment.optionB.title')}</h3>
+              <p className="text-sm text-gray-500 mb-6">{t('deployment.optionB.subtitle')}</p>
               <ul className="space-y-3">
-                {[
-                  'Deploy on AWS, Azure, OCI, GCP, or private servers',
-                  'Client manages their own infrastructure',
-                  'Full data sovereignty — data never leaves your environment',
-                  'Pulse provides deployment documentation and support',
-                  'VPN / IP restriction controls configured to your network',
-                  'Suitable for air-gapped or highly regulated environments',
-                  'Aligns with existing IT governance and procurement',
-                  'Timeline depends on client infrastructure readiness',
-                ].map((item) => (
+                {optionBItems.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-gray-700">
                     <Check />
                     {item}
@@ -154,20 +159,13 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200">
-                  <th className="text-left py-3 px-5 font-semibold text-gray-600 w-1/3">Criteria</th>
-                  <th className="text-left py-3 px-5 font-semibold text-[#16803C]">Option A — Pulse AWS</th>
-                  <th className="text-left py-3 px-5 font-semibold text-gray-700">Option B — Client Cloud / On-Prem</th>
+                  <th className="text-left py-3 px-5 font-semibold text-gray-600 w-1/3">{t('deployment.table.col1')}</th>
+                  <th className="text-left py-3 px-5 font-semibold text-[#16803C]">{t('deployment.table.col2')}</th>
+                  <th className="text-left py-3 px-5 font-semibold text-gray-700">{t('deployment.table.col3')}</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  ['Infrastructure Owner', 'Pulse manages dedicated AWS environment', 'Client manages own cloud or on-premise infrastructure'],
-                  ['Setup Complexity', 'Lower — fully managed by Pulse team', 'Higher — requires client IT coordination'],
-                  ['Hosting Responsibility', 'Pulse', 'Client'],
-                  ['Data Sovereignty', 'AWS region configurable', 'Full client control'],
-                  ['Supported Clouds', 'AWS (all regions)', 'AWS, Azure, OCI, GCP, or on-premise'],
-                  ['Recommended For', 'Rapid deployment, minimal IT overhead', 'Existing cloud infra or strict data residency needs'],
-                ].map(([criterion, optA, optB], idx) => (
+                {tableRows.map(([criterion, optA, optB], idx) => (
                   <tr key={criterion} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
                     <td className="py-3.5 px-5 font-medium text-gray-800 border-b border-gray-100">{criterion}</td>
                     <td className="py-3.5 px-5 text-gray-600 border-b border-gray-100">{optA}</td>
@@ -185,44 +183,18 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         <section className="py-10">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <Tag>Identity & Access</Tag>
+              <Tag>{t('identity.tag')}</Tag>
               <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">
-                Integrates with your existing identity stack
+                {t('identity.title')}
               </h2>
-              <p className="mt-3 text-gray-500 leading-relaxed">
-                PULSE connects to corporate identity systems out of the box — no custom development required.
-                Standard SSO and IAM integrations are included in the implementation scope.
-              </p>
+              <p className="mt-3 text-gray-500 leading-relaxed">{t('identity.subtitle')}</p>
               <div className="mt-6 bg-[#FFFFEB] border border-green-200 rounded-xl p-5">
-                <p className="text-sm text-gray-700 font-medium">
-                  SSO and IAM integration support is included at no additional charge in the standard implementation scope.
-                </p>
+                <p className="text-sm text-gray-700 font-medium">{t('identity.note')}</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              {[
-                {
-                  title: 'Single Sign-On (SSO)',
-                  detail: 'SAML 2.0 and OAuth 2.0 compatible. Works with Okta, Azure AD, Google Workspace, Active Directory Federation Services, and any standards-compliant IdP.',
-                  badge: 'SAML 2.0 / OAuth 2.0',
-                },
-                {
-                  title: 'Identity & Access Management (IAM)',
-                  detail: 'Role mapping from corporate directory. Users sync from your AD or IdP — no manual provisioning. Group-based access assignment supported.',
-                  badge: 'OpenID Connect',
-                },
-                {
-                  title: 'Role-Based Access Control (RBAC)',
-                  detail: 'Granular permissions by module, site, and function. Configurable approval hierarchies. Field users, managers, and admins have distinct access scopes.',
-                  badge: 'Granular RBAC',
-                },
-                {
-                  title: 'MFA & VPN / IP Restriction',
-                  detail: 'Multi-factor authentication enforced at login. VPN or IP allowlist controls can be configured for network-level access restriction.',
-                  badge: 'MFA + Network Controls',
-                },
-              ].map((item) => (
+              {identityItems.map((item) => (
                 <div key={item.title} className="border border-gray-200 rounded-xl p-5">
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
@@ -242,47 +214,13 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         {/* ── Security Standards ── */}
         <section className="py-10">
           <div className="text-center mb-12">
-            <Tag>Security Standards</Tag>
-            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">Hardened to enterprise standards</h2>
-            <p className="mt-3 text-gray-500 max-w-xl mx-auto">
-              Security is built into the architecture — not bolted on. Every deployment is hardened against
-              enterprise security requirements from day one.
-            </p>
+            <Tag>{t('security.tag')}</Tag>
+            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">{t('security.title')}</h2>
+            <p className="mt-3 text-gray-500 max-w-xl mx-auto">{t('security.subtitle')}</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              {
-                title: 'Encryption in Transit & at Rest',
-                detail: 'SSL/TLS enforced via Application Load Balancer. Data encrypted at rest using AES-256 on RDS and object storage.',
-                icon: '🔒',
-              },
-              {
-                title: 'Private Network Architecture',
-                detail: 'Database hosted in private VPC subnets. Application services accessible only through controlled ingress paths. No direct public database exposure.',
-                icon: '🏗️',
-              },
-              {
-                title: 'Secrets Management',
-                detail: 'Credentials and API keys managed via AWS Secrets Manager or equivalent. No secrets stored in code or configuration files.',
-                icon: '🗝️',
-              },
-              {
-                title: 'SOC2 Practices',
-                detail: 'Platform follows SOC2-aligned security controls covering access, availability, confidentiality, and change management.',
-                icon: '📋',
-              },
-              {
-                title: 'Penetration Testing Support',
-                detail: 'Client-led security assessments and penetration tests supported. Pulse provides environment access and engineering cooperation during assessments.',
-                icon: '🛡️',
-              },
-              {
-                title: 'Audit Logs & Monitoring',
-                detail: 'Full application audit trail. Infrastructure monitoring via CloudWatch and CloudTrail. Centralised logging via Fluentd for compliance and incident response.',
-                icon: '📊',
-              },
-            ].map((item) => (
+            {securityItems.map((item) => (
               <div key={item.title} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                 <div className="text-2xl mb-3">{item.icon}</div>
                 <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
@@ -298,30 +236,20 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         <section className="py-10">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <Tag>SLA & Support</Tag>
-              <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">
-                Structured L1–L3 support with defined response times
-              </h2>
-              <p className="mt-3 text-gray-500 leading-relaxed">
-                Enterprise support is active from day one of go-live. A dedicated account manager
-                oversees the engagement, with monthly service reviews and a formal change request process.
-              </p>
+              <Tag>{t('sla.tag')}</Tag>
+              <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">{t('sla.title')}</h2>
+              <p className="mt-3 text-gray-500 leading-relaxed">{t('sla.subtitle')}</p>
 
               <div className="mt-8 space-y-4">
-                {[
-                  { priority: 'P1 — Critical', def: 'Platform unavailable / data loss risk', response: '1 hour', resolution: '4 hours', color: 'text-red-600 bg-red-50 border-red-200' },
-                  { priority: 'P2 — High', def: 'Major functionality impaired', response: '4 hours', resolution: '1 business day', color: 'text-orange-600 bg-orange-50 border-orange-200' },
-                  { priority: 'P3 — Medium', def: 'Non-critical issue affecting usability', response: '1 business day', resolution: '3 business days', color: 'text-yellow-700 bg-yellow-50 border-yellow-200' },
-                  { priority: 'P4 — Low', def: 'General query / enhancement request', response: '2 business days', resolution: 'As agreed', color: 'text-gray-600 bg-gray-50 border-gray-200' },
-                ].map((row) => (
-                  <div key={row.priority} className={`rounded-xl border p-4 ${row.color}`}>
+                {priorities.map((row, i) => (
+                  <div key={row.priority} className={`rounded-xl border p-4 ${priorityColors[i]}`}>
                     <div className="flex items-center justify-between mb-1">
                       <span className="font-semibold text-sm">{row.priority}</span>
                     </div>
                     <p className="text-xs mb-2 opacity-80">{row.def}</p>
                     <div className="flex gap-6 text-xs font-medium">
-                      <span>Response: <span className="font-bold">{row.response}</span></span>
-                      <span>Resolution: <span className="font-bold">{row.resolution}</span></span>
+                      <span>{t('sla.responseLabel')} <span className="font-bold">{row.response}</span></span>
+                      <span>{t('sla.resolutionLabel')} <span className="font-bold">{row.resolution}</span></span>
                     </div>
                   </div>
                 ))}
@@ -331,24 +259,18 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
             <div className="space-y-5">
               {/* Uptime */}
               <div className="bg-[#0D1117] text-white rounded-2xl p-8 text-center">
-                <p className="text-6xl font-extrabold text-[#16803C]">99.5%</p>
-                <p className="text-sm text-gray-400 mt-2 uppercase tracking-widest">Platform Availability</p>
-                <p className="text-xs text-gray-500 mt-3">
-                  Committed minimum for Option A (Pulse-managed AWS). Planned maintenance communicated at least 72 hours in advance.
-                </p>
+                <p className="text-6xl font-extrabold text-[#16803C]">{t('sla.uptime.value')}</p>
+                <p className="text-sm text-gray-400 mt-2 uppercase tracking-widest">{t('sla.uptime.label')}</p>
+                <p className="text-xs text-gray-500 mt-3">{t('sla.uptime.note')}</p>
               </div>
 
               {/* Support tiers */}
               <div className="border border-gray-200 rounded-2xl overflow-hidden">
                 <div className="bg-gray-50 px-5 py-3 border-b border-gray-200">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Support Tiers</p>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest">{t('sla.tiers.title')}</p>
                 </div>
-                {[
-                  { tier: 'L1 — Service Desk', fn: 'First Contact Resolution', scope: 'User queries, account management, access issues, ticket creation' },
-                  { tier: 'L2 — Technical', fn: 'Application Support', scope: 'Platform config issues, integration queries, workflow troubleshooting' },
-                  { tier: 'L3 — Engineering', fn: 'Product Engineering', scope: 'Bug fixes, environment-level issues, security incidents, release deployment' },
-                ].map((row, i) => (
-                  <div key={row.tier} className={`px-5 py-4 ${i < 2 ? 'border-b border-gray-100' : ''}`}>
+                {tierItems.map((row, i) => (
+                  <div key={row.tier} className={`px-5 py-4 ${i < tierItems.length - 1 ? 'border-b border-gray-100' : ''}`}>
                     <p className="text-sm font-semibold text-gray-900">{row.tier}</p>
                     <p className="text-xs text-[#16803C] font-medium">{row.fn}</p>
                     <p className="text-xs text-gray-500 mt-1">{row.scope}</p>
@@ -358,11 +280,11 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
 
               {/* Governance */}
               <div className="bg-[#FFFFEB] border border-green-200 rounded-2xl p-5">
-                <p className="text-sm font-semibold text-gray-900 mb-1">Service Governance</p>
+                <p className="text-sm font-semibold text-gray-900 mb-1">{t('sla.governance.title')}</p>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li className="flex gap-2"><Check />Dedicated account manager</li>
-                  <li className="flex gap-2"><Check />Monthly service review reports</li>
-                  <li className="flex gap-2"><Check />Formal change request process</li>
+                  {governanceItems.map((item) => (
+                    <li key={item} className="flex gap-2"><Check />{item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -374,36 +296,26 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         {/* ── Integrations ── */}
         <section className="py-10">
           <div className="text-center mb-10">
-            <Tag>Enterprise Integrations</Tag>
-            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">Integrates with your enterprise IT ecosystem</h2>
-            <p className="mt-3 text-gray-500 max-w-xl mx-auto">
-              Standard enterprise integrations are included in the implementation scope at no additional charge.
-            </p>
+            <Tag>{t('integrations.tag')}</Tag>
+            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">{t('integrations.title')}</h2>
+            <p className="mt-3 text-gray-500 max-w-xl mx-auto">{t('integrations.subtitle')}</p>
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-gray-200 mb-8">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200">
-                  <th className="text-left py-3 px-5 font-semibold text-gray-600">Integration</th>
-                  <th className="text-left py-3 px-5 font-semibold text-gray-600">Status</th>
-                  <th className="text-left py-3 px-5 font-semibold text-gray-600">Details</th>
+                  <th className="text-left py-3 px-5 font-semibold text-gray-600">{t('integrations.col1')}</th>
+                  <th className="text-left py-3 px-5 font-semibold text-gray-600">{t('integrations.col2')}</th>
+                  <th className="text-left py-3 px-5 font-semibold text-gray-600">{t('integrations.col3')}</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  ['Single Sign-On (SSO)', 'Included', 'SAML 2.0 / OAuth 2.0 compatible'],
-                  ['Identity & Access Management (IAM)', 'Included', 'Role mapping from corporate directory'],
-                  ['RESTful API', 'Included', 'Full API documentation provided; all platform functions exposed'],
-                  ['VPN / IP Restriction Controls', 'Included', 'Network-level access control for private deployments'],
-                  ['Security Validation & Pen Testing', 'Included', 'Support for client-led security assessments'],
-                  ['ERP / CMMS Integration', 'Additional', 'Quoted separately based on integration complexity'],
-                  ['BI / Analytics Tool Integration', 'Additional', 'Data export and API available as standard; connector build quoted'],
-                ].map(([name, status, detail], idx) => (
+                {integrationRows.map(([name, status, detail], idx) => (
                   <tr key={name} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
                     <td className="py-3 px-5 font-medium text-gray-800 border-b border-gray-100">{name}</td>
                     <td className="py-3 px-5 border-b border-gray-100">
-                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${status === 'Included' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'}`}>
+                      <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${status === t('integrations.included') ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'}`}>
                         {status}
                       </span>
                     </td>
@@ -420,24 +332,13 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         {/* ── Implementation Timeline ── */}
         <section className="py-10">
           <div className="text-center mb-12">
-            <Tag>Implementation</Tag>
-            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">Structured, phase-based delivery</h2>
-            <p className="mt-3 text-gray-500 max-w-xl mx-auto">
-              A 7-phase implementation methodology designed for minimal disruption and rapid user adoption.
-              Timelines shown are for Option A (Pulse-managed AWS).
-            </p>
+            <Tag>{t('implementation.tag')}</Tag>
+            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">{t('implementation.title')}</h2>
+            <p className="mt-3 text-gray-500 max-w-xl mx-auto">{t('implementation.subtitle')}</p>
           </div>
 
           <div className="space-y-3">
-            {[
-              { phase: '01', name: 'Project Initiation & Scoping', weeks: 'Week 1–2', activities: 'Project kickoff, stakeholder alignment, requirements confirmation, project plan finalisation' },
-              { phase: '02', name: 'Environment Setup & Configuration', weeks: 'Week 2–4', activities: 'AWS environment provisioning, application deployment, multi-environment setup (Dev/Test/Prod), SSL and security configuration' },
-              { phase: '03', name: 'Platform Configuration', weeks: 'Week 3–6', activities: 'Site/location hierarchy, user and role setup, workflow configuration, checklist and form build, notification rules, report setup' },
-              { phase: '04', name: 'Integration & Security Validation', weeks: 'Week 5–7', activities: 'SSO/IAM integration setup, API integration setup, VPN/IP restrictions, security testing and validation' },
-              { phase: '05', name: 'User Acceptance Testing (UAT)', weeks: 'Week 7–9', activities: 'UAT execution, defect resolution, sign-off, performance and stability testing' },
-              { phase: '06', name: 'Training & Onboarding', weeks: 'Week 9–10', activities: 'Administrator training, end-user training, training material delivery, mobile app enablement' },
-              { phase: '07', name: 'Go-Live & Hypercare', weeks: 'Week 10–12', activities: 'Production deployment, go-live support, hypercare period monitoring, handover to steady-state support' },
-            ].map((row) => (
+            {phases.map((row) => (
               <div key={row.phase} className="flex gap-5 items-start rounded-xl border border-gray-100 bg-gray-50/50 p-5">
                 <span className="text-3xl font-extralight text-gray-300 w-8 shrink-0">{row.phase}</span>
                 <div className="flex-1 min-w-0">
@@ -452,9 +353,7 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
           </div>
 
           <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
-            <p className="text-sm text-amber-800">
-              <strong>Option B note:</strong> Timeline for client-cloud deployments may extend further based on infrastructure readiness, internal approvals, and cross-team coordination. All phases depend on client IT, security, and project management teams.
-            </p>
+            <p className="text-sm text-amber-800">{t('implementation.optionBNote')}</p>
           </div>
         </section>
 
@@ -463,18 +362,11 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
         {/* ── Why Pulse for enterprise IT ── */}
         <section className="py-10">
           <div className="text-center mb-10">
-            <Tag>Why PULSE</Tag>
-            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">What enterprise IT teams get</h2>
+            <Tag>{t('whyPulse.tag')}</Tag>
+            <h2 className="mt-4 text-2xl md:text-3xl font-bold text-gray-900">{t('whyPulse.title')}</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              { num: '01', title: 'Purpose-Built Platform', detail: 'Designed exclusively for operational management — not adapted from a generic project tool. Less configuration overhead, faster time-to-value.' },
-              { num: '02', title: 'Real AWS Enterprise Infrastructure', detail: 'EKS-based, Kubernetes-orchestrated, with HPA auto-scaling and RDS on private subnets. The same stack used for Tata Motors, Accor, and public sector deployments.' },
-              { num: '03', title: 'Cloud-Portable Architecture', detail: 'Same containerised application stack deploys identically on AWS EKS, Azure AKS, OCI OKE, or GKE. No cloud lock-in.' },
-              { num: '04', title: 'Transparent Commercials', detail: 'All-inclusive pricing: implementation, hosting, licensing, and support clearly itemised. No hidden fees or integration surcharges for standard SSO/IAM.' },
-              { num: '05', title: 'Security-First by Design', detail: 'SSL/TLS everywhere, RBAC enforced at the API layer, secrets in vault, pen test support, SOC2-aligned controls. Not an afterthought.' },
-              { num: '06', title: 'Continuous Product Investment', detail: 'All standard platform enhancements and new features are automatically available during the subscription — no upgrade fees, no version lock.' },
-            ].map((item) => (
+            {whyItems.map((item) => (
               <div key={item.num} className="rounded-2xl border border-gray-200 p-6">
                 <span className="text-3xl font-extralight text-gray-300">{item.num}</span>
                 <h3 className="font-bold text-gray-900 mt-2 mb-2">{item.title}</h3>
@@ -484,29 +376,25 @@ export default async function EnterpriseDeploymentPage({ params }: PageProps) {
           </div>
         </section>
 
-      </div>{/* end max-w container */}
+      </div>
 
       {/* ── CTA ── */}
       <section className="bg-[#0D1117] py-20 mt-10">
         <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            Ready to discuss your deployment requirements?
-          </h2>
-          <p className="text-gray-400 mb-8">
-            Share your infrastructure, SSO provider, and compliance requirements. Our enterprise team will scope a deployment plan specific to your environment.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{t('cta.title')}</h2>
+          <p className="text-gray-400 mb-8">{t('cta.subtitle')}</p>
           <LeadCaptureForm
             source="enterprise-deployment"
-            placeholder="Enter your work email"
-            buttonText="Talk to Enterprise Team"
+            placeholder={t('cta.formPlaceholder')}
+            buttonText={t('cta.formButton')}
             className="max-w-xl mx-auto"
           />
           <p className="mt-4 text-sm text-gray-400">
-            Or{' '}
+            {t('cta.footerOr')}{' '}
             <Link href={ROUTES.bookDemo} className="text-white underline hover:text-gray-200">
-              book a 30-minute demo
+              {t('cta.footerLink')}
             </Link>{' '}
-            with our solutions team.
+            {t('cta.footerSuffix')}
           </p>
         </div>
       </section>

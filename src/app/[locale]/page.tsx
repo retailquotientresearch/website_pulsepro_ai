@@ -35,7 +35,7 @@ import BeforeAfterPulse from "./_components/BeforeAfterPulse";
 import AIIntelligenceLayer from "./_components/AIIntelligenceLayer";
 import EnterpriseEssentials from "./_components/EnterpriseEssentials";
 import IndustrySolutions from "./_components/IndustrySolutions";
-import HowItWorks from "./how-it-works/page";
+import HowItWorksSection from "./_components/HowItWorksSection";
 import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/config/links";
 
@@ -101,8 +101,8 @@ export default async function HomePage({ params }: HomePageProps) {
       {/* Section 8: Call to Action */}
       <CallToAction />
 
-      {/* Section 9: How it Works */}
-      <HowItWorks />
+      {/* Section 9: How it Works — compact flow */}
+      <HowItWorksSection />
     </main>
   );
 }
