@@ -795,6 +795,22 @@
     "support": {
       "title": "We're Here to Support You",
       "description": "Don't hesitate to reach out with any questions, whether you're interested in learning more before making a purchase, you're an existing customer needing assistance, or you have other inquiries. Contact us, and we promise to respond within an hour. No question is too small; we're here to help!"
+    },
+    "enterprise": {
+      "note": "Managing 500+ sites?",
+      "link": "Let's talk enterprise pricing."
+    },
+    "roiSection": {
+      "badge": "ROI Calculator",
+      "title": "See exactly what you save",
+      "subtitle": "Adjust the sliders to match your operation. Results update instantly."
+    },
+    "leadCapture": {
+      "title": "Not ready to sign up yet?",
+      "description": "Leave your email and we'll send you a personalised walkthrough of how PULSE works for your industry.",
+      "placeholder": "Enter your work email",
+      "button": "Send Me a Walkthrough",
+      "noSpam": "No spam. Unsubscribe any time."
     }
   },
   "testimonials": {

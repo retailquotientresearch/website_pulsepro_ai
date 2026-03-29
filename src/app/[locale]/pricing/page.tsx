@@ -137,9 +137,9 @@ export default function PricingPage() {
             </div>
 
             <p className='text-sm text-gray-500 mb-12'>
-              Managing 500+ sites?{' '}
+              {t('enterprise.note')}{' '}
               <Link href={ROUTES.bookDemo} className='text-[#16803C] underline underline-offset-2 hover:no-underline font-medium'>
-                Let&apos;s talk enterprise pricing.
+                {t('enterprise.link')}
               </Link>
             </p>
           </div>
@@ -404,13 +404,13 @@ export default function PricingPage() {
             <AnimatedCard delay={100} direction='up'>
               <div className='text-center mb-10'>
                 <span className='inline-block bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full mb-3'>
-                  ROI Calculator
+                  {t('roiSection.badge')}
                 </span>
                 <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-3'>
-                  See exactly what you save
+                  {t('roiSection.title')}
                 </h2>
                 <p className='text-gray-600 max-w-xl mx-auto'>
-                  Adjust the sliders to match your operation. Results update instantly.
+                  {t('roiSection.subtitle')}
                 </p>
               </div>
             </AnimatedCard>
@@ -427,18 +427,18 @@ export default function PricingPage() {
           <AnimatedCard delay={150} direction='up'>
             <div className='max-w-2xl mx-auto text-center'>
               <h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-3'>
-                Not ready to sign up yet?
+                {t('leadCapture.title')}
               </h2>
               <p className='text-gray-600 mb-6'>
-                Leave your email and we&apos;ll send you a personalised walkthrough of how PULSE works for your industry.
+                {t('leadCapture.description')}
               </p>
               <LeadCaptureForm
                 source='pricing-page'
-                placeholder='Enter your work email'
-                buttonText='Send Me a Walkthrough'
+                placeholder={t('leadCapture.placeholder')}
+                buttonText={t('leadCapture.button')}
                 className='max-w-xl mx-auto'
               />
-              <p className='mt-3 text-xs text-gray-400'>No spam. Unsubscribe any time.</p>
+              <p className='mt-3 text-xs text-gray-400'>{t('leadCapture.noSpam')}</p>
             </div>
           </AnimatedCard>
         </Container>
