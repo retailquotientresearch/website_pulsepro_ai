@@ -16,6 +16,7 @@ export const ROUTES = {
   enterpriseDeployment: "/enterprise-deployment",
   blog: "/blog",
   roiCalculator: "/roi-calculator",
+  caseStudies: "/case-studies",
   icpRetail: "/inspection-software-for-retail",
   icpFoodBeverage: "/inspection-software-for-food-beverage",
   icpConstruction: "/inspection-software-for-construction",

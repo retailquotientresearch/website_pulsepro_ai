@@ -38,7 +38,8 @@
     "featureTasks": "Corrective Actions",
     "featureAttendance": "Attendance Tracking",
     "featureAnnouncements": "Operations Announcements",
-    "roiCalculator": "ROI Calculator"
+    "roiCalculator": "ROI Calculator",
+    "caseStudies": "Case Studies"
   },
   "tooltips": {
     "themeToggle": {
@@ -2059,6 +2060,33 @@
     "libraryIntro": "Get started with",
     "libraryDownloadNote": "Download as PDF or Excel, or import directly into PULSE and go digital in minutes. No account needed to browse.",
     "narrativeBadge": "In practice"
+  },
+  "caseStudies": {
+    "meta": {
+      "title": "Customer Case Studies — Real Results with PULSE",
+      "description": "See how multi-site operations across retail, food & beverage, hospitality, construction, and healthcare use PULSE to cut audit times, close corrective actions faster, and stay inspection-ready."
+    },
+    "hero": {
+      "badge": "Customer Results",
+      "title": "Real operations. Measurable results.",
+      "subtitle": "Five industries. Five deployments. Specific outcomes — not marketing language.",
+      "disclaimer": "Company names are anonymised at client request. All results are from live PULSE deployments.",
+      "stat1": "Sites managed on PULSE",
+      "stat2": "Industries covered",
+      "stat3": "Average go-live time"
+    },
+    "card": {
+      "challenge": "The challenge",
+      "solution": "What changed",
+      "result": "The result"
+    },
+    "cta": {
+      "title": "Want results like these?",
+      "subtitle": "Book a 30-minute demo and we'll show you exactly how PULSE would work for your operation — live, with your own checklist if you want.",
+      "demo": "Book a demo",
+      "free": "Start free trial",
+      "note": "Up and running in 24 hours. No IT team required."
+    }
   },
   "industrySolutions": {
     "badge": "Built for your industry",

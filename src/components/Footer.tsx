@@ -43,6 +43,7 @@ const groups: FooterGroup[] = [
   {
     titleKey: "links.company",
     links: [
+      { nameKey: "caseStudies", href: ROUTES.caseStudies },
       { nameKey: "bookDemo", href: ROUTES.bookDemo },
       { nameKey: "blog", href: ROUTES.blog, external: true },
       { nameKey: "featureTraining", href: ROUTES.featureTraining },

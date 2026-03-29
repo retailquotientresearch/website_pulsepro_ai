@@ -85,6 +85,14 @@ export default function Navigation() {
                   <Link href={ROUTES.featureAnnouncements} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
                     {t('featureAnnouncements')}
                   </Link>
+                  <div className="my-2 border-t border-gray-100" />
+                  <p className="px-4 pb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">{t('resources')}</p>
+                  <Link href={ROUTES.caseStudies} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                    {t('caseStudies')}
+                  </Link>
+                  <Link href={ROUTES.roiCalculator} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFFFEB] hover:text-[#1A7D3D] transition-colors">
+                    {t('roiCalculator')}
+                  </Link>
                 </div>
               </div>
             </div>
