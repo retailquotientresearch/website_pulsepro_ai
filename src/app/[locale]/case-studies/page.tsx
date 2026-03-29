@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { ROUTES, EXTERNAL_LINKS } from '@/config/links'
 import Container from '@/components/ui/Container'
-import { CASE_STUDIES } from '@/data/caseStudiesData'
+import { CASE_STUDIES, type CaseStudy } from '@/data/caseStudiesData'
 
 interface PageProps {
   params: Promise<{ locale: string }>
@@ -12,6 +12,11 @@ export default async function CaseStudiesPage({ params }: PageProps) {
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('caseStudies')
+
+  // Merge Arabic overrides exactly like ICPPage does
+  const studies = CASE_STUDIES.map((cs): CaseStudy =>
+    locale === 'ar' && cs.ar ? { ...cs, ...cs.ar } : cs
+  )
 
   return (
     <main className="min-h-screen bg-[#FFFFEB]">
@@ -54,7 +59,7 @@ export default async function CaseStudiesPage({ params }: PageProps) {
       <section className="py-16">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {CASE_STUDIES.map((cs) => (
+            {studies.map((cs) => (
               <div
                 key={cs.id}
                 className={`bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden flex flex-col${cs.fullWidth ? ' md:col-span-2' : ''}`}
