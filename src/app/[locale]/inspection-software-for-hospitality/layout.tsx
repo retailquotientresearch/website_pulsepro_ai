@@ -5,12 +5,16 @@ import { ICP_DATA } from '@/data/icpData'
 const d = ICP_DATA['hospitality']
 
 export const metadata: Metadata = {
-  title: d.metaTitle,
+  title: { absolute: d.metaTitle },
   description: d.metaDescription,
   openGraph: {
     title: d.metaTitle,
     description: d.metaDescription,
     url: `https://www.pulsepro.ai/en/${d.canonicalSlug}`,
+  },
+  twitter: {
+    title: d.metaTitle,
+    description: d.metaDescription,
   },
   alternates: {
     canonical: `https://www.pulsepro.ai/en/${d.canonicalSlug}`,

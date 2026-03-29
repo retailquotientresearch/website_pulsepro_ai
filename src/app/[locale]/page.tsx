@@ -1,5 +1,30 @@
+import type { Metadata } from 'next'
 import { setRequestLocale } from "next-intl/server";
 import Hero from "./_components/Hero";
+
+const BASE_URL = 'https://www.pulsepro.ai'
+
+export const metadata: Metadata = {
+  title: { absolute: 'PULSE — Enterprise Inspection Platform' },
+  description: 'PULSE helps enterprises manage inspections, corrective actions, and field teams across 100,000+ sites. Mobile-first. Up and running in 24 hours.',
+  openGraph: {
+    title: 'PULSE — Enterprise Inspection Platform',
+    description: 'Manage inspections, corrective actions, and field teams across 100,000+ sites. Mobile-first. Up and running in 24 hours.',
+    url: `${BASE_URL}/en`,
+  },
+  twitter: {
+    title: 'PULSE — Enterprise Inspection Platform',
+    description: 'Manage inspections, corrective actions, and field teams across 100,000+ sites.',
+  },
+  alternates: {
+    canonical: `${BASE_URL}/en`,
+    languages: {
+      en: `${BASE_URL}/en`,
+      ar: `${BASE_URL}/ar`,
+      'x-default': `${BASE_URL}/en`,
+    },
+  },
+}
 import UseCases from "./_components/UseCases";
 import TrustedBy from "./_components/TrustedBy";
 import CommonWorries from "./_components/CommonWorries";

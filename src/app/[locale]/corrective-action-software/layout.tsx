@@ -5,12 +5,16 @@ import { FEATURE_DATA } from '@/data/featureData'
 const d = FEATURE_DATA['tasks']
 
 export const metadata: Metadata = {
-  title: d.metaTitle,
+  title: { absolute: d.metaTitle },
   description: d.metaDescription,
   openGraph: {
     title: d.metaTitle,
     description: d.metaDescription,
     url: `https://www.pulsepro.ai/en/${d.canonicalSlug}`,
+  },
+  twitter: {
+    title: d.metaTitle,
+    description: d.metaDescription,
   },
   alternates: {
     canonical: `https://www.pulsepro.ai/en/${d.canonicalSlug}`,
